@@ -1,4 +1,7 @@
-[gd_scene format=3 uid="uid://dt5blvo4fvgke"]
+[gd_scene load_steps=2 format=3 uid="uid://dt5blvo4fvgke"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_umhnj"]
+size = Vector2(200, 20)
 
 [node name="Hud" type="CanvasLayer"]
 
@@ -47,3 +50,44 @@ offset_top = 35.256355
 offset_right = 82.30759
 offset_bottom = 58.256355
 text = "Test"
+
+[node name="People" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 10.0
+offset_top = 6.0
+offset_right = 50.0
+offset_bottom = 46.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="People"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MentalHealth" type="Label" parent="People/VBoxContainer"]
+layout_mode = 2
+text = "People's Mental Health"
+
+[node name="MentalHealthProgress" type="TextureProgressBar" parent="People/VBoxContainer"]
+layout_mode = 2
+value = 50.0
+texture_under = SubResource("PlaceholderTexture2D_umhnj")
+texture_over = SubResource("PlaceholderTexture2D_umhnj")
+texture_progress = SubResource("PlaceholderTexture2D_umhnj")
+tint_under = Color(1, 1, 1, 0.12156863)
+tint_over = Color(0.15294118, 0, 0.6509804, 0.24313726)
+tint_progress = Color(0.24313726, 1, 0.45490196, 1)
+
+[node name="Health" type="Label" parent="People/VBoxContainer"]
+layout_mode = 2
+text = "People's Health"
+
+[node name="HealthProgress" type="TextureProgressBar" parent="People/VBoxContainer"]
+layout_mode = 2
+value = 50.0
+texture_under = SubResource("PlaceholderTexture2D_umhnj")
+texture_over = SubResource("PlaceholderTexture2D_umhnj")
+texture_progress = SubResource("PlaceholderTexture2D_umhnj")
+tint_under = Color(1, 1, 1, 0.12156863)
+tint_over = Color(0.4118135, 0.06812616, 0.14906555, 0.24313726)
+tint_progress = Color(0.60172325, 0.15286446, 0.14492828, 1)

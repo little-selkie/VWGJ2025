@@ -1,5 +1,8 @@
 extends Node
 
+func _ready():
+	$Hud/People/VBoxContainer/MentalHealthProgress.value = float(GlobalVars.resource_people_mood[1])
+	$Hud/People/VBoxContainer/HealthProgress.value = float(GlobalVars.resource_people_health[1])
 
 func _on_time_simulation_timeout() -> void:
 	if GlobalVars.current_time[2] == 59:
