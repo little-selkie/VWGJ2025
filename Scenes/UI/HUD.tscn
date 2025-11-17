@@ -5,9 +5,9 @@
 [node name="Time" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 923.00006
+offset_left = 923.0
 offset_top = 1.0
-offset_right = 963.00006
+offset_right = 963.0
 offset_bottom = 41.0
 scale = Vector2(1.5600024, 1.5600024)
 
@@ -39,3 +39,11 @@ text = ":"
 [node name="MinuteNumber" type="Label" parent="Time/HBoxContainer"]
 layout_mode = 2
 text = "0"
+
+[node name="TimeOfDay" type="Label" parent="Time"]
+layout_mode = 0
+offset_left = 42.307587
+offset_top = 35.256355
+offset_right = 82.30759
+offset_bottom = 58.256355
+text = "Test"

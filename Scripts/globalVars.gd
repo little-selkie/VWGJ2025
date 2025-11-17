@@ -51,3 +51,4 @@ var resources: Array = [
 # Time simulated
 # 0 - day, 1 - hour, 2 - minute
 var current_time: Array = [1, 0, 0]
+var time_of_day: String = "Night"
