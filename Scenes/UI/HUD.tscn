@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dt5blvo4fvgke"]
+
+[node name="Hud" type="CanvasLayer"]
+
+[node name="Time" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 974.0
+offset_top = 1.0
+offset_right = 1014.0
+offset_bottom = 41.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Time"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Day" type="Label" parent="Time/HBoxContainer"]
+layout_mode = 2
+text = "Day"
+
+[node name="DayNumber" type="Label" parent="Time/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="Time" type="Label" parent="Time/HBoxContainer"]
+layout_mode = 2
+text = "Time:"
+
+[node name="HourNumber" type="Label" parent="Time/HBoxContainer"]
+layout_mode = 2
+text = "0"
+
+[node name="_" type="Label" parent="Time/HBoxContainer"]
+layout_mode = 2
+text = ":"
+
+[node name="MinuteNumber" type="Label" parent="Time/HBoxContainer"]
+layout_mode = 2
+text = "0"

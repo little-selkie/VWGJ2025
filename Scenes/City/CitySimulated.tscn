@@ -1,3 +1,15 @@
-[gd_scene format=3 uid="uid://b0b6gee2o0hl3"]
+[gd_scene load_steps=3 format=3 uid="uid://b0b6gee2o0hl3"]
+
+[ext_resource type="Script" uid="uid://b7tk4ilayrwjh" path="res://Scripts/City/city_simulated.gd" id="1_f2itq"]
+[ext_resource type="PackedScene" uid="uid://dt5blvo4fvgke" path="res://Scenes/UI/HUD.tscn" id="2_sa8op"]
 
 [node name="CitySimulated" type="Node"]
+script = ExtResource("1_f2itq")
+
+[node name="Hud" parent="." instance=ExtResource("2_sa8op")]
+
+[node name="TimeSimulation" type="Timer" parent="."]
+wait_time = 0.009999999999999998
+autostart = true
+
+[connection signal="timeout" from="TimeSimulation" to="." method="_on_time_simulation_timeout"]
