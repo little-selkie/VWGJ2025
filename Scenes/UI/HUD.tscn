@@ -152,6 +152,7 @@ text = "0"
 layout_mode = 2
 tooltip_text = "Energy"
 texture = SubResource("GradientTexture1D_omqfp")
+expand_mode = 2
 
 [node name="Money" type="HBoxContainer" parent="Resources/ResourceTable"]
 layout_mode = 2
@@ -164,6 +165,7 @@ text = "0"
 layout_mode = 2
 tooltip_text = "Moneys"
 texture = SubResource("GradientTexture1D_xaom8")
+expand_mode = 2
 
 [node name="Heating" type="HBoxContainer" parent="Resources/ResourceTable"]
 layout_mode = 2
@@ -176,6 +178,7 @@ text = "0"
 layout_mode = 2
 tooltip_text = "Heating"
 texture = SubResource("GradientTexture1D_qc5w2")
+expand_mode = 2
 
 [node name="UpgradeParts" type="HBoxContainer" parent="Resources/ResourceTable"]
 layout_mode = 2
@@ -188,3 +191,4 @@ text = "0"
 layout_mode = 2
 tooltip_text = "UpgradeParts"
 texture = SubResource("GradientTexture1D_4bm6u")
+expand_mode = 2

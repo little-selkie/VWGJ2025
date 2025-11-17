@@ -34,3 +34,8 @@ func time_update_hud() -> void:
 	$Hud/Resources/ResourceTable/Money/MoneyCount.text = str(GlobalVars.resource_money[1])
 	$Hud/Resources/ResourceTable/Heating/HeatingCount.text = str(GlobalVars.resource_heat[1])
 	$Hud/Resources/ResourceTable/UpgradeParts/UpgradePartsCount.text = str(GlobalVars.resource_upgrade[1])
+	
+	$Hud/Resources/ResourceTable/Energy/EnergyIcon.texture = GlobalVars.resource_power[2]
+	$Hud/Resources/ResourceTable/Money/MoneyIcon.texture = GlobalVars.resource_money[2]
+	$Hud/Resources/ResourceTable/Heating/HeatingIcon.texture = GlobalVars.resource_heat[2]
+	$Hud/Resources/ResourceTable/UpgradeParts/UpgradePartsIcon.texture = GlobalVars.resource_upgrade[2]

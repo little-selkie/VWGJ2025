@@ -1,7 +1,5 @@
 extends Node
 
-var time_simulation: float = 0.05
-
 # Resources
 # 0 - name, 1 - count, 2 - icon, 3 - description
 var resource_test: Array = [
@@ -39,18 +37,15 @@ var resource_upgrade: Array = [
 	0,
 	load("res://icon.svg"), 
 	"PLACEHOLDER"]
-# 0 - test, 1 - power, 2 - people's mental health, 3 - people's physical health,
-# 4 - money, 5 - heat
-var resources: Array = [
-	resource_test, 
-	resource_power, 
-	resource_people_mood, 
-	resource_people_health,
-	resource_money,
-	resource_heat,
-	resource_upgrade]
 
 # Time simulated
 # 0 - day, 1 - hour, 2 - minute
 var current_time: Array = [1, 0, 0]
 var time_of_day: String = "Night"
+var time_simulation: float = 0.05
+
+# Upgrades
+# 0 - name, 1 - cost, 2 - icon, 3 - description
+var upgrades: Array[Array] = [
+	["Self-Sufficiency", 10000, load("res://icon.svg"), "PLACEHOLDER"]
+]
