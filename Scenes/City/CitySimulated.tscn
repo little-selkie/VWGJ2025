@@ -9,7 +9,7 @@ script = ExtResource("1_f2itq")
 [node name="Hud" parent="." instance=ExtResource("2_sa8op")]
 
 [node name="TimeSimulation" type="Timer" parent="."]
-wait_time = 0.009999999999999998
+wait_time = 0.05
 autostart = true
 
 [connection signal="timeout" from="TimeSimulation" to="." method="_on_time_simulation_timeout"]

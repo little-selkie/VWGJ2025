@@ -5,10 +5,11 @@
 [node name="Time" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 974.0
+offset_left = 923.00006
 offset_top = 1.0
-offset_right = 1014.0
+offset_right = 963.00006
 offset_bottom = 41.0
+scale = Vector2(1.5600024, 1.5600024)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Time"]
 layout_mode = 0
