@@ -11,7 +11,7 @@ var resource_test: Array = [
 	"TestDescription"]
 var resource_power: Array = [
 	"Power", 
-	5, 
+	1, 
 	load("res://icon.svg"), 
 	"PLACEHOLDER"]
 var resource_people_mood: Array = [

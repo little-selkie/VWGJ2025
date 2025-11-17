@@ -20,6 +20,7 @@ enum producesEnum {None, MentalHealth, Health, Money, Heat, UpgradeParts}
 
 func _process(_delta: float) -> void:
 	work()
+	check_for_energy()
 
 func _ready():
 	$ProductionProgress.value = 0.0
@@ -27,6 +28,10 @@ func _ready():
 	$ProductionTick.wait_time = GlobalVars.time_simulation
 
 func update_info():
+	if is_on and (GlobalVars.resource_power[1] - needs_energy) >= 0:
+		$On_Off/Check.button_pressed = true
+	elif !is_on:
+		$On_Off/Check.button_pressed = false
 	$VBoxContainer/Details/EnergyCost.text = str(needs_energy)
 	$VBoxContainer/DistrictName.text = str(district_name)
 	if produces_1 != 0:
@@ -53,6 +58,16 @@ func update_info():
 		$VBoxContainer/Details/Production/Product_4.visible = true
 	else:
 		$VBoxContainer/Details/Production/Product_4.visible = false
+
+func check_for_energy():
+	if needs_energy > GlobalVars.resource_power[1] and !$On_Off/Check.button_pressed:
+		$On_Off/Check.disabled = true
+	elif needs_energy <= GlobalVars.resource_power[1] and !$On_Off/Check.button_pressed:
+		$On_Off/Check.disabled = false
+	
+	if GlobalVars.resource_power[1] < 0:
+		$On_Off/Check.button_pressed = false
+		$On_Off/Check.disabled = true
 
 func work():
 	if !is_on:
@@ -146,3 +161,12 @@ func _on_production_progress_value_changed(value: float) -> void:
 	if value >= 100:
 		$ProductionProgress.value = 0.0
 		check_for_production()
+
+
+func _on_check_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		is_on = true
+		GlobalVars.resource_power[1] -= needs_energy
+	if !toggled_on:
+		is_on = false
+		GlobalVars.resource_power[1] += needs_energy
