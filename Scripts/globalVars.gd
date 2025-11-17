@@ -47,5 +47,6 @@ var time_simulation: float = 0.05
 # Upgrades
 # 0 - name, 1 - cost, 2 - icon, 3 - description
 var upgrades: Array[Array] = [
-	["Self-Sufficiency", 10000, load("res://icon.svg"), "PLACEHOLDER"]
+	["Self-Sufficiency", 10000, load("res://icon.svg"), "PLACEHOLDER"],
+	["Night Shifts", 100, load("res://icon.svg"), "PLACEHOLDER"]
 ]
