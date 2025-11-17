@@ -25,6 +25,12 @@ offset_left = 247.0
 offset_top = 22.0
 offset_right = 247.0
 offset_bottom = 22.0
+district_name = "Mall"
+can_work_at_night = true
+produces_1 = 3
+produces_1_count = 100
+produces_2 = 1
+produces_2_count = 10
 
 [node name="PlaceholderGround" type="CSGBox3D" parent="."]
 transform = Transform3D(9.670273, 0, 0, 0, 0.17620224, 0, 0, 0, 9.226539, 0.006382942, 0, 0)

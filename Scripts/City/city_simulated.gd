@@ -1,6 +1,7 @@
 extends Node
 
 func _ready():
+	$TimeSimulation.wait_time = GlobalVars.time_simulation
 	time_update_hud()
 
 func _on_time_simulation_timeout() -> void:
@@ -28,3 +29,8 @@ func time_update_hud() -> void:
 	$Hud/Time/TimeOfDay.text = GlobalVars.time_of_day
 	$Hud/People/VBoxContainer/MentalHealthProgress.value = float(GlobalVars.resource_people_mood[1])
 	$Hud/People/VBoxContainer/HealthProgress.value = float(GlobalVars.resource_people_health[1])
+	
+	$Hud/Resources/ResourceTable/Energy/EnergyCount.text = str(GlobalVars.resource_power[1])
+	$Hud/Resources/ResourceTable/Money/MoneyCount.text = str(GlobalVars.resource_money[1])
+	$Hud/Resources/ResourceTable/Heating/HeatingCount.text = str(GlobalVars.resource_heat[1])
+	$Hud/Resources/ResourceTable/UpgradeParts/UpgradePartsCount.text = str(GlobalVars.resource_upgrade[1])

@@ -1,5 +1,7 @@
 extends Node
 
+var time_simulation: float = 0.05
+
 # Resources
 # 0 - name, 1 - count, 2 - icon, 3 - description
 var resource_test: Array = [
@@ -14,12 +16,12 @@ var resource_power: Array = [
 	"PLACEHOLDER"]
 var resource_people_mood: Array = [
 	"Mental Health", 
-	100, 
+	50, 
 	load("res://icon.svg"), 
 	"PLACEHOLDER"]
 var resource_people_health: Array = [
 	"Physical Health", 
-	100, 
+	50, 
 	load("res://icon.svg"), 
 	"PLACEHOLDER"]
 var resource_money: Array = [

@@ -1,7 +1,35 @@
-[gd_scene load_steps=2 format=3 uid="uid://dt5blvo4fvgke"]
+[gd_scene load_steps=10 format=3 uid="uid://dt5blvo4fvgke"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_umhnj"]
 size = Vector2(200, 20)
+
+[sub_resource type="Gradient" id="Gradient_umhnj"]
+colors = PackedColorArray(0.68235296, 0, 0, 1, 1, 0.6313726, 0.25490198, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_omqfp"]
+gradient = SubResource("Gradient_umhnj")
+width = 20
+
+[sub_resource type="Gradient" id="Gradient_qc5w2"]
+colors = PackedColorArray(0.4862745, 0.4862745, 0, 1, 1, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xaom8"]
+gradient = SubResource("Gradient_qc5w2")
+width = 20
+
+[sub_resource type="Gradient" id="Gradient_omqfp"]
+offsets = PackedFloat32Array(0, 0.94186044, 1)
+colors = PackedColorArray(0.91764706, 0, 0, 1, 0.99607843, 0.3882353, 0.9411765, 1, 1, 0.29803923, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qc5w2"]
+gradient = SubResource("Gradient_omqfp")
+width = 20
+
+[sub_resource type="Gradient" id="Gradient_xaom8"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4bm6u"]
+gradient = SubResource("Gradient_xaom8")
+width = 20
 
 [node name="Hud" type="CanvasLayer"]
 
@@ -91,3 +119,72 @@ texture_progress = SubResource("PlaceholderTexture2D_umhnj")
 tint_under = Color(1, 1, 1, 0.12156863)
 tint_over = Color(0.4118135, 0.06812616, 0.14906555, 0.24313726)
 tint_progress = Color(0.60172325, 0.15286446, 0.14492828, 1)
+
+[node name="Resources" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 13.0
+offset_top = 126.0
+offset_right = 53.0
+offset_bottom = 166.0
+
+[node name="Resources" type="Label" parent="Resources"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Resources:"
+
+[node name="ResourceTable" type="VBoxContainer" parent="Resources"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 28.0
+offset_right = 43.0
+offset_bottom = 68.0
+
+[node name="Energy" type="HBoxContainer" parent="Resources/ResourceTable"]
+layout_mode = 2
+
+[node name="EnergyCount" type="Label" parent="Resources/ResourceTable/Energy"]
+layout_mode = 2
+text = "0"
+
+[node name="EnergyIcon" type="TextureRect" parent="Resources/ResourceTable/Energy"]
+layout_mode = 2
+tooltip_text = "Energy"
+texture = SubResource("GradientTexture1D_omqfp")
+
+[node name="Money" type="HBoxContainer" parent="Resources/ResourceTable"]
+layout_mode = 2
+
+[node name="MoneyCount" type="Label" parent="Resources/ResourceTable/Money"]
+layout_mode = 2
+text = "0"
+
+[node name="MoneyIcon" type="TextureRect" parent="Resources/ResourceTable/Money"]
+layout_mode = 2
+tooltip_text = "Moneys"
+texture = SubResource("GradientTexture1D_xaom8")
+
+[node name="Heating" type="HBoxContainer" parent="Resources/ResourceTable"]
+layout_mode = 2
+
+[node name="HeatingCount" type="Label" parent="Resources/ResourceTable/Heating"]
+layout_mode = 2
+text = "0"
+
+[node name="HeatingIcon" type="TextureRect" parent="Resources/ResourceTable/Heating"]
+layout_mode = 2
+tooltip_text = "Heating"
+texture = SubResource("GradientTexture1D_qc5w2")
+
+[node name="UpgradeParts" type="HBoxContainer" parent="Resources/ResourceTable"]
+layout_mode = 2
+
+[node name="UpgradePartsCount" type="Label" parent="Resources/ResourceTable/UpgradeParts"]
+layout_mode = 2
+text = "0"
+
+[node name="UpgradePartsIcon" type="TextureRect" parent="Resources/ResourceTable/UpgradeParts"]
+layout_mode = 2
+tooltip_text = "UpgradeParts"
+texture = SubResource("GradientTexture1D_4bm6u")

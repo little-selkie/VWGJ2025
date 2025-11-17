@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://ecc8wscwb87c"]
+[gd_scene load_steps=6 format=3 uid="uid://ecc8wscwb87c"]
 
 [ext_resource type="Script" uid="uid://b5xd2rmp4iqb2" path="res://Scripts/City/district.gd" id="1_j064q"]
 
@@ -7,6 +7,12 @@ colors = PackedColorArray(0.91764706, 0.91764706, 0.19215687, 1, 1, 0.41568628, 
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_jrh6f"]
 gradient = SubResource("Gradient_j064q")
+width = 20
+
+[sub_resource type="Gradient" id="Gradient_jrh6f"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wwqtv"]
+gradient = SubResource("Gradient_jrh6f")
 width = 20
 
 [node name="District" type="Control"]
@@ -25,19 +31,20 @@ color = Color(0.16835594, 2.0431504e-05, 0.16898412, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 128.0
+offset_left = 22.0
 offset_top = 61.0
-offset_right = 168.0
-offset_bottom = 101.0
+offset_right = 277.0
+offset_bottom = 111.0
 
 [node name="DistrictName" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Test"
+horizontal_alignment = 1
 
 [node name="Details" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 
-[node name="EnergyCount" type="Label" parent="VBoxContainer/Details"]
+[node name="EnergyCost" type="Label" parent="VBoxContainer/Details"]
 layout_mode = 2
 text = "0"
 
@@ -49,9 +56,83 @@ texture = SubResource("GradientTexture1D_jrh6f")
 layout_mode = 2
 text = "|"
 
-[node name="+" type="Label" parent="VBoxContainer/Details"]
+[node name="Production" type="HBoxContainer" parent="VBoxContainer/Details"]
+layout_mode = 2
+
+[node name="Product_1" type="HBoxContainer" parent="VBoxContainer/Details/Production"]
+visible = false
+layout_mode = 2
+
+[node name="+" type="Label" parent="VBoxContainer/Details/Production/Product_1"]
 layout_mode = 2
 text = "+"
 
-[node name="Production" type="Control" parent="VBoxContainer/Details"]
+[node name="ProductCount" type="Label" parent="VBoxContainer/Details/Production/Product_1"]
 layout_mode = 2
+text = "0"
+
+[node name="ProductImage" type="TextureRect" parent="VBoxContainer/Details/Production/Product_1"]
+layout_mode = 2
+tooltip_text = "Not Working :("
+texture = SubResource("GradientTexture1D_wwqtv")
+
+[node name="Product_2" type="HBoxContainer" parent="VBoxContainer/Details/Production"]
+visible = false
+layout_mode = 2
+
+[node name="+" type="Label" parent="VBoxContainer/Details/Production/Product_2"]
+layout_mode = 2
+text = "+"
+
+[node name="ProductCount" type="Label" parent="VBoxContainer/Details/Production/Product_2"]
+layout_mode = 2
+text = "0"
+
+[node name="ProductImage" type="TextureRect" parent="VBoxContainer/Details/Production/Product_2"]
+layout_mode = 2
+texture = SubResource("GradientTexture1D_wwqtv")
+
+[node name="Product_3" type="HBoxContainer" parent="VBoxContainer/Details/Production"]
+visible = false
+layout_mode = 2
+
+[node name="+" type="Label" parent="VBoxContainer/Details/Production/Product_3"]
+layout_mode = 2
+text = "+"
+
+[node name="ProductCount" type="Label" parent="VBoxContainer/Details/Production/Product_3"]
+layout_mode = 2
+text = "0"
+
+[node name="ProductImage" type="TextureRect" parent="VBoxContainer/Details/Production/Product_3"]
+layout_mode = 2
+texture = SubResource("GradientTexture1D_wwqtv")
+
+[node name="Product_4" type="HBoxContainer" parent="VBoxContainer/Details/Production"]
+visible = false
+layout_mode = 2
+
+[node name="+" type="Label" parent="VBoxContainer/Details/Production/Product_4"]
+layout_mode = 2
+text = "+"
+
+[node name="ProductCount" type="Label" parent="VBoxContainer/Details/Production/Product_4"]
+layout_mode = 2
+text = "0"
+
+[node name="ProductImage" type="TextureRect" parent="VBoxContainer/Details/Production/Product_4"]
+layout_mode = 2
+texture = SubResource("GradientTexture1D_wwqtv")
+
+[node name="ProductionProgress" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 151.0
+offset_top = 208.0
+offset_right = 155.0
+offset_bottom = 235.0
+step = 0.5
+
+[node name="ProductionTick" type="Timer" parent="."]
+
+[connection signal="value_changed" from="ProductionProgress" to="." method="_on_production_progress_value_changed"]
+[connection signal="timeout" from="ProductionTick" to="." method="_on_production_tick_timeout"]

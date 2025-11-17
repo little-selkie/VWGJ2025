@@ -18,12 +18,131 @@ enum producesEnum {None, MentalHealth, Health, Money, Heat, UpgradeParts}
 @export var produces_4: producesEnum
 @export_range(0, 100, 1) var produces_4_count: int = 0
 
-var all_produce: int = 0
+func _process(_delta: float) -> void:
+	work()
 
 func _ready():
+	$ProductionProgress.value = 0.0
 	update_info()
+	$ProductionTick.wait_time = GlobalVars.time_simulation
 
 func update_info():
+	$VBoxContainer/Details/EnergyCost.text = str(needs_energy)
 	$VBoxContainer/DistrictName.text = str(district_name)
 	if produces_1 != 0:
-		all_produce += 1
+		$VBoxContainer/Details/Production/Product_1/ProductCount.text = str(produces_1_count)
+		$VBoxContainer/Details/Production/Product_1/ProductImage.tooltip_text = str(producesEnum.keys()[produces_1])
+		$VBoxContainer/Details/Production/Product_1.visible = true
+	else:
+		$VBoxContainer/Details/Production/Product_1.visible = false
+	if produces_2 != 0:
+		$VBoxContainer/Details/Production/Product_2/ProductCount.text = str(produces_2_count)
+		$VBoxContainer/Details/Production/Product_2/ProductImage.tooltip_text = str(producesEnum.keys()[produces_2])
+		$VBoxContainer/Details/Production/Product_2.visible = true
+	else:
+		$VBoxContainer/Details/Production/Product_2.visible = false
+	if produces_3 != 0:
+		$VBoxContainer/Details/Production/Product_3/ProductCount.text = str(produces_3_count)
+		$VBoxContainer/Details/Production/Product_3/ProductImage.tooltip_text = str(producesEnum.keys()[produces_3])
+		$VBoxContainer/Details/Production/Product_3.visible = true
+	else:
+		$VBoxContainer/Details/Production/Product_3.visible = false
+	if produces_4 != 0:
+		$VBoxContainer/Details/Production/Product_4/ProductCount.text = str(produces_4_count)
+		$VBoxContainer/Details/Production/Product_4/ProductImage.tooltip_text = str(producesEnum.keys()[produces_4])
+		$VBoxContainer/Details/Production/Product_4.visible = true
+	else:
+		$VBoxContainer/Details/Production/Product_4.visible = false
+
+func work():
+	if !is_on:
+		$ProductionTick.stop()
+	elif !can_work_at_night and GlobalVars.time_of_day == "Night":
+		$ProductionTick.stop()
+	elif $ProductionTick.is_stopped():
+		$ProductionTick.start()
+
+func check_for_production():
+	if is_on:
+		#MentalHealth
+		if produces_1 == 1:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_people_mood[1] += int(produces_1_count*(efficiency/100))
+		elif produces_2 == 1:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_people_mood[1] += int(produces_2_count*(efficiency/100))
+		elif produces_3 == 1:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_people_mood[1] += int(produces_3_count*(efficiency/100))
+		elif produces_4 == 1:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_people_mood[1] += int(produces_4_count*(efficiency/100))
+		#Health
+		if produces_1 == 2:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_people_health[1] += int(produces_1_count*(efficiency/100))
+		elif produces_2 == 2:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_people_health[1] += int(produces_2_count*(efficiency/100))
+		elif produces_3 == 2:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_people_health[1] += int(produces_3_count*(efficiency/100))
+		elif produces_4 == 2:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_people_health[1] += int(produces_4_count*(efficiency/100))
+		#Money
+		if produces_1 == 3:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_money[1] += int(produces_1_count*(efficiency/100))
+		elif produces_2 == 3:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_money[1] += int(produces_2_count*(efficiency/100))
+		elif produces_3 == 3:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_money[1] += int(produces_3_count*(efficiency/100))
+		elif produces_4 == 3:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_money[1] += int(produces_4_count*(efficiency/100))
+		#Heat
+		if produces_1 == 4:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_heat[1] += int(produces_1_count*(efficiency/100))
+		elif produces_2 == 4:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_heat[1] += int(produces_2_count*(efficiency/100))
+		elif produces_3 == 4:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_heat[1] += int(produces_3_count*(efficiency/100))
+		elif produces_4 == 4:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_heat[1] += int(produces_4_count*(efficiency/100))
+		#UpgradeParts
+		if produces_1 == 5:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_upgrade[1] += int(produces_1_count*(efficiency/100))
+		elif produces_2 == 5:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_upgrade[1] += int(produces_2_count*(efficiency/100))
+		elif produces_3 == 5:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_upgrade[1] += int(produces_3_count*(efficiency/100))
+		elif produces_4 == 5:
+			@warning_ignore("integer_division")
+			GlobalVars.resource_upgrade[1] += int(produces_4_count*(efficiency/100))
+			
+	#MentalHealth
+	if GlobalVars.resource_people_mood[1] > 100:
+		GlobalVars.resource_people_mood[1] = 100
+	#Health
+	if GlobalVars.resource_people_health[1] > 100:
+		GlobalVars.resource_people_health[1] = 100
+
+
+func _on_production_tick_timeout() -> void:
+	$ProductionProgress.value += $ProductionProgress.step
+
+
+func _on_production_progress_value_changed(value: float) -> void:
+	if value >= 100:
+		$ProductionProgress.value = 0.0
+		check_for_production()
