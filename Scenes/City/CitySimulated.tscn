@@ -26,11 +26,35 @@ offset_top = 22.0
 offset_right = 247.0
 offset_bottom = 22.0
 district_name = "Mall"
-can_work_at_night = true
+needs_energy = 3
+is_on = false
 produces_1 = 3
 produces_1_count = 100
 produces_2 = 1
 produces_2_count = 10
+
+[node name="District2" parent="." instance=ExtResource("3_kr0nf")]
+offset_left = 594.0
+offset_top = 92.0
+offset_right = 594.0
+offset_bottom = 92.0
+district_name = "Hospital"
+needs_energy = 2
+is_on = false
+can_work_at_night = true
+produces_1 = 2
+produces_1_count = 20
+
+[node name="District3" parent="." instance=ExtResource("3_kr0nf")]
+offset_left = 284.0
+offset_top = 316.0
+offset_right = 284.0
+offset_bottom = 316.0
+district_name = "Park"
+is_on = false
+can_work_at_night = true
+produces_1 = 1
+produces_1_count = 30
 
 [node name="PlaceholderGround" type="CSGBox3D" parent="."]
 transform = Transform3D(9.670273, 0, 0, 0, 0.17620224, 0, 0, 0, 9.226539, 0.006382942, 0, 0)
