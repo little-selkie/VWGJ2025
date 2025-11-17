@@ -1,3 +1,57 @@
-[gd_scene format=3 uid="uid://ecc8wscwb87c"]
+[gd_scene load_steps=4 format=3 uid="uid://ecc8wscwb87c"]
 
-[node name="District" type="Node"]
+[ext_resource type="Script" uid="uid://b5xd2rmp4iqb2" path="res://Scripts/City/district.gd" id="1_j064q"]
+
+[sub_resource type="Gradient" id="Gradient_j064q"]
+colors = PackedColorArray(0.91764706, 0.91764706, 0.19215687, 1, 1, 0.41568628, 0.14901961, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jrh6f"]
+gradient = SubResource("Gradient_j064q")
+width = 20
+
+[node name="District" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_j064q")
+
+[node name="PlaceholderImage" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 9.0
+offset_right = 97.0
+offset_bottom = 97.0
+scale = Vector2(3.1999998, 2.96)
+color = Color(0.16835594, 2.0431504e-05, 0.16898412, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 61.0
+offset_right = 168.0
+offset_bottom = 101.0
+
+[node name="DistrictName" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Test"
+
+[node name="Details" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="EnergyCount" type="Label" parent="VBoxContainer/Details"]
+layout_mode = 2
+text = "0"
+
+[node name="EnergyImage" type="TextureRect" parent="VBoxContainer/Details"]
+layout_mode = 2
+texture = SubResource("GradientTexture1D_jrh6f")
+
+[node name="|" type="Label" parent="VBoxContainer/Details"]
+layout_mode = 2
+text = "|"
+
+[node name="+" type="Label" parent="VBoxContainer/Details"]
+layout_mode = 2
+text = "+"
+
+[node name="Production" type="Control" parent="VBoxContainer/Details"]
+layout_mode = 2

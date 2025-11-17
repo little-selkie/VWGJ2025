@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=3 uid="uid://b0b6gee2o0hl3"]
+[gd_scene load_steps=5 format=3 uid="uid://b0b6gee2o0hl3"]
 
 [ext_resource type="Script" uid="uid://b7tk4ilayrwjh" path="res://Scripts/City/city_simulated.gd" id="1_f2itq"]
 [ext_resource type="PackedScene" uid="uid://dt5blvo4fvgke" path="res://Scenes/UI/HUD.tscn" id="2_sa8op"]
+[ext_resource type="PackedScene" uid="uid://ecc8wscwb87c" path="res://Scenes/City/District.tscn" id="3_kr0nf"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sa8op"]
+vertex_color_use_as_albedo = true
+albedo_color = Color(7.6046585e-06, 0.8488723, 0.46462423, 1)
 
 [node name="CitySimulated" type="Node"]
 script = ExtResource("1_f2itq")
@@ -11,5 +16,18 @@ script = ExtResource("1_f2itq")
 [node name="TimeSimulation" type="Timer" parent="."]
 wait_time = 0.05
 autostart = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.021522641, 6.4349604, -0.016028523)
+
+[node name="District" parent="." instance=ExtResource("3_kr0nf")]
+offset_left = 247.0
+offset_top = 22.0
+offset_right = 247.0
+offset_bottom = 22.0
+
+[node name="PlaceholderGround" type="CSGBox3D" parent="."]
+transform = Transform3D(9.670273, 0, 0, 0, 0.17620224, 0, 0, 0, 9.226539, 0.006382942, 0, 0)
+material = SubResource("StandardMaterial3D_sa8op")
 
 [connection signal="timeout" from="TimeSimulation" to="." method="_on_time_simulation_timeout"]
