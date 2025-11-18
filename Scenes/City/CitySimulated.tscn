@@ -58,9 +58,10 @@ produces_1 = 1
 produces_1_count = 30
 
 [node name="UpgradesMenu" parent="." instance=ExtResource("4_pul6c")]
-offset_left = 886.0
-offset_right = -266.0
-scale = Vector2(0.8166619, 0.8166619)
+offset_left = 1042.0
+offset_top = 10.0
+offset_right = -110.0
+offset_bottom = -638.0
 
 [node name="PlaceholderGround" type="CSGBox3D" parent="."]
 transform = Transform3D(9.670273, 0, 0, 0, 0.17620224, 0, 0, 0, 9.226539, 0.006382942, 0, 0)
