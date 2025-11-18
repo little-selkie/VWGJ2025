@@ -34,7 +34,7 @@ var resource_heat: Array = [
 	"PLACEHOLDER"]
 var resource_upgrade: Array = [
 	"Battery", 
-	0,
+	10,
 	load("res://icon.svg"), 
 	"PLACEHOLDER"]
 
