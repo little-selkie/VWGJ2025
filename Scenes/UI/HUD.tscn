@@ -1,7 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://dt5blvo4fvgke"]
+[gd_scene load_steps=11 format=3 uid="uid://dt5blvo4fvgke"]
 
 [ext_resource type="Script" uid="uid://g6ao4sshsevr" path="res://Scripts/hud.gd" id="1_qc5w2"]
-[ext_resource type="Texture2D" uid="uid://bu2gq36n27ab3" path="res://icon.svg" id="2_xaom8"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_umhnj"]
 size = Vector2(200, 20)
@@ -196,51 +195,3 @@ layout_mode = 2
 tooltip_text = "UpgradeParts"
 texture = SubResource("GradientTexture1D_4bm6u")
 expand_mode = 2
-
-[node name="Upgrades" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_left = -19.0
-offset_top = 288.0
-offset_right = 21.0
-offset_bottom = 328.0
-
-[node name="Upgrades" type="Label" parent="Upgrades"]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 36.0
-offset_right = 98.0
-offset_bottom = 59.0
-text = "Upgrades"
-
-[node name="GridContainer" type="GridContainer" parent="Upgrades"]
-layout_mode = 0
-offset_left = 27.0
-offset_top = 65.0
-offset_right = 130.0
-offset_bottom = 222.0
-scale = Vector2(0.53, 0.53)
-columns = 3
-
-[node name="TestUpgrade" type="VBoxContainer" parent="Upgrades/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="TestIcon" type="TextureRect" parent="Upgrades/GridContainer/TestUpgrade"]
-layout_mode = 2
-tooltip_text = "Test Tooltip"
-texture = ExtResource("2_xaom8")
-expand_mode = 4
-
-[node name="TestLabel" type="Label" parent="Upgrades/GridContainer/TestUpgrade"]
-layout_mode = 2
-text = "Test Upgrade"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TestCost" type="Label" parent="Upgrades/GridContainer/TestUpgrade"]
-layout_mode = 2
-text = "000"
-horizontal_alignment = 1
-vertical_alignment = 1
