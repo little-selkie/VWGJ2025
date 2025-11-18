@@ -1,12 +1,263 @@
-[gd_scene load_steps=2 format=3 uid="uid://gonh10mhtf6u"]
+[gd_scene load_steps=3 format=3 uid="uid://gonh10mhtf6u"]
 
 [ext_resource type="Script" uid="uid://dk11yw20b35wa" path="res://Scripts/upgrades_menu.gd" id="1_psehl"]
+[ext_resource type="Texture2D" uid="uid://bu2gq36n27ab3" path="res://icon.svg" id="2_qlo13"]
 
 [node name="UpgradesMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -1152.0
+offset_bottom = -648.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_psehl")
+
+[node name="FoldableContainer" type="FoldableContainer" parent="."]
+layout_mode = 0
+offset_right = 172.0
+offset_bottom = 173.0
+folded = true
+title = "Upgrades"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FoldableContainer"]
+visible = false
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="FoldableContainer/VBoxContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="Upgrade1" type="VBoxContainer" parent="FoldableContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect1" type="Button" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade1"]
+layout_mode = 2
+tooltip_text = "Test test"
+toggle_mode = true
+action_mode = 0
+icon = ExtResource("2_qlo13")
+icon_alignment = 1
+vertical_icon_alignment = 0
+
+[node name="Label" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade1"]
+layout_mode = 2
+text = "Test Text"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade1"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade1/HBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_qlo13")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade1/HBoxContainer"]
+layout_mode = 2
+text = "99"
+
+[node name="TextureRect2" type="TextureRect" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade1/HBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_qlo13")
+expand_mode = 4
+
+[node name="Label2" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade1/HBoxContainer"]
+layout_mode = 2
+text = "99"
+
+[node name="Upgrade2" type="VBoxContainer" parent="FoldableContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect2" type="Button" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade2"]
+layout_mode = 2
+toggle_mode = true
+action_mode = 0
+
+[node name="Label" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade2"]
+layout_mode = 2
+text = "Test Text"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade2"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade2/HBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_qlo13")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade2/HBoxContainer"]
+layout_mode = 2
+text = "99"
+
+[node name="TextureRect2" type="TextureRect" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade2/HBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_qlo13")
+expand_mode = 4
+
+[node name="Label2" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade2/HBoxContainer"]
+layout_mode = 2
+text = "99"
+
+[node name="Upgrade3" type="VBoxContainer" parent="FoldableContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect3" type="Button" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade3"]
+layout_mode = 2
+toggle_mode = true
+action_mode = 0
+
+[node name="Label" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade3"]
+layout_mode = 2
+text = "Test Text"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade3"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade3/HBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_qlo13")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade3/HBoxContainer"]
+layout_mode = 2
+text = "99"
+
+[node name="TextureRect2" type="TextureRect" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade3/HBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_qlo13")
+expand_mode = 4
+
+[node name="Label2" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade3/HBoxContainer"]
+layout_mode = 2
+text = "99"
+
+[node name="Upgrade4" type="VBoxContainer" parent="FoldableContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect4" type="Button" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade4"]
+layout_mode = 2
+toggle_mode = true
+action_mode = 0
+
+[node name="Label" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade4"]
+layout_mode = 2
+text = "Test Text"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade4"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade4/HBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_qlo13")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade4/HBoxContainer"]
+layout_mode = 2
+text = "99"
+
+[node name="TextureRect2" type="TextureRect" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade4/HBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_qlo13")
+expand_mode = 4
+
+[node name="Label2" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade4/HBoxContainer"]
+layout_mode = 2
+text = "99"
+
+[node name="Upgrade5" type="VBoxContainer" parent="FoldableContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect5" type="Button" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade5"]
+layout_mode = 2
+toggle_mode = true
+action_mode = 0
+
+[node name="Label" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade5"]
+layout_mode = 2
+text = "Test Text"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade5"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade5/HBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_qlo13")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade5/HBoxContainer"]
+layout_mode = 2
+text = "99"
+
+[node name="TextureRect2" type="TextureRect" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade5/HBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_qlo13")
+expand_mode = 4
+
+[node name="Label2" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade5/HBoxContainer"]
+layout_mode = 2
+text = "99"
+
+[node name="Upgrade6" type="VBoxContainer" parent="FoldableContainer/VBoxContainer/GridContainer"]
+layout_mode = 2
+
+[node name="TextureRect6" type="Button" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade6"]
+layout_mode = 2
+toggle_mode = true
+action_mode = 0
+
+[node name="Label" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade6"]
+layout_mode = 2
+text = "Test Text"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade6"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade6/HBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_qlo13")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade6/HBoxContainer"]
+layout_mode = 2
+text = "99"
+
+[node name="TextureRect2" type="TextureRect" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade6/HBoxContainer"]
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+texture = ExtResource("2_qlo13")
+expand_mode = 4
+
+[node name="Label2" type="Label" parent="FoldableContainer/VBoxContainer/GridContainer/Upgrade6/HBoxContainer"]
+layout_mode = 2
+text = "99"
+
+[node name="BuyButton" type="Button" parent="FoldableContainer/VBoxContainer"]
+layout_mode = 2
+text = "Buy"
+icon_alignment = 1
+
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/GridContainer/Upgrade1/TextureRect1" to="." method="_on_texture_rect_pressed"]
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/GridContainer/Upgrade2/TextureRect2" to="." method="_on_texture_rect_2_pressed"]
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/GridContainer/Upgrade3/TextureRect3" to="." method="_on_texture_rect_3_pressed"]
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/GridContainer/Upgrade4/TextureRect4" to="." method="_on_texture_rect_4_pressed"]
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/GridContainer/Upgrade5/TextureRect5" to="." method="_on_texture_rect_5_pressed"]
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/GridContainer/Upgrade6/TextureRect6" to="." method="_on_texture_rect_6_pressed"]
+[connection signal="pressed" from="FoldableContainer/VBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]

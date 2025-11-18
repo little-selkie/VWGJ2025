@@ -45,8 +45,12 @@ var time_of_day: String = "Night"
 var time_simulation: float = 0.05
 
 # Upgrades
-# 0 - name, 1 - cost, 2 - icon, 3 - description
+# 0 - name, 1 - cost in money, 2 - cost in technology, 3 - icon, 4 - description
 var upgrades: Array[Array] = [
-	["Self-Sufficiency", 10000, load("res://icon.svg"), "PLACEHOLDER"],
-	["Night Shifts", 100, load("res://icon.svg"), "PLACEHOLDER"]
+	["Self-Sufficiency", 10000, 10, load("res://icon.svg"), "PLACEHOLDER"],
+	["Solar Panels", 100, 0, load("res://icon.svg"), "PLACEHOLDER"],
+	["PLACEHOLDER", 99, 9, load("res://icon.svg"), "PLACEHOLDER"],
+	["PLACEHOLDER", 99, 9, load("res://icon.svg"), "PLACEHOLDER"],
+	["PLACEHOLDER", 99, 9, load("res://icon.svg"), "PLACEHOLDER"],
+	["PLACEHOLDER", 99, 9, load("res://icon.svg"), "PLACEHOLDER"]
 ]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://b0b6gee2o0hl3"]
+[gd_scene load_steps=6 format=3 uid="uid://b0b6gee2o0hl3"]
 
 [ext_resource type="Script" uid="uid://b7tk4ilayrwjh" path="res://Scripts/City/city_simulated.gd" id="1_f2itq"]
 [ext_resource type="PackedScene" uid="uid://dt5blvo4fvgke" path="res://Scenes/UI/HUD.tscn" id="2_sa8op"]
 [ext_resource type="PackedScene" uid="uid://ecc8wscwb87c" path="res://Scenes/City/District.tscn" id="3_kr0nf"]
+[ext_resource type="PackedScene" uid="uid://gonh10mhtf6u" path="res://Scenes/UI/UpgradesMenu.tscn" id="4_pul6c"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sa8op"]
 vertex_color_use_as_albedo = true
@@ -55,6 +56,11 @@ is_on = false
 can_work_at_night = true
 produces_1 = 1
 produces_1_count = 30
+
+[node name="UpgradesMenu" parent="." instance=ExtResource("4_pul6c")]
+offset_left = 886.0
+offset_right = -266.0
+scale = Vector2(0.8166619, 0.8166619)
 
 [node name="PlaceholderGround" type="CSGBox3D" parent="."]
 transform = Transform3D(9.670273, 0, 0, 0, 0.17620224, 0, 0, 0, 9.226539, 0.006382942, 0, 0)
