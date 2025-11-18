@@ -1,6 +1,71 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvo56ka5niilg"]
+[gd_scene load_steps=3 format=3 uid="uid://dvo56ka5niilg"]
 
 [ext_resource type="Script" uid="uid://cdujpxda8eqbj" path="res://Scripts/Events/random_event_manager.gd" id="1_mo7pg"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mo7pg"]
+bg_color = Color(0.039215688, 0.047058824, 0.047058824, 1)
+
 [node name="RandomEventManager" type="Node"]
 script = ExtResource("1_mo7pg")
+
+[node name="EventTimer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Control" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control"]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mo7pg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HeaderText" type="Label" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+text = "Header Text"
+horizontal_alignment = 1
+
+[node name="DescriptionText" type="RichTextLabel" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Description
+"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="ConfirmButton" type="Button" parent="Control/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "Ok"
+icon_alignment = 1
+
+[connection signal="timeout" from="EventTimer" to="." method="_on_event_timer_timeout"]
+[connection signal="button_up" from="Control/Panel/VBoxContainer/ConfirmButton" to="." method="_on_confirm_button_button_up"]

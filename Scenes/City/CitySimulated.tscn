@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://b0b6gee2o0hl3"]
+[gd_scene load_steps=7 format=3 uid="uid://b0b6gee2o0hl3"]
 
 [ext_resource type="Script" uid="uid://b7tk4ilayrwjh" path="res://Scripts/City/city_simulated.gd" id="1_f2itq"]
+[ext_resource type="PackedScene" uid="uid://dvo56ka5niilg" path="res://Scenes/Events/RandomEventManager.tscn" id="2_nr0j0"]
 [ext_resource type="PackedScene" uid="uid://dt5blvo4fvgke" path="res://Scenes/UI/HUD.tscn" id="2_sa8op"]
 [ext_resource type="PackedScene" uid="uid://ecc8wscwb87c" path="res://Scenes/City/District.tscn" id="3_kr0nf"]
 [ext_resource type="PackedScene" uid="uid://gonh10mhtf6u" path="res://Scenes/UI/UpgradesMenu.tscn" id="4_pul6c"]
@@ -66,5 +67,7 @@ offset_bottom = -638.0
 [node name="PlaceholderGround" type="CSGBox3D" parent="."]
 transform = Transform3D(9.670273, 0, 0, 0, 0.17620224, 0, 0, 0, 9.226539, 0.006382942, 0, 0)
 material = SubResource("StandardMaterial3D_sa8op")
+
+[node name="RandomEventManager" parent="." instance=ExtResource("2_nr0j0")]
 
 [connection signal="timeout" from="TimeSimulation" to="." method="_on_time_simulation_timeout"]
