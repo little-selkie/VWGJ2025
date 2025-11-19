@@ -83,3 +83,5 @@ produces_1 = 5
 produces_1_count = 1
 
 [node name="RandomEventManager" parent="." instance=ExtResource("2_as6u6")]
+min_event_timer = 10.0
+max_event_timer = 100.0

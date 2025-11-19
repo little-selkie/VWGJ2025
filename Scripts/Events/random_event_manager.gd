@@ -1,9 +1,11 @@
 extends Node
 
-@export var event_timer: float = 1.0
+@export var min_event_timer: float = 1.0
+@export var max_event_timer: float = 2.0
 
 var rng = RandomNumberGenerator.new()
 var random_number: int = 0
+var random_time: float = 1.0
 
 # Events
 # 0 - header, 1 - description, 2 - confim message, 3 - event function
@@ -13,7 +15,7 @@ var random_events: Array[Array] = [
 ]
 
 func _enter_tree() -> void:
-	$EventTimer.wait_time = event_timer
+	set_random_time()
 	$Control.visible = false
 
 func _on_event_timer_timeout() -> void:
@@ -34,4 +36,9 @@ func nothing_happens() -> void:
 
 func _on_confirm_button_button_up() -> void:
 	$Control.visible = false
+	set_random_time()
 	$EventTimer.start()
+
+func set_random_time() -> void:
+	random_time = rng.randf_range(min_event_timer, max_event_timer)
+	$EventTimer.wait_time = random_time

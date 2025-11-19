@@ -22,6 +22,7 @@ enum producesEnum {None, MentalHealth, Health, Money, Heat, UpgradeParts}
 @export_group("Strikes")
 @export var is_broken: bool = false
 @export var fix_cost: int = 100
+@export var fix_speed: float = 0.1
 
 func _process(_delta: float) -> void:
 	work()
@@ -34,6 +35,7 @@ func _ready():
 	update_info()
 	$ProductionTick.wait_time = production_timer
 	$Panel.visible = false
+	$Panel/Fixing/FixTickTimer.wait_time = fix_speed
 
 func update_info():
 	if produces_1 == 0 and produces_2 == 0 and produces_3 == 0 and produces_4 == 0:

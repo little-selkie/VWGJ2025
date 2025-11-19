@@ -7,7 +7,6 @@ bg_color = Color(0.039215688, 0.047058824, 0.047058824, 1)
 
 [node name="RandomEventManager" type="Node"]
 script = ExtResource("1_mo7pg")
-event_timer = 1000.0
 
 [node name="EventTimer" type="Timer" parent="."]
 one_shot = true
