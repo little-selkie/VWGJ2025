@@ -29,6 +29,8 @@ func _ready():
 	$ProductionTick.wait_time = production_timer
 
 func update_info():
+	if produces_1 == 0 and produces_2 == 0 and produces_3 == 0 and produces_4 == 0:
+		$ProductionProgress.visible = false
 	if is_on and (GlobalVars.resource_power[1] - needs_energy) >= 0:
 		$On_Off/Check.button_pressed = true
 	elif !is_on:
@@ -171,3 +173,11 @@ func _on_check_toggled(toggled_on: bool) -> void:
 	if !toggled_on:
 		is_on = false
 		GlobalVars.resource_power[1] += needs_energy
+	civillian_building_check()
+
+func civillian_building_check() -> void:
+	if district_name == "Civilian Building":
+		if is_on:
+			GlobalVars.civilians_unhappy = false
+		elif !is_on:
+			GlobalVars.civilians_unhappy = true

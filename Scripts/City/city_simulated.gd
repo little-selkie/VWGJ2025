@@ -22,6 +22,7 @@ func _on_time_simulation_timeout() -> void:
 		GlobalVars.time_of_day = "Day"
 	time_update_hud()
 	heating()
+	mood_swing()
 
 func time_update_hud() -> void:
 	$Hud/Time/HBoxContainer/DayNumber.text = str(GlobalVars.current_time[0])
@@ -52,4 +53,7 @@ func heating() -> void:
 			GlobalVars.resource_people_health[1] = 0
 
 func mood_swing() -> void:
-	pass
+	if GlobalVars.civilians_unhappy:
+		GlobalVars.resource_people_mood[1] -= GlobalVars.mental_mood_depletion
+		if GlobalVars.resource_people_mood[1] <= 0:
+			GlobalVars.resource_people_mood[1] = 0

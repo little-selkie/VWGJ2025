@@ -50,7 +50,6 @@ offset_right = 488.0
 offset_bottom = 366.0
 district_name = "Civilian Building"
 needs_energy = 3
-is_on = false
 can_work_at_night = true
 production_timer = 0.05
 

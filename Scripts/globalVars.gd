@@ -40,6 +40,7 @@ var resource_upgrade: Array = [
 
 var heat_consumption: float = 0.1
 var health_depletion: float = 0.1
+var mental_mood_depletion: float = 0.1
 
 var civilians_unhappy: bool = false
 
