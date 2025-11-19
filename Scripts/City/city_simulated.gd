@@ -21,6 +21,7 @@ func _on_time_simulation_timeout() -> void:
 	elif GlobalVars.current_time[1] == 5:
 		GlobalVars.time_of_day = "Day"
 	time_update_hud()
+	heating()
 
 func time_update_hud() -> void:
 	$Hud/Time/HBoxContainer/DayNumber.text = str(GlobalVars.current_time[0])
@@ -32,10 +33,20 @@ func time_update_hud() -> void:
 	
 	$Hud/Resources/ResourceTable/Energy/EnergyCount.text = str(GlobalVars.resource_power[1])
 	$Hud/Resources/ResourceTable/Money/MoneyCount.text = str(GlobalVars.resource_money[1])
-	$Hud/Resources/ResourceTable/Heating/HeatingCount.text = str(GlobalVars.resource_heat[1])
+	$Hud/Resources/ResourceTable/Heating/HeatingCount.text = str(int(GlobalVars.resource_heat[1]))
 	$Hud/Resources/ResourceTable/UpgradeParts/UpgradePartsCount.text = str(GlobalVars.resource_upgrade[1])
 	
 	$Hud/Resources/ResourceTable/Energy/EnergyIcon.texture = GlobalVars.resource_power[2]
 	$Hud/Resources/ResourceTable/Money/MoneyIcon.texture = GlobalVars.resource_money[2]
 	$Hud/Resources/ResourceTable/Heating/HeatingIcon.texture = GlobalVars.resource_heat[2]
 	$Hud/Resources/ResourceTable/UpgradeParts/UpgradePartsIcon.texture = GlobalVars.resource_upgrade[2]
+	
+	$Hud/Resources/Energy/EnergyCount.text = str(GlobalVars.resource_power[1])
+
+func heating() -> void:
+	GlobalVars.resource_heat[1] -= GlobalVars.heat_consumption
+	if GlobalVars.resource_heat[1] <= 0:
+		GlobalVars.resource_heat[1] = 0
+		GlobalVars.resource_people_health[1] -= GlobalVars.health_depletion
+		if GlobalVars.resource_people_health[1] <= 0:
+			GlobalVars.resource_people_health[1] = 0

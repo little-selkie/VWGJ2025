@@ -63,6 +63,7 @@ district_name = "Boiler (Heat)"
 needs_energy = 2
 is_on = false
 produces_1 = 4
+produces_1_count = 10
 
 [node name="GovernmentDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
 offset_left = 1111.0
