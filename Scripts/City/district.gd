@@ -8,6 +8,7 @@ extends Control
 @export_range(0, 100, 5) var efficiency: int = 100
 
 @export_group("Production")
+@export var production_timer: float = GlobalVars.time_simulation
 enum producesEnum {None, MentalHealth, Health, Money, Heat, UpgradeParts}
 @export var produces_1: producesEnum
 @export_range(0, 100, 1) var produces_1_count: int = 0
@@ -25,7 +26,7 @@ func _process(_delta: float) -> void:
 func _ready():
 	$ProductionProgress.value = 0.0
 	update_info()
-	$ProductionTick.wait_time = GlobalVars.time_simulation
+	$ProductionTick.wait_time = production_timer
 
 func update_info():
 	if is_on and (GlobalVars.resource_power[1] - needs_energy) >= 0:

@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://dt5blvo4fvgke"]
+[gd_scene load_steps=12 format=3 uid="uid://dt5blvo4fvgke"]
 
 [ext_resource type="Script" uid="uid://g6ao4sshsevr" path="res://Scripts/hud.gd" id="1_qc5w2"]
+[ext_resource type="PackedScene" uid="uid://gonh10mhtf6u" path="res://Scenes/UI/UpgradesMenu.tscn" id="2_qc5w2"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_umhnj"]
 size = Vector2(200, 20)
@@ -195,3 +196,9 @@ layout_mode = 2
 tooltip_text = "UpgradeParts"
 texture = SubResource("GradientTexture1D_4bm6u")
 expand_mode = 2
+
+[node name="UpgradesMenu" parent="." instance=ExtResource("2_qc5w2")]
+offset_left = 12.0
+offset_top = 283.0
+offset_right = -1908.0
+offset_bottom = -797.0

@@ -1,3 +1,85 @@
-[gd_scene format=3 uid="uid://ceij25nk1svn7"]
+[gd_scene load_steps=4 format=3 uid="uid://ceij25nk1svn7"]
+
+[ext_resource type="PackedScene" uid="uid://b0b6gee2o0hl3" path="res://Scenes/City/CitySimulated.tscn" id="1_mmd3b"]
+[ext_resource type="PackedScene" uid="uid://dvo56ka5niilg" path="res://Scenes/Events/RandomEventManager.tscn" id="2_as6u6"]
+[ext_resource type="PackedScene" uid="uid://ecc8wscwb87c" path="res://Scenes/City/District.tscn" id="3_as6u6"]
 
 [node name="CityPlayable" type="Node3D"]
+
+[node name="CitySimulated" parent="." instance=ExtResource("1_mmd3b")]
+
+[node name="Districts" type="Node" parent="."]
+
+[node name="HospitalDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+offset_left = 488.0
+offset_top = 79.0
+offset_right = 488.0
+offset_bottom = 79.0
+district_name = "Hospital"
+is_on = false
+produces_1 = 2
+produces_1_count = 5
+
+[node name="EntertainmentDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+offset_left = 794.0
+offset_top = 79.0
+offset_right = 794.0
+offset_bottom = 79.0
+district_name = "Entertainment"
+needs_energy = 2
+is_on = false
+produces_1 = 1
+produces_1_count = 1
+produces_2 = 3
+produces_2_count = 20
+
+[node name="ParkDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+offset_left = 1111.0
+offset_top = 82.0
+offset_right = 1111.0
+offset_bottom = 82.0
+district_name = "Park"
+is_on = false
+produces_1 = 1
+produces_1_count = 20
+
+[node name="CivilianDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+offset_left = 488.0
+offset_top = 366.0
+offset_right = 488.0
+offset_bottom = 366.0
+district_name = "Civilian Building"
+needs_energy = 3
+is_on = false
+can_work_at_night = true
+production_timer = 0.05
+
+[node name="HeatingDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+offset_left = 798.0
+offset_top = 367.0
+offset_right = 798.0
+offset_bottom = 367.0
+district_name = "Boiler (Heat)"
+needs_energy = 2
+is_on = false
+produces_1 = 4
+
+[node name="GovernmentDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+offset_left = 1111.0
+offset_top = 370.0
+offset_right = 1111.0
+offset_bottom = 370.0
+district_name = "Government"
+is_on = false
+
+[node name="TechnologyDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+offset_left = 796.0
+offset_top = 665.0
+offset_right = 796.0
+offset_bottom = 665.0
+district_name = "Laboratory"
+is_on = false
+produces_1 = 5
+produces_1_count = 1
+
+[node name="RandomEventManager" parent="." instance=ExtResource("2_as6u6")]

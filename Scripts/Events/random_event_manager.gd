@@ -12,7 +12,7 @@ var random_events: Array[Array] = [
 	["We are not sure what happened...", "...but nothing seem to change", "uh ok?", nothing_happens]
 ]
 
-func _ready() -> void:
+func _enter_tree() -> void:
 	$EventTimer.wait_time = event_timer
 	$Control.visible = false
 
