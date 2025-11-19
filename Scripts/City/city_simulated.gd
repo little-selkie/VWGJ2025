@@ -50,3 +50,6 @@ func heating() -> void:
 		GlobalVars.resource_people_health[1] -= GlobalVars.health_depletion
 		if GlobalVars.resource_people_health[1] <= 0:
 			GlobalVars.resource_people_health[1] = 0
+
+func mood_swing() -> void:
+	pass

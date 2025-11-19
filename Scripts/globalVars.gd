@@ -41,6 +41,8 @@ var resource_upgrade: Array = [
 var heat_consumption: float = 0.1
 var health_depletion: float = 0.1
 
+var civilians_unhappy: bool = false
+
 # Time simulated
 # 0 - day, 1 - hour, 2 - minute
 var current_time: Array = [1, 0, 0]
