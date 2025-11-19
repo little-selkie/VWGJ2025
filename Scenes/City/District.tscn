@@ -152,6 +152,34 @@ layout_mode = 2
 layout_mode = 2
 text = "On"
 
+[node name="DebugBrake" type="Button" parent="."]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 15.0
+offset_right = 279.0
+offset_bottom = 46.0
+text = "[Debug] Strike"
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 27.0
+offset_top = 21.0
+offset_right = 67.0
+offset_bottom = 61.0
+scale = Vector2(6, 6)
+
+[node name="BrokenLabel" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 3.7109377
+offset_top = 12.500001
+offset_right = 69.71094
+offset_bottom = 35.5
+scale = Vector2(0.50610095, 0.50610095)
+text = "BROKEN"
+horizontal_alignment = 1
+
 [connection signal="value_changed" from="ProductionProgress" to="." method="_on_production_progress_value_changed"]
 [connection signal="timeout" from="ProductionTick" to="." method="_on_production_tick_timeout"]
 [connection signal="toggled" from="On_Off/Check" to="." method="_on_check_toggled"]
+[connection signal="pressed" from="DebugBrake" to="." method="_on_debug_brake_pressed"]

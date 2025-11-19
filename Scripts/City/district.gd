@@ -19,14 +19,20 @@ enum producesEnum {None, MentalHealth, Health, Money, Heat, UpgradeParts}
 @export var produces_4: producesEnum
 @export_range(0, 100, 1) var produces_4_count: int = 0
 
+@export_group("Debug")
+@export var is_broken: bool = false
+
 func _process(_delta: float) -> void:
 	work()
 	check_for_energy()
+	if is_broken:
+		broken()
 
 func _ready():
 	$ProductionProgress.value = 0.0
 	update_info()
 	$ProductionTick.wait_time = production_timer
+	$Panel.visible = false
 
 func update_info():
 	if produces_1 == 0 and produces_2 == 0 and produces_3 == 0 and produces_4 == 0:
@@ -181,3 +187,13 @@ func civillian_building_check() -> void:
 			GlobalVars.civilians_unhappy = false
 		elif !is_on:
 			GlobalVars.civilians_unhappy = true
+
+func broken() -> void:
+	is_on = false
+	civillian_building_check()
+	$Panel.visible = true
+
+
+
+func _on_debug_brake_pressed() -> void:
+	is_broken = true
