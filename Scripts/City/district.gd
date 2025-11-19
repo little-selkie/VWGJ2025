@@ -19,8 +19,9 @@ enum producesEnum {None, MentalHealth, Health, Money, Heat, UpgradeParts}
 @export var produces_4: producesEnum
 @export_range(0, 100, 1) var produces_4_count: int = 0
 
-@export_group("Debug")
+@export_group("Strikes")
 @export var is_broken: bool = false
+@export var fix_cost: int = 100
 
 func _process(_delta: float) -> void:
 	work()
@@ -191,9 +192,37 @@ func civillian_building_check() -> void:
 func broken() -> void:
 	is_on = false
 	civillian_building_check()
+	$Panel/HBoxContainer/FixCost.text = str(fix_cost)
 	$Panel.visible = true
+	if $Panel/Fixing/FixTickTimer.is_stopped():
+		$Panel/BrokenLabel.visible = true
+		$Panel/HBoxContainer.visible = true
+		$Panel/Fixing.visible = false
 
 
 
 func _on_debug_brake_pressed() -> void:
 	is_broken = true
+	if is_on:
+		GlobalVars.resource_power[1] += needs_energy
+
+
+func _on_fix_button_pressed() -> void:
+	if GlobalVars.resource_money[1] - fix_cost >= 0:
+		GlobalVars.resource_money[1] -= fix_cost
+		$Panel/Fixing/FixTickTimer.start()
+		$Panel/Fixing.visible = true
+		$Panel/HBoxContainer.visible = false
+		$Panel/BrokenLabel.visible = false
+
+func fix() -> void:
+	$Panel.visible = false
+	is_broken = false
+	$Panel/Fixing/ProgressBar.value = 0
+
+func _on_fix_tick_timer_timeout() -> void:
+	$Panel/Fixing/ProgressBar.value += $Panel/Fixing/ProgressBar.step
+	if $Panel/Fixing/ProgressBar.value >= 100:
+		fix()
+	elif $Panel/Fixing/ProgressBar.value <= 100:
+		$Panel/Fixing/FixTickTimer.start()

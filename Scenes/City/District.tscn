@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ecc8wscwb87c"]
+[gd_scene load_steps=7 format=3 uid="uid://ecc8wscwb87c"]
 
 [ext_resource type="Script" uid="uid://b5xd2rmp4iqb2" path="res://Scripts/City/district.gd" id="1_j064q"]
 
@@ -14,6 +14,9 @@ width = 20
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_wwqtv"]
 gradient = SubResource("Gradient_jrh6f")
 width = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j064q"]
+bg_color = Color(0.33844706, 0.13373291, 0.08383446, 1)
 
 [node name="District" type="Control"]
 layout_mode = 3
@@ -168,6 +171,7 @@ offset_top = 21.0
 offset_right = 67.0
 offset_bottom = 61.0
 scale = Vector2(6, 6)
+theme_override_styles/panel = SubResource("StyleBoxFlat_j064q")
 
 [node name="BrokenLabel" type="Label" parent="Panel"]
 layout_mode = 0
@@ -179,7 +183,52 @@ scale = Vector2(0.50610095, 0.50610095)
 text = "BROKEN"
 horizontal_alignment = 1
 
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_left = 8.166666
+offset_top = 30.66667
+offset_right = 137.16667
+offset_bottom = 70.66667
+scale = Vector2(0.19999993, 0.19999993)
+
+[node name="FixButton" type="Button" parent="Panel/HBoxContainer"]
+layout_mode = 2
+text = "Fix"
+
+[node name="FixCost" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+text = "000"
+
+[node name="гривнів" type="Label" parent="Panel/HBoxContainer"]
+layout_mode = 2
+text = "гривнів"
+
+[node name="Fixing" type="VBoxContainer" parent="Panel"]
+visible = false
+layout_mode = 0
+offset_left = 4.6666665
+offset_top = 5.4999995
+offset_right = 58.666668
+offset_bottom = 59.5
+scale = Vector2(0.5533335, 0.5533335)
+
+[node name="FixTickTimer" type="Timer" parent="Panel/Fixing"]
+wait_time = 0.1
+one_shot = true
+
+[node name="Fixing" type="Label" parent="Panel/Fixing"]
+layout_mode = 2
+text = "Fixing"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="Panel/Fixing"]
+layout_mode = 2
+step = 1.0
+
 [connection signal="value_changed" from="ProductionProgress" to="." method="_on_production_progress_value_changed"]
 [connection signal="timeout" from="ProductionTick" to="." method="_on_production_tick_timeout"]
 [connection signal="toggled" from="On_Off/Check" to="." method="_on_check_toggled"]
 [connection signal="pressed" from="DebugBrake" to="." method="_on_debug_brake_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/FixButton" to="." method="_on_fix_button_pressed"]
+[connection signal="timeout" from="Panel/Fixing/FixTickTimer" to="." method="_on_fix_tick_timer_timeout"]
