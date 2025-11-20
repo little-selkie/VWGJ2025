@@ -192,6 +192,7 @@ func civillian_building_check() -> void:
 			GlobalVars.civilians_unhappy = true
 
 func broken() -> void:
+	$On_Off/Check.button_pressed = false
 	is_on = false
 	civillian_building_check()
 	$Panel/HBoxContainer/FixCost.text = str(fix_cost)
@@ -205,8 +206,8 @@ func broken() -> void:
 
 func _on_debug_brake_pressed() -> void:
 	is_broken = true
-	if is_on:
-		GlobalVars.resource_power[1] += needs_energy
+	#if is_on:
+		#GlobalVars.resource_power[1] += needs_energy
 
 
 func _on_fix_button_pressed() -> void:

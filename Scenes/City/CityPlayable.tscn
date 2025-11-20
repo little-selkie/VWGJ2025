@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://ceij25nk1svn7"]
+[gd_scene load_steps=5 format=3 uid="uid://ceij25nk1svn7"]
 
 [ext_resource type="PackedScene" uid="uid://b0b6gee2o0hl3" path="res://Scenes/City/CitySimulated.tscn" id="1_mmd3b"]
 [ext_resource type="PackedScene" uid="uid://dvo56ka5niilg" path="res://Scenes/Events/RandomEventManager.tscn" id="2_as6u6"]
 [ext_resource type="PackedScene" uid="uid://ecc8wscwb87c" path="res://Scenes/City/District.tscn" id="3_as6u6"]
+[ext_resource type="PackedScene" uid="uid://8h80kcye77gd" path="res://Scenes/City/PowerPlant.tscn" id="3_iswwh"]
 
 [node name="CityPlayable" type="Node3D"]
 
@@ -81,6 +82,13 @@ district_name = "Laboratory"
 is_on = false
 produces_1 = 5
 produces_1_count = 1
+
+[node name="PowerPlant" parent="Districts" instance=ExtResource("3_iswwh")]
+offset_left = 1521.0
+offset_top = 463.0
+offset_right = 1521.0
+offset_bottom = 463.0
+district_name = "PowerPlant"
 
 [node name="RandomEventManager" parent="." instance=ExtResource("2_as6u6")]
 min_event_timer = 10.0
