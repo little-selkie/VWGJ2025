@@ -24,6 +24,8 @@ enum producesEnum {None, MentalHealth, Health, Money, Heat, UpgradeParts}
 @export var fix_cost: int = 100
 @export var fix_speed: float = 0.1
 
+var random_event_manager: Node
+
 func _process(_delta: float) -> void:
 	work()
 	check_for_energy()
@@ -36,6 +38,7 @@ func _ready():
 	$ProductionTick.wait_time = production_timer
 	$Panel.visible = false
 	$Panel/Fixing/FixTickTimer.wait_time = fix_speed
+	random_event_manager = get_parent().get_parent().find_child("RandomEventManager")
 
 func update_info():
 	if produces_1 == 0 and produces_2 == 0 and produces_3 == 0 and produces_4 == 0:
@@ -183,6 +186,7 @@ func _on_check_toggled(toggled_on: bool) -> void:
 		is_on = false
 		GlobalVars.resource_power[1] += needs_energy
 	civillian_building_check()
+	government_building_check()
 
 func civillian_building_check() -> void:
 	if district_name == "Civilian Building":
@@ -190,6 +194,22 @@ func civillian_building_check() -> void:
 			GlobalVars.civilians_unhappy = false
 		elif !is_on:
 			GlobalVars.civilians_unhappy = true
+
+func government_building_check() -> void:
+	if district_name == "Government":
+		if is_on:
+			random_event_manager.random_events.append_array(random_event_manager.government_events)
+			print(random_event_manager.random_events)
+		elif !is_on:
+			for i in range(0, random_event_manager.random_events.size()):
+				remove_from_2d_array(random_event_manager.random_events, "Government")
+			print(random_event_manager.random_events)
+
+func remove_from_2d_array(array, type: String) -> void:
+	for i in range(0, array.size()):
+		if array[i][4] == type:
+			array.remove_at(i)
+			break
 
 func broken() -> void:
 	$On_Off/Check.button_pressed = false

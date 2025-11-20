@@ -8,11 +8,23 @@ var random_number: int = 0
 var random_time: float = 1.0
 
 # Events
-# 0 - header, 1 - description, 2 - confim message, 3 - event function
+# 0 - header, 1 - description, 2 - confim message, 3 - event function, 4 - event type
 var random_events: Array[Array] = [
-	["Ay caramba...", "-100 грошей", "ok :(", caramba_event],
-	["We are not sure what happened...", "...but nothing seem to change", "uh ok?", nothing_happens]
+	["Ay caramba...", "-100 грошей", "ok :(", caramba_event, "Common"],
+	["We are not sure what happened...", "...but nothing seem to change", "uh ok?", nothing_happens, "Common"]
 ]
+
+var government_events: Array[Array] = [
+	["Test government event", "government", "government", nothing_happens, "Government"],
+	["Test government event 2", "government", "government", nothing_happens, "Government"],
+	["Test government event 3", "government", "government", nothing_happens, "Government"]
+]
+
+func _ready() -> void:
+	for i in range(0, random_events.size() - 1):
+		random_events[i][4] = "Common"
+	for i in range(0, government_events.size() - 1):
+		government_events[i][4] = "Government"
 
 func _enter_tree() -> void:
 	set_random_time()
