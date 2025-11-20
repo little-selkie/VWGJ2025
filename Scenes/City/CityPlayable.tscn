@@ -60,7 +60,7 @@ offset_left = 798.0
 offset_top = 367.0
 offset_right = 798.0
 offset_bottom = 367.0
-district_name = "Boiler (Heat)"
+district_name = "Heating"
 needs_energy = 2
 is_on = false
 produces_1 = 4
@@ -89,7 +89,7 @@ offset_left = 1521.0
 offset_top = 463.0
 offset_right = 1521.0
 offset_bottom = 463.0
-district_name = "PowerPlant"
+district_name = "Power Plant"
 
 [node name="RandomEventManager" parent="." instance=ExtResource("2_as6u6")]
 min_event_timer = 10.0

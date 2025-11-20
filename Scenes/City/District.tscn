@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ecc8wscwb87c"]
+[gd_scene load_steps=8 format=3 uid="uid://ecc8wscwb87c"]
 
 [ext_resource type="Script" uid="uid://b5xd2rmp4iqb2" path="res://Scripts/City/district.gd" id="1_j064q"]
+[ext_resource type="PackedScene" uid="uid://078tgcvsvcbr" path="res://Scenes/UI/DistrictUpgradesMenu.tscn" id="2_jrh6f"]
 
 [sub_resource type="Gradient" id="Gradient_j064q"]
 colors = PackedColorArray(0.91764706, 0.91764706, 0.19215687, 1, 1, 0.41568628, 0.14901961, 1)
@@ -225,6 +226,13 @@ vertical_alignment = 1
 [node name="ProgressBar" type="ProgressBar" parent="Panel/Fixing"]
 layout_mode = 2
 step = 1.0
+
+[node name="DistrictUpgradesMenu" parent="." instance=ExtResource("2_jrh6f")]
+layout_mode = 1
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 1.0
+offset_bottom = 4.0
 
 [connection signal="value_changed" from="ProductionProgress" to="." method="_on_production_progress_value_changed"]
 [connection signal="timeout" from="ProductionTick" to="." method="_on_production_tick_timeout"]

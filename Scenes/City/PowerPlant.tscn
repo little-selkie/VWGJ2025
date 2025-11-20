@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://8h80kcye77gd"]
+[gd_scene load_steps=4 format=3 uid="uid://8h80kcye77gd"]
 
 [ext_resource type="Script" uid="uid://bkcwd0kfg6bjt" path="res://Scripts/City/power_plant.gd" id="1_ho2cs"]
+[ext_resource type="PackedScene" uid="uid://078tgcvsvcbr" path="res://Scenes/UI/DistrictUpgradesMenu.tscn" id="2_o1fab"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j064q"]
 bg_color = Color(0.33844706, 0.13373291, 0.08383446, 1)
@@ -135,6 +136,13 @@ vertical_alignment = 1
 [node name="ProgressBar" type="ProgressBar" parent="Panel/Fixing"]
 layout_mode = 2
 step = 1.0
+
+[node name="DistrictUpgradesMenu" parent="." instance=ExtResource("2_o1fab")]
+layout_mode = 1
+offset_left = 161.0
+offset_top = 231.0
+offset_right = 161.0
+offset_bottom = 231.0
 
 [connection signal="toggled" from="On_Off/Check" to="." method="_on_check_toggled"]
 [connection signal="pressed" from="DebugBrake" to="." method="_on_debug_brake_pressed"]
