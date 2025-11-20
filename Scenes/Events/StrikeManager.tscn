@@ -1,0 +1,51 @@
+[gd_scene load_steps=2 format=3 uid="uid://cinfkmpfb7obj"]
+
+[ext_resource type="Script" uid="uid://7s3ethy0gt4q" path="res://Scripts/Events/strike_manager.gd" id="1_rsvvp"]
+
+[node name="StrikeManager" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_rsvvp")
+
+[node name="Control" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DebugStrike" type="Button" parent="Control/VBoxContainer"]
+layout_mode = 2
+text = "[Debug] Random Strike"
+
+[node name="WarningMessage" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="Warning" type="Label" parent="Control/VBoxContainer/WarningMessage"]
+layout_mode = 2
+text = "Warning!"
+
+[node name="DistrictName" type="Label" parent="Control/VBoxContainer/WarningMessage"]
+layout_mode = 2
+text = "TTT"
+
+[node name="WillBeHit" type="Label" parent="Control/VBoxContainer/WarningMessage"]
+layout_mode = 2
+text = "will be hit in"
+
+[node name="MinuteCount" type="Label" parent="Control/VBoxContainer/WarningMessage"]
+layout_mode = 2
+text = "000"
+
+[node name="Minutes" type="Label" parent="Control/VBoxContainer/WarningMessage"]
+layout_mode = 2
+text = "minutes"
+
+[node name="TimeSimulation" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="pressed" from="Control/VBoxContainer/DebugStrike" to="." method="_on_debug_strike_pressed"]
+[connection signal="timeout" from="TimeSimulation" to="." method="_on_time_simulation_timeout"]

@@ -221,6 +221,7 @@ func _on_fix_button_pressed() -> void:
 func fix() -> void:
 	$Panel.visible = false
 	is_broken = false
+	GlobalVars.everything_is_broken = false
 	$Panel/Fixing/ProgressBar.value = 0
 
 func _on_fix_tick_timer_timeout() -> void:

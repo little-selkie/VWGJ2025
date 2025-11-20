@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ceij25nk1svn7"]
+[gd_scene load_steps=6 format=3 uid="uid://ceij25nk1svn7"]
 
 [ext_resource type="PackedScene" uid="uid://b0b6gee2o0hl3" path="res://Scenes/City/CitySimulated.tscn" id="1_mmd3b"]
 [ext_resource type="PackedScene" uid="uid://dvo56ka5niilg" path="res://Scenes/Events/RandomEventManager.tscn" id="2_as6u6"]
 [ext_resource type="PackedScene" uid="uid://ecc8wscwb87c" path="res://Scenes/City/District.tscn" id="3_as6u6"]
 [ext_resource type="PackedScene" uid="uid://8h80kcye77gd" path="res://Scenes/City/PowerPlant.tscn" id="3_iswwh"]
+[ext_resource type="PackedScene" uid="uid://cinfkmpfb7obj" path="res://Scenes/Events/StrikeManager.tscn" id="5_om6sx"]
 
 [node name="CityPlayable" type="Node3D"]
 
@@ -93,3 +94,9 @@ district_name = "PowerPlant"
 [node name="RandomEventManager" parent="." instance=ExtResource("2_as6u6")]
 min_event_timer = 10.0
 max_event_timer = 100.0
+
+[node name="StrikeManager" parent="." instance=ExtResource("5_om6sx")]
+offset_left = 1460.0
+offset_top = 213.0
+offset_right = 1460.0
+offset_bottom = 213.0
