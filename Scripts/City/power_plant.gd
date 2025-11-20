@@ -15,6 +15,10 @@ func _process(_delta: float) -> void:
 		broken()
 
 func _ready():
+	if is_on:
+		$On_Off/Check.button_pressed = true
+	elif !is_on:
+		$On_Off/Check.button_pressed = false
 	$Panel.visible = false
 	$Panel/Fixing/FixTickTimer.wait_time = fix_speed
 	$VBoxContainer/DistrictName.text = str(district_name)

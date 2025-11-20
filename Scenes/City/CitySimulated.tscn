@@ -12,4 +12,8 @@ script = ExtResource("1_f2itq")
 wait_time = 0.05
 autostart = true
 
+[node name="TimeIncome" type="Timer" parent="."]
+autostart = true
+
 [connection signal="timeout" from="TimeSimulation" to="." method="_on_time_simulation_timeout"]
+[connection signal="timeout" from="TimeIncome" to="." method="_on_time_income_timeout"]

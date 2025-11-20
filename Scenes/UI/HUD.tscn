@@ -37,6 +37,36 @@ width = 20
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_qc5w2")
 
+[node name="PassiveIncome" type="HBoxContainer" parent="."]
+offset_left = 219.0
+offset_top = 20.0
+offset_right = 342.0
+offset_bottom = 60.0
+
+[node name="PassiveIncomeLabel" type="Label" parent="PassiveIncome"]
+layout_mode = 2
+text = "Passive Income:"
+
+[node name="IncomeCount" type="Label" parent="PassiveIncome"]
+layout_mode = 2
+text = "000"
+
+[node name="MoneyLabel" type="Label" parent="PassiveIncome"]
+layout_mode = 2
+text = "гривнів"
+
+[node name="Every" type="Label" parent="PassiveIncome"]
+layout_mode = 2
+text = "every"
+
+[node name="IcomeTime" type="Label" parent="PassiveIncome"]
+layout_mode = 2
+text = "000"
+
+[node name="Minutes" type="Label" parent="PassiveIncome"]
+layout_mode = 2
+text = "minutes"
+
 [node name="Time" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0

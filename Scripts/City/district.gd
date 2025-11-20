@@ -33,6 +33,10 @@ func _process(_delta: float) -> void:
 		broken()
 
 func _ready():
+	if is_on:
+		$On_Off/Check.button_pressed = true
+	elif !is_on:
+		$On_Off/Check.button_pressed = false
 	$ProductionProgress.value = 0.0
 	update_info()
 	$ProductionTick.wait_time = production_timer

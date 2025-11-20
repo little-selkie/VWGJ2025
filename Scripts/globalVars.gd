@@ -41,6 +41,9 @@ var resource_upgrade: Array = [
 var heat_consumption: float = 0.1
 var health_depletion: float = 0.1
 var mental_mood_depletion: float = 0.1
+# Moneys
+var passive_money_income: int = 10
+var income_time: float = 3.0
 
 var civilians_unhappy: bool = false
 

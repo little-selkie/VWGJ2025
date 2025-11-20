@@ -1,7 +1,10 @@
 extends Node
 
-func _ready():
+func _enter_tree() -> void:
+	$TimeIncome.wait_time = GlobalVars.income_time
 	$TimeSimulation.wait_time = GlobalVars.time_simulation
+
+func _ready():
 	time_update_hud()
 
 func _on_time_simulation_timeout() -> void:
@@ -43,6 +46,9 @@ func time_update_hud() -> void:
 	$Hud/Resources/ResourceTable/UpgradeParts/UpgradePartsIcon.texture = GlobalVars.resource_upgrade[2]
 	
 	$Hud/Resources/Energy/EnergyCount.text = str(GlobalVars.resource_power[1])
+	
+	$Hud/PassiveIncome/IncomeCount.text = str(int(GlobalVars.resource_people_mood[1] * GlobalVars.passive_money_income))
+	$Hud/PassiveIncome/IcomeTime.text = str(int(GlobalVars.income_time/GlobalVars.time_simulation))
 
 func heating() -> void:
 	GlobalVars.resource_heat[1] -= GlobalVars.heat_consumption
@@ -57,3 +63,10 @@ func mood_swing() -> void:
 		GlobalVars.resource_people_mood[1] -= GlobalVars.mental_mood_depletion
 		if GlobalVars.resource_people_mood[1] <= 0:
 			GlobalVars.resource_people_mood[1] = 0
+
+func generate_money() -> void:
+	GlobalVars.resource_money[1] += int(GlobalVars.resource_people_mood[1] * GlobalVars.passive_money_income)
+
+
+func _on_time_income_timeout() -> void:
+	generate_money()
