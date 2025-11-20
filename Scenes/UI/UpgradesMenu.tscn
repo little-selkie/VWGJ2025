@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://gonh10mhtf6u"]
 
-[ext_resource type="Script" uid="uid://dk11yw20b35wa" path="res://Scripts/upgrades_menu.gd" id="1_psehl"]
+[ext_resource type="Script" uid="uid://dk11yw20b35wa" path="res://Scripts/UI/upgrades_menu.gd" id="1_psehl"]
 [ext_resource type="Texture2D" uid="uid://bu2gq36n27ab3" path="res://icon.svg" id="2_qlo13"]
 
 [node name="UpgradesMenu" type="Control"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=12 format=3 uid="uid://dt5blvo4fvgke"]
 
-[ext_resource type="Script" uid="uid://g6ao4sshsevr" path="res://Scripts/hud.gd" id="1_qc5w2"]
+[ext_resource type="Script" uid="uid://g6ao4sshsevr" path="res://Scripts/UI/hud.gd" id="1_qc5w2"]
 [ext_resource type="PackedScene" uid="uid://gonh10mhtf6u" path="res://Scenes/UI/UpgradesMenu.tscn" id="2_qc5w2"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_umhnj"]
