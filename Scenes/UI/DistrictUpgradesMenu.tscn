@@ -29,13 +29,15 @@ layout_mode = 2
 
 [node name="UpgradesList" type="ItemList" parent="UpgradesMenu/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 8
 allow_search = false
 auto_width = true
 auto_height = true
 item_count = 2
 max_columns = 3
+same_column_width = true
 icon_mode = 0
-fixed_icon_size = Vector2i(64, 64)
+fixed_icon_size = Vector2i(32, 32)
 item_0/text = "Test"
 item_0/icon = ExtResource("2_gxjsq")
 item_1/text = "Test 2"

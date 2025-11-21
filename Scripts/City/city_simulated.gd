@@ -26,6 +26,7 @@ func _on_time_simulation_timeout() -> void:
 	time_update_hud()
 	heating()
 	mood_swing()
+	health_boost_at_home()
 
 func time_update_hud() -> void:
 	$Hud/Time/HBoxContainer/DayNumber.text = str(GlobalVars.current_time[0])
@@ -64,12 +65,20 @@ func heating() -> void:
 func mood_swing() -> void:
 	if GlobalVars.civilians_unhappy:
 		GlobalVars.resource_people_mood[1] -= GlobalVars.mental_mood_depletion
-		if GlobalVars.resource_people_mood[1] <= 0:
-			GlobalVars.resource_people_mood[1] = 0
+	if GlobalVars.resource_people_mood[1] <= 0:
+		GlobalVars.resource_people_mood[1] = 0
+	elif GlobalVars.resource_people_mood[1] >= 100:
+		GlobalVars.resource_people_mood[1] = 100
 
 func generate_money() -> void:
 	GlobalVars.resource_money[1] += int(GlobalVars.resource_people_mood[1] * GlobalVars.passive_money_income)
 
+func health_boost_at_home() -> void:
+	GlobalVars.resource_people_health[1] += GlobalVars.constant_health_boost
+	if GlobalVars.resource_people_health[1] >= 100:
+		GlobalVars.resource_people_health[1] = 100
+	elif GlobalVars.resource_people_health[1] <= 0:
+		GlobalVars.resource_people_health[1] = 100
 
 func _on_time_income_timeout() -> void:
 	generate_money()

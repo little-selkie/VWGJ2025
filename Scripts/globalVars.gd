@@ -29,18 +29,19 @@ var resource_money: Array = [
 	"PLACEHOLDER"]
 var resource_heat: Array = [
 	"Heating", 
-	10, 
+	100, 
 	load("res://icon.svg"), 
 	"PLACEHOLDER"]
 var resource_upgrade: Array = [
 	"Technology", 
-	10,
+	100,
 	load("res://icon.svg"), 
 	"PLACEHOLDER"]
 
 var heat_consumption: float = 0.1
 var health_depletion: float = 0.1
 var mental_mood_depletion: float = 0.1
+var constant_health_boost: float = 0.0
 # Moneys
 var passive_money_income: int = 10
 var income_time: float = 3.0

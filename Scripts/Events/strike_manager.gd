@@ -50,6 +50,7 @@ func choose_target() -> void:
 
 func strike() -> void:
 	choosen_target.is_broken = true
+	GlobalVars.resource_people_health[1] -= (choosen_target.people_working_here - choosen_target.people_working_here*choosen_target.shelter_protection)
 	check_if_everything_is_broken()
 
 func check_if_everything_is_broken() -> void:

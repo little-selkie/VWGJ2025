@@ -10,7 +10,17 @@ extends Control
 @export var fix_cost: int = 100
 @export var fix_speed: float = 0.1
 
+@export var people_working_here: int = 10
+var shelter_protection: float = 0
+
+@export_range(0, 100, 1) var base_energy: int = 10
+var extra_energy: int = 0
+
 func _process(_delta: float) -> void:
+	if GlobalVars.time_of_day == "Night":
+		gives_energy = base_energy
+	elif GlobalVars.time_of_day == "Day":
+		gives_energy = base_energy + extra_energy
 	if is_broken:
 		broken()
 

@@ -20,6 +20,18 @@ var government_events: Array[Array] = [
 	["Test government event 3", "government", "government", nothing_happens, "type"]
 ]
 
+var government_events_upgrade_1: Array[Array] = [
+	["Test government event", "government", "government", nothing_happens, "type"],
+	["Test government event 2", "government", "government", nothing_happens, "type"],
+	["Test government event 3", "government", "government", nothing_happens, "type"]
+]
+
+var government_events_upgrade_2: Array[Array] = [
+	["Test government event", "government", "government", nothing_happens, "type"],
+	["Test government event 2", "government", "government", nothing_happens, "type"],
+	["Test government event 3", "government", "government", nothing_happens, "type"]
+]
+
 func _ready() -> void:
 	for i in range(0, random_events.size()):
 		random_events[i][4] = "Common"

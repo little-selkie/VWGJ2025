@@ -2,7 +2,15 @@ extends Control
 
 # 0 - title, 1 - icon, 2 - description, 3 - function, 4 - type, 5 - cost in money, 6 - cost in technology
 var all_general_upgrades: Array[Array] = [
-	["Title", load("res://icon.svg"), "Description", "What Happens", "Type", 10, 10]
+	["Protection I", load("res://icon.svg"), "Add 20% Protection", add_protection, "Type", 10, 10],
+	["Protection II", load("res://icon.svg"), "Add 20% Protection", add_protection, "Type", 20, 20],
+	["Protection III", load("res://icon.svg"), "Add 20% Protection", add_protection, "Type", 30, 30],
+	["Extra Battery I", load("res://icon.svg"), "Add 3 To Power", add_power, "Type", 10, 10],
+	["Extra Battery II", load("res://icon.svg"), "Add 3 To Power", add_power, "Type", 20, 20],
+	["Extra Battery III", load("res://icon.svg"), "Add 3 To Power", add_power, "Type", 30, 30],
+	["Local business support", load("res://icon.svg"), "Add 25% to passive income", add_passive_income, "Type", 300, 5],
+	["Heating Program", load("res://icon.svg"), "Reduce Heating consumption by 50%", reduce_heating_consumption, "Type", 300, 5],
+	["Tabletki.ua", load("res://icon.svg"), "Add constant health boost", health_boost, "Type", 300, 5]
 ]
 
 var current_money_cost: int = 999999
@@ -44,6 +52,7 @@ func _on_buy_button_pressed() -> void:
 	$UpgradesMenu/VBoxContainer/UpgradesList.set_item_disabled(upgrade_selected, true)
 	GlobalVars.resource_money[1] -= current_money_cost
 	GlobalVars.resource_upgrade[1] -= current_technology_cost
+	all_general_upgrades[upgrade_selected][3].call()
 
 func check_for_money() -> void:
 	if (GlobalVars.resource_money[1] - current_money_cost) < 0 or (GlobalVars.resource_upgrade[1] - current_technology_cost) < 0:
@@ -51,3 +60,17 @@ func check_for_money() -> void:
 
 
 # Upgrade Functions
+func add_protection() -> void:
+	GlobalVars.protection += 20
+
+func add_power() -> void:
+	GlobalVars.resource_power[1] += 3
+
+func add_passive_income() -> void:
+	GlobalVars.passive_money_income += int(GlobalVars.passive_money_income * 0.25)
+
+func reduce_heating_consumption() -> void:
+	GlobalVars.heat_consumption -= GlobalVars.heat_consumption * 0.5
+
+func health_boost() -> void:
+	GlobalVars.constant_health_boost = 0.1

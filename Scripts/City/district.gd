@@ -22,7 +22,10 @@ enum producesEnum {None, MentalHealth, Health, Money, Heat, UpgradeParts}
 @export_group("Strikes")
 @export var is_broken: bool = false
 @export var fix_cost: int = 100
-@export var fix_speed: float = 0.1
+@export var fix_speed: float = 0.5
+
+@export var people_working_here: int = 10
+var shelter_protection: float = 0
 
 var random_event_manager: Node
 
@@ -31,6 +34,7 @@ func _process(_delta: float) -> void:
 	check_for_energy()
 	if is_broken:
 		broken()
+	update_info()
 
 func _ready():
 	if is_on:

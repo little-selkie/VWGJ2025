@@ -31,7 +31,7 @@ district_name = "Entertainment"
 needs_energy = 2
 is_on = false
 produces_1 = 1
-produces_1_count = 1
+produces_1_count = 10
 produces_2 = 3
 produces_2_count = 20
 
