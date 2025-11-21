@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dt5blvo4fvgke"]
+[gd_scene load_steps=14 format=3 uid="uid://dt5blvo4fvgke"]
 
 [ext_resource type="Script" uid="uid://g6ao4sshsevr" path="res://Scripts/UI/hud.gd" id="1_qc5w2"]
 [ext_resource type="PackedScene" uid="uid://gonh10mhtf6u" path="res://Scenes/UI/UpgradesMenu.tscn" id="2_qc5w2"]
@@ -33,6 +33,14 @@ width = 20
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_4bm6u"]
 gradient = SubResource("Gradient_xaom8")
 width = 20
+
+[sub_resource type="Gradient" id="Gradient_4bm6u"]
+colors = PackedColorArray(0.261541, 0.47718966, 0.9868447, 1, 0.054634377, 0, 0.8249099, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ykvyr"]
+gradient = SubResource("Gradient_4bm6u")
+width = 300
+height = 30
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_qc5w2")
@@ -248,3 +256,24 @@ offset_left = 12.0
 offset_top = 283.0
 offset_right = -1908.0
 offset_bottom = -797.0
+
+[node name="Protection" type="VBoxContainer" parent="."]
+offset_left = 17.0
+offset_top = 1004.0
+offset_right = 317.0
+offset_bottom = 1061.0
+
+[node name="ProtectionLabel" type="Label" parent="Protection"]
+layout_mode = 2
+text = "Protection"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Protection"]
+layout_mode = 2
+value = 50.0
+texture_under = SubResource("GradientTexture2D_ykvyr")
+texture_over = SubResource("GradientTexture2D_ykvyr")
+texture_progress = SubResource("GradientTexture2D_ykvyr")
+tint_under = Color(1, 1, 1, 0.039215688)
+tint_over = Color(1, 1, 1, 0.039215688)

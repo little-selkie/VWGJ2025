@@ -55,6 +55,8 @@ var time_simulation: float = 0.05
 
 var everything_is_broken: bool = false
 
+var protection: int = 0
+
 # Upgrades
 # 0 - name, 1 - cost in money, 2 - cost in technology, 3 - icon, 4 - description
 var upgrades: Array[Array] = [

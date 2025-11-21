@@ -11,7 +11,7 @@ var upgrade_selected: int
 
 func init_all_arrays() -> void:
 	for i in range(0, all_general_upgrades.size()):
-		all_general_upgrades[i][4] = "Hospital"
+		all_general_upgrades[i][4] = "General"
 
 func init_upgrade_ui() -> void:
 	for i in range (0,all_general_upgrades.size()):
@@ -48,3 +48,6 @@ func _on_buy_button_pressed() -> void:
 func check_for_money() -> void:
 	if (GlobalVars.resource_money[1] - current_money_cost) < 0 or (GlobalVars.resource_upgrade[1] - current_technology_cost) < 0:
 		$UpgradesMenu/VBoxContainer/BuyButton.disabled = true
+
+
+# Upgrade Functions
