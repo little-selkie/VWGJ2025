@@ -27,6 +27,7 @@ func _on_time_simulation_timeout() -> void:
 	heating()
 	mood_swing()
 	health_boost_at_home()
+	win_lose_listener()
 
 func time_update_hud() -> void:
 	$Hud/Time/HBoxContainer/DayNumber.text = str(GlobalVars.current_time[0])
@@ -48,7 +49,7 @@ func time_update_hud() -> void:
 	
 	$Hud/Resources/Energy/EnergyCount.text = str(GlobalVars.resource_power[1])
 	
-	$Hud/PassiveIncome/IncomeCount.text = str(int(GlobalVars.resource_people_mood[1] * GlobalVars.passive_money_income))
+	$Hud/PassiveIncome/IncomeCount.text = str(int((GlobalVars.resource_people_mood[1] + -20) * GlobalVars.passive_money_income))
 	$Hud/PassiveIncome/IcomeTime.text = str(int(GlobalVars.income_time/GlobalVars.time_simulation))
 	
 	$Hud/Protection/TextureProgressBar.value = GlobalVars.protection
@@ -71,14 +72,26 @@ func mood_swing() -> void:
 		GlobalVars.resource_people_mood[1] = 100
 
 func generate_money() -> void:
-	GlobalVars.resource_money[1] += int(GlobalVars.resource_people_mood[1] * GlobalVars.passive_money_income)
+	GlobalVars.resource_money[1] += int((GlobalVars.resource_people_mood[1] + -20) * GlobalVars.passive_money_income)
 
 func health_boost_at_home() -> void:
 	GlobalVars.resource_people_health[1] += GlobalVars.constant_health_boost
 	if GlobalVars.resource_people_health[1] >= 100:
 		GlobalVars.resource_people_health[1] = 100
 	elif GlobalVars.resource_people_health[1] <= 0:
-		GlobalVars.resource_people_health[1] = 100
+		GlobalVars.resource_people_health[1] = 0
 
 func _on_time_income_timeout() -> void:
 	generate_money()
+
+func win_lose_listener() -> void:
+	if GlobalVars.protection >= 100 and !GlobalVars.endless_mode:
+		GlobalVars.lose = false
+		$Hud/WinPopUp.visible = true
+	elif GlobalVars.resource_money[1] < 0 and !GlobalVars.second_chance and !GlobalVars.endless_mode:
+		GlobalVars.lose = true
+		$Hud/WinPopUp.visible = true
+	elif GlobalVars.resource_money[1] < 0 and GlobalVars.second_chance and !GlobalVars.endless_mode:
+		var RandomEventManager = get_parent().find_child("RandomEventManager")
+		RandomEventManager.find_child("EventTimer").stop()
+		RandomEventManager.special_events[0][3].call()

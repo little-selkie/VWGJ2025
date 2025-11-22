@@ -13,7 +13,6 @@ var hospital_upgrades: Array[Array] = [
 	["Advanced Shelter", load("res://icon.svg"), "Will protect 75% of People Health upon Strike", shelters, "Type", 10, 10]
 ]
 var entertainment_upgrades: Array[Array] = [
-	["Title", load("res://icon.svg"), "Description", "What Happens", "Type", 10, 10],
 	["More Entertainment", load("res://icon.svg"), "Will generate 25% more entertainment", more_production, "Type", 10, 10],
 	["More Mental Health", load("res://icon.svg"), "Will generate 50% more mental health", more_mental_health_production, "Type", 10, 10],
 	["More Money", load("res://icon.svg"), "Will generate 100% more money", more_money_production, "Type", 10, 10],
@@ -53,7 +52,6 @@ var heating_upgrades: Array[Array] = [
 var government_upgrades: Array[Array] = [
 	["Diplomacy I", load("res://icon.svg"), "Adds more Diplomacy events", diplomacy_level_one, "Type", 10, 10],
 	["Diplomacy II", load("res://icon.svg"), "Adds even more Diplomacy events", diplomacy_level_two, "Type", 10, 10],
-	["Night Shifts", load("res://icon.svg"), "Unlocks working during night hours", night_shift, "Type", 10, 10],
 	["Night Shifts", load("res://icon.svg"), "Unlocks working during night hours", night_shift, "Type", 10, 10],
 	["Autonomy", load("res://icon.svg"), "Needs less energy to function", autonomy, "Type", 10, 10],
 	["Top Specialists", load("res://icon.svg"), "25% Cheaper to repair", cheaper_repairs, "Type", 10, 10],

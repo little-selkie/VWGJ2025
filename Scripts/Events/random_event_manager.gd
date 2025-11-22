@@ -32,11 +32,19 @@ var government_events_upgrade_2: Array[Array] = [
 	["Test government event 3", "government", "government", nothing_happens, "type"]
 ]
 
+var special_events: Array[Array] = [
+	["Last Chance", "Partners gave you money, this is your last chance", "Thank you", last_chance, "Special"],
+]
+
 func _ready() -> void:
 	for i in range(0, random_events.size()):
 		random_events[i][4] = "Common"
 	for i in range(0, government_events.size()):
 		government_events[i][4] = "Government"
+	for i in range(0, government_events_upgrade_1.size()):
+		government_events_upgrade_1[i][4] = "Government"
+	for i in range(0, government_events_upgrade_2.size()):
+		government_events_upgrade_2[i][4] = "Government"
 
 func _enter_tree() -> void:
 	set_random_time()
@@ -57,6 +65,13 @@ func caramba_event() -> void:
 func nothing_happens() -> void:
 	print(" ")
 
+func last_chance() -> void:
+	GlobalVars.resource_money[1] += 10000
+	GlobalVars.second_chance = false
+	$Control/Panel/VBoxContainer/HeaderText.text = str(special_events[0][0])
+	$Control/Panel/VBoxContainer/DescriptionText.text = str(special_events[0][1])
+	$Control/Panel/VBoxContainer/ConfirmButton.text = str(special_events[0][2])
+	$Control.visible = true
 
 func _on_confirm_button_button_up() -> void:
 	$Control.visible = false

@@ -1,5 +1,10 @@
 extends Node
 
+# WinLose
+var lose: bool = false
+var endless_mode: bool = false
+var second_chance: bool = true
+
 # Resources
 # 0 - name, 1 - count, 2 - icon, 3 - description
 var resource_test: Array = [
@@ -14,7 +19,7 @@ var resource_power: Array = [
 	"PLACEHOLDER"]
 var resource_people_mood: Array = [
 	"Mental Health", 
-	50, 
+	0, 
 	load("res://icon.svg"), 
 	"PLACEHOLDER"]
 var resource_people_health: Array = [
@@ -24,7 +29,7 @@ var resource_people_health: Array = [
 	"PLACEHOLDER"]
 var resource_money: Array = [
 	"Money", 
-	10000, 
+	10, 
 	load("res://icon.svg"), 
 	"PLACEHOLDER"]
 var resource_heat: Array = [
@@ -58,13 +63,9 @@ var everything_is_broken: bool = false
 
 var protection: int = 0
 
-# Upgrades
-# 0 - name, 1 - cost in money, 2 - cost in technology, 3 - icon, 4 - description
-var upgrades: Array[Array] = [
-	["Self-Sufficiency", 10000, 10, load("res://icon.svg"), "PLACEHOLDER"],
-	["Solar Panels", 100, 0, load("res://icon.svg"), "PLACEHOLDER"],
-	["PLACEHOLDER", 99, 9, load("res://icon.svg"), "PLACEHOLDER"],
-	["PLACEHOLDER", 99, 9, load("res://icon.svg"), "PLACEHOLDER"],
-	["PLACEHOLDER", 99, 9, load("res://icon.svg"), "PLACEHOLDER"],
-	["PLACEHOLDER", 99, 9, load("res://icon.svg"), "PLACEHOLDER"]
-]
+func _init() -> void:
+	reload()
+
+func reload() -> void:
+	current_time = [1, 0, 0]
+	time_of_day = "Night"

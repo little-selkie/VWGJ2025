@@ -1,7 +1,7 @@
 [gd_scene load_steps=14 format=3 uid="uid://dt5blvo4fvgke"]
 
 [ext_resource type="Script" uid="uid://g6ao4sshsevr" path="res://Scripts/UI/hud.gd" id="1_qc5w2"]
-[ext_resource type="PackedScene" uid="uid://gonh10mhtf6u" path="res://Scenes/UI/UpgradesMenu.tscn" id="2_qc5w2"]
+[ext_resource type="PackedScene" uid="uid://bo8o0x3o2moa6" path="res://Scenes/UI/WinLosePopUp.tscn" id="2_qc5w2"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_umhnj"]
 size = Vector2(200, 20)
@@ -251,12 +251,6 @@ text = "Energy"
 layout_mode = 2
 text = "0"
 
-[node name="UpgradesMenu" parent="." instance=ExtResource("2_qc5w2")]
-offset_left = 12.0
-offset_top = 283.0
-offset_right = -1908.0
-offset_bottom = -797.0
-
 [node name="Protection" type="VBoxContainer" parent="."]
 offset_left = 17.0
 offset_top = 1004.0
@@ -277,3 +271,6 @@ texture_over = SubResource("GradientTexture2D_ykvyr")
 texture_progress = SubResource("GradientTexture2D_ykvyr")
 tint_under = Color(1, 1, 1, 0.039215688)
 tint_over = Color(1, 1, 1, 0.039215688)
+
+[node name="WinPopUp" parent="." instance=ExtResource("2_qc5w2")]
+visible = false

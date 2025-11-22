@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ceij25nk1svn7"]
+[gd_scene load_steps=7 format=3 uid="uid://ceij25nk1svn7"]
 
 [ext_resource type="PackedScene" uid="uid://b0b6gee2o0hl3" path="res://Scenes/City/CitySimulated.tscn" id="1_mmd3b"]
 [ext_resource type="PackedScene" uid="uid://dvo56ka5niilg" path="res://Scenes/Events/RandomEventManager.tscn" id="2_as6u6"]
 [ext_resource type="PackedScene" uid="uid://ecc8wscwb87c" path="res://Scenes/City/District.tscn" id="3_as6u6"]
 [ext_resource type="PackedScene" uid="uid://8h80kcye77gd" path="res://Scenes/City/PowerPlant.tscn" id="3_iswwh"]
 [ext_resource type="PackedScene" uid="uid://cinfkmpfb7obj" path="res://Scenes/Events/StrikeManager.tscn" id="5_om6sx"]
+[ext_resource type="PackedScene" uid="uid://gonh10mhtf6u" path="res://Scenes/UI/UpgradesMenu.tscn" id="6_cfbjk"]
 
 [node name="CityPlayable" type="Node3D"]
 
@@ -100,3 +101,9 @@ offset_left = 1460.0
 offset_top = 213.0
 offset_right = 1460.0
 offset_bottom = 213.0
+
+[node name="UpgradesMenu" parent="." instance=ExtResource("6_cfbjk")]
+offset_left = 10.0
+offset_top = 275.0
+offset_right = -1910.0
+offset_bottom = -805.0
