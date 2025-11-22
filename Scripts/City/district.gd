@@ -35,6 +35,8 @@ func _process(_delta: float) -> void:
 	if is_broken:
 		broken()
 	update_info()
+	
+	efficiency = int(GlobalVars.resource_people_health[1] + 50)
 
 func _ready():
 	if is_on:
@@ -105,68 +107,68 @@ func check_for_production():
 		#MentalHealth
 		if produces_1 == 1:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_people_mood[1] += int(produces_1_count*(efficiency/100))
+			GlobalVars.resource_people_mood[1] += int(produces_1_count*(float(efficiency)/100))
 		elif produces_2 == 1:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_people_mood[1] += int(produces_2_count*(efficiency/100))
+			GlobalVars.resource_people_mood[1] += int(produces_2_count*(float(efficiency)/100))
 		elif produces_3 == 1:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_people_mood[1] += int(produces_3_count*(efficiency/100))
+			GlobalVars.resource_people_mood[1] += int(produces_3_count*(float(efficiency)/100))
 		elif produces_4 == 1:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_people_mood[1] += int(produces_4_count*(efficiency/100))
+			GlobalVars.resource_people_mood[1] += int(produces_4_count*(float(efficiency)/100))
 		#Health
 		if produces_1 == 2:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_people_health[1] += int(produces_1_count*(efficiency/100))
+			GlobalVars.resource_people_health[1] += int(produces_1_count*(float(efficiency)/100))
 		elif produces_2 == 2:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_people_health[1] += int(produces_2_count*(efficiency/100))
+			GlobalVars.resource_people_health[1] += int(produces_2_count*(float(efficiency)/100))
 		elif produces_3 == 2:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_people_health[1] += int(produces_3_count*(efficiency/100))
+			GlobalVars.resource_people_health[1] += int(produces_3_count*(float(efficiency)/100))
 		elif produces_4 == 2:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_people_health[1] += int(produces_4_count*(efficiency/100))
+			GlobalVars.resource_people_health[1] += int(produces_4_count*(float(efficiency)/100))
 		#Money
 		if produces_1 == 3:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_money[1] += int(produces_1_count*(efficiency/100))
+			GlobalVars.resource_money[1] += int(produces_1_count*(float(efficiency)/100))
 		elif produces_2 == 3:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_money[1] += int(produces_2_count*(efficiency/100))
+			GlobalVars.resource_money[1] += int(produces_2_count*(float(efficiency)/100))
 		elif produces_3 == 3:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_money[1] += int(produces_3_count*(efficiency/100))
+			GlobalVars.resource_money[1] += int(produces_3_count*(float(efficiency)/100))
 		elif produces_4 == 3:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_money[1] += int(produces_4_count*(efficiency/100))
+			GlobalVars.resource_money[1] += int(produces_4_count*(float(efficiency)/100))
 		#Heat
 		if produces_1 == 4:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_heat[1] += int(produces_1_count*(efficiency/100))
+			GlobalVars.resource_heat[1] += int(produces_1_count*(float(efficiency)/100))
 		elif produces_2 == 4:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_heat[1] += int(produces_2_count*(efficiency/100))
+			GlobalVars.resource_heat[1] += int(produces_2_count*(float(efficiency)/100))
 		elif produces_3 == 4:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_heat[1] += int(produces_3_count*(efficiency/100))
+			GlobalVars.resource_heat[1] += int(produces_3_count*(float(efficiency)/100))
 		elif produces_4 == 4:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_heat[1] += int(produces_4_count*(efficiency/100))
+			GlobalVars.resource_heat[1] += int(produces_4_count*(float(efficiency)/100))
 		#UpgradeParts
 		if produces_1 == 5:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_upgrade[1] += int(produces_1_count*(efficiency/100))
+			GlobalVars.resource_upgrade[1] += int(produces_1_count*(float(efficiency)/100))
 		elif produces_2 == 5:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_upgrade[1] += int(produces_2_count*(efficiency/100))
+			GlobalVars.resource_upgrade[1] += int(produces_2_count*(float(efficiency)/100))
 		elif produces_3 == 5:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_upgrade[1] += int(produces_3_count*(efficiency/100))
+			GlobalVars.resource_upgrade[1] += int(produces_3_count*(float(efficiency)/100))
 		elif produces_4 == 5:
 			@warning_ignore("integer_division")
-			GlobalVars.resource_upgrade[1] += int(produces_4_count*(efficiency/100))
+			GlobalVars.resource_upgrade[1] += int(produces_4_count*(float(efficiency)/100))
 			
 	#MentalHealth
 	if GlobalVars.resource_people_mood[1] > 100:

@@ -54,6 +54,8 @@ func time_update_hud() -> void:
 	
 	$Hud/Protection/TextureProgressBar.value = GlobalVars.protection
 	$Hud/Protection/TextureProgressBar.tooltip_text = str(GlobalVars.protection) + "%"
+	
+	$Hud/GlobalEfficiency/EfficiencyCount.text = str(int(GlobalVars.resource_people_health[1] + 50)) + "%"
 
 func heating() -> void:
 	GlobalVars.resource_heat[1] -= GlobalVars.heat_consumption
