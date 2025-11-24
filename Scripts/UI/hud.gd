@@ -1,5 +1,7 @@
 extends CanvasLayer
 
+var bus = AudioServer.get_bus_index("Master")
+
 func _ready() -> void:
 	$PauseMenu.visible = false
 
@@ -21,3 +23,10 @@ func _on_pause_menu_draw() -> void:
 
 func _on_pause_menu_hidden() -> void:
 	get_tree().paused = false
+
+
+func _on_mute_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		AudioServer.set_bus_mute(bus, true)
+	if !toggled_on:
+		AudioServer.set_bus_mute(bus, false)
