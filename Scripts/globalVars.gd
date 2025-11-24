@@ -19,7 +19,7 @@ var resource_power: Array = [
 	"PLACEHOLDER"]
 var resource_people_mood: Array = [
 	"Mental Health", 
-	0, 
+	50, 
 	load("res://icon.svg"), 
 	"PLACEHOLDER"]
 var resource_people_health: Array = [
