@@ -57,7 +57,7 @@ var civilians_unhappy: bool = false
 # 0 - day, 1 - hour, 2 - minute
 var current_time: Array = [1, 0, 0]
 var time_of_day: String = "Night"
-var time_simulation: float = 0.05
+var time_simulation: float = 0.2
 
 var everything_is_broken: bool = false
 

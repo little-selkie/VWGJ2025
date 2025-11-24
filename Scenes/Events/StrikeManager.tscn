@@ -47,5 +47,9 @@ text = "minutes"
 [node name="TimeSimulation" type="Timer" parent="."]
 one_shot = true
 
+[node name="StrikeTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="pressed" from="Control/VBoxContainer/DebugStrike" to="." method="_on_debug_strike_pressed"]
 [connection signal="timeout" from="TimeSimulation" to="." method="_on_time_simulation_timeout"]
+[connection signal="timeout" from="StrikeTimer" to="." method="_on_strike_timer_timeout"]

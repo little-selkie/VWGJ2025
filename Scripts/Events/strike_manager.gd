@@ -7,6 +7,10 @@ var rng = RandomNumberGenerator.new()
 var random_time: int = 0
 @export var min_strike_time: int = 10
 @export var max_strike_time: int = 100
+@export var strike_period_timer: float = 15.0
+
+func _enter_tree() -> void:
+	$StrikeTimer.wait_time = 60
 
 func _ready() -> void:
 	$TimeSimulation.wait_time = GlobalVars.time_simulation
@@ -19,6 +23,8 @@ func _process(_delta: float) -> void:
 	elif !GlobalVars.everything_is_broken:
 		$Control/VBoxContainer/DebugStrike.disabled = false
 		$Control/VBoxContainer/DebugStrike.text = str("[Debug] Random Strike")
+	if GlobalVars.protection == 100:
+		$StrikeTimer.stop()
 
 func _on_time_simulation_timeout() -> void:
 	time_until_impact -= 1
@@ -61,3 +67,11 @@ func check_if_everything_is_broken() -> void:
 
 func _on_debug_strike_pressed() -> void:
 	strike_init()
+
+
+func _on_strike_timer_timeout() -> void:
+	$StrikeTimer.wait_time = strike_period_timer + (float(GlobalVars.protection)/100 * strike_period_timer)
+	if GlobalVars.everything_is_broken or !$TimeSimulation.is_stopped():
+		pass
+	elif !GlobalVars.everything_is_broken:
+		strike_init()

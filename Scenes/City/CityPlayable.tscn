@@ -102,6 +102,9 @@ offset_left = 1460.0
 offset_top = 213.0
 offset_right = 1460.0
 offset_bottom = 213.0
+min_strike_time = 15
+max_strike_time = 60
+strike_period_timer = 30.0
 
 [node name="UpgradesMenu" parent="." instance=ExtResource("6_cfbjk")]
 offset_left = 10.0
