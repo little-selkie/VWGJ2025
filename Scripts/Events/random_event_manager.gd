@@ -57,6 +57,7 @@ func _on_event_timer_timeout() -> void:
 	$Control/Panel/VBoxContainer/DescriptionText.text = str(random_events[random_number][1])
 	$Control/Panel/VBoxContainer/ConfirmButton.text = str(random_events[random_number][2])
 	$Control.visible = true
+	get_tree().paused = true
 
 # Event functions
 func caramba_event() -> void:
@@ -74,6 +75,7 @@ func last_chance() -> void:
 	$Control.visible = true
 
 func _on_confirm_button_button_up() -> void:
+	get_tree().paused = false
 	$Control.visible = false
 	set_random_time()
 	$EventTimer.start()

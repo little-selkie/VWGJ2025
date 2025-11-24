@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://gonh10mhtf6u" path="res://Scenes/UI/UpgradesMenu.tscn" id="6_cfbjk"]
 
 [node name="CityPlayable" type="Node3D"]
+process_mode = 1
 
 [node name="CitySimulated" parent="." instance=ExtResource("1_mmd3b")]
 

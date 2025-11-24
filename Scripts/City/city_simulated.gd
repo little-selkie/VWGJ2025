@@ -97,3 +97,4 @@ func win_lose_listener() -> void:
 		var RandomEventManager = get_parent().find_child("RandomEventManager")
 		RandomEventManager.find_child("EventTimer").stop()
 		RandomEventManager.special_events[0][3].call()
+		get_tree().paused = true

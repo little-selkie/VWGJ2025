@@ -14,9 +14,11 @@ func _on_draw() -> void:
 		$BGPanel/Panel/VBoxContainer/Header.text = "You Lose"
 		$BGPanel/Panel/VBoxContainer/Context.text = "You have to money and no means to protect your city. Do you wish to try again?"
 		$BGPanel/Panel/VBoxContainer/Buttons/FirstButton.text = "Try Again"
+	get_tree().paused = true
 
 
 func _on_first_button_pressed() -> void:
+	get_tree().paused = false
 	if !GlobalVars.lose:
 		$".".visible = false
 		GlobalVars.endless_mode = true

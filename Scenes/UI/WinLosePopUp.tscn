@@ -6,6 +6,7 @@
 bg_color = Color(0.04303915, 0.043039158, 0.043039113, 1)
 
 [node name="WinPopUp" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
