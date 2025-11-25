@@ -21,8 +21,10 @@ GlobalVars="*res://Scripts/globalVars.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=3840
+window/size/viewport_height=2160
+window/size/mode=2
+window/stretch/mode="canvas_items"
 
 [editor]
 
@@ -32,6 +34,8 @@ version_control/autoload_on_startup=true
 [file_customization]
 
 folder_colors={
+"res://Buildings/": "teal",
+"res://Icons/": "orange",
 "res://Scenes/": "blue",
 "res://Scripts/": "pink",
 "res://addons/": "gray"

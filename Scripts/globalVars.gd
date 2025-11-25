@@ -15,32 +15,32 @@ var resource_test: Array = [
 var resource_power: Array = [
 	"Power", 
 	0, 
-	load("res://icon.svg"), 
+	load("res://Icons/Upgrades/Electricity.png"), 
 	"PLACEHOLDER"]
 var resource_people_mood: Array = [
 	"Mental Health", 
 	50, 
-	load("res://icon.svg"), 
+	load("res://Icons/Upgrades/Mental_Health.png"), 
 	"PLACEHOLDER"]
 var resource_people_health: Array = [
 	"Physical Health", 
 	50, 
-	load("res://icon.svg"), 
+	load("res://Icons/Upgrades/Physical_Health_.png"), 
 	"PLACEHOLDER"]
 var resource_money: Array = [
 	"Money", 
 	10, 
-	load("res://icon.svg"), 
+	load("res://Icons/Upgrades/Money.png"), 
 	"PLACEHOLDER"]
 var resource_heat: Array = [
 	"Heating", 
 	100, 
-	load("res://icon.svg"), 
+	load("res://Icons/Upgrades/Heating.png"), 
 	"PLACEHOLDER"]
 var resource_upgrade: Array = [
 	"Technology", 
 	100,
-	load("res://icon.svg"), 
+	load("res://Icons/Upgrades/Tech.png"), 
 	"PLACEHOLDER"]
 
 var heat_consumption: float = 0.1

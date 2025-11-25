@@ -295,6 +295,7 @@ visible = false
 
 [node name="PauseMenu" type="Panel" parent="."]
 process_mode = 3
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -344,10 +345,10 @@ text = "Exit"
 
 [node name="MuteButton" type="Button" parent="PauseMenu"]
 layout_mode = 0
-offset_left = 1812.0
-offset_top = 1004.0
-offset_right = 1901.0
-offset_bottom = 1057.0
+offset_left = 3661.0
+offset_top = 2046.0
+offset_right = 3750.0
+offset_bottom = 2099.0
 theme_override_colors/font_pressed_color = Color(1, 0.8039216, 0.8117647, 1)
 theme_override_font_sizes/font_size = 32
 toggle_mode = true
