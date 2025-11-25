@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ecc8wscwb87c"]
+[gd_scene load_steps=9 format=3 uid="uid://ecc8wscwb87c"]
 
 [ext_resource type="Script" uid="uid://b5xd2rmp4iqb2" path="res://Scripts/City/district.gd" id="1_j064q"]
 [ext_resource type="PackedScene" uid="uid://078tgcvsvcbr" path="res://Scenes/UI/DistrictUpgradesMenu.tscn" id="2_jrh6f"]
+[ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="2_wwqtv"]
 
 [sub_resource type="Gradient" id="Gradient_j064q"]
 colors = PackedColorArray(0.91764706, 0.91764706, 0.19215687, 1, 1, 0.41568628, 0.14901961, 1)
@@ -30,15 +31,16 @@ offset_left = 11.0
 offset_top = 9.0
 offset_right = 97.0
 offset_bottom = 97.0
-scale = Vector2(3.1999998, 2.96)
-color = Color(0.16835594, 2.0431504e-05, 0.16898412, 1)
+scale = Vector2(6.2799983, 2.96)
+color = Color(0.16862746, 0, 0.16862746, 0.40784314)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 22.0
-offset_top = 61.0
+offset_top = 27.0
 offset_right = 277.0
-offset_bottom = 111.0
+offset_bottom = 179.0
+theme = ExtResource("2_wwqtv")
 
 [node name="DistrictName" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -130,10 +132,11 @@ texture = SubResource("GradientTexture1D_wwqtv")
 
 [node name="ProductionProgress" type="ProgressBar" parent="."]
 layout_mode = 0
-offset_left = 151.0
-offset_top = 166.0
-offset_right = 155.0
-offset_bottom = 193.0
+offset_left = 481.0
+offset_top = 194.0
+offset_right = 485.0
+offset_bottom = 253.0
+theme = ExtResource("2_wwqtv")
 step = 0.5
 
 [node name="ProductionTick" type="Timer" parent="."]
@@ -141,9 +144,10 @@ step = 0.5
 [node name="On_Off" type="HBoxContainer" parent="."]
 layout_mode = 0
 offset_left = 24.0
-offset_top = 223.0
-offset_right = 124.0
-offset_bottom = 263.0
+offset_top = 189.0
+offset_right = 251.0
+offset_bottom = 253.0
+theme = ExtResource("2_wwqtv")
 
 [node name="Off" type="Label" parent="On_Off"]
 layout_mode = 2
@@ -230,10 +234,10 @@ step = 1.0
 
 [node name="DistrictUpgradesMenu" parent="." instance=ExtResource("2_jrh6f")]
 layout_mode = 1
-offset_left = 1.0
-offset_top = 4.0
-offset_right = 1.0
-offset_bottom = 4.0
+offset_left = 7.0
+offset_top = 270.0
+offset_right = 7.0
+offset_bottom = 270.0
 
 [connection signal="value_changed" from="ProductionProgress" to="." method="_on_production_progress_value_changed"]
 [connection signal="timeout" from="ProductionTick" to="." method="_on_production_tick_timeout"]

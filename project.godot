@@ -34,6 +34,7 @@ version_control/autoload_on_startup=true
 [file_customization]
 
 folder_colors={
+"res://Art/": "yellow",
 "res://Buildings/": "teal",
 "res://Icons/": "orange",
 "res://Scenes/": "blue",

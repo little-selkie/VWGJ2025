@@ -63,6 +63,10 @@ var everything_is_broken: bool = false
 
 var protection: int = 0
 
+# Shaders
+var buildings_shader: ShaderMaterial = load("res://Art/City/Buildings_Material.tres")
+var road_shader: ShaderMaterial = load("res://Art/City/Road_Material.tres")
+
 func _init() -> void:
 	reload()
 

@@ -8,4 +8,5 @@ ItemList/constants/h_separation = 0
 ItemList/constants/icon_margin = 5
 ItemList/font_sizes/font_size = 40
 Label/font_sizes/font_size = 46
+ProgressBar/font_sizes/font_size = 40
 RichTextLabel/font_sizes/normal_font_size = 46

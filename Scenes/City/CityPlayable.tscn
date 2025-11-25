@@ -12,27 +12,27 @@
 process_mode = 1
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.97960156, -0.17426535, 0.10006259, 0.02408941, 0.59619474, 0.80247843, -0.19950096, -0.7836986, 0.58823127, -0.6128442, 4.4845304, 1.759011)
+transform = Transform3D(-0.01605177, 0.86747044, -0.49722978, 0.027989445, 0.49748883, 0.86701876, 0.99947935, -9.318077e-10, -0.03226559, -12.749004, 9.41552, -0.7889633)
 
 [node name="CitySimulated" parent="." instance=ExtResource("1_mmd3b")]
 
 [node name="Districts" type="Node" parent="."]
 
 [node name="HospitalDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
-offset_left = 758.0
-offset_top = 390.0
-offset_right = 758.0
-offset_bottom = 390.0
+offset_left = 1132.0
+offset_top = 130.0
+offset_right = 1132.0
+offset_bottom = 130.0
 district_name = "Hospital"
 is_on = false
 produces_1 = 2
 produces_1_count = 5
 
 [node name="EntertainmentDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
-offset_left = 1337.0
-offset_top = 379.0
-offset_right = 1337.0
-offset_bottom = 379.0
+offset_left = 518.0
+offset_top = 544.0
+offset_right = 518.0
+offset_bottom = 544.0
 district_name = "Entertainment"
 needs_energy = 2
 is_on = false
@@ -42,30 +42,30 @@ produces_2 = 3
 produces_2_count = 20
 
 [node name="ParkDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
-offset_left = 2038.0
-offset_top = 396.0
-offset_right = 2038.0
-offset_bottom = 396.0
+offset_left = 1593.0
+offset_top = 610.0
+offset_right = 1593.0
+offset_bottom = 610.0
 district_name = "Park"
 is_on = false
 produces_1 = 1
 produces_1_count = 20
 
 [node name="CivilianDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
-offset_left = 888.0
-offset_top = 935.0
-offset_right = 888.0
-offset_bottom = 935.0
+offset_left = 2026.0
+offset_top = 199.0
+offset_right = 2026.0
+offset_bottom = 199.0
 district_name = "Civilian Building"
 needs_energy = 3
 can_work_at_night = true
 production_timer = 0.05
 
 [node name="HeatingDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
-offset_left = 1635.0
-offset_top = 1023.0
-offset_right = 1635.0
-offset_bottom = 1023.0
+offset_left = 1578.0
+offset_top = 1425.0
+offset_right = 1578.0
+offset_bottom = 1425.0
 district_name = "Heating"
 needs_energy = 2
 is_on = false
@@ -73,28 +73,28 @@ produces_1 = 4
 produces_1_count = 10
 
 [node name="GovernmentDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
-offset_left = 2189.0
-offset_top = 1502.0
-offset_right = 2189.0
-offset_bottom = 1502.0
+offset_left = 2594.0
+offset_top = 543.0
+offset_right = 2594.0
+offset_bottom = 543.0
 district_name = "Government"
 is_on = false
 
 [node name="TechnologyDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
-offset_left = 2347.0
-offset_top = 828.0
-offset_right = 2347.0
-offset_bottom = 828.0
+offset_left = 635.0
+offset_top = 1254.0
+offset_right = 635.0
+offset_bottom = 1254.0
 district_name = "Laboratory"
 is_on = false
 produces_1 = 5
 produces_1_count = 1
 
 [node name="PowerPlant" parent="Districts" instance=ExtResource("3_iswwh")]
-offset_left = 3099.0
-offset_top = 1011.0
-offset_right = 3099.0
-offset_bottom = 1011.0
+offset_left = 3065.0
+offset_top = 971.0
+offset_right = 3065.0
+offset_bottom = 971.0
 district_name = "Power Plant"
 
 [node name="RandomEventManager" parent="." instance=ExtResource("2_as6u6")]

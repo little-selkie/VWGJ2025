@@ -39,6 +39,7 @@ func _process(_delta: float) -> void:
 	efficiency = int(GlobalVars.resource_people_health[1] + 50)
 
 func _ready():
+	shader_change(is_on)
 	if is_on:
 		$On_Off/Check.button_pressed = true
 	elif !is_on:
@@ -191,9 +192,11 @@ func _on_production_progress_value_changed(value: float) -> void:
 func _on_check_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		is_on = true
+		shader_change(is_on)
 		GlobalVars.resource_power[1] -= needs_energy
 	if !toggled_on:
 		is_on = false
+		shader_change(is_on)
 		GlobalVars.resource_power[1] += needs_energy
 	civillian_building_check()
 	government_building_check()
@@ -232,7 +235,28 @@ func broken() -> void:
 		$Panel/HBoxContainer.visible = true
 		$Panel/Fixing.visible = false
 
-
+func shader_change(are_lights_on: bool) -> void:
+	if district_name == "Hospital":
+		GlobalVars.buildings_shader.set_shader_parameter("Hospital_enabled", are_lights_on)
+		GlobalVars.road_shader.set_shader_parameter("Hospital_enabled", are_lights_on)
+	elif district_name == "Entertainment":
+		GlobalVars.buildings_shader.set_shader_parameter("Entertainment_enabled", are_lights_on)
+		GlobalVars.road_shader.set_shader_parameter("Entertainment_enabled", are_lights_on)
+	elif district_name == "Park":
+		GlobalVars.buildings_shader.set_shader_parameter("Park_enabled", are_lights_on)
+		GlobalVars.road_shader.set_shader_parameter("Park_enabled", are_lights_on)
+	elif district_name == "Civilian Building":
+		GlobalVars.buildings_shader.set_shader_parameter("Civ_enabled", are_lights_on)
+		GlobalVars.road_shader.set_shader_parameter("Civ_enabled", are_lights_on)
+	elif district_name == "Heating":
+		GlobalVars.buildings_shader.set_shader_parameter("Heat_enabled", are_lights_on)
+		GlobalVars.road_shader.set_shader_parameter("Heat_enabled", are_lights_on)
+	elif district_name == "Government":
+		GlobalVars.buildings_shader.set_shader_parameter("Government_enabled", are_lights_on)
+		GlobalVars.road_shader.set_shader_parameter("Government_enabled", are_lights_on)
+	elif district_name == "Laboratory":
+		GlobalVars.buildings_shader.set_shader_parameter("Lab_enabled", are_lights_on)
+		GlobalVars.road_shader.set_shader_parameter("Lab_enabled", are_lights_on)
 
 func _on_debug_brake_pressed() -> void:
 	is_broken = true
