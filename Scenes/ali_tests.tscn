@@ -1,3 +1,70 @@
-[gd_scene format=3 uid="uid://dpb7wmcwopt3h"]
+[gd_scene load_steps=6 format=3 uid="uid://dpb7wmcwopt3h"]
+
+[ext_resource type="Material" uid="uid://jxgcg7qiihwc" path="res://Art/City/Road_Material.tres" id="1_q04yn"]
+[ext_resource type="Material" uid="uid://qop7nkqg3cq2" path="res://Art/City/Buildings_Material.tres" id="2_ofbs5"]
+[ext_resource type="ArrayMesh" uid="uid://1uc36bfnm4n1" path="res://Art/City/SM_City_Buildings.res" id="3_q04yn"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_52kg3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q04yn"]
+albedo_color = Color(0, 0, 0, 1)
 
 [node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-4.3710337e-08, 0.76156086, -0.6480934, -3.036358e-10, 0.6480934, 0.76156086, 1, 3.3484866e-08, -2.8097144e-08, -38.54348, 29.51345, 1.4855995)
+fov = 50.0
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.7882686, -0.3966368, 0.470438, -6.9658235e-10, 0.7645278, 0.6445908, -0.61533135, -0.5081107, 0.6026533, -10.0903015, 19.97581, 0)
+light_color = Color(0.5982517, 0.74899393, 0.9142372, 1)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(64, 0, 0, 0, 0.499, 0, 0, 0, 64, 0, 0, 0)
+material_override = ExtResource("1_q04yn")
+mesh = SubResource("PlaneMesh_52kg3")
+
+[node name="Background_01" type="MeshInstance3D" parent="."]
+transform = Transform3D(64, 0, 0, 0, 0.499, 0, 0, 0, 64, 0, 0, -128)
+material_override = SubResource("StandardMaterial3D_q04yn")
+mesh = SubResource("PlaneMesh_52kg3")
+
+[node name="Background_02" type="MeshInstance3D" parent="."]
+transform = Transform3D(64, 0, 0, 0, 0.499, 0, 0, 0, 64, 0, 0, 128)
+material_override = SubResource("StandardMaterial3D_q04yn")
+mesh = SubResource("PlaneMesh_52kg3")
+
+[node name="Background_03" type="MeshInstance3D" parent="."]
+transform = Transform3D(64, 0, 0, 0, 0.499, 0, 0, 0, 64, 128, 0, 0)
+material_override = SubResource("StandardMaterial3D_q04yn")
+mesh = SubResource("PlaneMesh_52kg3")
+
+[node name="Background_04" type="MeshInstance3D" parent="."]
+transform = Transform3D(64, 0, 0, 0, 0.499, 0, 0, 0, 64, -128, 0, 0)
+material_override = SubResource("StandardMaterial3D_q04yn")
+mesh = SubResource("PlaneMesh_52kg3")
+
+[node name="Background_05" type="MeshInstance3D" parent="."]
+transform = Transform3D(64, 0, 0, 0, 0.499, 0, 0, 0, 64, 128, 0, -128)
+material_override = SubResource("StandardMaterial3D_q04yn")
+mesh = SubResource("PlaneMesh_52kg3")
+
+[node name="Background_06" type="MeshInstance3D" parent="."]
+transform = Transform3D(64, 0, 0, 0, 0.499, 0, 0, 0, 64, 128, 0, 128)
+material_override = SubResource("StandardMaterial3D_q04yn")
+mesh = SubResource("PlaneMesh_52kg3")
+
+[node name="Background_07" type="MeshInstance3D" parent="."]
+transform = Transform3D(64, 0, 0, 0, 0.499, 0, 0, 0, 64, -128, 0, -128)
+material_override = SubResource("StandardMaterial3D_q04yn")
+mesh = SubResource("PlaneMesh_52kg3")
+
+[node name="Background_08" type="MeshInstance3D" parent="."]
+transform = Transform3D(64, 0, 0, 0, 0.499, 0, 0, 0, 64, -128, 0, 128)
+material_override = SubResource("StandardMaterial3D_q04yn")
+mesh = SubResource("PlaneMesh_52kg3")
+
+[node name="SmCityBuildings" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+material_override = ExtResource("2_ofbs5")
+mesh = ExtResource("3_q04yn")

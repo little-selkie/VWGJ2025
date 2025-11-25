@@ -1,0 +1,23 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://qop7nkqg3cq2"]
+
+[ext_resource type="Shader" uid="uid://chgc6axodkp4f" path="res://Art/City/Data/Buildings_Shader.gdshader" id="1_hfmnv"]
+[ext_resource type="Texture2D" uid="uid://de2per5mj3n24" path="res://Art/City/Data/T_Roads_Masks.png" id="2_cg52l"]
+[ext_resource type="Texture2D" uid="uid://dr3x0fc4fq7f7" path="res://Art/City/Data/T_Windows_128.png" id="2_gaalm"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_hfmnv")
+shader_parameter/window_tex = ExtResource("2_gaalm")
+shader_parameter/masks_tex = ExtResource("2_cg52l")
+shader_parameter/windows_tiling_u = 128.0
+shader_parameter/windows_tiling_v = 256.0
+shader_parameter/emission_strength = 1.0
+shader_parameter/window_colour = Vector3(1, 0.337, 0.164)
+shader_parameter/Power_enabled = false
+shader_parameter/Entertainment_enabled = false
+shader_parameter/Lab_enabled = true
+shader_parameter/Heat_enabled = true
+shader_parameter/Government_enabled = true
+shader_parameter/Park_enabled = true
+shader_parameter/Hospital_enabled = true
+shader_parameter/Civ_enabled = true

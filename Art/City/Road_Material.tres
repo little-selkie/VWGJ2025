@@ -1,0 +1,24 @@
+[gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://jxgcg7qiihwc"]
+
+[ext_resource type="Shader" uid="uid://vw5tiujkrc7j" path="res://Art/City/Data/Road_Material.gdshader" id="1_lgihu"]
+[ext_resource type="Texture2D" uid="uid://dmtuboqajxmhn" path="res://Art/City/Data/T_Roads_Cleaned.png" id="2_f34w5"]
+[ext_resource type="Texture2D" uid="uid://bfmufw88v4nwa" path="res://Art/City/Data/T_Streetlight_Mask.PNG" id="2_x0nin"]
+[ext_resource type="Texture2D" uid="uid://de2per5mj3n24" path="res://Art/City/Data/T_Roads_Masks.png" id="3_fk1fj"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_lgihu")
+shader_parameter/road_tex = ExtResource("2_f34w5")
+shader_parameter/masks_tex = ExtResource("3_fk1fj")
+shader_parameter/light_tex = ExtResource("2_x0nin")
+shader_parameter/light_tiling = 650.0
+shader_parameter/light_colour = Vector3(0.8, 0.4, 0.164)
+shader_parameter/emissive_power = 8.0
+shader_parameter/Power_enabled = false
+shader_parameter/Entertainment_enabled = false
+shader_parameter/Lab_enabled = true
+shader_parameter/Heat_enabled = true
+shader_parameter/Government_enabled = true
+shader_parameter/Park_enabled = true
+shader_parameter/Hospital_enabled = true
+shader_parameter/Civ_enabled = true
