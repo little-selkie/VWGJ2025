@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://bkhdypxj8q4jn"]
+
+[ext_resource type="PackedScene" uid="uid://bbl1ds2ot8uq7" path="res://Buildings/factory.fbx" id="1_1a4dd"]
+[ext_resource type="PackedScene" uid="uid://cqvb5nqwsw4lt" path="res://Buildings/civilian_building.fbx" id="1_krsrq"]
+[ext_resource type="PackedScene" uid="uid://c2pltb3ffvsk8" path="res://Buildings/government.fbx" id="3_m7hpa"]
+[ext_resource type="PackedScene" uid="uid://6omroyrxinou" path="res://Buildings/hospital.fbx" id="4_xbvaa"]
+[ext_resource type="PackedScene" uid="uid://da7rrxat10ulc" path="res://Buildings/park.fbx" id="5_4gqnq"]
+[ext_resource type="PackedScene" uid="uid://dgjg7bjmb8xn2" path="res://Buildings/station.fbx" id="6_01vff"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_01vff"]
+albedo_color = Color(0.0054630837, 0.15633371, 0, 1)
+
+[node name="City3d" type="Node3D"]
+
+[node name="Buldings" type="Node3D" parent="."]
+
+[node name="factory" parent="Buldings" instance=ExtResource("1_1a4dd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.67726, 0, 0.51792824)
+
+[node name="civilian_building" parent="Buldings" instance=ExtResource("1_krsrq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8754531, 0, 0)
+
+[node name="government" parent="Buldings" instance=ExtResource("3_m7hpa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9213686, 0, -3.948151)
+
+[node name="hospital" parent="Buldings" instance=ExtResource("4_xbvaa")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5251887, 0, -3.2591732)
+
+[node name="park" parent="Buldings" instance=ExtResource("5_4gqnq")]
+transform = Transform3D(-0.0018151234, 0, 0.99999833, 0, 1, 0, -0.99999833, 0, -0.0018151234, -4.388356, 0, -2.156559)
+
+[node name="station" parent="Buldings" instance=ExtResource("6_01vff")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9745037, 0, -0.5808641)
+
+[node name="PlaceholderGround" type="CSGBox3D" parent="."]
+transform = Transform3D(46.52057, 0, 0, 0, 1, 0, 0, 0, 47.099503, 0, -0.49381498, 0)
+material = SubResource("StandardMaterial3D_01vff")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.37638602, -0.5878918, 0.71604246, 0, 0.7728776, 0.63455516, -0.92646295, -0.23883767, 0.29090032, 1.4531047, 3.1779995, 0)
+shadow_enabled = true

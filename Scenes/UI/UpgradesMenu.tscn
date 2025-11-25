@@ -1,10 +1,62 @@
-[gd_scene load_steps=4 format=3 uid="uid://gonh10mhtf6u"]
+[gd_scene load_steps=8 format=3 uid="uid://gonh10mhtf6u"]
 
 [ext_resource type="Script" uid="uid://dk11yw20b35wa" path="res://Scripts/UI/upgrades_menu.gd" id="1_psehl"]
 [ext_resource type="Texture2D" uid="uid://bu2gq36n27ab3" path="res://icon.svg" id="2_qlo13"]
+[ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="3_jsc17"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qlo13"]
-bg_color = Color(0.24270698, 0.43538237, 0.24599662, 1)
+[sub_resource type="Animation" id="Animation_jsc17"]
+resource_name = "GeneralUpgradeSlide"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UpgradesMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 2088), Vector2(0, 1734)]
+}
+
+[sub_resource type="Animation" id="Animation_45clo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UpgradesMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 2088)]
+}
+
+[sub_resource type="Animation" id="Animation_hs3gl"]
+resource_name = "GeneralUpgradeSlideDown"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UpgradesMenu:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1734), Vector2(0, 2088)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hs3gl"]
+_data = {
+&"GeneralUpgradeSlide": SubResource("Animation_jsc17"),
+&"GeneralUpgradeSlideDown": SubResource("Animation_hs3gl"),
+&"RESET": SubResource("Animation_45clo")
+}
 
 [node name="UpgradesMenu" type="Control"]
 layout_mode = 3
@@ -17,25 +69,45 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_psehl")
 
-[node name="UpgradesMenu" type="FoldableContainer" parent="."]
+[node name="UpgradesMenu" type="Panel" parent="."]
+custom_minimum_size = Vector2(3840, 700)
 layout_mode = 0
-offset_right = 24.0
-offset_bottom = 32.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_qlo13")
-folded = true
-title = "General Upgrades"
+offset_top = 2088.0
+offset_right = 3840.0
+offset_bottom = 2788.0012
+
+[node name="SlideButton" type="Button" parent="UpgradesMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -203.5
+offset_right = 203.5
+offset_bottom = 72.0
+grow_horizontal = 2
+theme = ExtResource("3_jsc17")
+toggle_mode = true
+text = "General Upgrades"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UpgradesMenu"]
-visible = false
-layout_mode = 2
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -189.0
+offset_top = 72.0
+offset_right = 189.0
+offset_bottom = 385.0
+grow_horizontal = 2
 
 [node name="UpgradesList" type="ItemList" parent="UpgradesMenu/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_jsc17")
 allow_search = false
 auto_width = true
 auto_height = true
 item_count = 2
-max_columns = 3
+max_columns = 20
 same_column_width = true
 icon_mode = 0
 fixed_icon_size = Vector2i(128, 128)
@@ -50,23 +122,34 @@ alignment = 1
 
 [node name="MoneyCost" type="Label" parent="UpgradesMenu/VBoxContainer/Cost"]
 layout_mode = 2
+theme = ExtResource("3_jsc17")
 text = "00"
 
 [node name="PlaceholderMoney" type="Label" parent="UpgradesMenu/VBoxContainer/Cost"]
 layout_mode = 2
-text = "Moneh"
+theme = ExtResource("3_jsc17")
+text = " Money "
 
 [node name="TechnologyCost" type="Label" parent="UpgradesMenu/VBoxContainer/Cost"]
 layout_mode = 2
+theme = ExtResource("3_jsc17")
 text = "00"
 
 [node name="PlaceholderTechnology" type="Label" parent="UpgradesMenu/VBoxContainer/Cost"]
 layout_mode = 2
-text = "Tech"
+theme = ExtResource("3_jsc17")
+text = " Technology"
 
 [node name="BuyButton" type="Button" parent="UpgradesMenu/VBoxContainer"]
 layout_mode = 2
+theme = ExtResource("3_jsc17")
 text = "Buy"
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_hs3gl")
+}
+
+[connection signal="toggled" from="UpgradesMenu/SlideButton" to="." method="_on_slide_button_toggled"]
 [connection signal="item_selected" from="UpgradesMenu/VBoxContainer/UpgradesList" to="." method="_on_upgrades_list_item_selected"]
 [connection signal="pressed" from="UpgradesMenu/VBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]

@@ -1,0 +1,11 @@
+[gd_resource type="Theme" format=3 uid="uid://crmwd4ulbqdbp"]
+
+[resource]
+BoxContainer/constants/separation = 24
+Button/font_sizes/font_size = 46
+FoldableContainer/font_sizes/font_size = 46
+ItemList/constants/h_separation = 0
+ItemList/constants/icon_margin = 5
+ItemList/font_sizes/font_size = 40
+Label/font_sizes/font_size = 46
+RichTextLabel/font_sizes/normal_font_size = 46

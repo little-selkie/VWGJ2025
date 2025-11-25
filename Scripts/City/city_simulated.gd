@@ -47,13 +47,11 @@ func time_update_hud() -> void:
 	$Hud/Resources/ResourceTable/Heating/HeatingIcon.texture = GlobalVars.resource_heat[2]
 	$Hud/Resources/ResourceTable/UpgradeParts/UpgradePartsIcon.texture = GlobalVars.resource_upgrade[2]
 	
-	$Hud/Resources/Energy/EnergyCount.text = str(GlobalVars.resource_power[1])
-	
 	$Hud/PassiveIncome/IncomeCount.text = str(int((GlobalVars.resource_people_mood[1] + -20) * GlobalVars.passive_money_income))
 	$Hud/PassiveIncome/IcomeTime.text = str(int(GlobalVars.income_time/GlobalVars.time_simulation))
 	
-	$Hud/Protection/TextureProgressBar.value = GlobalVars.protection
-	$Hud/Protection/TextureProgressBar.tooltip_text = str(GlobalVars.protection) + "%"
+	$Hud/People/VBoxContainer/TextureProgressBar.value = GlobalVars.protection
+	$Hud/People/VBoxContainer/TextureProgressBar.tooltip_text = str(GlobalVars.protection) + "%"
 	
 	$Hud/GlobalEfficiency/EfficiencyCount.text = str(int(GlobalVars.resource_people_health[1] + 50)) + "%"
 

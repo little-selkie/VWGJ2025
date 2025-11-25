@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://ceij25nk1svn7"]
+[gd_scene load_steps=8 format=3 uid="uid://ceij25nk1svn7"]
 
 [ext_resource type="PackedScene" uid="uid://b0b6gee2o0hl3" path="res://Scenes/City/CitySimulated.tscn" id="1_mmd3b"]
 [ext_resource type="PackedScene" uid="uid://dvo56ka5niilg" path="res://Scenes/Events/RandomEventManager.tscn" id="2_as6u6"]
@@ -6,29 +6,33 @@
 [ext_resource type="PackedScene" uid="uid://8h80kcye77gd" path="res://Scenes/City/PowerPlant.tscn" id="3_iswwh"]
 [ext_resource type="PackedScene" uid="uid://cinfkmpfb7obj" path="res://Scenes/Events/StrikeManager.tscn" id="5_om6sx"]
 [ext_resource type="PackedScene" uid="uid://gonh10mhtf6u" path="res://Scenes/UI/UpgradesMenu.tscn" id="6_cfbjk"]
+[ext_resource type="PackedScene" uid="uid://bkhdypxj8q4jn" path="res://Scenes/City/City3D.tscn" id="7_cfbjk"]
 
 [node name="CityPlayable" type="Node3D"]
 process_mode = 1
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.97960156, -0.17426535, 0.10006259, 0.02408941, 0.59619474, 0.80247843, -0.19950096, -0.7836986, 0.58823127, -0.6128442, 4.4845304, 1.759011)
 
 [node name="CitySimulated" parent="." instance=ExtResource("1_mmd3b")]
 
 [node name="Districts" type="Node" parent="."]
 
 [node name="HospitalDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
-offset_left = 488.0
-offset_top = 79.0
-offset_right = 488.0
-offset_bottom = 79.0
+offset_left = 758.0
+offset_top = 390.0
+offset_right = 758.0
+offset_bottom = 390.0
 district_name = "Hospital"
 is_on = false
 produces_1 = 2
 produces_1_count = 5
 
 [node name="EntertainmentDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
-offset_left = 1105.0
-offset_top = 143.0
-offset_right = 1105.0
-offset_bottom = 143.0
+offset_left = 1337.0
+offset_top = 379.0
+offset_right = 1337.0
+offset_bottom = 379.0
 district_name = "Entertainment"
 needs_energy = 2
 is_on = false
@@ -38,30 +42,30 @@ produces_2 = 3
 produces_2_count = 20
 
 [node name="ParkDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
-offset_left = 2376.0
-offset_top = 320.0
-offset_right = 2376.0
-offset_bottom = 320.0
+offset_left = 2038.0
+offset_top = 396.0
+offset_right = 2038.0
+offset_bottom = 396.0
 district_name = "Park"
 is_on = false
 produces_1 = 1
 produces_1_count = 20
 
 [node name="CivilianDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
-offset_left = 679.0
-offset_top = 696.0
-offset_right = 679.0
-offset_bottom = 696.0
+offset_left = 888.0
+offset_top = 935.0
+offset_right = 888.0
+offset_bottom = 935.0
 district_name = "Civilian Building"
 needs_energy = 3
 can_work_at_night = true
 production_timer = 0.05
 
 [node name="HeatingDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
-offset_left = 1677.0
-offset_top = 1304.0
-offset_right = 1677.0
-offset_bottom = 1304.0
+offset_left = 1635.0
+offset_top = 1023.0
+offset_right = 1635.0
+offset_bottom = 1023.0
 district_name = "Heating"
 needs_energy = 2
 is_on = false
@@ -69,28 +73,28 @@ produces_1 = 4
 produces_1_count = 10
 
 [node name="GovernmentDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
-offset_left = 2447.0
-offset_top = 974.0
-offset_right = 2447.0
-offset_bottom = 974.0
+offset_left = 2189.0
+offset_top = 1502.0
+offset_right = 2189.0
+offset_bottom = 1502.0
 district_name = "Government"
 is_on = false
 
 [node name="TechnologyDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
-offset_left = 987.0
-offset_top = 995.0
-offset_right = 987.0
-offset_bottom = 995.0
+offset_left = 2347.0
+offset_top = 828.0
+offset_right = 2347.0
+offset_bottom = 828.0
 district_name = "Laboratory"
 is_on = false
 produces_1 = 5
 produces_1_count = 1
 
 [node name="PowerPlant" parent="Districts" instance=ExtResource("3_iswwh")]
-offset_left = 3221.0
-offset_top = 742.0
-offset_right = 3221.0
-offset_bottom = 742.0
+offset_left = 3099.0
+offset_top = 1011.0
+offset_right = 3099.0
+offset_bottom = 1011.0
 district_name = "Power Plant"
 
 [node name="RandomEventManager" parent="." instance=ExtResource("2_as6u6")]
@@ -98,16 +102,20 @@ min_event_timer = 10.0
 max_event_timer = 30.0
 
 [node name="StrikeManager" parent="." instance=ExtResource("5_om6sx")]
-offset_left = 1460.0
-offset_top = 213.0
-offset_right = 1460.0
-offset_bottom = 213.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -157.0
+offset_top = 203.0
+offset_right = -157.0
+offset_bottom = 203.0
+grow_horizontal = 2
 min_strike_time = 15
 max_strike_time = 60
 strike_period_timer = 30.0
 
 [node name="UpgradesMenu" parent="." instance=ExtResource("6_cfbjk")]
-offset_left = 10.0
-offset_top = 275.0
-offset_right = -3830.0
-offset_bottom = -1885.0
+offset_right = -3840.0
+offset_bottom = -2160.0
+
+[node name="City3d" parent="." instance=ExtResource("7_cfbjk")]

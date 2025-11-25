@@ -1,23 +1,45 @@
-[gd_scene load_steps=15 format=3 uid="uid://dt5blvo4fvgke"]
+[gd_scene load_steps=21 format=3 uid="uid://dt5blvo4fvgke"]
 
 [ext_resource type="Script" uid="uid://g6ao4sshsevr" path="res://Scripts/UI/hud.gd" id="1_qc5w2"]
+[ext_resource type="Texture2D" uid="uid://dpqmx2fioas52" path="res://Icons/Upgrades/Mental_Health.png" id="2_4bm6u"]
 [ext_resource type="PackedScene" uid="uid://bo8o0x3o2moa6" path="res://Scenes/UI/WinLosePopUp.tscn" id="2_qc5w2"]
+[ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="2_ykvyr"]
+[ext_resource type="Texture2D" uid="uid://hv21k7xgujn8" path="res://Icons/Upgrades/Physical_Health_.png" id="3_ykvyr"]
+[ext_resource type="Texture2D" uid="uid://dboy4vxaewkhq" path="res://Icons/Upgrades/Air_Defense_.png" id="5_lelo4"]
+[ext_resource type="Texture2D" uid="uid://rqr7n11w7vy1" path="res://Icons/Upgrades/Money.png" id="6_1ree7"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_umhnj"]
-size = Vector2(200, 20)
+[sub_resource type="Gradient" id="Gradient_ykvyr"]
+colors = PackedColorArray(0.90588236, 0.12156863, 0, 1, 0, 0.9843137, 0.78039217, 1)
 
-[sub_resource type="Gradient" id="Gradient_umhnj"]
-colors = PackedColorArray(0.68235296, 0, 0, 1, 1, 0.6313726, 0.25490198, 1)
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lelo4"]
+gradient = SubResource("Gradient_ykvyr")
+width = 500
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_omqfp"]
-gradient = SubResource("Gradient_umhnj")
-width = 20
+[sub_resource type="Gradient" id="Gradient_lelo4"]
+colors = PackedColorArray(0.6964891, 0.07215544, 0.56850487, 1, 0, 0.32941177, 0.95686275, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1ree7"]
+gradient = SubResource("Gradient_lelo4")
+width = 500
+
+[sub_resource type="Gradient" id="Gradient_4bm6u"]
+colors = PackedColorArray(0.261541, 0.47718966, 0.9868447, 1, 0.054634377, 0, 0.8249099, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ykvyr"]
+gradient = SubResource("Gradient_4bm6u")
+width = 500
 
 [sub_resource type="Gradient" id="Gradient_qc5w2"]
 colors = PackedColorArray(0.4862745, 0.4862745, 0, 1, 1, 1, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_xaom8"]
 gradient = SubResource("Gradient_qc5w2")
+width = 20
+
+[sub_resource type="Gradient" id="Gradient_xaom8"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_4bm6u"]
+gradient = SubResource("Gradient_xaom8")
 width = 20
 
 [sub_resource type="Gradient" id="Gradient_omqfp"]
@@ -28,20 +50,6 @@ colors = PackedColorArray(0.91764706, 0, 0, 1, 0.99607843, 0.3882353, 0.9411765,
 gradient = SubResource("Gradient_omqfp")
 width = 20
 
-[sub_resource type="Gradient" id="Gradient_xaom8"]
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_4bm6u"]
-gradient = SubResource("Gradient_xaom8")
-width = 20
-
-[sub_resource type="Gradient" id="Gradient_4bm6u"]
-colors = PackedColorArray(0.261541, 0.47718966, 0.9868447, 1, 0.054634377, 0, 0.8249099, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_ykvyr"]
-gradient = SubResource("Gradient_4bm6u")
-width = 300
-height = 30
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qc5w2"]
 bg_color = Color(0, 0, 0, 0.7058824)
 
@@ -50,10 +58,11 @@ process_mode = 3
 script = ExtResource("1_qc5w2")
 
 [node name="PassiveIncome" type="HBoxContainer" parent="."]
-offset_left = 219.0
-offset_top = 20.0
-offset_right = 342.0
-offset_bottom = 60.0
+offset_left = 2669.0
+offset_top = 55.0
+offset_right = 3783.0
+offset_bottom = 119.0
+theme = ExtResource("2_ykvyr")
 
 [node name="PassiveIncomeLabel" type="Label" parent="PassiveIncome"]
 layout_mode = 2
@@ -65,7 +74,7 @@ text = "000"
 
 [node name="MoneyLabel" type="Label" parent="PassiveIncome"]
 layout_mode = 2
-text = "гривнів"
+text = "Moneys"
 
 [node name="Every" type="Label" parent="PassiveIncome"]
 layout_mode = 2
@@ -80,10 +89,11 @@ layout_mode = 2
 text = "minutes"
 
 [node name="GlobalEfficiency" type="HBoxContainer" parent="."]
-offset_left = 219.0
-offset_top = 47.0
-offset_right = 588.0
-offset_bottom = 87.0
+offset_left = 2671.0
+offset_top = 143.0
+offset_right = 3441.0
+offset_bottom = 207.0
+theme = ExtResource("2_ykvyr")
 
 [node name="EfficiencyLabel" type="Label" parent="GlobalEfficiency"]
 layout_mode = 2
@@ -96,9 +106,9 @@ text = "000"
 [node name="Time" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 1659.0
+offset_left = 1474.0
 offset_top = 1.0
-offset_right = 1699.0
+offset_right = 1514.0
 offset_bottom = 41.0
 scale = Vector2(1.5600024, 1.5600024)
 
@@ -106,6 +116,7 @@ scale = Vector2(1.5600024, 1.5600024)
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("2_ykvyr")
 
 [node name="Day" type="Label" parent="Time/HBoxContainer"]
 layout_mode = 2
@@ -133,66 +144,87 @@ text = "0"
 
 [node name="TimeOfDay" type="Label" parent="Time"]
 layout_mode = 0
-offset_left = 42.307587
-offset_top = 35.256355
-offset_right = 82.30759
-offset_bottom = 58.256355
+offset_left = 151.92279
+offset_top = 65.384514
+offset_right = 244.92279
+offset_bottom = 129.38452
+theme = ExtResource("2_ykvyr")
 text = "Test"
 
 [node name="People" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 10.0
-offset_top = 6.0
-offset_right = 50.0
-offset_bottom = 46.0
+offset_left = 47.0
+offset_top = 55.0
+offset_right = 87.0
+offset_bottom = 95.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="People"]
+[node name="VBoxContainer2" type="VBoxContainer" parent="People"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("2_ykvyr")
 
-[node name="MentalHealth" type="Label" parent="People/VBoxContainer"]
+[node name="MentalHealth" type="TextureRect" parent="People/VBoxContainer2"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-text = "People's Mental Health"
+texture = ExtResource("2_4bm6u")
+expand_mode = 2
+
+[node name="PhysicalHealth" type="TextureRect" parent="People/VBoxContainer2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("3_ykvyr")
+expand_mode = 2
+
+[node name="PhysicalHealth2" type="TextureRect" parent="People/VBoxContainer2"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("5_lelo4")
+expand_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="People"]
+layout_mode = 0
+offset_left = 88.0
+offset_right = 588.0
+offset_bottom = 152.0
+theme = ExtResource("2_ykvyr")
 
 [node name="MentalHealthProgress" type="TextureProgressBar" parent="People/VBoxContainer"]
 layout_mode = 2
 value = 50.0
-texture_under = SubResource("PlaceholderTexture2D_umhnj")
-texture_over = SubResource("PlaceholderTexture2D_umhnj")
-texture_progress = SubResource("PlaceholderTexture2D_umhnj")
-tint_under = Color(1, 1, 1, 0.12156863)
-tint_over = Color(0.15294118, 0, 0.6509804, 0.24313726)
-tint_progress = Color(0.24313726, 1, 0.45490196, 1)
-
-[node name="Health" type="Label" parent="People/VBoxContainer"]
-layout_mode = 2
-text = "People's Health"
+texture_under = SubResource("GradientTexture2D_lelo4")
+texture_over = SubResource("GradientTexture2D_lelo4")
+texture_progress = SubResource("GradientTexture2D_lelo4")
+tint_under = Color(1, 1, 1, 0.19607843)
+tint_over = Color(1, 1, 1, 0)
 
 [node name="HealthProgress" type="TextureProgressBar" parent="People/VBoxContainer"]
 layout_mode = 2
 value = 50.0
-texture_under = SubResource("PlaceholderTexture2D_umhnj")
-texture_over = SubResource("PlaceholderTexture2D_umhnj")
-texture_progress = SubResource("PlaceholderTexture2D_umhnj")
-tint_under = Color(1, 1, 1, 0.12156863)
-tint_over = Color(0.4118135, 0.06812616, 0.14906555, 0.24313726)
-tint_progress = Color(0.60172325, 0.15286446, 0.14492828, 1)
+texture_under = SubResource("GradientTexture2D_1ree7")
+texture_over = SubResource("GradientTexture2D_1ree7")
+texture_progress = SubResource("GradientTexture2D_1ree7")
+tint_under = Color(1, 1, 1, 0.19607843)
+tint_over = Color(1, 1, 1, 0)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="People/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_ykvyr")
+value = 50.0
+texture_under = SubResource("GradientTexture2D_ykvyr")
+texture_over = SubResource("GradientTexture2D_ykvyr")
+texture_progress = SubResource("GradientTexture2D_ykvyr")
+tint_under = Color(1, 1, 1, 0.19607843)
+tint_over = Color(1, 1, 1, 0)
 
 [node name="Resources" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 13.0
-offset_top = 126.0
-offset_right = 53.0
-offset_bottom = 166.0
-
-[node name="Resources" type="Label" parent="Resources"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Resources:"
+offset_left = 46.0
+offset_top = 349.0
+offset_right = 86.0
+offset_bottom = 389.0
 
 [node name="ResourceTable" type="VBoxContainer" parent="Resources"]
 layout_mode = 0
@@ -200,95 +232,68 @@ offset_left = 3.0
 offset_top = 28.0
 offset_right = 43.0
 offset_bottom = 68.0
+theme = ExtResource("2_ykvyr")
 
 [node name="Energy" type="HBoxContainer" parent="Resources/ResourceTable"]
 layout_mode = 2
 
-[node name="EnergyCount" type="Label" parent="Resources/ResourceTable/Energy"]
-layout_mode = 2
-text = "0"
-
 [node name="EnergyIcon" type="TextureRect" parent="Resources/ResourceTable/Energy"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 tooltip_text = "Energy"
-texture = SubResource("GradientTexture1D_omqfp")
+theme = ExtResource("2_ykvyr")
+texture = ExtResource("6_1ree7")
 expand_mode = 2
+
+[node name="EnergyCount" type="Label" parent="Resources/ResourceTable/Energy"]
+layout_mode = 2
+theme = ExtResource("2_ykvyr")
+text = "0"
 
 [node name="Money" type="HBoxContainer" parent="Resources/ResourceTable"]
 layout_mode = 2
 
-[node name="MoneyCount" type="Label" parent="Resources/ResourceTable/Money"]
-layout_mode = 2
-text = "0"
-
 [node name="MoneyIcon" type="TextureRect" parent="Resources/ResourceTable/Money"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 tooltip_text = "Moneys"
 texture = SubResource("GradientTexture1D_xaom8")
 expand_mode = 2
 
-[node name="Heating" type="HBoxContainer" parent="Resources/ResourceTable"]
+[node name="MoneyCount" type="Label" parent="Resources/ResourceTable/Money"]
 layout_mode = 2
-
-[node name="HeatingCount" type="Label" parent="Resources/ResourceTable/Heating"]
-layout_mode = 2
+theme = ExtResource("2_ykvyr")
 text = "0"
-
-[node name="HeatingIcon" type="TextureRect" parent="Resources/ResourceTable/Heating"]
-layout_mode = 2
-tooltip_text = "Heating"
-texture = SubResource("GradientTexture1D_qc5w2")
-expand_mode = 2
 
 [node name="UpgradeParts" type="HBoxContainer" parent="Resources/ResourceTable"]
 layout_mode = 2
 
-[node name="UpgradePartsCount" type="Label" parent="Resources/ResourceTable/UpgradeParts"]
-layout_mode = 2
-text = "0"
-
 [node name="UpgradePartsIcon" type="TextureRect" parent="Resources/ResourceTable/UpgradeParts"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 tooltip_text = "UpgradeParts"
 texture = SubResource("GradientTexture1D_4bm6u")
 expand_mode = 2
 
-[node name="Energy" type="HBoxContainer" parent="Resources"]
-layout_mode = 0
-offset_left = 826.0
-offset_top = -133.0
-offset_right = 893.0
-offset_bottom = -93.0
-scale = Vector2(2.5200005, 2.5200005)
-
-[node name="Energy" type="Label" parent="Resources/Energy"]
+[node name="UpgradePartsCount" type="Label" parent="Resources/ResourceTable/UpgradeParts"]
 layout_mode = 2
-text = "Energy"
-
-[node name="EnergyCount" type="Label" parent="Resources/Energy"]
-layout_mode = 2
+theme = ExtResource("2_ykvyr")
 text = "0"
 
-[node name="Protection" type="VBoxContainer" parent="."]
-offset_left = 17.0
-offset_top = 1004.0
-offset_right = 317.0
-offset_bottom = 1061.0
-
-[node name="ProtectionLabel" type="Label" parent="Protection"]
+[node name="Heating" type="HBoxContainer" parent="Resources/ResourceTable"]
 layout_mode = 2
-text = "Protection"
-horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="Protection"]
+[node name="HeatingIcon" type="TextureRect" parent="Resources/ResourceTable/Heating"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-value = 50.0
-texture_under = SubResource("GradientTexture2D_ykvyr")
-texture_over = SubResource("GradientTexture2D_ykvyr")
-texture_progress = SubResource("GradientTexture2D_ykvyr")
-tint_under = Color(1, 1, 1, 0.039215688)
-tint_over = Color(1, 1, 1, 0.039215688)
+tooltip_text = "Heating"
+texture = SubResource("GradientTexture1D_qc5w2")
+expand_mode = 2
+
+[node name="HeatingCount" type="Label" parent="Resources/ResourceTable/Heating"]
+layout_mode = 2
+theme = ExtResource("2_ykvyr")
+text = "0"
 
 [node name="WinPopUp" parent="." instance=ExtResource("2_qc5w2")]
 visible = false

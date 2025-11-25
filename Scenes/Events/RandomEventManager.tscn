@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dvo56ka5niilg"]
+[gd_scene load_steps=4 format=3 uid="uid://dvo56ka5niilg"]
 
 [ext_resource type="Script" uid="uid://cdujpxda8eqbj" path="res://Scripts/Events/random_event_manager.gd" id="1_mo7pg"]
+[ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="2_he734"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mo7pg"]
 bg_color = Color(0.039215688, 0.047058824, 0.047058824, 1)
@@ -23,7 +24,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="Control"]
-custom_minimum_size = Vector2(800, 400)
+custom_minimum_size = Vector2(1800, 1000)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -46,6 +47,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_he734")
 
 [node name="HeaderText" type="Label" parent="Control/Panel/VBoxContainer"]
 layout_mode = 2
@@ -56,6 +58,7 @@ horizontal_alignment = 1
 [node name="DescriptionText" type="RichTextLabel" parent="Control/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 6
+theme = ExtResource("2_he734")
 text = "Description
 "
 fit_content = true
@@ -65,6 +68,7 @@ horizontal_alignment = 1
 [node name="ConfirmButton" type="Button" parent="Control/Panel/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 10
+theme = ExtResource("2_he734")
 text = "Ok"
 icon_alignment = 1
 

@@ -74,3 +74,10 @@ func reduce_heating_consumption() -> void:
 
 func health_boost() -> void:
 	GlobalVars.constant_health_boost = 0.1
+
+
+func _on_slide_button_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		$AnimationPlayer.play("GeneralUpgradeSlide")
+	elif !toggled_on:
+		$AnimationPlayer.play("GeneralUpgradeSlideDown")
