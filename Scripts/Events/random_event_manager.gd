@@ -18,7 +18,7 @@ var random_events: Array[Array] = [
 	["Temprature Drops", "Forecasters predict a cold night. People need more hot water to heat up their houses. \r\n Your city spends some hot water for Heating.", "Hope everyone are keeping warm.", heating_decreace, "type"],
 	["Donations", "Kind people orginized charity auction and collected some money for the good cause. \r\n Your city gets a moderate amount of money.", "Thank you!", money_donation, "type"],
 	["Mental Struggles", "Last few days were especially hard on your people. They are mentally exhausted and are barely holding up. \r\n Your city gets a moderate decrease of People's Mental Health.", "We must keep going.", mental_health_decrease, "type"],
-	["Seasonal Illnesses", "Weather is getting colder and people are catching a cold. Many called in sick and need some time to recover. \r\n Your city gets a moderate decrease of People's Physical Health.", "They need to keep warm and drink lots of hot tea.", physical_health_decrease, "type"],
+	["Seasonal Illnesses", "Weather is getting chilly and people are catching a cold. Many called in sick and need some time to recover. \r\n Your city gets a moderate decrease of People's Physical Health.", "They need to keep warm and drink lots of hot tea.", physical_health_decrease, "type"],
 	["Cute Kittens", "New photos of cute kittens in funny little hats are making rounds on social media. Aren't they adorable? \r\n Your city gets a slight boost to People's Mental Health.", "So cute!", mental_health_add, "type"],
 	["Home Reconstruction", "Recent attack damage prive housings. Families, who live there, need money to start the reconstruction. \r\n Your city spends a moderate amount of money and gets a slight boost to People's Mental Health.", "We'll help them.", money_decrease, "type"],
 	["Home Reconstruction", "Recent attack damage prive housings. Families, who live there, need money to start the reconstruction. \r\n Your city spends a moderate amount of money and gets a slight boost to People's Mental Health.", "We'll help them.", money_decrease, "type"],
@@ -74,12 +74,14 @@ func _on_event_timer_timeout() -> void:
 
 # Event functions
 func mental_health_add() -> void:
+	$Sounds/Laugh.play()
 	GlobalVars.resource_people_mood[1] += 10
 
 func nothing_happens() -> void:
-	print(" ")
+	$Sounds/Silence.play()
 
 func last_chance() -> void:
+	$Sounds/Warning.play()
 	GlobalVars.resource_money[1] += 10000
 	GlobalVars.second_chance = false
 	$Control/Panel/VBoxContainer/HeaderText.text = str(special_events[0][0])
@@ -88,25 +90,31 @@ func last_chance() -> void:
 	$Control.visible = true
 
 func mental_health_physical_health_money_add() -> void:
+	$Sounds/Clapping.play()
 	GlobalVars.resource_people_mood[1] += 10
 	GlobalVars.resource_people_health[1] += 10
 	GlobalVars.resource_money[1] += 500
 
 func heating_decreace() -> void:
+	$Sounds/Sneeze.play()
 	GlobalVars.resource_heat[1] -= 50
 	if GlobalVars.resource_heat[1] < 0:
 		GlobalVars.resource_heat[1] = 0
 
 func money_donation() -> void:
+	$Sounds/Money.play()
 	GlobalVars.resource_money[1] += 3000
 
 func mental_health_decrease() -> void:
+	$Sounds/Cry.play()
 	GlobalVars.resource_people_mood[1] -= 40
 
 func physical_health_decrease() -> void:
+	$Sounds/Coughing.play()
 	GlobalVars.resource_people_mood[1] -= 30
 
 func money_decrease() -> void:
+	$Sounds/GivingMoney.play()
 	var decrease_amount = 3000
 	if GlobalVars.resource_money[1] - decrease_amount >= 0:
 		GlobalVars.resource_money[1] -= decrease_amount
@@ -115,11 +123,13 @@ func money_decrease() -> void:
 	GlobalVars.resource_people_mood[1] += 10
 
 func humanitarian_help() -> void:
+	$Sounds/Clapping.play()
 	GlobalVars.resource_people_health[1] += 30
 	GlobalVars.resource_people_mood[1] += 30
 	GlobalVars.resource_heat[1] += 100
 
 func huge_money_donation() -> void:
+	$Sounds/Money.play()
 	GlobalVars.resource_people_mood[1] += 10
 	GlobalVars.resource_money[1] += 8000
 
@@ -127,6 +137,7 @@ func protection_donation_1() -> void:
 	if protection_count == 0:
 		GlobalVars.protection += 20
 		protection_count += 1
+		$Sounds/Clapping.play()
 	else:
 		random_number = rng.randi_range(0, random_events.size() - 1)
 		random_events[random_number][3].call()
@@ -140,6 +151,7 @@ func protection_donation_2() -> void:
 	if protection_count == 0 or protection_count == 1:
 		GlobalVars.protection += 20
 		protection_count += 1
+		$Sounds/Clapping.play()
 	else:
 		random_number = rng.randi_range(0, random_events.size() - 1)
 		random_events[random_number][3].call()
@@ -151,6 +163,7 @@ func protection_donation_2() -> void:
 
 # Else
 func _on_confirm_button_button_up() -> void:
+	$Sounds/ButtonPress.play()
 	get_tree().paused = false
 	$Control.visible = false
 	set_random_time()

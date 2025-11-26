@@ -137,6 +137,7 @@ func _process(_delta: float) -> void:
 	check_for_money()
 
 func _on_upgrades_list_item_selected(index: int) -> void:
+	$Sounds/SelectSound.play()
 	upgrade_selected = index
 	$UpgradesMenu/VBoxContainer/Cost/MoneyCost.text = str(current_upgrades[index][5])
 	current_money_cost = int(current_upgrades[index][5])
@@ -147,6 +148,7 @@ func _on_upgrades_list_item_selected(index: int) -> void:
 		$UpgradesMenu/VBoxContainer/BuyButton.disabled = false
 	
 func _on_buy_button_pressed() -> void:
+	$Sounds/BuySound.play()
 	$UpgradesMenu/VBoxContainer/Cost.visible = false
 	$UpgradesMenu/VBoxContainer/BuyButton.disabled = true
 	$UpgradesMenu/VBoxContainer/UpgradesList.set_item_disabled(upgrade_selected, true)
@@ -209,3 +211,7 @@ func diplomacy_level_one() -> void:
 func diplomacy_level_two() -> void:
 	random_event_manager.government_events.append_array(random_event_manager.government_events_upgrade_2)
 	print(random_event_manager.government_events)
+
+
+func _on_upgrades_menu_folding_changed(_is_folded: bool) -> void:
+	$Sounds/FoldSound.play()

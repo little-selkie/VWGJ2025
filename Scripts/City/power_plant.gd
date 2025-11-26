@@ -35,6 +35,7 @@ func _ready():
 	$VBoxContainer/HBoxContainer/EnergyCount.text = str(gives_energy)
 
 func _on_check_toggled(toggled_on: bool) -> void:
+	$Check.play()
 	if toggled_on:
 		is_on = true
 		GlobalVars.resource_power[1] += gives_energy

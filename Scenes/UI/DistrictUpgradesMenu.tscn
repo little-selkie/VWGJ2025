@@ -1,8 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://078tgcvsvcbr"]
+[gd_scene load_steps=8 format=3 uid="uid://078tgcvsvcbr"]
 
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="1_54j4s"]
 [ext_resource type="Script" uid="uid://cqyj8vred4vnv" path="res://Scripts/UI/district_upgrades_menu.gd" id="1_dhfmc"]
 [ext_resource type="Texture2D" uid="uid://bu2gq36n27ab3" path="res://icon.svg" id="2_gxjsq"]
+[ext_resource type="AudioStream" uid="uid://lvt03mbttcbu" path="res://Audio/SFX/button-4-214382.mp3" id="4_bny83"]
+[ext_resource type="AudioStream" uid="uid://uvfqbuxyjfn4" path="res://Audio/SFX/cash-register-fake-88639.mp3" id="5_vrqec"]
+[ext_resource type="AudioStream" uid="uid://cymgkgfqkrxg" path="res://Audio/SFX/folding-37422.mp3" id="6_w7pba"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxjsq"]
 bg_color = Color(0.24270698, 0.43538237, 0.24599662, 1)
@@ -77,5 +80,29 @@ layout_mode = 2
 theme = ExtResource("1_54j4s")
 text = "Buy"
 
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="SelectSound" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("4_bny83")
+volume_db = -20.0
+max_distance = 5000.0
+bus = &"SFX"
+
+[node name="BuySound" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("5_vrqec")
+volume_db = -10.0
+max_distance = 5000.0
+bus = &"SFX"
+
+[node name="FoldSound" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("6_w7pba")
+volume_db = -20.0
+max_distance = 5000.0
+bus = &"SFX"
+
+[connection signal="folding_changed" from="UpgradesMenu" to="." method="_on_upgrades_menu_folding_changed"]
 [connection signal="item_selected" from="UpgradesMenu/VBoxContainer/UpgradesList" to="." method="_on_upgrades_list_item_selected"]
 [connection signal="pressed" from="UpgradesMenu/VBoxContainer/BuyButton" to="." method="_on_buy_button_pressed"]

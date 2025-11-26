@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://8h80kcye77gd"]
+[gd_scene load_steps=6 format=3 uid="uid://8h80kcye77gd"]
 
 [ext_resource type="Script" uid="uid://bkcwd0kfg6bjt" path="res://Scripts/City/power_plant.gd" id="1_ho2cs"]
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="2_7hj7r"]
 [ext_resource type="PackedScene" uid="uid://078tgcvsvcbr" path="res://Scenes/UI/DistrictUpgradesMenu.tscn" id="2_o1fab"]
+[ext_resource type="AudioStream" uid="uid://d15seqb5v0lny" path="res://Audio/SFX/light-switch-on-382714.mp3" id="4_af8px"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j064q"]
 bg_color = Color(0.33844706, 0.13373291, 0.08383446, 1)
@@ -147,6 +148,13 @@ offset_left = 10.0
 offset_top = 272.0
 offset_right = 10.0
 offset_bottom = 272.0
+
+[node name="Check" type="AudioStreamPlayer2D" parent="."]
+process_mode = 3
+stream = ExtResource("4_af8px")
+volume_db = -15.0
+max_distance = 5000.0
+bus = &"SFX"
 
 [connection signal="toggled" from="On_Off/Check" to="." method="_on_check_toggled"]
 [connection signal="pressed" from="DebugBrake" to="." method="_on_debug_brake_pressed"]

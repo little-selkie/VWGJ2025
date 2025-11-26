@@ -1,7 +1,17 @@
-[gd_scene load_steps=4 format=3 uid="uid://dvo56ka5niilg"]
+[gd_scene load_steps=14 format=3 uid="uid://dvo56ka5niilg"]
 
 [ext_resource type="Script" uid="uid://cdujpxda8eqbj" path="res://Scripts/Events/random_event_manager.gd" id="1_mo7pg"]
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="2_he734"]
+[ext_resource type="AudioStream" uid="uid://dm5yglv5xvbmb" path="res://Audio/SFX/90s-sitcom-laugh-track-v2-353986.mp3" id="3_f0b0q"]
+[ext_resource type="AudioStream" uid="uid://dfj5lvlv4ra4n" path="res://Audio/SFX/crying-411857.mp3" id="4_wq81h"]
+[ext_resource type="AudioStream" uid="uid://bglmyqattk161" path="res://Audio/SFX/coughing-sound-effect-type-11-294172.mp3" id="5_hejnl"]
+[ext_resource type="AudioStream" uid="uid://btgnh06fwvids" path="res://Audio/SFX/you-just-got-money-notif-47625.mp3" id="6_kjw61"]
+[ext_resource type="AudioStream" uid="uid://citp6c7eitor1" path="res://Audio/SFX/moreclaps-104533.mp3" id="7_t5xc8"]
+[ext_resource type="AudioStream" uid="uid://bnkia1qkbxf7d" path="res://Audio/SFX/male-sneeze-real-36269.mp3" id="8_1k5rc"]
+[ext_resource type="AudioStream" uid="uid://dnpawbsnr526l" path="res://Audio/SFX/warning-notification-call-184996.mp3" id="9_uoq7p"]
+[ext_resource type="AudioStream" uid="uid://ds35sgv8m3ntr" path="res://Audio/SFX/comedic-silence-90574.mp3" id="10_0qprk"]
+[ext_resource type="AudioStream" uid="uid://2wwkxs4pogp0" path="res://Audio/SFX/unfolding-dollar-bill-263968.mp3" id="11_ta2x4"]
+[ext_resource type="AudioStream" uid="uid://cag32vf6klafm" path="res://Audio/SFX/button-press-382713.mp3" id="12_2r8sk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mo7pg"]
 bg_color = Color(0.039215688, 0.047058824, 0.047058824, 1)
@@ -15,7 +25,6 @@ autostart = true
 
 [node name="Control" type="Control" parent="."]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -71,6 +80,82 @@ size_flags_vertical = 10
 theme = ExtResource("2_he734")
 text = "Ok"
 icon_alignment = 1
+
+[node name="Sounds" type="Node2D" parent="."]
+position = Vector2(1907, 1011)
+
+[node name="Laugh" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("3_f0b0q")
+volume_db = -20.0
+max_distance = 5000.0
+bus = &"SFX"
+
+[node name="Cry" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("4_wq81h")
+volume_db = -20.0
+pitch_scale = 0.9
+max_distance = 5000.0
+bus = &"SFX"
+
+[node name="Coughing" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("5_hejnl")
+volume_db = -20.0
+max_distance = 5000.0
+bus = &"SFX"
+
+[node name="Money" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("6_kjw61")
+volume_db = -20.0
+max_distance = 5000.0
+bus = &"SFX"
+
+[node name="Clapping" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("7_t5xc8")
+volume_db = -10.0
+max_distance = 5000.0
+bus = &"SFX"
+
+[node name="Sneeze" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("8_1k5rc")
+volume_db = -10.0
+pitch_scale = 1.1
+max_distance = 5000.0
+bus = &"SFX"
+
+[node name="Warning" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("9_uoq7p")
+volume_db = -10.0
+pitch_scale = 0.9
+max_distance = 5000.0
+bus = &"SFX"
+
+[node name="Silence" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("10_0qprk")
+volume_db = -10.0
+max_distance = 5000.0
+bus = &"SFX"
+
+[node name="GivingMoney" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("11_ta2x4")
+volume_db = -10.0
+max_distance = 5000.0
+bus = &"SFX"
+
+[node name="ButtonPress" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("12_2r8sk")
+volume_db = -10.0
+max_distance = 5000.0
+bus = &"SFX"
 
 [connection signal="timeout" from="EventTimer" to="." method="_on_event_timer_timeout"]
 [connection signal="button_up" from="Control/Panel/VBoxContainer/ConfirmButton" to="." method="_on_confirm_button_button_up"]

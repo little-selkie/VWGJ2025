@@ -217,6 +217,7 @@ func _on_production_progress_value_changed(value: float) -> void:
 
 
 func _on_check_toggled(toggled_on: bool) -> void:
+	$Check.play()
 	if toggled_on:
 		is_on = true
 		shader_change(is_on)

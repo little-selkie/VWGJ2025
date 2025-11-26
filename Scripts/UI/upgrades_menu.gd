@@ -37,6 +37,7 @@ func _process(_delta: float) -> void:
 	check_for_money()
 
 func _on_upgrades_list_item_selected(index: int) -> void:
+	$Sounds/SelectSound.play()
 	upgrade_selected = index
 	$UpgradesMenu/VBoxContainer/Cost/MoneyCost.text = str(all_general_upgrades[index][5])
 	current_money_cost = int(all_general_upgrades[index][5])
@@ -47,6 +48,7 @@ func _on_upgrades_list_item_selected(index: int) -> void:
 		$UpgradesMenu/VBoxContainer/BuyButton.disabled = false
 	
 func _on_buy_button_pressed() -> void:
+	$Sounds/BuySound.play()
 	$UpgradesMenu/VBoxContainer/Cost.visible = false
 	$UpgradesMenu/VBoxContainer/BuyButton.disabled = true
 	$UpgradesMenu/VBoxContainer/UpgradesList.set_item_disabled(upgrade_selected, true)
@@ -77,6 +79,7 @@ func health_boost() -> void:
 
 
 func _on_slide_button_toggled(toggled_on: bool) -> void:
+	$Sounds/FoldSound.play()
 	if toggled_on:
 		$AnimationPlayer.play("GeneralUpgradeSlide")
 	elif !toggled_on:
