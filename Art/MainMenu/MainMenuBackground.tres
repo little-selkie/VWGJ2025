@@ -1,0 +1,12 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cf3p61u0s073m"]
+
+[ext_resource type="Shader" uid="uid://ckcqsl5rbsyim" path="res://Art/MainMenu/MainMenuBackground.gdshader" id="1_201nk"]
+[ext_resource type="Texture2D" uid="uid://b2e6cl2kfg71b" path="res://Art/MainMenu/T_MainMenu.png" id="2_vmws7"]
+
+[resource]
+shader = ExtResource("1_201nk")
+shader_parameter/back_tex = ExtResource("2_vmws7")
+shader_parameter/min_brightness = 0.75
+shader_parameter/max_brightness = 1.0
+shader_parameter/speed = 8.0
+shader_parameter/seed = 1.0
