@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bo8o0x3o2moa6"]
+[gd_scene load_steps=5 format=3 uid="uid://bo8o0x3o2moa6"]
 
 [ext_resource type="Script" uid="uid://ec2jdvjx1bsf" path="res://Scripts/UI/win_lose_pop_up.gd" id="1_bbi2y"]
+[ext_resource type="AudioStream" uid="uid://cou8vco87v5cv" path="res://Audio/SFX/victory-chime-366449.mp3" id="2_afale"]
+[ext_resource type="AudioStream" uid="uid://dts0hfjyrtp1n" path="res://Audio/SFX/scary-riser-432997.mp3" id="3_7cbjf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbi2y"]
 bg_color = Color(0.04303915, 0.043039158, 0.043039113, 1)
@@ -73,6 +75,23 @@ text = "Ok"
 [node name="ExitButton" type="Button" parent="BGPanel/Panel/VBoxContainer/Buttons"]
 layout_mode = 2
 text = "Exit Game"
+
+[node name="Sounds" type="Node2D" parent="."]
+position = Vector2(1953, 1098)
+
+[node name="Win" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("2_afale")
+volume_db = -20.0
+max_distance = 5000.0
+bus = &"SFX"
+
+[node name="Lose" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("3_7cbjf")
+volume_db = -15.0
+max_distance = 5000.0
+bus = &"SFX"
 
 [connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="pressed" from="BGPanel/Panel/VBoxContainer/Buttons/FirstButton" to="." method="_on_first_button_pressed"]
