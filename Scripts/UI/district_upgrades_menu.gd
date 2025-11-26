@@ -4,78 +4,78 @@ extends Control
 var all_district_upgrades: Array[Array]
 
 var hospital_upgrades: Array[Array] = [
-	["Night Shifts", load("res://Icons/Upgrades/Overtime.png"), "Unlocks working during night hours", night_shift, "Type", 10, 10],
-	["More Health production", load("res://Icons/Upgrades/Physical_Health_+.png"), "Will generate 25% more health", more_production, "Type", 10, 10],
-	["Autonomy", load("res://Icons/Upgrades/Autonomy.png"), "Needs less energy to function", autonomy, "Type", 10, 10],
-	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 10, 10],
-	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 10, 10],
-	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 10, 10],
-	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 10, 10]
+	["Night Shifts", load("res://Icons/Upgrades/Overtime.png"), "Unlocks working during night hours", night_shift, "Type", 500, 5],
+	["More Health production", load("res://Icons/Upgrades/Physical_Health_+.png"), "Will generate 25% more health", more_production, "Type", 1000, 10],
+	["Autonomy", load("res://Icons/Upgrades/Autonomy.png"), "Needs less energy to function", autonomy, "Type", 1000, 10],
+	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 500, 5],
+	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 1000, 10],
+	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 500, 5],
+	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 1000, 10]
 ]
 var entertainment_upgrades: Array[Array] = [
-	["More Entertainment", load("res://Icons/Upgrades/Entertainment_.png"), "Will generate 25% more entertainment", more_production, "Type", 10, 10],
-	["More Mental Health", load("res://Icons/Upgrades/Mental_Health_+.png"), "Will generate 50% more mental health", more_mental_health_production, "Type", 10, 10],
-	["More Money", load("res://Icons/Upgrades/Money_+.png"), "Will generate 100% more money", more_money_production, "Type", 10, 10],
-	["Autonomy", load("res://Icons/Upgrades/Autonomy.png"), "Needs less energy to function", autonomy, "Type", 10, 10],
-	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 10, 10],
-	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 10, 10],
-	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 10, 10],
-	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 10, 10]
+	["More Entertainment", load("res://Icons/Upgrades/Entertainment_.png"), "Will generate 25% more entertainment", more_production, "Type", 500, 5],
+	["More Mental Health", load("res://Icons/Upgrades/Mental_Health_+.png"), "Will generate 50% more mental health", more_mental_health_production, "Type", 500, 5],
+	["More Money", load("res://Icons/Upgrades/Money_+.png"), "Will generate 100% more money", more_money_production, "Type", 1000, 10],
+	["Autonomy", load("res://Icons/Upgrades/Autonomy.png"), "Needs less energy to function", autonomy, "Type", 1000, 10],
+	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 500, 5],
+	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 1000, 10],
+	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 500, 5],
+	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 1000, 10]
 ]
 var park_upgrades: Array[Array] = [
-	["More Mental Health production", load("res://Icons/Upgrades/Mental_Health_+.png"), "Will generate +25% more mental health", more_production, "Type", 10, 10],
-	["More Mental Health production", load("res://Icons/Upgrades/Mental_Health_++.png"), "Will generate +25% more mental health", more_production, "Type", 10, 10],
-	["Even More Mental Health production", load("res://Icons/Upgrades/Mental_Health_++.png"), "Will generate +25% more mental health", more_production, "Type", 10, 10],
-	["Autonomy", load("res://Icons/Upgrades/Autonomy.png"), "Needs less energy to function", autonomy, "Type", 10, 10],
-	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 10, 10],
-	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 10, 10],
-	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 10, 10],
-	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 10, 10]
+	["More Mental Health production", load("res://Icons/Upgrades/Mental_Health_+.png"), "Will generate +25% more mental health", more_production, "Type", 500, 5],
+	["More Mental Health production", load("res://Icons/Upgrades/Mental_Health_++.png"), "Will generate +25% more mental health", more_production, "Type", 1000, 10],
+	["Even More Mental Health production", load("res://Icons/Upgrades/Mental_Health_++.png"), "Will generate +25% more mental health", more_production, "Type", 1500, 15],
+	["Autonomy", load("res://Icons/Upgrades/Autonomy.png"), "Needs less energy to function", autonomy, "Type", 1000, 10],
+	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 500, 5],
+	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 1000, 10],
+	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 500, 5],
+	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 1000, 10]
 ]
 var civilian_upgrades: Array[Array] = [
-	["More energy per day", load("res://Icons/Upgrades/Electricity.png"), "Less mental health depletion when off, but needs more energy to function", less_mental_health_depletion, "Type", 10, 10],
-	["Autonomy", load("res://Icons/Upgrades/Autonomy.png"), "Needs less energy to function", autonomy, "Type", 10, 10],
-	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 10, 10],
-	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 10, 10],
-	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 10, 10],
-	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 10, 10]
+	["More energy per day", load("res://Icons/Upgrades/Electricity.png"), "Less mental health depletion when off, but needs more energy to function", less_mental_health_depletion, "Type", 500, 5],
+	["Autonomy", load("res://Icons/Upgrades/Autonomy.png"), "Needs less energy to function", autonomy, "Type", 1000, 10],
+	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 500, 5],
+	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 1000, 10],
+	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 500, 5],
+	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 1000, 10]
 ]
 var heating_upgrades: Array[Array] = [
-	["Night Shifts", load("res://Icons/Upgrades/Overtime.png"), "Unlocks working during night hours", night_shift, "Type", 10, 10],
-	["More Heating production", load("res://Icons/Upgrades/Heating_+.png"), "Will generate 25% more heating", more_production, "Type", 10, 10],
-	["Autonomy", load("res://Icons/Upgrades/Autonomy.png"), "Needs less energy to function", autonomy, "Type", 10, 10],
-	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 10, 10],
-	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 10, 10],
-	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 10, 10],
-	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 10, 10]
+	["Night Shifts", load("res://Icons/Upgrades/Overtime.png"), "Unlocks working during night hours", night_shift, "Type", 500, 5],
+	["More Heating production", load("res://Icons/Upgrades/Heating_+.png"), "Will generate 25% more heating", more_production, "Type", 500, 5],
+	["Autonomy", load("res://Icons/Upgrades/Autonomy.png"), "Needs less energy to function", autonomy, "Type", 1000, 10],
+	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 500, 5],
+	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 1000, 10],
+	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 500, 5],
+	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 1000, 10]
 ]
 var government_upgrades: Array[Array] = [
-	["Diplomacy I", load("res://Icons/Upgrades/Diplomacy_1.png"), "Adds more Diplomacy events", diplomacy_level_one, "Type", 10, 10],
-	["Diplomacy II", load("res://Icons/Upgrades/Diplomacy_2.png"), "Adds even more Diplomacy events", diplomacy_level_two, "Type", 10, 10],
-	["Night Shifts", load("res://Icons/Upgrades/Overtime.png"), "Unlocks working during night hours", night_shift, "Type", 10, 10],
-	["Autonomy", load("res://Icons/Upgrades/Autonomy.png"), "Needs less energy to function", autonomy, "Type", 10, 10],
-	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 10, 10],
-	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 10, 10],
-	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 10, 10],
-	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 10, 10]
+	["Diplomacy I", load("res://Icons/Upgrades/Diplomacy_1.png"), "Adds more Diplomacy events", diplomacy_level_one, "Type", 500, 5],
+	["Diplomacy II", load("res://Icons/Upgrades/Diplomacy_2.png"), "Adds even more Diplomacy events", diplomacy_level_two, "Type", 1000, 10],
+	["Night Shifts", load("res://Icons/Upgrades/Overtime.png"), "Unlocks working during night hours", night_shift, "Type", 500, 5],
+	["Autonomy", load("res://Icons/Upgrades/Autonomy.png"), "Needs less energy to function", autonomy, "Type", 1000, 10],
+	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 500, 5],
+	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 1000, 10],
+	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 500, 5],
+	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 1000, 10]
 ]
 var laboratory_upgrades: Array[Array] = [
-	["Night Shifts", load("res://Icons/Upgrades/Overtime.png"), "Unlocks working during night hours", night_shift, "Type", 10, 10],
-	["More Technology production", load("res://Icons/Upgrades/Tech_+.png"), "Will generate +25% more technology", more_production, "Type", 10, 10],
-	["Even more Technology production", load("res://Icons/Upgrades/Tech_+.png"), "Will generate +25% more technology", more_production, "Type", 10, 10],
-	["Autonomy", load("res://Icons/Upgrades/Autonomy.png"), "Needs less energy to function", autonomy, "Type", 10, 10],
-	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 10, 10],
-	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 10, 10],
-	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 10, 10],
-	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 10, 10]
+	["Night Shifts", load("res://Icons/Upgrades/Overtime.png"), "Unlocks working during night hours", night_shift, "Type", 500, 5],
+	["More Technology production", load("res://Icons/Upgrades/Tech_+.png"), "Will generate +25% more technology", more_production, "Type", 500, 5],
+	["Even more Technology production", load("res://Icons/Upgrades/Tech_+.png"), "Will generate +25% more technology", more_production, "Type", 1000, 10],
+	["Autonomy", load("res://Icons/Upgrades/Autonomy.png"), "Needs less energy to function", autonomy, "Type", 1000, 10],
+	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 500, 5],
+	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 1000, 10],
+	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 500, 5],
+	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 1000, 10]
 ]
 var power_upgrades: Array[Array] = [
-	["Solar Panels", load("res://Icons/Upgrades/Solar_Panels.png"), "Gives Extra 3 Energy", solar_panels, "Type", 10, 4],
-	["Solar Panels+", load("res://Icons/Upgrades/Solar_Panels.png"), "Gives Extra 3 Energy", solar_panels, "Type", 10, 4],
-	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 10, 10],
-	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 10, 10],
-	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 10, 10],
-	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 10, 10]
+	["Solar Panels", load("res://Icons/Upgrades/Solar_Panels.png"), "Gives Extra 3 Energy", solar_panels, "Type", 500, 5],
+	["Solar Panels+", load("res://Icons/Upgrades/Solar_Panels.png"), "Gives Extra 3 Energy", solar_panels, "Type", 1000, 10],
+	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 500, 5],
+	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 1000, 10],
+	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 500, 5],
+	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 1000, 10]
 ]
 
 var current_upgrades: Array[Array]

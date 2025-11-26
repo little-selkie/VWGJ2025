@@ -2,15 +2,15 @@ extends Control
 
 # 0 - title, 1 - icon, 2 - description, 3 - function, 4 - type, 5 - cost in money, 6 - cost in technology
 var all_general_upgrades: Array[Array] = [
-	["Protection I", load("res://Icons/Upgrades/Air_Defense_+.png"), "Add 20% Protection", add_protection, "Type", 10, 10],
-	["Protection II", load("res://Icons/Upgrades/Air_Defense_+.png"), "Add 20% Protection", add_protection, "Type", 20, 20],
-	["Protection III", load("res://Icons/Upgrades/Air_Defense_+.png"), "Add 20% Protection", add_protection, "Type", 30, 30],
-	["Extra Battery I", load("res://Icons/Upgrades/Electricity_+.png"), "Add 3 To Power", add_power, "Type", 10, 10],
-	["Extra Battery II", load("res://Icons/Upgrades/Electricity_+.png"), "Add 3 To Power", add_power, "Type", 20, 20],
-	["Extra Battery III", load("res://Icons/Upgrades/Electricity_+.png"), "Add 3 To Power", add_power, "Type", 30, 30],
-	["Local business support", load("res://Icons/Upgrades/Money_+.png"), "Add 25% to passive income", add_passive_income, "Type", 300, 5],
-	["Heating Program", load("res://Icons/Upgrades/Heating_+.png"), "Reduce Heating consumption by 50%", reduce_heating_consumption, "Type", 300, 5],
-	["Tabletki.ua", load("res://Icons/Upgrades/Physical_Health_+.png"), "Add constant health boost", health_boost, "Type", 300, 5]
+	["Protection I", load("res://Icons/Upgrades/Air_Defense_+.png"), "Add 20% Protection", add_protection, "Type", 1000, 10],
+	["Protection II", load("res://Icons/Upgrades/Air_Defense_+.png"), "Add 20% Protection", add_protection, "Type", 2000, 20],
+	["Protection III", load("res://Icons/Upgrades/Air_Defense_+.png"), "Add 20% Protection", add_protection, "Type", 3000, 30],
+	["Extra Battery I", load("res://Icons/Upgrades/Electricity_+.png"), "Add 3 To Power", add_power, "Type", 1000, 10],
+	["Extra Battery II", load("res://Icons/Upgrades/Electricity_+.png"), "Add 3 To Power", add_power, "Type", 2000, 20],
+	["Extra Battery III", load("res://Icons/Upgrades/Electricity_+.png"), "Add 3 To Power", add_power, "Type", 3000, 30],
+	["Local business support", load("res://Icons/Upgrades/Money_+.png"), "Add 25% to passive income", add_passive_income, "Type", 3000, 5],
+	["Heating Program", load("res://Icons/Upgrades/Heating_+.png"), "Reduce Heating consumption by 50%", reduce_heating_consumption, "Type", 3000, 5],
+	["Tabletki.ua", load("res://Icons/Upgrades/Physical_Health_+.png"), "Add constant health boost", health_boost, "Type", 3000, 5]
 ]
 
 var current_money_cost: int = 999999

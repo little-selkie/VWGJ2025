@@ -91,9 +91,11 @@ offset_top = 130.0
 offset_right = 1132.0
 offset_bottom = 130.0
 district_name = "Hospital"
+needs_energy = 2
 is_on = false
 produces_1 = 2
 produces_1_count = 5
+fix_cost = 500
 
 [node name="EntertainmentDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
 offset_left = 518.0
@@ -101,12 +103,13 @@ offset_top = 544.0
 offset_right = 518.0
 offset_bottom = 544.0
 district_name = "Entertainment"
-needs_energy = 2
+needs_energy = 4
 is_on = false
 produces_1 = 1
 produces_1_count = 10
 produces_2 = 3
 produces_2_count = 20
+fix_cost = 500
 
 [node name="ParkDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
 offset_left = 1593.0
@@ -114,9 +117,11 @@ offset_top = 610.0
 offset_right = 1593.0
 offset_bottom = 610.0
 district_name = "Park"
+needs_energy = 2
 is_on = false
 produces_1 = 1
 produces_1_count = 20
+fix_cost = 500
 
 [node name="CivilianDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
 offset_left = 2026.0
@@ -124,9 +129,10 @@ offset_top = 199.0
 offset_right = 2026.0
 offset_bottom = 199.0
 district_name = "Civilian Building"
-needs_energy = 3
+needs_energy = 6
 can_work_at_night = true
 production_timer = 0.05
+fix_cost = 500
 
 [node name="HeatingDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
 offset_left = 1578.0
@@ -134,10 +140,11 @@ offset_top = 1425.0
 offset_right = 1578.0
 offset_bottom = 1425.0
 district_name = "Heating"
-needs_energy = 2
+needs_energy = 4
 is_on = false
 produces_1 = 4
 produces_1_count = 10
+fix_cost = 500
 
 [node name="GovernmentDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
 offset_left = 2594.0
@@ -145,7 +152,9 @@ offset_top = 543.0
 offset_right = 2594.0
 offset_bottom = 543.0
 district_name = "Government"
+needs_energy = 2
 is_on = false
+fix_cost = 500
 
 [node name="TechnologyDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
 offset_left = 635.0
@@ -153,9 +162,11 @@ offset_top = 1254.0
 offset_right = 635.0
 offset_bottom = 1254.0
 district_name = "Laboratory"
+needs_energy = 2
 is_on = false
 produces_1 = 5
-produces_1_count = 1
+produces_1_count = 4
+fix_cost = 500
 
 [node name="PowerPlant" parent="Districts" instance=ExtResource("3_iswwh")]
 offset_left = 3065.0
@@ -163,6 +174,7 @@ offset_top = 971.0
 offset_right = 3065.0
 offset_bottom = 971.0
 district_name = "Power Plant"
+fix_cost = 1000
 
 [node name="RandomEventManager" parent="." instance=ExtResource("2_as6u6")]
 min_event_timer = 10.0
