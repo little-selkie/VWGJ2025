@@ -1,14 +1,18 @@
 extends Node
 
+@onready var cam := $Camera3D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	_hideAllDistricts()
+	_hideAllDistrictBorders()
 
+func _traceMousePos(pos: Vector2) -> Dictionary:
+	var from = cam.project_ray_origin(pos)
+	var to = from + cam.project_ray_normal(pos) * 200000
+	var space = $Camera3D.get_world_3d().direct_space_state
+	return space.intersect_ray(PhysicsRayQueryParameters3D.create(from, to))
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func _hideAllDistricts():
 	$Districts/PowerPlant.visible = false
@@ -22,13 +26,7 @@ func _hideAllDistricts():
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		var cam = $Camera3D
-		var from = cam.project_ray_origin(event.position)
-		var to = from + cam.project_ray_normal(event.position) * 200000
-
-		var space = $Camera3D.get_world_3d().direct_space_state
-		var hit = space.intersect_ray(PhysicsRayQueryParameters3D.create(from, to))
-		
+		var hit = _traceMousePos(event.position)
 		
 		if hit:
 			_hideAllDistricts()
@@ -49,3 +47,36 @@ func _unhandled_input(event):
 					$Districts/HospitalDistrict.visible = true
 				"Area_Government":
 					$Districts/GovernmentDistrict.visible = true
+
+
+func _hideAllDistrictBorders():
+	$DistrictBorderUX/Border_Power.visible = false
+	$DistrictBorderUX/Border_Heat.visible = false
+	$DistrictBorderUX/Border_Lab.visible = false
+	$DistrictBorderUX/Border_Enter.visible = false
+	$DistrictBorderUX/Border_Park.visible = false
+	$DistrictBorderUX/Border_Civ.visible = false
+	$DistrictBorderUX/Border_Hospital.visible = false
+	$DistrictBorderUX/Border_Gov.visible = false
+
+func _process(_delta: float) -> void:
+	var hit = _traceMousePos(get_viewport().get_mouse_position())
+	if hit:
+		_hideAllDistrictBorders()
+		match hit.collider.name:
+				"Area_PowerPlant":
+					$DistrictBorderUX/Border_Power.visible = true
+				"Area_Heating":
+					$DistrictBorderUX/Border_Heat.visible = true
+				"Area_Lab":
+					$DistrictBorderUX/Border_Lab.visible = true
+				"Area_Entertainment":
+					$DistrictBorderUX/Border_Enter.visible = true
+				"Area_Park":
+					$DistrictBorderUX/Border_Park.visible = true
+				"Area_Civ":
+					$DistrictBorderUX/Border_Civ.visible = true
+				"Area_Hospital":
+					$DistrictBorderUX/Border_Hospital.visible = true
+				"Area_Government":
+					$DistrictBorderUX/Border_Gov.visible = true
