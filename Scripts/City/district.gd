@@ -52,6 +52,7 @@ func _ready():
 	random_event_manager = get_parent().get_parent().find_child("RandomEventManager")
 
 func update_info():
+	set_icons()
 	if produces_1 == 0 and produces_2 == 0 and produces_3 == 0 and produces_4 == 0:
 		$ProductionProgress.visible = false
 	if is_on and (GlobalVars.resource_power[1] - needs_energy) >= 0:
@@ -178,6 +179,32 @@ func check_for_production():
 	if GlobalVars.resource_people_health[1] > 100:
 		GlobalVars.resource_people_health[1] = 100
 
+func set_icons():
+	#MentalHealth
+	if produces_1 == 1:
+		$VBoxContainer/Details/Production/Product_1/ProductImage.texture = GlobalVars.resource_people_mood[2]
+	elif produces_2 == 1:
+		$VBoxContainer/Details/Production/Product_2/ProductImage.texture = GlobalVars.resource_people_mood[2]
+	#Health
+	if produces_1 == 2:
+		$VBoxContainer/Details/Production/Product_1/ProductImage.texture = GlobalVars.resource_people_health[2]
+	elif produces_2 == 2:
+		$VBoxContainer/Details/Production/Product_2/ProductImage.texture = GlobalVars.resource_people_health[2]
+	#Money
+	if produces_1 == 3:
+		$VBoxContainer/Details/Production/Product_1/ProductImage.texture = GlobalVars.resource_money[2]
+	elif produces_2 == 3:
+		$VBoxContainer/Details/Production/Product_2/ProductImage.texture = GlobalVars.resource_money[2]
+	#Heat
+	if produces_1 == 4:
+		$VBoxContainer/Details/Production/Product_1/ProductImage.texture = GlobalVars.resource_heat[2]
+	elif produces_2 == 4:
+		$VBoxContainer/Details/Production/Product_2/ProductImage.texture = GlobalVars.resource_heat[2]
+	#UpgradeParts
+	if produces_1 == 5:
+		$VBoxContainer/Details/Production/Product_1/ProductImage.texture = GlobalVars.resource_upgrade[2]
+	elif produces_2 == 5:
+		$VBoxContainer/Details/Production/Product_1/ProductImage.texture = GlobalVars.resource_upgrade[2]
 
 func _on_production_tick_timeout() -> void:
 	$ProductionProgress.value += $ProductionProgress.step

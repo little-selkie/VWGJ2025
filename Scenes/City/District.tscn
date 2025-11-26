@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://ecc8wscwb87c"]
+[gd_scene load_steps=10 format=3 uid="uid://ecc8wscwb87c"]
 
 [ext_resource type="Script" uid="uid://b5xd2rmp4iqb2" path="res://Scripts/City/district.gd" id="1_j064q"]
 [ext_resource type="PackedScene" uid="uid://078tgcvsvcbr" path="res://Scenes/UI/DistrictUpgradesMenu.tscn" id="2_jrh6f"]
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="2_wwqtv"]
+[ext_resource type="Texture2D" uid="uid://dboy4vxaewkhq" path="res://Icons/Upgrades/Air_Defense_.png" id="3_mkv84"]
 
 [sub_resource type="Gradient" id="Gradient_j064q"]
 colors = PackedColorArray(0.91764706, 0.91764706, 0.19215687, 1, 1, 0.41568628, 0.14901961, 1)
@@ -66,7 +67,6 @@ text = "|"
 layout_mode = 2
 
 [node name="Product_1" type="HBoxContainer" parent="VBoxContainer/Details/Production"]
-visible = false
 layout_mode = 2
 
 [node name="+" type="Label" parent="VBoxContainer/Details/Production/Product_1"]
@@ -80,7 +80,8 @@ text = "0"
 [node name="ProductImage" type="TextureRect" parent="VBoxContainer/Details/Production/Product_1"]
 layout_mode = 2
 tooltip_text = "Not Working :("
-texture = SubResource("GradientTexture1D_wwqtv")
+texture = ExtResource("3_mkv84")
+expand_mode = 2
 
 [node name="Product_2" type="HBoxContainer" parent="VBoxContainer/Details/Production"]
 visible = false
@@ -96,7 +97,8 @@ text = "0"
 
 [node name="ProductImage" type="TextureRect" parent="VBoxContainer/Details/Production/Product_2"]
 layout_mode = 2
-texture = SubResource("GradientTexture1D_wwqtv")
+texture = ExtResource("3_mkv84")
+expand_mode = 2
 
 [node name="Product_3" type="HBoxContainer" parent="VBoxContainer/Details/Production"]
 visible = false
