@@ -30,18 +30,18 @@ var government_events: Array[Array] = [
 	["Politicians' Speech", "Politicians' from other countries publicly condemned recent attack on your city. \r\n People are grateful for their reaction, but nothing seems to change.", "Okay.", nothing_happens, "type"],
 	["Politicians' Speech", "Politicians' from other countries publicly condemned recent attack on your city. \r\n People are grateful for their reaction, but nothing seems to change.", "Okay.", nothing_happens, "type"],
 	["Humanitarian Help", "Non-Profit Organization collected donations and bought medicine, food and heating blankets for your people. \r\n Your city gets a moderate boost to People's Mental Health, People's Physical Health and Heating.", "Thank you!", humanitarian_help, "type"],
-	["Huge Donation", "Foreign celebrity hosted charity consert and collected a huge amount of donations for your people. \r\n Your city gets a considerate amount of money and a slight boost to People's Mental Health.", "Thank you!", nothing_happens, "type"]
+	["Huge Donation", "Foreign celebrity hosted charity consert and collected a huge amount of donations for your people. \r\n Your city gets a considerate amount of money and a slight boost to People's Mental Health.", "Thank you!", huge_money_donation, "type"]
 ]
 
 var government_events_upgrade_1: Array[Array] = [
 	["Humanitarian Help", "Non-Profit Organization collected donations and bought medicine, food and heating blankets for your people. \r\n Your city gets a moderate boost to People's Mental Health, People's Physical Health and Heating.", "Thank you!", humanitarian_help, "type"],
-	["Huge Donation", "Foreign celebrity hosted charity consert and collected a huge amount of donations for your people. \r\n Your city gets a considerate amount of money and a slight boost to People's Mental Health.", "Thank you!", nothing_happens, "type"],
+	["Huge Donation", "Foreign celebrity hosted charity consert and collected a huge amount of donations for your people. \r\n Your city gets a considerate amount of money and a slight boost to People's Mental Health.", "Thank you!", huge_money_donation, "type"],
 	["Protection", "Your partners donated a huge amount of protection tools to counteract enemy attacks. Your people now feel a bit safer. \r\n Your city gets 20% more protection.", "Thank you!", protection_donation_1, "type"]
 ]
 
 var government_events_upgrade_2: Array[Array] = [
 	["Humanitarian Help", "Non-Profit Organization collected donations and bought medicine, food and heating blankets for your people. \r\n Your city gets a moderate boost to People's Mental Health, People's Physical Health and Heating.", "Thank you!", humanitarian_help, "type"],
-	["Huge Donation", "Foreign celebrity hosted charity consert and collected a huge amount of donations for your people. \r\n Your city gets a considerate amount of money and a slight boost to People's Mental Health.", "Thank you!", nothing_happens, "type"],
+	["Huge Donation", "Foreign celebrity hosted charity consert and collected a huge amount of donations for your people. \r\n Your city gets a considerate amount of money and a slight boost to People's Mental Health.", "Thank you!", huge_money_donation, "type"],
 	["Protection", "Your partners donated a huge amount of protection tools to counteract enemy attacks. Your people now feel a bit safer. \r\n Your city gets 20% more protection.", "Thank you!", protection_donation_2, "type"]
 ]
 
