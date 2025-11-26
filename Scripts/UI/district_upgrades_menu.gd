@@ -179,7 +179,9 @@ func solar_panels() -> void:
 		get_parent().extra_energy = 6
 
 func autonomy() -> void:
+	var was_energy = get_parent().needs_energy
 	get_parent().needs_energy -= int(get_parent().needs_energy * 0.5)
+	GlobalVars.resource_power[1] += (was_energy - get_parent().needs_energy)
 
 func cheaper_repairs() -> void:
 	get_parent().fix_cost = get_parent().fix_cost * 0.75
@@ -201,8 +203,10 @@ func more_money_production() -> void:
 	get_parent().produces_2_count += int(get_parent().produces_2_count * 1)
 
 func less_mental_health_depletion() -> void:
+	var was_energy = get_parent().needs_energy
 	GlobalVars.mental_mood_depletion = GlobalVars.mental_mood_depletion * 0.5
 	get_parent().needs_energy = int(get_parent().needs_energy * 1.5)
+	GlobalVars.resource_power[1] += (was_energy - get_parent().needs_energy)
 
 func diplomacy_level_one() -> void:
 	random_event_manager.government_events.append_array(random_event_manager.government_events_upgrade_1)
