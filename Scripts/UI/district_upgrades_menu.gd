@@ -70,8 +70,8 @@ var laboratory_upgrades: Array[Array] = [
 	["Advanced Shelter", load("res://Icons/Upgrades/Shelter_2.png"), "Will protect 75% of People Health upon Strike", shelters, "Type", 10, 10]
 ]
 var power_upgrades: Array[Array] = [
-	["Solar Panels", load("res://Icons/Upgrades/Solar_Panels.png"), "Gives Extra 3 Energy during the Day", solar_panels, "Type", 10, 4],
-	["Solar Panels+", load("res://Icons/Upgrades/Solar_Panels.png"), "Gives additional Extra 3 Energy during the Day", solar_panels, "Type", 10, 4],
+	["Solar Panels", load("res://Icons/Upgrades/Solar_Panels.png"), "Gives Extra 3 Energy", solar_panels, "Type", 10, 4],
+	["Solar Panels+", load("res://Icons/Upgrades/Solar_Panels.png"), "Gives Extra 3 Energy", solar_panels, "Type", 10, 4],
 	["Top Specialists", load("res://Icons/Upgrades/Specialist_.png"), "25% Cheaper to repair", cheaper_repairs, "Type", 10, 10],
 	["Top Specialists+", load("res://Icons/Upgrades/Specialist_+.png"), "25% Faster to repair", faster_repairs, "Type", 10, 10],
 	["Basic Shelter", load("res://Icons/Upgrades/Shelter.png"), "Will protect 25% of People Health upon Strike", shelters, "Type", 10, 10],
@@ -177,6 +177,9 @@ func solar_panels() -> void:
 		get_parent().extra_energy = 3
 	elif get_parent().extra_energy != 0:
 		get_parent().extra_energy = 6
+	if get_parent().find_child("Check").button_pressed:
+		get_parent().find_child("Check").button_pressed = false
+		#get_parent().find_child("Check").button_pressed = true
 
 func autonomy() -> void:
 	var was_energy = get_parent().needs_energy

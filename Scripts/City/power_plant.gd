@@ -17,10 +17,8 @@ var shelter_protection: float = 0
 var extra_energy: int = 0
 
 func _process(_delta: float) -> void:
-	if GlobalVars.time_of_day == "Night":
-		gives_energy = base_energy
-	elif GlobalVars.time_of_day == "Day":
-		gives_energy = base_energy + extra_energy
+	gives_energy = base_energy + extra_energy
+	$VBoxContainer/HBoxContainer/EnergyCount.text = str(gives_energy)
 	if is_broken:
 		broken()
 
