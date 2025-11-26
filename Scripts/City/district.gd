@@ -42,8 +42,10 @@ func _ready():
 	shader_change(is_on)
 	if is_on:
 		$On_Off/Check.button_pressed = true
+		$Generators.playing = false
 	elif !is_on:
 		$On_Off/Check.button_pressed = false
+		$Generators.playing = true
 	$ProductionProgress.value = 0.0
 	update_info()
 	$ProductionTick.wait_time = production_timer
@@ -219,10 +221,12 @@ func _on_production_progress_value_changed(value: float) -> void:
 func _on_check_toggled(toggled_on: bool) -> void:
 	$Check.play()
 	if toggled_on:
+		$Generators.playing = false
 		is_on = true
 		shader_change(is_on)
 		GlobalVars.resource_power[1] -= needs_energy
 	if !toggled_on:
+		$Generators.playing = true
 		is_on = false
 		shader_change(is_on)
 		GlobalVars.resource_power[1] += needs_energy

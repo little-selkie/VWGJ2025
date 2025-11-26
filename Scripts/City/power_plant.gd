@@ -27,8 +27,10 @@ func _process(_delta: float) -> void:
 func _ready():
 	if is_on:
 		$On_Off/Check.button_pressed = true
+		$Generators.playing = false
 	elif !is_on:
 		$On_Off/Check.button_pressed = false
+		$Generators.playing = true
 	$Panel.visible = false
 	$Panel/Fixing/FixTickTimer.wait_time = fix_speed
 	$VBoxContainer/DistrictName.text = str(district_name)
@@ -38,11 +40,13 @@ func _on_check_toggled(toggled_on: bool) -> void:
 	$Check.play()
 	if toggled_on:
 		is_on = true
+		$Generators.playing = false
 		GlobalVars.resource_power[1] += gives_energy
 		GlobalVars.buildings_shader.set_shader_parameter("Power_enabled", true)
 		GlobalVars.road_shader.set_shader_parameter("Power_enabled", true)
 	if !toggled_on:
 		is_on = false
+		$Generators.playing = true
 		GlobalVars.resource_power[1] -= gives_energy
 		GlobalVars.buildings_shader.set_shader_parameter("Power_enabled", false)
 		GlobalVars.road_shader.set_shader_parameter("Power_enabled", false)
