@@ -1,16 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://ecc8wscwb87c"]
+[gd_scene load_steps=9 format=3 uid="uid://ecc8wscwb87c"]
 
 [ext_resource type="Script" uid="uid://b5xd2rmp4iqb2" path="res://Scripts/City/district.gd" id="1_j064q"]
 [ext_resource type="PackedScene" uid="uid://078tgcvsvcbr" path="res://Scenes/UI/DistrictUpgradesMenu.tscn" id="2_jrh6f"]
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="2_wwqtv"]
+[ext_resource type="Texture2D" uid="uid://dm88on4ur3kty" path="res://Icons/Upgrades/Electricity.png" id="3_bbwrn"]
 [ext_resource type="Texture2D" uid="uid://dboy4vxaewkhq" path="res://Icons/Upgrades/Air_Defense_.png" id="3_mkv84"]
-
-[sub_resource type="Gradient" id="Gradient_j064q"]
-colors = PackedColorArray(0.91764706, 0.91764706, 0.19215687, 1, 1, 0.41568628, 0.14901961, 1)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_jrh6f"]
-gradient = SubResource("Gradient_j064q")
-width = 20
 
 [sub_resource type="Gradient" id="Gradient_jrh6f"]
 
@@ -53,11 +47,13 @@ layout_mode = 2
 
 [node name="EnergyCost" type="Label" parent="VBoxContainer/Details"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
 text = "0"
 
 [node name="EnergyImage" type="TextureRect" parent="VBoxContainer/Details"]
 layout_mode = 2
-texture = SubResource("GradientTexture1D_jrh6f")
+texture = ExtResource("3_bbwrn")
+expand_mode = 2
 
 [node name="|" type="Label" parent="VBoxContainer/Details"]
 layout_mode = 2
@@ -71,10 +67,12 @@ layout_mode = 2
 
 [node name="+" type="Label" parent="VBoxContainer/Details/Production/Product_1"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 text = "+"
 
 [node name="ProductCount" type="Label" parent="VBoxContainer/Details/Production/Product_1"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 text = "0"
 
 [node name="ProductImage" type="TextureRect" parent="VBoxContainer/Details/Production/Product_1"]
@@ -153,13 +151,16 @@ theme = ExtResource("2_wwqtv")
 
 [node name="Off" type="Label" parent="On_Off"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Off"
 
 [node name="Check" type="CheckButton" parent="On_Off"]
 layout_mode = 2
+theme_override_colors/button_checked_color = Color(0.105882354, 0.627451, 1, 1)
 
 [node name="On" type="Label" parent="On_Off"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "On"
 
 [node name="DebugBrake" type="Button" parent="."]

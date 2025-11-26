@@ -35,6 +35,7 @@ version_control/autoload_on_startup=true
 
 folder_colors={
 "res://Art/": "yellow",
+"res://Audio/": "purple",
 "res://Buildings/": "teal",
 "res://Icons/": "orange",
 "res://Scenes/": "blue",

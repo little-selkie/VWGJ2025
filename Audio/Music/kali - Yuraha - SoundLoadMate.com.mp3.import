@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2blembipys8p"
+path="res://.godot/imported/kali - Yuraha - SoundLoadMate.com.mp3-7f91d8c533feb770191448b79529b438.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/kali - Yuraha - SoundLoadMate.com.mp3"
+dest_files=["res://.godot/imported/kali - Yuraha - SoundLoadMate.com.mp3-7f91d8c533feb770191448b79529b438.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
