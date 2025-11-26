@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://ceij25nk1svn7"]
+[gd_scene load_steps=18 format=3 uid="uid://ceij25nk1svn7"]
 
 [ext_resource type="PackedScene" uid="uid://b0b6gee2o0hl3" path="res://Scenes/City/CitySimulated.tscn" id="1_mmd3b"]
 [ext_resource type="Script" uid="uid://d1dtodg0syeey" path="res://Scripts/City/city_playable.gd" id="1_r2v6b"]
@@ -13,7 +13,63 @@
 [sub_resource type="Curve3D" id="Curve3D_r2v6b"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.4549284, 0, 6.1895795, 0, 0, 0, 0, 0, 0, 3.403727, 0, 5.435695, 0, 0, 0, 0, 0, 0, 2.4993744, 0, 4.7995653, 0, 0, 0, 0, 0, 0, 1.350804, 0, 4.308767, 0, 0, 0, 0, 0, 0, -0.6376897, 0, 3.8786852, 0, 0, 0, 0, 0, 0, -0.5787797, 0, 2.8739972, 0, 0, 0, 0, 0, 0, -1.1205313, 0, 1.217401, 0, 0, 0, 0, 0, 0, -1.654512, 0, -0.15391047, 0, 0, 0, 0, 0, 0, 0.28468505, 0, -1.5838889, 0, 0, 0, 0, 0, 0, 0.79572284, 0, -2.4238122, 0, 0, 0, 0, 0, 0, 3.7392614, 0, -0.50661623, 0, 0, 0, 0, 0, 0, 4.7236776, 0, 0.5841641, 0, 0, 0, 0, 0, 0, 6.3179035, 0, 1.2724622, 0, 0, 0, 0, 0, 0, 8.47843, 0, 1.7126632, 0, 0, 0, 0, 0, 0, 7.859638, 0, 2.9942842, 0, 0, 0, 0, 0, 0, 6.7733583, 0, 4.1290803, 0, 0, 0, 0, 0, 0, 5.35662, 0, 5.3434277),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.4549284, 0, 6.1895795, 0, 0, 0, 0, 0, 0, 3.403727, 0, 5.435695, 0, 0, 0, 0, 0, 0, 2.4993744, 0, 4.7995653, 0, 0, 0, 0, 0, 0, 1.350804, 0, 4.308767, 0, 0, 0, 0, 0, 0, -0.6376897, 0, 3.8786852, 0, 0, 0, 0, 0, 0, -0.5787797, 0, 2.8739972, 0, 0, 0, 0, 0, 0, -1.1205313, 0, 1.217401, 0, 0, 0, 0, 0, 0, -1.654512, 0, -0.15391047, 0, 0, 0, 0, 0, 0, 0.28468505, 0, -1.5838889, 0, 0, 0, 0, 0, 0, 0.79572284, 0, -2.4238122, 0, 0, 0, 0, 0, 0, 3.7392614, 0, -0.50661623, 0, 0, 0, 0, 0, 0, 4.7236776, 0, 0.5841641, 0, 0, 0, 0, 0, 0, 5.759606, 0, 1.1899312, 0, 0, 0, 0, 0, 0, 8.47843, 0, 1.7126632, 0, 0, 0, 0, 0, 0, 7.859638, 0, 2.9942842, 0, 0, 0, 0, 0, 0, 6.7733583, 0, 4.1290803, 0, 0, 0, 0, 0, 0, 5.35662, 0, 5.3434277),
+"tilts": PackedFloat32Array(-1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964)
+}
+point_count = 17
+
+[sub_resource type="Curve3D" id="Curve3D_owu6q"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.2397456, 0, 0.7017331, 0, 0, 0, 0, 0, 0, -2.7164493, 0, -5.8142586, 0, 0, 0, 0, 0, 0, -1.2738838, 0, -3.8949137, 0, 0, 0, 0, 0, 0, 0.88996315, 0, -2.4890246, 0, 0, 0, 0, 0, 0, 0.30315685, 0, -1.6577157, 0, 0, 0, 0, 0, 0, -1.6039629, 0, -0.2762766, 0, 0, 0, 0, 0, 0, -3.4132814, 0, 0.45723104, 0, 0, 0, 0, 0, 0, -4.8182917, 0, 2.300863),
+"tilts": PackedFloat32Array(-1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964)
+}
+point_count = 8
+
+[sub_resource type="Curve3D" id="Curve3D_p1u6s"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.633257, 0, -11.119613, 0, 0, 0, 0, 0, 0, -8.399941, 0, -9.934662, 0, 0, 0, 0, 0, 0, -6.75552, 0, -8.616707, 0, 0, 0, 0, 0, 0, -4.9901857, 0, -7.3833914, 0, 0, 0, 0, 0, 0, -2.6323762, 0, -6.077528, 0, 0, 0, 0, 0, 0, -1.0121379, 0, -6.8030076, 0, 0, 0, 0, 0, 0, 0.71712565, 0, -7.528116, 0, 0, 0, 0, 0, 0, 2.941931, 0, -8.217321, 0, 0, 0, 0, 0, 0, 3.776233, 0, -8.519605, 0, 0, 0, 0, 0, 0, 4.3687077, 0, -9.801286, 0, 0, 0, 0, 0, 0, -6.066939, 0, -14.113392, 0, 0, 0, 0, 0, 0, -6.877058, 0, -12.263418, 0, 0, 0, 0, 0, 0, -8.461023, 0, -12.904259, 0, 0, 0, 0, 0, 0, -9.005133, 0, -12.698707, 0, 0, 0, 0, 0, 0, -8.944675, 0, -12.287601),
+"tilts": PackedFloat32Array(-1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964)
+}
+point_count = 15
+
+[sub_resource type="Curve3D" id="Curve3D_hh50m"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.373805, 0, -9.812524, 0, 0, 0, 0, 0, 0, 3.752879, 0, -8.430135, 0, 0, 0, 0, 0, 0, 2.4144332, 0, -8.02775, 0, 0, 0, 0, 0, 0, 0.82365584, 0, -7.5427575, 0, 0, 0, 0, 0, 0, -0.37912583, 0, -7.077164, 0, 0, 0, 0, 0, 0, -1.8147061, 0, -6.4175735, 0, 0, 0, 0, 0, 0, -2.7072477, 0, -5.9324646, 0, 0, 0, 0, 0, 0, -2.3384984, 0, -5.3117895, 0, 0, 0, 0, 0, 0, -1.1793504, 0, -3.8131175, 0, 0, 0, 0, 0, 0, 0.920655, 0, -2.4406304, 0, 0, 0, 0, 0, 0, 3.34562, 0, -0.8498533, 0, 0, 0, 0, 0, 0, 4.7424, 0, 0.5663266, 0, 0, 0, 0, 0, 0, 5.6316595, 0, 1.1739211, 0, 0, 0, 0, 0, 0, 8.555602, 0, 1.760565, 0, 0, 0, 0, 0, 0, 9.146136, 0, 0.13953257, 0, 0, 0, 0, 0, 0, 9.204337, 0, -1.12145, 0, 0, 0, 0, 0, 0, 8.777541, 0, -2.712227, 0, 0, 0, 0, 0, 0, 8.253749, 0, -4.419402, 0, 0, 0, 0, 0, 0, 7.768756, 0, -5.99078, 0, 0, 0, 0, 0, 0, 6.9733686, 0, -7.7561545, 0, 0, 0, 0, 0, 0, 5.752025, 0, -9.031704),
+"tilts": PackedFloat32Array(-1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964)
+}
+point_count = 21
+
+[sub_resource type="Curve3D" id="Curve3D_chgr3"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -15.277178, 0, -0.80768394, 0, 0, 0, 0, 0, 0, -15.1465435, 0, -1.93684, 0, 0, 0, 0, 0, 0, -15.125689, 0, -2.907587, 0, 0, 0, 0, 0, 0, -13.662863, 0, -4.6864347, 0, 0, 0, 0, 0, 0, -13.2960415, 0, -4.4350157, 0, 0, 0, 0, 0, 0, -12.208874, 0, -5.7072344, 0, 0, 0, 0, 0, 0, -6.598414, 0, -1.2934108, 0, 0, 0, 0, 0, 0, -5.019068, 0, -0.5812316, 0, 0, 0, 0, 0, 0, -6.10222, 0, -0.4333086, 0, 0, 0, 0, 0, 0, -7.073733, 0, -0.22512674, 0, 0, 0, 0, 0, 0, -8.137772, 0, 0.6075983, 0, 0, 0, 0, 0, 0, -9.155546, 0, 2.1111305, 0, 0, 0, 0, 0, 0, -10.12706, 0, 3.1520364, 0, 0, 0, 0, 0, 0, -11.468672, 0, 3.244562, 0, 0, 0, 0, 0, 0, -12.463316, 0, 2.7356741, 0, 0, 0, 0, 0, 0, -12.3707905, 0, 1.3940611, 0, 0, 0, 0, 0, 0, -12.139479, 0, 0.052447796, 0, 0, 0, 0, 0, 0, -14.244423, 0, 0.07557917, 0, 0, 0, 0, 0, 0, -15.192804, 0, 0.7926483),
+"tilts": PackedFloat32Array(-1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964)
+}
+point_count = 19
+
+[sub_resource type="Curve3D" id="Curve3D_ijfif"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.541, 0, 0.587, 0, 0, 0, 0, 0, 0, -7.259, 0, 0.788, 0, 0, 0, 0, 0, 0, -2.886, 0, -5.696, 0, 0, 0, 0, 0, 0, -3.938, 0, -5.829, 0, 0, 0, 0, 0, 0, -5.365, 0, -4.951, 0, 0, 0, 0, 0, 0, -6.387, 0, -3.501, 0, 0, 0, 0, 0, 0, -7.495, 0, -2.14, 0, 0, 0, 0, 0, 0, -9.24, 0, -2.205, 0, 0, 0, 0, 0, 0, -10.062, 0, -2.776, 0, 0, 0, 0, 0, 0, -9.636739, 0, -5.3197374, 0, 0, 0, 0, 0, 0, -11.601189, 0, -5.278021, 0, 0, 0, 0, 0, 0, -12.61619, 0, -4.598354, 0, 0, 0, 0, 0, 0, -12.827, 0, -5.125, 0, 0, 0, 0, 0, 0, -13.826, 0, -3.823, 0, 0, 0, 0, 0, 0, -14.024, 0, -2.659, 0, 0, 0, 0, 0, 0, -13.682, 0, -1.546, 0, 0, 0, 0, 0, 0, -13.71, 0, -0.894, 0, 0, 0, 0, 0, 0, -14.022, 0, -0.126, 0, 0, 0, 0, 0, 0, -14.07, 0, 0.722, 0, 0, 0, 0, 0, 0, -13.774, 0, 1.5, 0, 0, 0, 0, 0, 0, -13.119, 0, 2.201, 0, 0, 0, 0, 0, 0, -12.9, 0, 2.66, 0, 0, 0, 0, 0, 0, -12.731, 0, 3.686, 0, 0, 0, 0, 0, 0, -12.196, 0, 5.045, 0, 0, 0, 0, 0, 0, -10.459, 0, 2.922, 0, 0, 0, 0, 0, 0, -8.798, 0, 1.191),
+"tilts": PackedFloat32Array(-1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964)
+}
+point_count = 26
+
+[sub_resource type="Curve3D" id="Curve3D_extop"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 5.055521, 0, 10.349696, 0, 0, 0, 0, 0, 0, -2.0942173, 0, 14.612559, 0, 0, 0, 0, 0, 0, -2.8934479, 0, 13.557183, 0, 0, 0, 0, 0, 0, -3.4104567, 0, 12.098859, 0, 0, 0, 0, 0, 0, -4.179982, 0, 10.5864935, 0, 0, 0, 0, 0, 0, -4.2465286, 0, 9.011939, 0, 0, 0, 0, 0, 0, -4.0637693, 0, 7.3279195, 0, 0, 0, 0, 0, 0, -4.6033716, 0, 5.978911, 0, 0, 0, 0, 0, 0, -5.0620337, 0, 4.8997054, 0, 0, 0, 0, 0, 0, -4.0637693, 0, 3.6046584, 0, 0, 0, 0, 0, 0, -2.7417412, 0, 1.931889, 0, 0, 0, 0, 0, 0, -1.6625366, 0, 0.9066443, 0, 0, 0, 0, 0, 0, -0.4484291, 0, 0.3940214, 0, 0, 0, 0, 0, 0, 2.3437147, 0, 2.1945188, 0, 0, 0, 0, 0, 0, 1.5159922, 0, 3.5289288, 0, 0, 0, 0, 0, 0, 1.5481024, 0, 5.169507, 0, 0, 0, 0, 0, 0, 1.5712528, 0, 6.205454, 0, 0, 0, 0, 0, 0, 2.558526, 0, 7.212961, 0, 0, 0, 0, 0, 0, 3.734767, 0, 7.6836286, 0, 0, 0, 0, 0, 0, 4.2855206, 0, 8.212922),
+"tilts": PackedFloat32Array(-1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964)
+}
+point_count = 20
+
+[sub_resource type="Curve3D" id="Curve3D_dda04"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -2.8421702, 0, -1.1729918, 0, 0, 0, 0, 0, 0, -4.13138, 0, 0.5932989, 0, 0, 0, 0, 0, 0, -4.932125, 0, 2.1680894, 0, 0, 0, 0, 0, 0, -4.837133, 0, 3.342891, 0, 0, 0, 0, 0, 0, -4.8876886, 0, 4.7172556, 0, 0, 0, 0, 0, 0, -3.8488183, 0, 5.835204, 0, 0, 0, 0, 0, 0, -2.8507974, 0, 6.1543264, 0, 0, 0, 0, 0, 0, -2.1393328, 0, 6.776353, 0, 0, 0, 0, 0, 0, -1.773294, 0, 7.9108324, 0, 0, 0, 0, 0, 0, -1.28065, 0, 8.947529, 0, 0, 0, 0, 0, 0, 2.869757, 0, 6.4703045, 0, 0, 0, 0, 0, 0, 5.139172, 0, 4.644371, 0, 0, 0, 0, 0, 0, 3.368415, 0, 3.3433244, 0, 0, 0, 0, 0, 0, 1.9893501, 0, 2.7464168, 0, 0, 0, 0, 0, 0, -0.066603184, 0, 2.276141, 0, 0, 0, 0, 0, 0, 0.012226105, 0, 1.3084259, 0, 0, 0, 0, 0, 0, -1.0002575, 0, -1.88397),
 "tilts": PackedFloat32Array(-1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964)
 }
 point_count = 17
@@ -246,6 +302,149 @@ debug_custom_color = Color(1, 1, 1, 1)
 
 [node name="CSGPolygon3D" type="CSGPolygon3D" parent="DistrictBorderUX/Border_Civ"]
 transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("9_dda04")
+polygon = PackedVector2Array(0, 0, 0, 0.02, 1, 0.02, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.25
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Border_Park" type="Path3D" parent="DistrictBorderUX"]
+curve = SubResource("Curve3D_owu6q")
+debug_custom_color = Color(1, 1, 1, 1)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="DistrictBorderUX/Border_Park"]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("9_dda04")
+polygon = PackedVector2Array(0, 0, 0, 0.02, 1, 0.02, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.25
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Border_Enter" type="Path3D" parent="DistrictBorderUX"]
+curve = SubResource("Curve3D_p1u6s")
+debug_custom_color = Color(1, 1, 1, 1)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="DistrictBorderUX/Border_Enter"]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("9_dda04")
+polygon = PackedVector2Array(0, 0, 0, 0.02, 1, 0.02, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.25
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Border_Hospital" type="Path3D" parent="DistrictBorderUX"]
+curve = SubResource("Curve3D_hh50m")
+debug_custom_color = Color(1, 1, 1, 1)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="DistrictBorderUX/Border_Hospital"]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("9_dda04")
+polygon = PackedVector2Array(0, 0, 0, 0.02, 1, 0.02, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.25
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Border_Lab" type="Path3D" parent="DistrictBorderUX"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5805244, 0, -5.475747)
+curve = SubResource("Curve3D_chgr3")
+debug_custom_color = Color(1, 1, 1, 1)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="DistrictBorderUX/Border_Lab"]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, -2.568859, 0, 5.6086817)
+material_override = ExtResource("9_dda04")
+polygon = PackedVector2Array(0, 0, 0, 0.02, 1, 0.02, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.25
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Border_Heat" type="Path3D" parent="DistrictBorderUX"]
+curve = SubResource("Curve3D_ijfif")
+debug_custom_color = Color(1, 1, 1, 1)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="DistrictBorderUX/Border_Heat"]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0.038475037, 0, -0.07695088)
+material_override = ExtResource("9_dda04")
+polygon = PackedVector2Array(0, 0, 0, 0.02, 1, 0.02, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.25
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Border_Power" type="Path3D" parent="DistrictBorderUX"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.0418186, 0, 0.18886131)
+curve = SubResource("Curve3D_extop")
+debug_custom_color = Color(1, 1, 1, 1)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="DistrictBorderUX/Border_Power"]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, 7.0335693, 0, -0.1906128)
+material_override = ExtResource("9_dda04")
+polygon = PackedVector2Array(0, 0, 0, 0.02, 1, 0.02, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.25
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="Border_Gov" type="Path3D" parent="DistrictBorderUX"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60432625, 0, 1.581258)
+curve = SubResource("Curve3D_dda04")
+debug_custom_color = Color(1, 1, 1, 1)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="DistrictBorderUX/Border_Gov"]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0.5881119, 0, -1.5471475)
 material_override = ExtResource("9_dda04")
 polygon = PackedVector2Array(0, 0, 0, 0.02, 1, 0.02, 1, 0)
 mode = 2
