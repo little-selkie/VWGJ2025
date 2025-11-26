@@ -39,7 +39,7 @@ var resource_heat: Array = [
 	"PLACEHOLDER"]
 var resource_upgrade: Array = [
 	"Technology", 
-	100,
+	50,
 	load("res://Icons/Upgrades/Tech.png"), 
 	"PLACEHOLDER"]
 
