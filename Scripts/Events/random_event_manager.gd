@@ -146,7 +146,8 @@ func protection_donation_1() -> void:
 		random_number = rng.randi_range(0, random_events.size() - 1)
 		random_events[random_number][3].call()
 		$Control/Panel/VBoxContainer/HeaderText.text = str(random_events[random_number][0])
-		$Control/Panel/VBoxContainer/DescriptionText.text = str(random_events[random_number][1])
+		$Control/Panel/VBoxContainer/HBoxContainer/EventImage.texture = random_events[random_number][5]
+		$Control/Panel/VBoxContainer/HBoxContainer/DescriptionText.text = str(random_events[random_number][1])
 		$Control/Panel/VBoxContainer/ConfirmButton.text = str(random_events[random_number][2])
 		$Control.visible = true
 		get_tree().paused = true
@@ -160,7 +161,8 @@ func protection_donation_2() -> void:
 		random_number = rng.randi_range(0, random_events.size() - 1)
 		random_events[random_number][3].call()
 		$Control/Panel/VBoxContainer/HeaderText.text = str(random_events[random_number][0])
-		$Control/Panel/VBoxContainer/DescriptionText.text = str(random_events[random_number][1])
+		$Control/Panel/VBoxContainer/HBoxContainer/EventImage.texture = random_events[random_number][5]
+		$Control/Panel/VBoxContainer/HBoxContainer/DescriptionText.text = str(random_events[random_number][1])
 		$Control/Panel/VBoxContainer/ConfirmButton.text = str(random_events[random_number][2])
 		$Control.visible = true
 		get_tree().paused = true
