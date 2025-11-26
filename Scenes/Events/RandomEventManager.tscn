@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvo56ka5niilg"]
+[gd_scene load_steps=15 format=3 uid="uid://dvo56ka5niilg"]
 
 [ext_resource type="Script" uid="uid://cdujpxda8eqbj" path="res://Scripts/Events/random_event_manager.gd" id="1_mo7pg"]
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="2_he734"]
 [ext_resource type="AudioStream" uid="uid://dm5yglv5xvbmb" path="res://Audio/SFX/90s-sitcom-laugh-track-v2-353986.mp3" id="3_f0b0q"]
+[ext_resource type="Texture2D" uid="uid://dtjjvx0um41tx" path="res://Icons/Funny/meme.png" id="3_wq81h"]
 [ext_resource type="AudioStream" uid="uid://dfj5lvlv4ra4n" path="res://Audio/SFX/crying-411857.mp3" id="4_wq81h"]
 [ext_resource type="AudioStream" uid="uid://bglmyqattk161" path="res://Audio/SFX/coughing-sound-effect-type-11-294172.mp3" id="5_hejnl"]
 [ext_resource type="AudioStream" uid="uid://btgnh06fwvids" path="res://Audio/SFX/you-just-got-money-notif-47625.mp3" id="6_kjw61"]
@@ -64,15 +65,29 @@ size_flags_vertical = 2
 text = "Header Text"
 horizontal_alignment = 1
 
-[node name="DescriptionText" type="RichTextLabel" parent="Control/Panel/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/Panel/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 800)
 layout_mode = 2
-size_flags_vertical = 6
+
+[node name="EventImage" type="TextureRect" parent="Control/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
 theme = ExtResource("2_he734")
-text = "Description
-"
+texture = ExtResource("3_wq81h")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="DescriptionText" type="RichTextLabel" parent="Control/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_he734")
+text = "Description goes here"
 fit_content = true
 scroll_active = false
+autowrap_mode = 2
 horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ConfirmButton" type="Button" parent="Control/Panel/VBoxContainer"]
 layout_mode = 2
