@@ -45,6 +45,7 @@ func strike_init() -> void:
 func warning_sys() -> void:
 	$Control/VBoxContainer/WarningMessage/MinuteCount.text = str(time_until_impact)
 	$Control/VBoxContainer/WarningMessage.visible = true
+	$Sounds/Siren.play()
 
 func choose_target() -> void:
 	var random_target_id = rng.randi_range(0, get_parent().find_child("Districts").get_child_count() - 1)
@@ -58,6 +59,9 @@ func strike() -> void:
 	choosen_target.is_broken = true
 	GlobalVars.resource_people_health[1] -= (choosen_target.people_working_here - choosen_target.people_working_here*choosen_target.shelter_protection)
 	check_if_everything_is_broken()
+	$Sounds/Explosion.volume_db = randf_range(-10, 0)
+	$Sounds/Explosion.pitch_scale = randf_range(0.7, 1.1)
+	$Sounds/Explosion.play()
 
 func check_if_everything_is_broken() -> void:
 	GlobalVars.everything_is_broken = true
