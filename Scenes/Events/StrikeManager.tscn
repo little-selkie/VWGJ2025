@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cinfkmpfb7obj"]
+[gd_scene load_steps=8 format=3 uid="uid://cinfkmpfb7obj"]
 
 [ext_resource type="Script" uid="uid://7s3ethy0gt4q" path="res://Scripts/Events/strike_manager.gd" id="1_rsvvp"]
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="2_4716m"]
+[ext_resource type="AudioStream" uid="uid://dqd8p2jpb68cy" path="res://Audio/SFX/explosions-sound-effect-337381.mp3" id="3_3i2gl"]
+[ext_resource type="AudioStream" uid="uid://bmkdxoxtvacuf" path="res://Audio/SFX/air-raid-siren-sound-effect-241383.mp3" id="4_xf0jl"]
 
 [sub_resource type="Animation" id="Animation_4716m"]
 resource_name = "AnimationFlash"
@@ -101,6 +103,22 @@ libraries = {
 &"": SubResource("AnimationLibrary_xf0jl")
 }
 autoplay = "AnimationFlash"
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Explosion" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("3_3i2gl")
+max_distance = 5000.0
+bus = &"SFX"
+
+[node name="Siren" type="AudioStreamPlayer2D" parent="Sounds"]
+process_mode = 3
+stream = ExtResource("4_xf0jl")
+volume_db = -10.0
+pitch_scale = 0.8
+max_distance = 5000.0
+bus = &"SFX"
 
 [connection signal="pressed" from="Control/VBoxContainer/DebugStrike" to="." method="_on_debug_strike_pressed"]
 [connection signal="timeout" from="TimeSimulation" to="." method="_on_time_simulation_timeout"]
