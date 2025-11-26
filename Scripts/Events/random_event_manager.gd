@@ -88,7 +88,8 @@ func last_chance() -> void:
 	GlobalVars.resource_money[1] += 10000
 	GlobalVars.second_chance = false
 	$Control/Panel/VBoxContainer/HeaderText.text = str(special_events[0][0])
-	$Control/Panel/VBoxContainer/DescriptionText.text = str(special_events[0][1])
+	$Control/Panel/VBoxContainer/HBoxContainer/EventImage.texture = special_events[0][5]
+	$Control/Panel/VBoxContainer/HBoxContainer/DescriptionText.text = str(special_events[0][1])
 	$Control/Panel/VBoxContainer/ConfirmButton.text = str(special_events[0][2])
 	$Control.visible = true
 
