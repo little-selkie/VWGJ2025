@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dt5blvo4fvgke"]
+[gd_scene load_steps=22 format=3 uid="uid://dt5blvo4fvgke"]
 
 [ext_resource type="Script" uid="uid://g6ao4sshsevr" path="res://Scripts/UI/hud.gd" id="1_qc5w2"]
 [ext_resource type="Texture2D" uid="uid://dpqmx2fioas52" path="res://Icons/Upgrades/Mental_Health.png" id="2_4bm6u"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://hv21k7xgujn8" path="res://Icons/Upgrades/Physical_Health_.png" id="3_ykvyr"]
 [ext_resource type="Texture2D" uid="uid://dboy4vxaewkhq" path="res://Icons/Upgrades/Air_Defense_.png" id="5_lelo4"]
 [ext_resource type="Texture2D" uid="uid://rqr7n11w7vy1" path="res://Icons/Upgrades/Money.png" id="6_1ree7"]
+[ext_resource type="AudioStream" uid="uid://cfablmg0cs227" path="res://Audio/SFX/diesel-power-generator-33638.mp3" id="8_d2sja"]
 
 [sub_resource type="Gradient" id="Gradient_ykvyr"]
 colors = PackedColorArray(0.90588236, 0.12156863, 0, 1, 0, 0.9843137, 0.78039217, 1)
@@ -367,17 +368,70 @@ text = "Exit"
 
 [node name="MuteButton" type="Button" parent="PauseMenu"]
 layout_mode = 0
-offset_left = 3661.0
-offset_top = 2046.0
-offset_right = 3750.0
-offset_bottom = 2099.0
+offset_left = 3284.0
+offset_top = 2042.0
+offset_right = 3373.0
+offset_bottom = 2095.0
 theme_override_colors/font_pressed_color = Color(1, 0.8039216, 0.8117647, 1)
 theme_override_font_sizes/font_size = 32
 toggle_mode = true
 text = "Mute"
+
+[node name="SoundSettings" type="VBoxContainer" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 2960.0
+offset_top = 1881.0
+offset_right = 3714.0
+offset_bottom = 2013.0
+
+[node name="Music" type="HBoxContainer" parent="PauseMenu/SoundSettings"]
+layout_mode = 2
+theme = ExtResource("2_ykvyr")
+alignment = 2
+
+[node name="MusicLabel" type="Label" parent="PauseMenu/SoundSettings/Music"]
+layout_mode = 2
+text = "Music"
+
+[node name="MusicSlider" type="HSlider" parent="PauseMenu/SoundSettings/Music"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_ykvyr")
+min_value = -80.0
+max_value = 20.0
+
+[node name="SFX" type="HBoxContainer" parent="PauseMenu/SoundSettings"]
+layout_mode = 2
+theme = ExtResource("2_ykvyr")
+alignment = 2
+
+[node name="SFXLabel" type="Label" parent="PauseMenu/SoundSettings/SFX"]
+layout_mode = 2
+text = "SFX"
+vertical_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="PauseMenu/SoundSettings/SFX"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+size_flags_vertical = 4
+theme = ExtResource("2_ykvyr")
+min_value = -80.0
+max_value = 20.0
+
+[node name="SampleAudio" type="AudioStreamPlayer2D" parent="PauseMenu"]
+position = Vector2(1926, 957)
+stream = ExtResource("8_d2sja")
+volume_db = -5.0
+max_distance = 5000.0
+bus = &"SFX"
 
 [connection signal="draw" from="PauseMenu" to="." method="_on_pause_menu_draw"]
 [connection signal="hidden" from="PauseMenu" to="." method="_on_pause_menu_hidden"]
 [connection signal="pressed" from="PauseMenu/PauseButtons/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PauseMenu/PauseButtons/Exit" to="." method="_on_exit_pressed"]
 [connection signal="toggled" from="PauseMenu/MuteButton" to="." method="_on_mute_button_toggled"]
+[connection signal="value_changed" from="PauseMenu/SoundSettings/Music/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="drag_ended" from="PauseMenu/SoundSettings/SFX/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
+[connection signal="drag_started" from="PauseMenu/SoundSettings/SFX/SFXSlider" to="." method="_on_sfx_slider_drag_started"]
+[connection signal="value_changed" from="PauseMenu/SoundSettings/SFX/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
