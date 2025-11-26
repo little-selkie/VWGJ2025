@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://iqscfxq1xkrc"]
+
+[ext_resource type="Shader" uid="uid://0hemkg0mwj37" path="res://Art/UX/DistrictBorder.gdshader" id="1_jblo2"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_jblo2")
+shader_parameter/min_height = 0.0
+shader_parameter/max_height = 10.0
+shader_parameter/bottom_color = Color(0, 0, 1, 1)
+shader_parameter/top_color = Color(1, 0, 0, 1)

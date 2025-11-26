@@ -1,15 +1,26 @@
-[gd_scene load_steps=8 format=3 uid="uid://ceij25nk1svn7"]
+[gd_scene load_steps=11 format=3 uid="uid://ceij25nk1svn7"]
 
 [ext_resource type="PackedScene" uid="uid://b0b6gee2o0hl3" path="res://Scenes/City/CitySimulated.tscn" id="1_mmd3b"]
+[ext_resource type="Script" uid="uid://d1dtodg0syeey" path="res://Scripts/City/city_playable.gd" id="1_r2v6b"]
 [ext_resource type="PackedScene" uid="uid://dvo56ka5niilg" path="res://Scenes/Events/RandomEventManager.tscn" id="2_as6u6"]
 [ext_resource type="PackedScene" uid="uid://ecc8wscwb87c" path="res://Scenes/City/District.tscn" id="3_as6u6"]
 [ext_resource type="PackedScene" uid="uid://8h80kcye77gd" path="res://Scenes/City/PowerPlant.tscn" id="3_iswwh"]
 [ext_resource type="PackedScene" uid="uid://cinfkmpfb7obj" path="res://Scenes/Events/StrikeManager.tscn" id="5_om6sx"]
 [ext_resource type="PackedScene" uid="uid://gonh10mhtf6u" path="res://Scenes/UI/UpgradesMenu.tscn" id="6_cfbjk"]
 [ext_resource type="PackedScene" uid="uid://bkhdypxj8q4jn" path="res://Scenes/City/City3D.tscn" id="7_cfbjk"]
+[ext_resource type="Material" uid="uid://iqscfxq1xkrc" path="res://Art/UX/DistrictBorder.tres" id="9_dda04"]
+
+[sub_resource type="Curve3D" id="Curve3D_r2v6b"]
+closed = true
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 4.4549284, 0, 6.1895795, 0, 0, 0, 0, 0, 0, 3.403727, 0, 5.435695, 0, 0, 0, 0, 0, 0, 2.4993744, 0, 4.7995653, 0, 0, 0, 0, 0, 0, 1.350804, 0, 4.308767, 0, 0, 0, 0, 0, 0, -0.6376897, 0, 3.8786852, 0, 0, 0, 0, 0, 0, -0.5787797, 0, 2.8739972, 0, 0, 0, 0, 0, 0, -1.1205313, 0, 1.217401, 0, 0, 0, 0, 0, 0, -1.654512, 0, -0.15391047, 0, 0, 0, 0, 0, 0, 0.28468505, 0, -1.5838889, 0, 0, 0, 0, 0, 0, 0.79572284, 0, -2.4238122, 0, 0, 0, 0, 0, 0, 3.7392614, 0, -0.50661623, 0, 0, 0, 0, 0, 0, 4.7236776, 0, 0.5841641, 0, 0, 0, 0, 0, 0, 6.3179035, 0, 1.2724622, 0, 0, 0, 0, 0, 0, 8.47843, 0, 1.7126632, 0, 0, 0, 0, 0, 0, 7.859638, 0, 2.9942842, 0, 0, 0, 0, 0, 0, 6.7733583, 0, 4.1290803, 0, 0, 0, 0, 0, 0, 5.35662, 0, 5.3434277),
+"tilts": PackedFloat32Array(-1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964)
+}
+point_count = 17
 
 [node name="CityPlayable" type="Node3D"]
 process_mode = 1
+script = ExtResource("1_r2v6b")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.01605177, 0.86747044, -0.49722978, 0.027989445, 0.49748883, 0.86701876, 0.99947935, -9.318077e-10, -0.03226559, -12.749004, 9.41552, -0.7889633)
@@ -119,3 +130,132 @@ offset_right = -3840.0
 offset_bottom = -2160.0
 
 [node name="City3d" parent="." instance=ExtResource("7_cfbjk")]
+
+[node name="CollisionAreas" type="Node3D" parent="."]
+visible = false
+
+[node name="Area_PowerPlant" type="StaticBody3D" parent="CollisionAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.490129, 0.4652617, 7.626425)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="CollisionAreas/Area_PowerPlant"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+polygon = PackedVector2Array(-3.6270204, -0.3353715, -3.5773377, 3.1597986, -1.5896935, 7.109604, 5.4181976, 2.9461699, 4.8534613, 1.3708553, 4.12525, 0.2859683, 1.8770919, -1.2863541)
+
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="CollisionAreas/Area_PowerPlant"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -8.69411)
+polygon = PackedVector2Array(-3.7212253, 8.15506, 1.9933314, 4.621584, 2.7721624, 3.4734104, 0.123456, 1.7111335, -1.784143, 2.6410236, -4.5457864, 6.15766)
+
+[node name="CollisionPolygon3D3" type="CollisionPolygon3D" parent="CollisionAreas/Area_PowerPlant"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, -6.6254864)
+polygon = PackedVector2Array(-3.6394963, 6.290292, 1.884099, 5.306304, 1.9881854, 2.583875, -3.7050376, 6.060896)
+
+[node name="Area_Heating" type="StaticBody3D" parent="CollisionAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.799813, 0.4652617, -3.6835551)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="CollisionAreas/Area_Heating"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+polygon = PackedVector2Array(-1.7033968, -0.748898, -2.1656427, 0.9325812, -2.1829767, 4.8675056, -0.28065586, 8.700491, 2.5976858, 5.1584044, 1.9808264, 0.95117927, 1.4054918, -1.1056561, 0.60278606, -1.6662755, -0.98988247, -1.3732243)
+
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="CollisionAreas/Area_Heating"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 6.5870976, 0, 1.6294398)
+polygon = PackedVector2Array(-1.989007, 2.5998118, 2.2881603, -3.6359148, 1.4734402, -3.9132662, -0.52002335, -2.5265088, -2.2534704, -0.13435197)
+
+[node name="CollisionPolygon3D3" type="CollisionPolygon3D" parent="CollisionAreas/Area_Heating"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 8.090578, 0, 3.9865894)
+polygon = PackedVector2Array(-5.5640554, 1.1074958, -3.4665847, 0.20610294, -3.778606, -2.4807396, -5.9974184, -2.6367495)
+
+[node name="Area_Lab" type="StaticBody3D" parent="CollisionAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.155504, 0.4652617, -8.321125)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="CollisionAreas/Area_Lab"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+polygon = PackedVector2Array(-1.3845539, 0.041505814, -1.5461607, 3.502173, 6.07359, 2.936139, 8.1458435, 2.1616006, 1.5728846, -2.7375946)
+
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="CollisionAreas/Area_Lab"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.29723072, 0, 2.9425788)
+polygon = PackedVector2Array(0.76648235, 1.9492736, 1.1082964, 2.8558254, 3.2334924, 3.1976402, 5.700502, 0.061861992, 1.0191278, 0.34423065)
+
+[node name="Area_Entertainment" type="StaticBody3D" parent="CollisionAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.054913, 0.4652617, -4.9829197)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="CollisionAreas/Area_Entertainment"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -12.708515, 0, -6.931916)
+polygon = PackedVector2Array(-4.3701515, -2.142725, -5.249304, -0.28248882, -6.1495194, 2.418971, -1.8339808, 5.457187, -0.72548413, 5.8139453, 5.237463, 3.4822798, 5.925495, 2.2463694)
+
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="CollisionAreas/Area_Entertainment"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -18.151535, 0, -6.637231)
+polygon = PackedVector2Array(0.1424985, -0.54563046, -1.5909462, -1.20434, -2.4923382, 0.5117712, -0.6895547, 2.0545378)
+
+[node name="Area_Park" type="StaticBody3D" parent="CollisionAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.453764, 0.4652617, -4.030531)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="CollisionAreas/Area_Park"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+polygon = PackedVector2Array(0.69582534, -1.8627057, -3.8328743, 4.6870365, -1.259119, 6.4071207, 0.1097219, 4.507978, 2.2502716, 0.23961997)
+
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="CollisionAreas/Area_Park"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+polygon = PackedVector2Array(2.260999, 0.24845743, 0.15867448, 4.427625, 1.9023974, 3.732222, 3.7753785, 2.3306723, 4.2977753, 1.5916731)
+
+[node name="Area_Civ" type="StaticBody3D" parent="CollisionAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9601192, 0.4652617, 0.33531952)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="CollisionAreas/Area_Civ"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+polygon = PackedVector2Array(-0.55899143, 4.539732, 1.5207515, 5.8191223, 3.9348845, 3.678081, 4.8743205, 2.6949503, 5.5078945, 1.3731854, 2.7573595, 0.8481839)
+
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="CollisionAreas/Area_Civ"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+polygon = PackedVector2Array(-1.7060843, 3.8813467, -0.5481744, 4.525843, 2.7452292, 0.8736088, 1.8713346, 0.261883)
+
+[node name="CollisionPolygon3D3" type="CollisionPolygon3D" parent="CollisionAreas/Area_Civ"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+polygon = PackedVector2Array(-1.6724465, 3.8478866, 1.8569174, 0.2420741, 1.0275934, -0.73245454, -2.1704953, -2.8093004, -2.5770848, -2.0386338)
+
+[node name="CollisionPolygon3D4" type="CollisionPolygon3D" parent="CollisionAreas/Area_Civ"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+polygon = PackedVector2Array(-3.292062, 3.5863726, -1.6659973, 3.9274387, -2.583587, -2.047816, -4.6153927, -0.5294241)
+
+[node name="Area_Hospital" type="StaticBody3D" parent="CollisionAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8639088, 0.4652617, -7.1897793)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="CollisionAreas/Area_Hospital"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+polygon = PackedVector2Array(-0.102813244, -1.2001114, 0.03447199, 6.7336307, 1.4497991, 8.068082, 4.5635185, 8.957717, 5.12965, 7.6839213, 5.392498, 6.4101276, 4.446453, 2.9245553, 3.233317, -0.31047773, 1.939302, -1.8471184, 0.4633174, -2.534563)
+
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="CollisionAreas/Area_Hospital"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+polygon = PackedVector2Array(-6.6435933, 1.2158175, -5.127171, 3.3792465, -0.011773586, 6.654719, -0.11408377, -1.230936, -3.2682424, -0.36152124)
+
+[node name="Area_Government" type="StaticBody3D" parent="CollisionAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4495373, 0.4652617, 5.1316376)
+
+[node name="CollisionPolygon3D" type="CollisionPolygon3D" parent="CollisionAreas/Area_Government"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+polygon = PackedVector2Array(-0.39526176, 3.0573664, 0.522117, 5.389036, 4.6961694, 2.9413748, 6.9319706, 0.9938779, 3.7466297, -0.81539536, 1.8770919, -1.2863541)
+
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="CollisionAreas/Area_Government"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.8937201, 0, -3.6856585)
+polygon = PackedVector2Array(0.7369447, 5.0101347, 1.6654091, 5.913233, 3.4863274, 6.7340717, 5.720304, 2.401408, 5.7797494, 1.3462396, 4.6354117, -1.626066, 2.9411979, -0.9127129, 0.90516853, 1.985285)
+
+[node name="DistrictBorderUX" type="Node3D" parent="."]
+
+[node name="Border_Civ" type="Path3D" parent="DistrictBorderUX"]
+curve = SubResource("Curve3D_r2v6b")
+debug_custom_color = Color(1, 1, 1, 1)
+
+[node name="CSGPolygon3D" type="CSGPolygon3D" parent="DistrictBorderUX/Border_Civ"]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, 0, 0, 0)
+material_override = ExtResource("9_dda04")
+polygon = PackedVector2Array(0, 0, 0, 0.02, 1, 0.02, 1, 0)
+mode = 2
+path_node = NodePath("..")
+path_interval_type = 0
+path_interval = 0.25
+path_simplify_angle = 0.0
+path_rotation = 2
+path_rotation_accurate = false
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
