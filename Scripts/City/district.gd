@@ -279,24 +279,31 @@ func shader_change(are_lights_on: bool) -> void:
 	if district_name == "Hospital":
 		GlobalVars.buildings_shader.set_shader_parameter("Hospital_enabled", are_lights_on)
 		GlobalVars.road_shader.set_shader_parameter("Hospital_enabled", are_lights_on)
+		GlobalVars.buildings_shaders[3].set_shader_parameter("Power_Enabled", are_lights_on)
 	elif district_name == "Entertainment":
 		GlobalVars.buildings_shader.set_shader_parameter("Entertainment_enabled", are_lights_on)
 		GlobalVars.road_shader.set_shader_parameter("Entertainment_enabled", are_lights_on)
+		GlobalVars.buildings_shaders[5].set_shader_parameter("Power_Enabled", are_lights_on)
 	elif district_name == "Park":
 		GlobalVars.buildings_shader.set_shader_parameter("Park_enabled", are_lights_on)
 		GlobalVars.road_shader.set_shader_parameter("Park_enabled", are_lights_on)
+		GlobalVars.buildings_shaders[6].set_shader_parameter("Power_Enabled", are_lights_on)
 	elif district_name == "Civilian Building":
 		GlobalVars.buildings_shader.set_shader_parameter("Civ_enabled", are_lights_on)
 		GlobalVars.road_shader.set_shader_parameter("Civ_enabled", are_lights_on)
+		GlobalVars.buildings_shaders[0].set_shader_parameter("Power_Enabled", are_lights_on)
 	elif district_name == "Heating":
 		GlobalVars.buildings_shader.set_shader_parameter("Heat_enabled", are_lights_on)
 		GlobalVars.road_shader.set_shader_parameter("Heat_enabled", are_lights_on)
+		GlobalVars.buildings_shaders[1].set_shader_parameter("Power_Enabled", are_lights_on)
 	elif district_name == "Government":
 		GlobalVars.buildings_shader.set_shader_parameter("Government_enabled", are_lights_on)
 		GlobalVars.road_shader.set_shader_parameter("Government_enabled", are_lights_on)
+		GlobalVars.buildings_shaders[2].set_shader_parameter("Power_Enabled", are_lights_on)
 	elif district_name == "Laboratory":
 		GlobalVars.buildings_shader.set_shader_parameter("Lab_enabled", are_lights_on)
 		GlobalVars.road_shader.set_shader_parameter("Lab_enabled", are_lights_on)
+		GlobalVars.buildings_shaders[4].set_shader_parameter("Power_Enabled", are_lights_on)
 
 func _on_debug_brake_pressed() -> void:
 	is_broken = true

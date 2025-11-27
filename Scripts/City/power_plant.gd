@@ -45,12 +45,14 @@ func _on_check_toggled(toggled_on: bool) -> void:
 		GlobalVars.resource_power[1] += gives_energy
 		GlobalVars.buildings_shader.set_shader_parameter("Power_enabled", true)
 		GlobalVars.road_shader.set_shader_parameter("Power_enabled", true)
+		GlobalVars.buildings_shaders[7].set_shader_parameter("Power_Enabled", true)
 	if !toggled_on:
 		is_on = false
 		$Generators.playing = true
 		GlobalVars.resource_power[1] -= gives_energy
 		GlobalVars.buildings_shader.set_shader_parameter("Power_enabled", false)
 		GlobalVars.road_shader.set_shader_parameter("Power_enabled", false)
+		GlobalVars.buildings_shaders[7].set_shader_parameter("Power_Enabled", false)
 
 func broken() -> void:
 	$On_Off/Check.button_pressed = false

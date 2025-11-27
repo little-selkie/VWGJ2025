@@ -68,6 +68,18 @@ var protection: int = 0
 var buildings_shader: ShaderMaterial = load("res://Art/City/Buildings_Material.tres")
 var road_shader: ShaderMaterial = load("res://Art/City/Road_Material.tres")
 
+# 0 - civilian, 1 - heating, 2 - goverment, 3 - hospital, 4 - lab, 5 - entertament, 6 - park, 7 - powerplant
+var buildings_shaders: Array[ShaderMaterial] = [
+	load("res://Buildings/Shader/CivMat.tres"),
+	load("res://Buildings/Shader/FacMat.tres"),
+	load("res://Buildings/Shader/GovMat.tres"),
+	load("res://Buildings/Shader/HosMat.tres"),
+	load("res://Buildings/Shader/LabMat.tres"),
+	load("res://Buildings/Shader/MalMat.tres"),
+	load("res://Buildings/Shader/ParMat.tres"),
+	load("res://Buildings/Shader/StaMat.tres")
+]
+
 func _init() -> void:
 	reload()
 
