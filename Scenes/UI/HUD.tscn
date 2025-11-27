@@ -90,15 +90,6 @@ offset_bottom = 143.0
 theme = ExtResource("2_ykvyr")
 theme_override_styles/panel = SubResource("StyleBoxTexture_eebq5")
 
-[node name="BGForWarning" type="PanelContainer" parent="."]
-custom_minimum_size = Vector2(1000, 200)
-offset_left = 2117.0
-offset_top = -57.0
-offset_right = 3117.0
-offset_bottom = 143.0
-theme = ExtResource("2_ykvyr")
-theme_override_styles/panel = SubResource("StyleBoxTexture_eebq5")
-
 [node name="PassiveIncome" type="HBoxContainer" parent="."]
 offset_left = 810.0
 offset_top = 6.0
