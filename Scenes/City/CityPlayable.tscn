@@ -135,10 +135,10 @@ production_timer = 0.05
 fix_cost = 500
 
 [node name="HeatingDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
-offset_left = 1578.0
-offset_top = 1425.0
-offset_right = 1578.0
-offset_bottom = 1425.0
+offset_left = 1707.0
+offset_top = 1159.0
+offset_right = 1707.0
+offset_bottom = 1159.0
 district_name = "Heating"
 needs_energy = 4
 is_on = false
@@ -158,9 +158,9 @@ fix_cost = 500
 
 [node name="TechnologyDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
 offset_left = 635.0
-offset_top = 1254.0
+offset_top = 1149.0
 offset_right = 635.0
-offset_bottom = 1254.0
+offset_bottom = 1149.0
 district_name = "Laboratory"
 needs_energy = 4
 is_on = false
@@ -169,9 +169,9 @@ produces_1_count = 4
 fix_cost = 500
 
 [node name="PowerPlant" parent="Districts" instance=ExtResource("3_iswwh")]
-offset_left = 3065.0
+offset_left = 2721.0
 offset_top = 971.0
-offset_right = 3065.0
+offset_right = 2721.0
 offset_bottom = 971.0
 district_name = "Power Plant"
 fix_cost = 1000
