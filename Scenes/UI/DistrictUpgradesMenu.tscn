@@ -57,10 +57,12 @@ theme_override_styles/title_hover_panel = SubResource("StyleBoxTexture_msl1y")
 theme_override_styles/title_collapsed_panel = SubResource("StyleBoxTexture_msl1y")
 theme_override_styles/title_collapsed_hover_panel = SubResource("StyleBoxTexture_msl1y")
 theme_override_styles/panel = SubResource("StyleBoxTexture_s8xan")
+folded = true
 title = "District Upgrades"
 title_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UpgradesMenu"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
