@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://078tgcvsvcbr"]
+[gd_scene load_steps=15 format=3 uid="uid://078tgcvsvcbr"]
 
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="1_54j4s"]
 [ext_resource type="Script" uid="uid://cqyj8vred4vnv" path="res://Scripts/UI/district_upgrades_menu.gd" id="1_dhfmc"]
@@ -7,7 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://hvbkjh106y7y" path="res://Icons/Additional/Upgrades_bottom.png" id="4_3ovtx"]
 [ext_resource type="AudioStream" uid="uid://lvt03mbttcbu" path="res://Audio/SFX/button-4-214382.mp3" id="4_bny83"]
 [ext_resource type="AudioStream" uid="uid://uvfqbuxyjfn4" path="res://Audio/SFX/cash-register-fake-88639.mp3" id="5_vrqec"]
+[ext_resource type="Texture2D" uid="uid://rqr7n11w7vy1" path="res://Icons/Upgrades/Money.png" id="6_msl1y"]
 [ext_resource type="AudioStream" uid="uid://cymgkgfqkrxg" path="res://Audio/SFX/folding-37422.mp3" id="6_w7pba"]
+[ext_resource type="Texture2D" uid="uid://calkv8wwbh5fo" path="res://Icons/Upgrades/Tech.png" id="7_3507b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_msl1y"]
 content_margin_left = 164.0
@@ -21,14 +23,18 @@ expand_margin_bottom = 5.0
 axis_stretch_horizontal = 2
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8xan"]
-content_margin_left = 95.0
+content_margin_left = 78.0
 content_margin_top = 51.0
-content_margin_right = 104.0
+content_margin_right = 87.0
 content_margin_bottom = 17.0
 texture = ExtResource("4_3ovtx")
 expand_margin_left = 69.0
 expand_margin_right = 80.0
 expand_margin_bottom = 25.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_msl1y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3507b"]
 
 [node name="DistrictUpgradesMenu" type="Control"]
 layout_mode = 3
@@ -45,17 +51,16 @@ layout_mode = 0
 offset_right = 24.0
 offset_bottom = 32.0
 theme = ExtResource("1_54j4s")
+theme_override_font_sizes/font_size = 36
 theme_override_styles/title_panel = SubResource("StyleBoxTexture_msl1y")
 theme_override_styles/title_hover_panel = SubResource("StyleBoxTexture_msl1y")
 theme_override_styles/title_collapsed_panel = SubResource("StyleBoxTexture_msl1y")
 theme_override_styles/title_collapsed_hover_panel = SubResource("StyleBoxTexture_msl1y")
 theme_override_styles/panel = SubResource("StyleBoxTexture_s8xan")
-folded = true
 title = "District Upgrades"
 title_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UpgradesMenu"]
-visible = false
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
@@ -66,6 +71,13 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme = ExtResource("1_54j4s")
+theme_override_constants/h_separation = 2
+theme_override_constants/v_separation = 0
+theme_override_constants/line_separation = 0
+theme_override_constants/icon_margin = 0
+theme_override_font_sizes/font_size = 30
+theme_override_styles/panel = SubResource("StyleBoxEmpty_msl1y")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_3507b")
 allow_search = false
 auto_width = true
 auto_height = true
@@ -82,33 +94,41 @@ item_1/icon = ExtResource("2_gxjsq")
 [node name="Cost" type="HBoxContainer" parent="UpgradesMenu/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_54j4s")
+theme_override_constants/separation = 5
 alignment = 1
 
 [node name="MoneyCost" type="Label" parent="UpgradesMenu/VBoxContainer/Cost"]
 layout_mode = 2
 theme = ExtResource("1_54j4s")
+theme_override_font_sizes/font_size = 40
 text = "00"
 
-[node name="PlaceholderMoney" type="Label" parent="UpgradesMenu/VBoxContainer/Cost"]
+[node name="Money" type="TextureRect" parent="UpgradesMenu/VBoxContainer/Cost"]
 layout_mode = 2
+tooltip_text = "Money"
 theme = ExtResource("1_54j4s")
-text = "Money"
+texture = ExtResource("6_msl1y")
+expand_mode = 2
 
 [node name="TechnologyCost" type="Label" parent="UpgradesMenu/VBoxContainer/Cost"]
 layout_mode = 2
 theme = ExtResource("1_54j4s")
+theme_override_font_sizes/font_size = 40
 text = "00"
 
-[node name="PlaceholderTechnology" type="Label" parent="UpgradesMenu/VBoxContainer/Cost"]
+[node name="Technology" type="TextureRect" parent="UpgradesMenu/VBoxContainer/Cost"]
 layout_mode = 2
+tooltip_text = "Technology"
 theme = ExtResource("1_54j4s")
-text = "Technology"
+texture = ExtResource("7_3507b")
+expand_mode = 2
 
 [node name="BuyButton" type="Button" parent="UpgradesMenu/VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
 theme = ExtResource("1_54j4s")
+theme_override_font_sizes/font_size = 40
 text = "Buy"
 
 [node name="Sounds" type="Node2D" parent="."]
