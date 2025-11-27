@@ -1,14 +1,34 @@
-[gd_scene load_steps=8 format=3 uid="uid://078tgcvsvcbr"]
+[gd_scene load_steps=11 format=3 uid="uid://078tgcvsvcbr"]
 
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="1_54j4s"]
 [ext_resource type="Script" uid="uid://cqyj8vred4vnv" path="res://Scripts/UI/district_upgrades_menu.gd" id="1_dhfmc"]
 [ext_resource type="Texture2D" uid="uid://bu2gq36n27ab3" path="res://icon.svg" id="2_gxjsq"]
+[ext_resource type="Texture2D" uid="uid://1rd7atb31nf2" path="res://Icons/Additional/Upgrades_top.png" id="3_uslyp"]
+[ext_resource type="Texture2D" uid="uid://hvbkjh106y7y" path="res://Icons/Additional/Upgrades_bottom.png" id="4_3ovtx"]
 [ext_resource type="AudioStream" uid="uid://lvt03mbttcbu" path="res://Audio/SFX/button-4-214382.mp3" id="4_bny83"]
 [ext_resource type="AudioStream" uid="uid://uvfqbuxyjfn4" path="res://Audio/SFX/cash-register-fake-88639.mp3" id="5_vrqec"]
 [ext_resource type="AudioStream" uid="uid://cymgkgfqkrxg" path="res://Audio/SFX/folding-37422.mp3" id="6_w7pba"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gxjsq"]
-bg_color = Color(0.24270698, 0.43538237, 0.24599662, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_msl1y"]
+content_margin_left = 164.0
+content_margin_top = 69.0
+content_margin_right = 159.0
+texture = ExtResource("3_uslyp")
+expand_margin_left = 277.0
+expand_margin_top = 18.0
+expand_margin_right = 298.0
+expand_margin_bottom = 5.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_s8xan"]
+content_margin_left = 95.0
+content_margin_top = 51.0
+content_margin_right = 104.0
+content_margin_bottom = 17.0
+texture = ExtResource("4_3ovtx")
+expand_margin_left = 69.0
+expand_margin_right = 80.0
+expand_margin_bottom = 25.0
 
 [node name="DistrictUpgradesMenu" type="Control"]
 layout_mode = 3
@@ -25,17 +45,26 @@ layout_mode = 0
 offset_right = 24.0
 offset_bottom = 32.0
 theme = ExtResource("1_54j4s")
-theme_override_styles/panel = SubResource("StyleBoxFlat_gxjsq")
+theme_override_styles/title_panel = SubResource("StyleBoxTexture_msl1y")
+theme_override_styles/title_hover_panel = SubResource("StyleBoxTexture_msl1y")
+theme_override_styles/title_collapsed_panel = SubResource("StyleBoxTexture_msl1y")
+theme_override_styles/title_collapsed_hover_panel = SubResource("StyleBoxTexture_msl1y")
+theme_override_styles/panel = SubResource("StyleBoxTexture_s8xan")
 folded = true
 title = "District Upgrades"
+title_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UpgradesMenu"]
 visible = false
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("1_54j4s")
 
 [node name="UpgradesList" type="ItemList" parent="UpgradesMenu/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme = ExtResource("1_54j4s")
 allow_search = false
 auto_width = true
@@ -77,6 +106,8 @@ text = "Technology"
 
 [node name="BuyButton" type="Button" parent="UpgradesMenu/VBoxContainer"]
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 theme = ExtResource("1_54j4s")
 text = "Buy"
 
