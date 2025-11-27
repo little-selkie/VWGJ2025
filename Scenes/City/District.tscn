@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ecc8wscwb87c"]
+[gd_scene load_steps=31 format=3 uid="uid://ecc8wscwb87c"]
 
 [ext_resource type="Script" uid="uid://b5xd2rmp4iqb2" path="res://Scripts/City/district.gd" id="1_j064q"]
 [ext_resource type="PackedScene" uid="uid://078tgcvsvcbr" path="res://Scenes/UI/DistrictUpgradesMenu.tscn" id="2_jrh6f"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://dm88on4ur3kty" path="res://Icons/Upgrades/Electricity.png" id="3_bbwrn"]
 [ext_resource type="Texture2D" uid="uid://dboy4vxaewkhq" path="res://Icons/Upgrades/Air_Defense_.png" id="3_mkv84"]
 [ext_resource type="Texture2D" uid="uid://hnvdw0ewvlpq" path="res://Icons/Additional/Info_Bubble.png" id="4_tqgjt"]
+[ext_resource type="Texture2D" uid="uid://rqr7n11w7vy1" path="res://Icons/Upgrades/Money.png" id="6_e6uhw"]
+[ext_resource type="Texture2D" uid="uid://cve3felu3ygsl" path="res://Icons/Additional/Reconstruction_.png" id="6_kdwf6"]
 [ext_resource type="AudioStream" uid="uid://d15seqb5v0lny" path="res://Audio/SFX/light-switch-on-382714.mp3" id="6_ww6a0"]
 [ext_resource type="AudioStream" uid="uid://cfablmg0cs227" path="res://Audio/SFX/diesel-power-generator-33638.mp3" id="7_gjx8e"]
 [ext_resource type="AudioStream" uid="uid://cvdy7bnk52bqq" path="res://Audio/SFX/book-opening-345808.mp3" id="9_nrkkc"]
@@ -67,7 +69,49 @@ _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\">
 base_scale = 3.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j064q"]
-bg_color = Color(0.33844706, 0.13373291, 0.08383446, 1)
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qonli"]
+texture = ExtResource("6_kdwf6")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="Animation" id="Animation_qonli"]
+resource_name = "BrokenFlash"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BrokenLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.35686275, 0.2901961, 1), Color(1, 0.35686275, 0.2901961, 0.2509804), Color(1, 0.35686275, 0.2901961, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_e6uhw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BrokenLabel:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.35686275, 0.2901961, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fqmyk"]
+_data = {
+&"BrokenFlash": SubResource("Animation_qonli"),
+&"RESET": SubResource("Animation_e6uhw")
+}
 
 [node name="District" type="Control"]
 layout_mode = 3
@@ -264,53 +308,68 @@ offset_bottom = 46.0
 text = "[Debug] Strike"
 
 [node name="Panel" type="Panel" parent="."]
-visible = false
+custom_minimum_size = Vector2(82, 32)
 layout_mode = 0
-offset_left = 27.0
-offset_top = 21.0
-offset_right = 67.0
-offset_bottom = 61.0
+offset_left = 55.0
+offset_top = 83.0
+offset_right = 137.0
+offset_bottom = 115.0
 scale = Vector2(6, 6)
 theme_override_styles/panel = SubResource("StyleBoxFlat_j064q")
 
 [node name="BrokenLabel" type="Label" parent="Panel"]
+self_modulate = Color(1, 0.35686275, 0.2901961, 1)
 layout_mode = 0
-offset_left = 3.7109377
-offset_top = 12.500001
-offset_right = 69.71094
-offset_bottom = 35.5
-scale = Vector2(0.50610095, 0.50610095)
-text = "BROKEN"
-horizontal_alignment = 1
+offset_left = 33.666664
+offset_top = 3.333333
+offset_right = 193.66666
+offset_bottom = 67.333336
+scale = Vector2(0.28666687, 0.28666687)
+theme = ExtResource("2_wwqtv")
+text = "Broken"
+
+[node name="FixButton" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 8.999999
+offset_top = 1.4999996
+offset_right = 74.0
+offset_bottom = 67.5
+scale = Vector2(0.305, 0.305)
+theme = ExtResource("2_wwqtv")
+theme_override_font_sizes/font_size = 36
+text = "Fix"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 layout_mode = 0
-offset_left = 8.166666
-offset_top = 30.66667
-offset_right = 137.16667
-offset_bottom = 70.66667
+offset_left = 6.833333
+offset_top = 19.833332
+offset_right = 166.83333
+offset_bottom = 77.83333
 scale = Vector2(0.19999993, 0.19999993)
-
-[node name="FixButton" type="Button" parent="Panel/HBoxContainer"]
-layout_mode = 2
-text = "Fix"
+theme = ExtResource("2_wwqtv")
+theme_override_constants/separation = 5
 
 [node name="FixCost" type="Label" parent="Panel/HBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 42
 text = "000"
 
-[node name="гривнів" type="Label" parent="Panel/HBoxContainer"]
+[node name="гривнів" type="TextureRect" parent="Panel/HBoxContainer"]
 layout_mode = 2
-text = "гривнів"
+texture = ExtResource("6_e6uhw")
+expand_mode = 2
 
 [node name="Fixing" type="VBoxContainer" parent="Panel"]
 visible = false
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 0
-offset_left = 4.6666665
-offset_top = 5.4999995
-offset_right = 58.666668
-offset_bottom = 59.5
-scale = Vector2(0.5533335, 0.5533335)
+offset_left = 8.166666
+offset_top = -1.1666676
+offset_right = 258.16666
+offset_bottom = 121.833336
+scale = Vector2(0.26996467, 0.26996467)
+theme = ExtResource("2_wwqtv")
+theme_override_constants/separation = 0
 
 [node name="FixTickTimer" type="Timer" parent="Panel/Fixing"]
 wait_time = 0.1
@@ -318,6 +377,7 @@ one_shot = true
 
 [node name="Fixing" type="Label" parent="Panel/Fixing"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 46
 text = "Fixing"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -325,6 +385,22 @@ vertical_alignment = 1
 [node name="ProgressBar" type="ProgressBar" parent="Panel/Fixing"]
 layout_mode = 2
 step = 1.0
+
+[node name="Decor" type="Panel" parent="Panel"]
+custom_minimum_size = Vector2(66, 66)
+layout_mode = 0
+offset_left = -19.5
+offset_top = -30.5
+offset_right = 46.5
+offset_bottom = 35.5
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_qonli")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Panel"]
+libraries = {
+&"": SubResource("AnimationLibrary_fqmyk")
+}
+autoplay = "BrokenFlash"
 
 [node name="DistrictUpgradesMenu" parent="." instance=ExtResource("2_jrh6f")]
 layout_mode = 1
@@ -374,5 +450,5 @@ bus = &"SFX"
 [connection signal="timeout" from="ProductionTick" to="." method="_on_production_tick_timeout"]
 [connection signal="toggled" from="On_Off/Check" to="." method="_on_check_toggled"]
 [connection signal="pressed" from="DebugBrake" to="." method="_on_debug_brake_pressed"]
-[connection signal="pressed" from="Panel/HBoxContainer/FixButton" to="." method="_on_fix_button_pressed"]
+[connection signal="pressed" from="Panel/FixButton" to="." method="_on_fix_button_pressed"]
 [connection signal="timeout" from="Panel/Fixing/FixTickTimer" to="." method="_on_fix_tick_timer_timeout"]

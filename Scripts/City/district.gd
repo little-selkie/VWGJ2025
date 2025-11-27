@@ -278,8 +278,9 @@ func broken() -> void:
 	$Panel/HBoxContainer/FixCost.text = str(fix_cost)
 	$Panel.visible = true
 	if $Panel/Fixing/FixTickTimer.is_stopped():
-		$Panel/BrokenLabel.visible = true
 		$Panel/HBoxContainer.visible = true
+		$Panel/FixButton.visible = true
+		$Panel/BrokenLabel.visible = true
 		$Panel/Fixing.visible = false
 
 func shader_change(are_lights_on: bool) -> void:
@@ -323,8 +324,9 @@ func _on_fix_button_pressed() -> void:
 		GlobalVars.resource_money[1] -= fix_cost
 		$Panel/Fixing/FixTickTimer.start()
 		$Panel/Fixing.visible = true
-		$Panel/HBoxContainer.visible = false
 		$Panel/BrokenLabel.visible = false
+		$Panel/HBoxContainer.visible = false
+		$Panel/FixButton.visible = false
 
 func fix() -> void:
 	$Panel.visible = false
