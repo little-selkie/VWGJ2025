@@ -38,12 +38,20 @@ var government_events: Array[Array] = [
 var government_events_upgrade_1: Array[Array] = [
 	["Humanitarian Help", "Non-Profit Organization collected donations and bought medicine, food and heating blankets for your people. \r\n Your city gets a moderate boost to People's Mental Health, People's Physical Health and Heating.", "Thank you!", humanitarian_help, "type", load("res://Icons/Funny/meme.png")],
 	["Huge Donation", "Foreign celebrity hosted charity consert and collected a huge amount of donations for your people. \r\n Your city gets a considerate amount of money and a slight boost to People's Mental Health.", "Thank you!", huge_money_donation, "type", load("res://Icons/Funny/huge_donation.png")],
+	["Protection", "Your partners donated a huge amount of protection tools to counteract enemy attacks. Your people now feel a bit safer. \r\n Your city gets 20% more protection.", "Thank you!", protection_donation_1, "type", load("res://Icons/Funny/meme.png")],
+	["Protection", "Your partners donated a huge amount of protection tools to counteract enemy attacks. Your people now feel a bit safer. \r\n Your city gets 20% more protection.", "Thank you!", protection_donation_1, "type", load("res://Icons/Funny/meme.png")],
+	["Protection", "Your partners donated a huge amount of protection tools to counteract enemy attacks. Your people now feel a bit safer. \r\n Your city gets 20% more protection.", "Thank you!", protection_donation_1, "type", load("res://Icons/Funny/meme.png")],
+	["Protection", "Your partners donated a huge amount of protection tools to counteract enemy attacks. Your people now feel a bit safer. \r\n Your city gets 20% more protection.", "Thank you!", protection_donation_1, "type", load("res://Icons/Funny/meme.png")],
 	["Protection", "Your partners donated a huge amount of protection tools to counteract enemy attacks. Your people now feel a bit safer. \r\n Your city gets 20% more protection.", "Thank you!", protection_donation_1, "type", load("res://Icons/Funny/meme.png")]
 ]
 
 var government_events_upgrade_2: Array[Array] = [
 	["Humanitarian Help", "Non-Profit Organization collected donations and bought medicine, food and heating blankets for your people. \r\n Your city gets a moderate boost to People's Mental Health, People's Physical Health and Heating.", "Thank you!", humanitarian_help, "type", load("res://Icons/Funny/meme.png")],
 	["Huge Donation", "Foreign celebrity hosted charity consert and collected a huge amount of donations for your people. \r\n Your city gets a considerate amount of money and a slight boost to People's Mental Health.", "Thank you!", huge_money_donation, "type", load("res://Icons/Funny/huge_donation.png")],
+	["Protection", "Your partners donated a huge amount of protection tools to counteract enemy attacks. Your people now feel a bit safer. \r\n Your city gets 20% more protection.", "Thank you!", protection_donation_2, "type", load("res://Icons/Funny/meme.png")],
+	["Protection", "Your partners donated a huge amount of protection tools to counteract enemy attacks. Your people now feel a bit safer. \r\n Your city gets 20% more protection.", "Thank you!", protection_donation_2, "type", load("res://Icons/Funny/meme.png")],
+	["Protection", "Your partners donated a huge amount of protection tools to counteract enemy attacks. Your people now feel a bit safer. \r\n Your city gets 20% more protection.", "Thank you!", protection_donation_2, "type", load("res://Icons/Funny/meme.png")],
+	["Protection", "Your partners donated a huge amount of protection tools to counteract enemy attacks. Your people now feel a bit safer. \r\n Your city gets 20% more protection.", "Thank you!", protection_donation_2, "type", load("res://Icons/Funny/meme.png")],
 	["Protection", "Your partners donated a huge amount of protection tools to counteract enemy attacks. Your people now feel a bit safer. \r\n Your city gets 20% more protection.", "Thank you!", protection_donation_2, "type", load("res://Icons/Funny/meme.png")]
 ]
 
