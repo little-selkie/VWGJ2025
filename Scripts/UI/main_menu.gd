@@ -16,8 +16,10 @@ func _on_exit_button_pressed() -> void:
 func _on_mute_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		AudioServer.set_bus_mute(bus, true)
+		$MuteButton.icon = load("res://Icons/Additional/Sound_Off_Icon.png")
 	if !toggled_on:
 		AudioServer.set_bus_mute(bus, false)
+		$MuteButton.icon = load("res://Icons/Additional/Sound_On_Icon.png")
 
 
 func _on_music_slider_value_changed(value: float) -> void:

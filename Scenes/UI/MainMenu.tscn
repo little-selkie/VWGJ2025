@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://1mmx1mnvcgjn"]
+[gd_scene load_steps=18 format=3 uid="uid://1mmx1mnvcgjn"]
 
 [ext_resource type="Script" uid="uid://df7vk2vqagst1" path="res://Scripts/UI/main_menu.gd" id="1_g18y6"]
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="2_72sra"]
@@ -9,9 +9,21 @@
 [ext_resource type="StyleBox" uid="uid://6j5enffhjbeo" path="res://Art/MainMenu/MainMenuButtonStyle_Normal.tres" id="4_ynupv"]
 [ext_resource type="StyleBox" uid="uid://71elciwrq1ur" path="res://Art/MainMenu/MainMenuButtonStyle_Pressed.tres" id="5_m48tj"]
 [ext_resource type="StyleBox" uid="uid://djd0xssjrlkqs" path="res://Art/MainMenu/MainMenuButtonStyle_Hovered.tres" id="6_dvisc"]
+[ext_resource type="Texture2D" uid="uid://drht5fpacld6s" path="res://Icons/Additional/Sound_On_Icon.png" id="8_dvisc"]
+[ext_resource type="Texture2D" uid="uid://cgbmwch1c05xw" path="res://Icons/Funny/goobers.png" id="9_ab04i"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_370kx"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hys1s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fgqbg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_euk5f"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kdsd0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w0mr3"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -89,27 +101,12 @@ theme_override_styles/hover = ExtResource("6_dvisc")
 text = "Exit
 "
 
-[node name="MuteButton" type="Button" parent="BG"]
-layout_mode = 0
-offset_left = 3302.0
-offset_top = 2032.0
-offset_right = 3391.0
-offset_bottom = 2085.0
-theme = ExtResource("2_72sra")
-theme_override_colors/font_pressed_color = Color(1, 0.8039216, 0.8117647, 1)
-theme_override_font_sizes/font_size = 32
-theme_override_styles/normal = ExtResource("4_ynupv")
-theme_override_styles/pressed = ExtResource("5_m48tj")
-theme_override_styles/hover = ExtResource("6_dvisc")
-toggle_mode = true
-text = "Mute"
-
 [node name="SoundSettings" type="VBoxContainer" parent="BG"]
 layout_mode = 0
-offset_left = 2960.0
-offset_top = 1881.0
-offset_right = 3714.0
-offset_bottom = 2013.0
+offset_left = 2643.0
+offset_top = 1945.0
+offset_right = 3397.0
+offset_bottom = 2077.0
 
 [node name="Music" type="HBoxContainer" parent="BG/SoundSettings"]
 layout_mode = 2
@@ -150,6 +147,60 @@ theme_override_styles/grabber_area_highlight = ExtResource("6_dvisc")
 min_value = -80.0
 max_value = 20.0
 
+[node name="MuteButton" type="Button" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 3454.0002
+offset_top = 1912.0002
+offset_right = 5502.0
+offset_bottom = 3960.0002
+scale = Vector2(0.1, 0.1)
+tooltip_text = "Mute Button"
+theme = ExtResource("2_72sra")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_hys1s")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_fgqbg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_euk5f")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_kdsd0")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_w0mr3")
+toggle_mode = true
+icon = ExtResource("8_dvisc")
+
+[node name="FeelFreeText" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
+offset_left = 3352.0
+offset_top = 1661.0
+offset_right = 3752.0
+offset_bottom = 1911.0
+theme = ExtResource("2_72sra")
+theme_override_font_sizes/normal_font_size = 36
+text = "Feel free to fully mute the audio if you are getting overwhelmed with sounds. We understand <3"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Arrow" type="RichTextLabel" parent="."]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 0
+offset_left = 3591.0
+offset_top = 1907.0
+offset_right = 3641.0
+offset_bottom = 1957.0
+rotation = 1.5707964
+theme = ExtResource("2_72sra")
+theme_override_font_sizes/normal_font_size = 36
+text = "->"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Cat" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 3688.0
+offset_top = 1859.0
+offset_right = 3908.0
+offset_bottom = 2061.0
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("9_ab04i")
+
 [node name="BGMenuMusic" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(1926, 960)
 stream = ExtResource("2_mjmdf")
@@ -166,8 +217,8 @@ bus = &"SFX"
 
 [connection signal="pressed" from="BG/VBoxContainer/MenuButtons/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="BG/VBoxContainer/MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]
-[connection signal="toggled" from="BG/MuteButton" to="." method="_on_mute_button_toggled"]
 [connection signal="value_changed" from="BG/SoundSettings/Music/MusicSlider" to="." method="_on_music_slider_value_changed"]
 [connection signal="drag_ended" from="BG/SoundSettings/SFX/SFXSlider" to="." method="_on_sfx_slider_drag_ended"]
 [connection signal="drag_started" from="BG/SoundSettings/SFX/SFXSlider" to="." method="_on_sfx_slider_drag_started"]
 [connection signal="value_changed" from="BG/SoundSettings/SFX/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="toggled" from="MuteButton" to="." method="_on_mute_button_toggled"]
