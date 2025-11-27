@@ -70,7 +70,7 @@ func _ready() -> void:
 		government_events_upgrade_2[i][4] = "Government"
 
 func _enter_tree() -> void:
-	set_random_time()
+	$EventTimer.wait_time = 50
 	$Control.visible = false
 
 func _on_event_timer_timeout() -> void:

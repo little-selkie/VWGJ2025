@@ -1,14 +1,26 @@
-[gd_scene load_steps=23 format=3 uid="uid://dt5blvo4fvgke"]
+[gd_scene load_steps=34 format=3 uid="uid://dt5blvo4fvgke"]
 
 [ext_resource type="Script" uid="uid://g6ao4sshsevr" path="res://Scripts/UI/hud.gd" id="1_qc5w2"]
 [ext_resource type="Texture2D" uid="uid://dpqmx2fioas52" path="res://Icons/Upgrades/Mental_Health.png" id="2_4bm6u"]
 [ext_resource type="PackedScene" uid="uid://bo8o0x3o2moa6" path="res://Scenes/UI/WinLosePopUp.tscn" id="2_qc5w2"]
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="2_ykvyr"]
+[ext_resource type="Texture2D" uid="uid://hvbkjh106y7y" path="res://Icons/Additional/Upgrades_bottom.png" id="3_18ujm"]
+[ext_resource type="Texture2D" uid="uid://y3cub6ehhwme" path="res://Icons/Additional/Notification_Screen.png" id="3_eebq5"]
 [ext_resource type="Texture2D" uid="uid://hv21k7xgujn8" path="res://Icons/Upgrades/Physical_Health_.png" id="3_ykvyr"]
 [ext_resource type="Texture2D" uid="uid://dboy4vxaewkhq" path="res://Icons/Upgrades/Air_Defense_.png" id="5_lelo4"]
 [ext_resource type="Texture2D" uid="uid://rqr7n11w7vy1" path="res://Icons/Upgrades/Money.png" id="6_1ree7"]
 [ext_resource type="AudioStream" uid="uid://cfablmg0cs227" path="res://Audio/SFX/diesel-power-generator-33638.mp3" id="8_d2sja"]
 [ext_resource type="PackedScene" uid="uid://c40pgjptu5ut3" path="res://Scenes/UI/Tutorial.tscn" id="9_i4i0y"]
+[ext_resource type="Texture2D" uid="uid://drht5fpacld6s" path="res://Icons/Additional/Sound_On_Icon.png" id="9_pydgx"]
+[ext_resource type="Texture2D" uid="uid://cgbmwch1c05xw" path="res://Icons/Funny/goobers.png" id="10_pydgx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eebq5"]
+texture = ExtResource("3_18ujm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_18ujm"]
+texture = ExtResource("3_eebq5")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
 
 [sub_resource type="Gradient" id="Gradient_ykvyr"]
 colors = PackedColorArray(0.90588236, 0.12156863, 0, 1, 0, 0.9843137, 0.78039217, 1)
@@ -53,56 +65,85 @@ gradient = SubResource("Gradient_omqfp")
 width = 20
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qc5w2"]
-bg_color = Color(0, 0, 0, 0.7058824)
+bg_color = Color(0, 0, 0, 0.84313726)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yenib"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pydgx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eebq5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_18ujm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jt2rc"]
 
 [node name="Hud" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_qc5w2")
 
-[node name="PassiveIncome" type="HBoxContainer" parent="."]
-offset_left = 2669.0
-offset_top = 55.0
-offset_right = 3783.0
-offset_bottom = 119.0
+[node name="BGForStats" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1000, 200)
+offset_left = 717.0
+offset_top = -57.0
+offset_right = 1717.0
+offset_bottom = 143.0
 theme = ExtResource("2_ykvyr")
+theme_override_styles/panel = SubResource("StyleBoxTexture_eebq5")
+
+[node name="PassiveIncome" type="HBoxContainer" parent="."]
+offset_left = 810.0
+offset_top = 6.0
+offset_right = 1924.0
+offset_bottom = 70.0
+theme = ExtResource("2_ykvyr")
+theme_override_constants/separation = 10
 
 [node name="PassiveIncomeLabel" type="Label" parent="PassiveIncome"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "Passive Income:"
 
 [node name="IncomeCount" type="Label" parent="PassiveIncome"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "000"
 
-[node name="MoneyLabel" type="Label" parent="PassiveIncome"]
+[node name="MoneyLabel" type="TextureRect" parent="PassiveIncome"]
 layout_mode = 2
-text = "Moneys"
+texture = ExtResource("6_1ree7")
+expand_mode = 2
 
 [node name="Every" type="Label" parent="PassiveIncome"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "every"
 
 [node name="IcomeTime" type="Label" parent="PassiveIncome"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "000"
 
 [node name="Minutes" type="Label" parent="PassiveIncome"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "minutes"
 
 [node name="GlobalEfficiency" type="HBoxContainer" parent="."]
-offset_left = 2671.0
-offset_top = 143.0
-offset_right = 3441.0
-offset_bottom = 207.0
+offset_left = 812.0
+offset_top = 59.0
+offset_right = 1582.0
+offset_bottom = 123.0
 theme = ExtResource("2_ykvyr")
+theme_override_constants/separation = 10
 
 [node name="EfficiencyLabel" type="Label" parent="GlobalEfficiency"]
 layout_mode = 2
-text = "General Production Efficiency:"
+theme_override_font_sizes/font_size = 36
+text = "Global Production Efficiency:"
 
 [node name="EfficiencyCount" type="Label" parent="GlobalEfficiency"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 36
 text = "000"
 
 [node name="Time" type="Control" parent="."]
@@ -114,10 +155,31 @@ offset_right = 1514.0
 offset_bottom = 41.0
 scale = Vector2(1.5600024, 1.5600024)
 
+[node name="TextureRect" type="Panel" parent="Time"]
+custom_minimum_size = Vector2(800, 400)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 22.948639
+offset_top = -134.10239
+offset_right = 822.9486
+offset_bottom = 265.8976
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5867851, 0.5867851)
+theme = ExtResource("2_ykvyr")
+theme_override_styles/panel = SubResource("StyleBoxTexture_18ujm")
+
 [node name="HBoxContainer" type="HBoxContainer" parent="Time"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 139.10234
+offset_top = 5.128189
+offset_right = 557.10236
+offset_bottom = 69.12819
+scale = Vector2(0.69230974, 0.69230974)
 theme = ExtResource("2_ykvyr")
 
 [node name="Day" type="Label" parent="Time/HBoxContainer"]
@@ -146,11 +208,12 @@ text = "0"
 
 [node name="TimeOfDay" type="Label" parent="Time"]
 layout_mode = 0
-offset_left = 151.92279
-offset_top = 65.384514
-offset_right = 244.92279
-offset_bottom = 129.38452
+offset_left = 255.12782
+offset_top = 48.07685
+offset_right = 348.12787
+offset_bottom = 112.07686
 theme = ExtResource("2_ykvyr")
+theme_override_font_sizes/font_size = 30
 text = "Test"
 
 [node name="People" type="Control" parent="."]
@@ -327,6 +390,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_ykvyr")
 theme_override_styles/panel = SubResource("StyleBoxFlat_qc5w2")
 
 [node name="Pause" type="Label" parent="PauseMenu"]
@@ -336,13 +400,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -92.5
-offset_top = -370.0
-offset_right = 92.5
-offset_bottom = -282.0
+offset_left = -173.5
+offset_top = -875.0
+offset_right = 173.5
+offset_bottom = -710.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 120
 text = "Pause"
 
 [node name="PauseButtons" type="VBoxContainer" parent="PauseMenu"]
@@ -358,34 +422,45 @@ offset_right = 66.0
 offset_bottom = -112.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_ykvyr")
+theme_override_constants/separation = 50
 
 [node name="Resume" type="Button" parent="PauseMenu/PauseButtons"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme = ExtResource("2_ykvyr")
+theme_override_font_sizes/font_size = 64
 text = "Resume"
 
 [node name="Exit" type="Button" parent="PauseMenu/PauseButtons"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 32
+theme = ExtResource("2_ykvyr")
+theme_override_font_sizes/font_size = 64
 text = "Exit"
 
 [node name="MuteButton" type="Button" parent="PauseMenu"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
-offset_left = 3284.0
-offset_top = 2042.0
-offset_right = 3373.0
-offset_bottom = 2095.0
-theme_override_colors/font_pressed_color = Color(1, 0.8039216, 0.8117647, 1)
-theme_override_font_sizes/font_size = 32
+offset_left = 3463.0
+offset_top = 1915.9999
+offset_right = 5511.0
+offset_bottom = 3964.0
+scale = Vector2(0.1, 0.1)
+tooltip_text = "Mute Button"
+theme = ExtResource("2_ykvyr")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_yenib")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pydgx")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_eebq5")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_18ujm")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jt2rc")
 toggle_mode = true
-text = "Mute"
+icon = ExtResource("9_pydgx")
 
 [node name="SoundSettings" type="VBoxContainer" parent="PauseMenu"]
 layout_mode = 0
-offset_left = 2960.0
-offset_top = 1881.0
-offset_right = 3714.0
-offset_bottom = 2013.0
+offset_left = 2637.0
+offset_top = 1944.0
+offset_right = 3391.0
+offset_bottom = 2096.0
 
 [node name="Music" type="HBoxContainer" parent="PauseMenu/SoundSettings"]
 layout_mode = 2
@@ -421,6 +496,42 @@ size_flags_vertical = 4
 theme = ExtResource("2_ykvyr")
 min_value = -80.0
 max_value = 20.0
+
+[node name="FeelFreeText" type="RichTextLabel" parent="PauseMenu"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
+offset_left = 3361.0
+offset_top = 1665.0
+offset_right = 3761.0
+offset_bottom = 1915.0
+theme = ExtResource("2_ykvyr")
+theme_override_font_sizes/normal_font_size = 36
+text = "Feel free to fully mute the audio if you are getting overwhelmed with sounds. We understand <3"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Arrow" type="RichTextLabel" parent="PauseMenu"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 0
+offset_left = 3600.0
+offset_top = 1911.0
+offset_right = 3650.0
+offset_bottom = 1961.0
+rotation = 1.5707964
+theme = ExtResource("2_ykvyr")
+theme_override_font_sizes/normal_font_size = 36
+text = "->"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Cat" type="TextureRect" parent="PauseMenu"]
+layout_mode = 0
+offset_left = 3697.0
+offset_top = 1863.0
+offset_right = 3917.0
+offset_bottom = 2065.0
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("10_pydgx")
 
 [node name="SampleAudio" type="AudioStreamPlayer2D" parent="PauseMenu"]
 position = Vector2(1926, 957)

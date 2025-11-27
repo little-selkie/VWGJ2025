@@ -49,11 +49,19 @@ func time_update_hud() -> void:
 	
 	$Hud/PassiveIncome/IncomeCount.text = str(int((GlobalVars.resource_people_mood[1] + -20) * GlobalVars.passive_money_income))
 	$Hud/PassiveIncome/IcomeTime.text = str(int(GlobalVars.income_time/GlobalVars.time_simulation))
+	if int($Hud/PassiveIncome/IncomeCount.text) < 0:
+		$Hud/PassiveIncome/IncomeCount.self_modulate = Color(1.0, 0.357, 0.29, 1.0)
+	else:
+		$Hud/PassiveIncome/IncomeCount.self_modulate = Color(0.216, 0.773, 0.478, 1.0)
 	
 	$Hud/People/VBoxContainer/TextureProgressBar.value = GlobalVars.protection
 	$Hud/People/VBoxContainer/TextureProgressBar.tooltip_text = str(GlobalVars.protection) + "%"
 	
 	$Hud/GlobalEfficiency/EfficiencyCount.text = str(int(GlobalVars.resource_people_health[1] + 50)) + "%"
+	if int($Hud/GlobalEfficiency/EfficiencyCount.text) < 100:
+		$Hud/GlobalEfficiency/EfficiencyCount.self_modulate = Color(1.0, 0.357, 0.29, 1.0)
+	else:
+		$Hud/GlobalEfficiency/EfficiencyCount.self_modulate = Color(0.216, 0.773, 0.478, 1.0)
 
 func heating() -> void:
 	GlobalVars.resource_heat[1] -= GlobalVars.heat_consumption

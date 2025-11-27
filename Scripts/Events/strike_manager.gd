@@ -2,6 +2,7 @@ extends Node
 
 var choosen_target: Node
 var time_until_impact: int = 0
+var choosen_target_name: String = "None"
 
 var rng = RandomNumberGenerator.new()
 var random_time: int = 0
@@ -14,7 +15,10 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	$TimeSimulation.wait_time = GlobalVars.time_simulation
-	$Control/VBoxContainer/WarningMessage.visible = false
+	#$Control/VBoxContainer/WarningMessage.visible = false
+	$HUDMessages/WarningMessage.visible = false
+	$HUDMessages/WarningMessageTop.visible = false
+	$HUDMessages/AllClear.visible = true
 
 func _process(_delta: float) -> void:
 	if GlobalVars.everything_is_broken:
@@ -28,10 +32,14 @@ func _process(_delta: float) -> void:
 
 func _on_time_simulation_timeout() -> void:
 	time_until_impact -= 1
-	$Control/VBoxContainer/WarningMessage/MinuteCount.text = str(time_until_impact)
+	#$Control/VBoxContainer/WarningMessage/MinuteCount.text = str(time_until_impact)
+	$HUDMessages/WarningMessage.text = str(choosen_target_name) + " will be hit in " + str(time_until_impact) + " minutes!"
 	if time_until_impact == 0:
 		strike()
-		$Control/VBoxContainer/WarningMessage.visible = false
+		$HUDMessages/WarningMessage.visible = false
+		$HUDMessages/WarningMessageTop.visible = false
+		$HUDMessages/AllClear.visible = true
+		#$Control/VBoxContainer/WarningMessage.visible = false
 	elif time_until_impact > 0:
 		$TimeSimulation.start()
 
@@ -43,8 +51,12 @@ func strike_init() -> void:
 	warning_sys()
 
 func warning_sys() -> void:
-	$Control/VBoxContainer/WarningMessage/MinuteCount.text = str(time_until_impact)
-	$Control/VBoxContainer/WarningMessage.visible = true
+	#$Control/VBoxContainer/WarningMessage/MinuteCount.text = str(time_until_impact)
+	#$Control/VBoxContainer/WarningMessage.visible = true
+	$HUDMessages/WarningMessage.text = str(choosen_target_name) + " will be hit in " + str(time_until_impact) + " minutes!"
+	$HUDMessages/AllClear.visible = false
+	$HUDMessages/WarningMessage.visible = true
+	$HUDMessages/WarningMessageTop.visible = true
 	$Sounds/Siren.play()
 
 func choose_target() -> void:
@@ -53,7 +65,7 @@ func choose_target() -> void:
 	if choosen_target.is_broken:
 		choose_target()
 	elif !choosen_target.is_broken:
-		$Control/VBoxContainer/WarningMessage/DistrictName.text = str(choosen_target.district_name)
+		choosen_target_name = str(choosen_target.district_name)
 
 func strike() -> void:
 	choosen_target.is_broken = true

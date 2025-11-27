@@ -1,9 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cinfkmpfb7obj"]
+[gd_scene load_steps=10 format=3 uid="uid://cinfkmpfb7obj"]
 
 [ext_resource type="Script" uid="uid://7s3ethy0gt4q" path="res://Scripts/Events/strike_manager.gd" id="1_rsvvp"]
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="2_4716m"]
 [ext_resource type="AudioStream" uid="uid://dqd8p2jpb68cy" path="res://Audio/SFX/explosions-sound-effect-337381.mp3" id="3_3i2gl"]
+[ext_resource type="Texture2D" uid="uid://hvbkjh106y7y" path="res://Icons/Additional/Upgrades_bottom.png" id="3_v0h3q"]
 [ext_resource type="AudioStream" uid="uid://bmkdxoxtvacuf" path="res://Audio/SFX/air-raid-siren-sound-effect-241383.mp3" id="4_xf0jl"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d6mgf"]
+texture = ExtResource("3_v0h3q")
 
 [sub_resource type="Animation" id="Animation_4716m"]
 resource_name = "AnimationFlash"
@@ -11,14 +15,26 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/VBoxContainer/WarningMessage:modulate")
+tracks/0/path = NodePath("HUDMessages/WarningMessage:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.51, 1),
+"times": PackedFloat32Array(0, 0.5, 1),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(0.9999936, 0.3199104, 0.29387164, 1), Color(1, 0.32156864, 0.29411766, 0.59607846), Color(1, 0.32156864, 0.29411766, 1)]
+"values": [Color(1, 0.35686275, 0.2901961, 1), Color(1, 0.35686275, 0.2901961, 0.2), Color(1, 0.35686275, 0.2901961, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HUDMessages/WarningMessageTop:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 0.35686275, 0.2901961, 1), Color(1, 0.35686275, 0.2901961, 0.2), Color(1, 0.35686275, 0.2901961, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_3i2gl"]
@@ -26,14 +42,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Control/VBoxContainer/WarningMessage:modulate")
+tracks/0/path = NodePath("HUDMessages/WarningMessage:self_modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 0.49192542, 0.4458968, 1)]
+"values": [Color(1, 0.35686275, 0.2901961, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HUDMessages/WarningMessageTop:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.35686275, 0.2901961, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xf0jl"]
@@ -46,6 +74,62 @@ _data = {
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_rsvvp")
+
+[node name="BGForWarning" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(1000, 200)
+layout_mode = 0
+offset_left = 2117.0
+offset_top = -57.0
+offset_right = 3117.0
+offset_bottom = 143.0
+theme = ExtResource("2_4716m")
+theme_override_styles/panel = SubResource("StyleBoxTexture_d6mgf")
+
+[node name="HUDMessages" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 27.0
+offset_right = 67.0
+offset_bottom = 40.0
+
+[node name="WarningMessageTop" type="Label" parent="HUDMessages"]
+visible = false
+self_modulate = Color(1, 0.35686275, 0.2901961, 1)
+layout_mode = 0
+offset_left = 2252.0
+offset_top = -37.0
+offset_right = 2974.0
+offset_bottom = 104.0
+theme = ExtResource("2_4716m")
+text = "Warning!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WarningMessage" type="Label" parent="HUDMessages"]
+visible = false
+self_modulate = Color(1, 0.35686275, 0.2901961, 1)
+layout_mode = 0
+offset_left = 2231.0
+offset_top = 21.0
+offset_right = 2953.0
+offset_bottom = 162.0
+theme = ExtResource("2_4716m")
+theme_override_font_sizes/font_size = 40
+text = "City will be hit in 000 minutes!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AllClear" type="Label" parent="HUDMessages"]
+self_modulate = Color(0.21568628, 0.77254903, 0.47843137, 1)
+layout_mode = 0
+offset_left = 2251.0
+offset_top = -6.0
+offset_right = 2975.0
+offset_bottom = 135.0
+theme = ExtResource("2_4716m")
+text = "All Clear. No threats detected.
+Have a safe day."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Control" type="Control" parent="."]
 anchors_preset = 0
@@ -62,35 +146,6 @@ offset_bottom = 64.0
 visible = false
 layout_mode = 2
 text = "[Debug] Random Strike"
-
-[node name="WarningMessage" type="HBoxContainer" parent="Control/VBoxContainer"]
-modulate = Color(1, 0.49192542, 0.4458968, 1)
-layout_mode = 2
-
-[node name="Warning" type="Label" parent="Control/VBoxContainer/WarningMessage"]
-layout_mode = 2
-theme = ExtResource("2_4716m")
-text = "Warning!"
-
-[node name="DistrictName" type="Label" parent="Control/VBoxContainer/WarningMessage"]
-layout_mode = 2
-theme = ExtResource("2_4716m")
-text = "TTT"
-
-[node name="WillBeHit" type="Label" parent="Control/VBoxContainer/WarningMessage"]
-layout_mode = 2
-theme = ExtResource("2_4716m")
-text = "will be hit in"
-
-[node name="MinuteCount" type="Label" parent="Control/VBoxContainer/WarningMessage"]
-layout_mode = 2
-theme = ExtResource("2_4716m")
-text = "000"
-
-[node name="Minutes" type="Label" parent="Control/VBoxContainer/WarningMessage"]
-layout_mode = 2
-theme = ExtResource("2_4716m")
-text = "minutes"
 
 [node name="TimeSimulation" type="Timer" parent="."]
 one_shot = true
