@@ -1,5 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://bkhdypxj8q4jn"]
+[gd_scene load_steps=18 format=3 uid="uid://bkhdypxj8q4jn"]
 
+[ext_resource type="Material" uid="uid://yrrmp72qykv1" path="res://Buildings/Shader/CivMat.tres" id="1_ix71c"]
+[ext_resource type="Material" uid="uid://vt7w3athn2sq" path="res://Buildings/Shader/FacMat.tres" id="3_o0wyc"]
+[ext_resource type="Material" uid="uid://urwy3bb711ju" path="res://Buildings/Shader/GovMat.tres" id="5_267bx"]
+[ext_resource type="Material" uid="uid://hp23yahc5mdr" path="res://Buildings/Shader/HosMat.tres" id="7_7nk1e"]
 [ext_resource type="PackedScene" uid="uid://dpb7wmcwopt3h" path="res://Scenes/ali_tests.tscn" id="7_txxl0"]
 [ext_resource type="ArrayMesh" uid="uid://052ygbp5rwus" path="res://Buildings/Meshes/park.res" id="8_a6xeu"]
 [ext_resource type="ArrayMesh" uid="uid://8nnp3wdroech" path="res://Buildings/Meshes/station.res" id="8_eve8j"]
@@ -9,6 +13,10 @@
 [ext_resource type="ArrayMesh" uid="uid://i3jaqojksidx" path="res://Buildings/Meshes/factory.res" id="8_o1dah"]
 [ext_resource type="ArrayMesh" uid="uid://7wekq66iab5p" path="res://Buildings/Meshes/civilian_building.res" id="8_oxbol"]
 [ext_resource type="ArrayMesh" uid="uid://ovhg0qtheovx" path="res://Buildings/Meshes/mall.res" id="8_vbyev"]
+[ext_resource type="Material" uid="uid://b465n0xa62aov" path="res://Buildings/Shader/LabMat.tres" id="9_anw7p"]
+[ext_resource type="Material" uid="uid://dveckfotgpx3l" path="res://Buildings/Shader/MalMat.tres" id="11_w3yqg"]
+[ext_resource type="Material" uid="uid://24pxl1m7s0td" path="res://Buildings/Shader/ParMat.tres" id="13_nrqqa"]
+[ext_resource type="Material" uid="uid://dgj44b0xidbao" path="res://Buildings/Shader/StaMat.tres" id="15_alcu4"]
 
 [node name="City3d" type="Node3D"]
 
@@ -16,35 +24,43 @@
 
 [node name="CivilianBuilding" type="MeshInstance3D" parent="Buldings"]
 transform = Transform3D(72.88015, -68.47252, -2.9930297e-06, 0, -4.3711393e-06, 100.000015, -68.47252, -72.88015, -3.1856923e-06, 4.330908, -0.039367676, 2.0037804)
+material_override = ExtResource("1_ix71c")
 mesh = ExtResource("8_oxbol")
 skeleton = NodePath("../..")
 
 [node name="Factory" type="MeshInstance3D" parent="Buldings"]
 transform = Transform3D(90.11983, -1.8944842e-06, 43.34075, -43.34075, -3.939262e-06, 90.11983, 3.559543e-13, -99.999985, -4.371139e-06, -11.85102, -0.43875122, -1.3746376)
+material_override = ExtResource("3_o0wyc")
 mesh = ExtResource("8_o1dah")
 
 [node name="Government" type="MeshInstance3D" parent="Buldings"]
 transform = Transform3D(-61.77636, 78.6364, 3.4373054e-06, 0, -4.371139e-06, 100, 78.6364, 61.77636, 2.70033e-06, -0.2494154, -0.13305664, 6.588892)
+material_override = ExtResource("5_267bx")
 mesh = ExtResource("8_hr1jw")
 
 [node name="Hospital" type="MeshInstance3D" parent="Buldings"]
 transform = Transform3D(-54.343807, 83.944916, 3.6693496e-06, -1.6979319e-13, -4.371138e-06, 100, 83.944916, 54.343807, 2.3754435e-06, 4.672119, -0.07977295, -5.0880127)
+material_override = ExtResource("7_7nk1e")
 mesh = ExtResource("8_l18cn")
 
 [node name="Laboratory" type="MeshInstance3D" parent="Buldings"]
 transform = Transform3D(7.691048, 99.703804, 4.3581917e-06, 0, -4.371139e-06, 100, 99.703804, -7.691048, -3.361864e-07, -6.3498535, -0.15527344, -5.5459595)
+material_override = ExtResource("9_anw7p")
 mesh = ExtResource("8_ix71c")
 
 [node name="Mall" type="MeshInstance3D" parent="Buldings"]
 transform = Transform3D(110.76737, 56.94283, 10.635003, -5.704048, -12.115703, 124.280624, 57.645924, -110.61521, -8.13776, -4.9869385, -0.33007813, -10.202988)
+material_override = ExtResource("11_w3yqg")
 mesh = ExtResource("8_vbyev")
 
 [node name="Park" type="MeshInstance3D" parent="Buldings"]
 transform = Transform3D(62.801735, 77.81993, 3.4016173e-06, 0, -4.371139e-06, 100, 77.81993, -62.801735, -2.745151e-06, -1.1113281, -0.2869873, -1.885376)
+material_override = ExtResource("13_nrqqa")
 mesh = ExtResource("8_a6xeu")
 
 [node name="Station" type="MeshInstance3D" parent="Buldings"]
 transform = Transform3D(-85.80109, -51.363113, -2.245153e-06, -4.5346346, 7.575016, 99.60951, -51.162544, 85.46605, -8.828579, -7.1721497, -0.2883911, 9.671036)
+material_override = ExtResource("15_alcu4")
 mesh = ExtResource("8_eve8j")
 
 [node name="Node3D" parent="." instance=ExtResource("7_txxl0")]

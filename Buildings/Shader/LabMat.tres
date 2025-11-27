@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b465n0xa62aov"]
+
+[ext_resource type="Shader" uid="uid://snxhsxdjrev5" path="res://Buildings/Shader/Building_Shader.gdshader" id="1_tjfj6"]
+[ext_resource type="Texture2D" uid="uid://dhmulvpaxl4yp" path="res://Buildings/laboratory_0.png" id="2_r3ktw"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_tjfj6")
+shader_parameter/building_tex = ExtResource("2_r3ktw")
+shader_parameter/Power_Enabled = false

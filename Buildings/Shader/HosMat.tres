@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://hp23yahc5mdr"]
+
+[ext_resource type="Shader" uid="uid://snxhsxdjrev5" path="res://Buildings/Shader/Building_Shader.gdshader" id="1_wkuw8"]
+[ext_resource type="Texture2D" uid="uid://d064ia7rgqe1p" path="res://Buildings/hospital_0.png" id="2_hmml3"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_wkuw8")
+shader_parameter/building_tex = ExtResource("2_hmml3")
+shader_parameter/Power_Enabled = false
