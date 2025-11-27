@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dvo56ka5niilg"]
+[gd_scene load_steps=17 format=3 uid="uid://dvo56ka5niilg"]
 
 [ext_resource type="Script" uid="uid://cdujpxda8eqbj" path="res://Scripts/Events/random_event_manager.gd" id="1_mo7pg"]
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="2_he734"]
@@ -14,6 +14,9 @@
 [ext_resource type="AudioStream" uid="uid://ds35sgv8m3ntr" path="res://Audio/SFX/comedic-silence-90574.mp3" id="10_0qprk"]
 [ext_resource type="AudioStream" uid="uid://2wwkxs4pogp0" path="res://Audio/SFX/unfolding-dollar-bill-263968.mp3" id="11_ta2x4"]
 [ext_resource type="AudioStream" uid="uid://cag32vf6klafm" path="res://Audio/SFX/button-press-382713.mp3" id="12_2r8sk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hejnl"]
+bg_color = Color(0.16078432, 0.16078432, 0.16078432, 0.27450982)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kjw61"]
 content_margin_left = 329.0
@@ -36,12 +39,23 @@ autostart = true
 
 [node name="Control" type="Control" parent="."]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="BG" type="Panel" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_he734")
+theme_override_styles/panel = SubResource("StyleBoxFlat_hejnl")
 
 [node name="Panel" type="Panel" parent="Control"]
 custom_minimum_size = Vector2(1500, 1000)
