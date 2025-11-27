@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bkhdypxj8q4jn"]
+[gd_scene load_steps=10 format=3 uid="uid://bkhdypxj8q4jn"]
 
 [ext_resource type="PackedScene" uid="uid://bbl1ds2ot8uq7" path="res://Buildings/factory.fbx" id="1_1a4dd"]
 [ext_resource type="PackedScene" uid="uid://cqvb5nqwsw4lt" path="res://Buildings/civilian_building.fbx" id="1_krsrq"]
@@ -6,29 +6,37 @@
 [ext_resource type="PackedScene" uid="uid://6omroyrxinou" path="res://Buildings/hospital.fbx" id="4_xbvaa"]
 [ext_resource type="PackedScene" uid="uid://da7rrxat10ulc" path="res://Buildings/park.fbx" id="5_4gqnq"]
 [ext_resource type="PackedScene" uid="uid://dgjg7bjmb8xn2" path="res://Buildings/station.fbx" id="6_01vff"]
+[ext_resource type="PackedScene" uid="uid://c7euj8auct4cr" path="res://Buildings/mall.fbx" id="7_oxbol"]
 [ext_resource type="PackedScene" uid="uid://dpb7wmcwopt3h" path="res://Scenes/ali_tests.tscn" id="7_txxl0"]
+[ext_resource type="PackedScene" uid="uid://dhpd7kegknn1u" path="res://Buildings/laboratory.fbx" id="8_ix71c"]
 
 [node name="City3d" type="Node3D"]
 
 [node name="Buldings" type="Node3D" parent="."]
 
 [node name="factory" parent="Buldings" instance=ExtResource("1_1a4dd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.503694, 0, -4.681217)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.44925, 0, -1.5918384)
 
 [node name="civilian_building" parent="Buldings" instance=ExtResource("1_krsrq")]
 transform = Transform3D(0.7912769, 0, 0.611458, 0, 1, 0, -0.611458, 0, 0.7912769, 3.604001, 0, 2.1044853)
 
 [node name="government" parent="Buldings" instance=ExtResource("3_m7hpa")]
-transform = Transform3D(0.975932, 0, 0.21807511, 0, 1, 0, -0.21807511, 0, 0.975932, 0.039880514, 0.09107828, 6.252159)
+transform = Transform3D(-0.5943739, 0, -0.8041889, 0, 1, 0, 0.8041889, 0, -0.5943739, -0.20250535, 0.09107828, 6.889839)
 
 [node name="hospital" parent="Buldings" instance=ExtResource("4_xbvaa")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4605443, 0, -4.6146817)
+transform = Transform3D(-0.43229032, 0, -0.9017345, 0, 1, 0, 0.9017345, 0, -0.43229032, 2.2310216, 0, -5.39288)
 
 [node name="park" parent="Buldings" instance=ExtResource("5_4gqnq")]
-transform = Transform3D(-0.7128222, 0, 0.70134485, 0, 1, 0, -0.70134485, 0, -0.7128222, -1.187671, 0, -2.156559)
+transform = Transform3D(-0.58056086, 0, 0.81421685, 0, 1, 0, -0.81421685, 0, -0.58056086, -1.2536042, 0.20812988, -2.0666237)
 
 [node name="station" parent="Buldings" instance=ExtResource("6_01vff")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.508824, 0, 4.005133)
+transform = Transform3D(0.9132044, 0, 0.40750188, 0, 1, 0, -0.40750188, 0, 0.9132044, -6.9134874, 0, 11.543209)
+
+[node name="mall" parent="Buldings" instance=ExtResource("7_oxbol")]
+transform = Transform3D(0.90112996, 0, -0.433549, 0, 1, 0, 0.433549, 0, 0.90112996, -2.9859695, 0, -9.322486)
+
+[node name="laboratory" parent="Buldings" instance=ExtResource("8_ix71c")]
+transform = Transform3D(0.9559878, 0, -0.29340637, 0, 1, 0, 0.29340637, 0, 0.9559878, -6.5733757, 0, -6.1368747)
 
 [node name="Node3D" parent="." instance=ExtResource("7_txxl0")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.008541822, 0)
