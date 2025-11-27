@@ -11,12 +11,13 @@ var random_time: int = 0
 @export var strike_period_timer: float = 15.0
 
 func _enter_tree() -> void:
-	$StrikeTimer.wait_time = 1
+	$StrikeTimer.wait_time = 60
 
 func _ready() -> void:
 	$TimeSimulation.wait_time = GlobalVars.time_simulation
 	#$Control/VBoxContainer/WarningMessage.visible = false
 	$HUDMessages/WarningMessage.visible = false
+	$HUDMessages/WarningMessageTop.visible = false
 	$HUDMessages/AllClear.visible = true
 
 func _process(_delta: float) -> void:
@@ -32,10 +33,11 @@ func _process(_delta: float) -> void:
 func _on_time_simulation_timeout() -> void:
 	time_until_impact -= 1
 	#$Control/VBoxContainer/WarningMessage/MinuteCount.text = str(time_until_impact)
-	$HUDMessages/WarningMessage.text = "Warning! \r\n" + str(choosen_target_name) + " will be hit in " + str(time_until_impact) + " minutes!"
+	$HUDMessages/WarningMessage.text = str(choosen_target_name) + " will be hit in " + str(time_until_impact) + " minutes!"
 	if time_until_impact == 0:
 		strike()
 		$HUDMessages/WarningMessage.visible = false
+		$HUDMessages/WarningMessageTop.visible = false
 		$HUDMessages/AllClear.visible = true
 		#$Control/VBoxContainer/WarningMessage.visible = false
 	elif time_until_impact > 0:
@@ -51,9 +53,10 @@ func strike_init() -> void:
 func warning_sys() -> void:
 	#$Control/VBoxContainer/WarningMessage/MinuteCount.text = str(time_until_impact)
 	#$Control/VBoxContainer/WarningMessage.visible = true
-	$HUDMessages/WarningMessage.text = "Warning! \r\n" + str(choosen_target_name) + " will be hit in " + str(time_until_impact) + " minutes!"
+	$HUDMessages/WarningMessage.text = str(choosen_target_name) + " will be hit in " + str(time_until_impact) + " minutes!"
 	$HUDMessages/AllClear.visible = false
 	$HUDMessages/WarningMessage.visible = true
+	$HUDMessages/WarningMessageTop.visible = true
 	$Sounds/Siren.play()
 
 func choose_target() -> void:
