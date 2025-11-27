@@ -87,3 +87,7 @@ func _on_fix_tick_timer_timeout() -> void:
 		fix()
 	elif $Panel/Fixing/ProgressBar.value <= 100:
 		$Panel/Fixing/FixTickTimer.start()
+
+
+func _on_draw() -> void:
+	$Fold.play()
