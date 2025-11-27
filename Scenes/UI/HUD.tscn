@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dt5blvo4fvgke"]
+[gd_scene load_steps=23 format=3 uid="uid://dt5blvo4fvgke"]
 
 [ext_resource type="Script" uid="uid://g6ao4sshsevr" path="res://Scripts/UI/hud.gd" id="1_qc5w2"]
 [ext_resource type="Texture2D" uid="uid://dpqmx2fioas52" path="res://Icons/Upgrades/Mental_Health.png" id="2_4bm6u"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dboy4vxaewkhq" path="res://Icons/Upgrades/Air_Defense_.png" id="5_lelo4"]
 [ext_resource type="Texture2D" uid="uid://rqr7n11w7vy1" path="res://Icons/Upgrades/Money.png" id="6_1ree7"]
 [ext_resource type="AudioStream" uid="uid://cfablmg0cs227" path="res://Audio/SFX/diesel-power-generator-33638.mp3" id="8_d2sja"]
+[ext_resource type="PackedScene" uid="uid://c40pgjptu5ut3" path="res://Scenes/UI/Tutorial.tscn" id="9_i4i0y"]
 
 [sub_resource type="Gradient" id="Gradient_ykvyr"]
 colors = PackedColorArray(0.90588236, 0.12156863, 0, 1, 0, 0.9843137, 0.78039217, 1)
@@ -315,6 +316,8 @@ text = "0"
 
 [node name="WinPopUp" parent="." instance=ExtResource("2_qc5w2")]
 visible = false
+
+[node name="Tutorial" parent="." instance=ExtResource("9_i4i0y")]
 
 [node name="PauseMenu" type="Panel" parent="."]
 process_mode = 3
