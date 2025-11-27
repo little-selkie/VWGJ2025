@@ -72,5 +72,48 @@ func _init() -> void:
 	reload()
 
 func reload() -> void:
+	lose = false
+	endless_mode = false
+	second_chance = true
+	resource_power = [
+	"Power", 
+	0, 
+	load("res://Icons/Upgrades/Electricity.png"), 
+	"PLACEHOLDER"]
+	resource_people_mood = [
+	"Mental Health", 
+	50, 
+	load("res://Icons/Upgrades/Mental_Health.png"), 
+	"PLACEHOLDER"]
+	resource_people_health = [
+	"Physical Health", 
+	50, 
+	load("res://Icons/Upgrades/Physical_Health_.png"), 
+	"PLACEHOLDER"]
+	resource_money = [
+	"Money", 
+	3000, 
+	load("res://Icons/Upgrades/Money.png"), 
+	"PLACEHOLDER"]
+	resource_heat = [
+	"Heating", 
+	100, 
+	load("res://Icons/Upgrades/Heating.png"), 
+	"PLACEHOLDER"]
+	resource_upgrade = [
+	"Technology", 
+	80,
+	load("res://Icons/Upgrades/Tech.png"), 
+	"PLACEHOLDER"]
+	heat_consumption = 0.1
+	health_depletion = 0.1
+	mental_mood_depletion = 0.1
+	constant_health_boost = 0.0
+	passive_money_income = 10
+	income_time = 3.0
+	civilians_unhappy = false
 	current_time = [1, 0, 0]
 	time_of_day = "Night"
+	time_simulation = 0.2
+	everything_is_broken = false
+	protection = 0

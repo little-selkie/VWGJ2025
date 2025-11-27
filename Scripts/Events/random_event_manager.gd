@@ -56,7 +56,7 @@ var government_events_upgrade_2: Array[Array] = [
 ]
 
 var special_events: Array[Array] = [
-	["Last Chance", "You ran out of money. Partners collected some funds for you, but they are not really happy. \r\n This is your last chanсe to save the the city.", "Thank you.", last_chance, "Special", load("res://Icons/Funny/last_chance.png")],
+	["Last Chance", "You ran out of money. Partners collected some funds for you, but they are not really happy. \r\n This is your last chanсe to save the city.", "Thank you.", last_chance, "Special", load("res://Icons/Funny/last_chance.png")],
 ]
 
 func _ready() -> void:
