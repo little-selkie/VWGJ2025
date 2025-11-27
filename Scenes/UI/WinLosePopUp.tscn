@@ -1,11 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://bo8o0x3o2moa6"]
+[gd_scene load_steps=8 format=3 uid="uid://bo8o0x3o2moa6"]
 
 [ext_resource type="Script" uid="uid://ec2jdvjx1bsf" path="res://Scripts/UI/win_lose_pop_up.gd" id="1_bbi2y"]
+[ext_resource type="Texture2D" uid="uid://y3cub6ehhwme" path="res://Icons/Additional/Notification_Screen.png" id="2_8kc3f"]
 [ext_resource type="AudioStream" uid="uid://cou8vco87v5cv" path="res://Audio/SFX/victory-chime-366449.mp3" id="2_afale"]
 [ext_resource type="AudioStream" uid="uid://dts0hfjyrtp1n" path="res://Audio/SFX/scary-riser-432997.mp3" id="3_7cbjf"]
+[ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="3_gtmf0"]
+[ext_resource type="Texture2D" uid="uid://dtjjvx0um41tx" path="res://Icons/Funny/meme.png" id="4_tx8s5"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbi2y"]
-bg_color = Color(0.04303915, 0.043039158, 0.043039113, 1)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8wxy7"]
+content_margin_left = 329.0
+content_margin_top = 972.0
+content_margin_right = 278.0
+content_margin_bottom = 303.0
+texture = ExtResource("2_8kc3f")
+expand_margin_left = 347.0
+expand_margin_top = 794.0
+expand_margin_right = 299.0
+expand_margin_bottom = 290.0
+axis_stretch_vertical = 2
 
 [node name="WinPopUp" type="Control"]
 process_mode = 3
@@ -26,40 +38,73 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="BGPanel"]
-custom_minimum_size = Vector2(800, 500)
+custom_minimum_size = Vector2(1500, 1000)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -400.0
-offset_top = -250.0
-offset_right = 400.0
-offset_bottom = 250.0
+offset_left = -698.0
+offset_top = -380.0
+offset_right = 802.0
+offset_bottom = 620.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bbi2y")
+scale = Vector2(0.84000003, 0.84000003)
+mouse_behavior_recursive = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8wxy7")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="BGPanel/Panel"]
+custom_minimum_size = Vector2(0, 900)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -801.19055
+offset_top = -385.7143
+offset_right = 822.80945
+offset_bottom = 514.2857
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("3_gtmf0")
+theme_override_constants/separation = 0
+alignment = 1
 
-[node name="Header" type="Label" parent="BGPanel/Panel/VBoxContainer"]
+[node name="HeaderText" type="Label" parent="BGPanel/Panel/VBoxContainer"]
 layout_mode = 2
-text = "Header"
+size_flags_horizontal = 4
+size_flags_vertical = 2
+theme = ExtResource("3_gtmf0")
+theme_override_font_sizes/font_size = 60
+text = "Header Text"
 horizontal_alignment = 1
-vertical_alignment = 1
 
-[node name="Context" type="RichTextLabel" parent="BGPanel/Panel/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="BGPanel/Panel/VBoxContainer"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 700)
 layout_mode = 2
 size_flags_vertical = 3
-text = "Text Context"
+theme_override_constants/separation = 0
+
+[node name="EventImage" type="TextureRect" parent="BGPanel/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_gtmf0")
+texture = ExtResource("4_tx8s5")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="DescriptionText" type="RichTextLabel" parent="BGPanel/Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_gtmf0")
+text = "Description goes here"
 fit_content = true
+scroll_active = false
+autowrap_mode = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 
