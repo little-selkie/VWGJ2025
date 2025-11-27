@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bkhdypxj8q4jn" path="res://Scenes/City/City3D.tscn" id="7_cfbjk"]
 [ext_resource type="Material" uid="uid://iqscfxq1xkrc" path="res://Art/UX/DistrictBorder.tres" id="9_dda04"]
 [ext_resource type="Material" uid="uid://c7v8b7b7wcwu5" path="res://Art/FAYA/fire_mat.tres" id="10_chgr3"]
-[ext_resource type="ArrayMesh" uid="uid://b3ygbbyq1foai" path="res://Art/FAYA/SM_Plastic_Fire.res" id="10_hh50m"]
+[ext_resource type="ArrayMesh" uid="uid://4fc3on74hb2x" path="res://Art/FAYA/SM_Plastic_Fire.res" id="10_hh50m"]
 [ext_resource type="Script" uid="uid://cndsq4i8iryiw" path="res://Scripts/Tests/fire.gd" id="11_chgr3"]
 [ext_resource type="Script" uid="uid://djdysyw4268ig" path="res://Scripts/Tests/light_flicker.gd" id="13_ijfif"]
 
@@ -41,7 +41,7 @@ point_count = 14
 [sub_resource type="Curve3D" id="Curve3D_chgr3"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.68451, 0.34924316, -11.114578, 0, 0, 0, 0, 0, 0, -10.613083, 0.3244629, -9.967068, 0, 0, 0, 0, 0, 0, -11.065458, 0.3260498, -9.93248, 0, 0, 0, 0, 0, 0, -12.504647, 0.2919922, -8.321384, 0, 0, 0, 0, 0, 0, -12.847449, 0.21240234, -5.2233467, 0, 0, 0, 0, 0, 0, -12.562348, 0.20031738, -4.8266754, 0, 0, 0, 0, 0, 0, -11.49721, 0.21069336, -5.4569893, 0, 0, 0, 0, 0, 0, -9.625185, 0.19848633, -5.412136, 0, 0, 0, 0, 0, 0, -10.03954, 0.13574219, -2.9332962, 0, 0, 0, 0, 0, 0, -9.327685, 0.11730957, -2.3903427, 0, 0, 0, 0, 0, 0, -7.50442, 0.103515625, -2.268978, 0, 0, 0, 0, 0, 0, -5.4382405, 0.16345215, -5.0045204, 0, 0, 0, 0, 0, 0, -3.939126, 0.17956543, -5.950039, 0, 0, 0, 0, 0, 0, -2.9115772, 0.16870117, -5.7617607, 0, 0, 0, 0, 0, 0, -2.642271, 0.17675781, -6.128048, 0, 0, 0, 0, 0, 0, -6.090952, 0.24963379, -8.253002),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -9.68451, 0.34924316, -11.114578, 0, 0, 0, 0, 0, 0, -10.613083, 0.3244629, -9.967068, 0, 0, 0, 0, 0, 0, -11.065458, 0.3260498, -9.93248, 0, 0, 0, 0, 0, 0, -12.504647, 0.2919922, -8.321384, 0, 0, 0, 0, 0, 0, -12.847449, 0.21240234, -5.2233467, 0, 0, 0, 0, 0, 0, -12.562348, 0.20031738, -4.8266754, 0, 0, 0, 0, 0, 0, -11.49721, 0.21069336, -5.4569893, 0, 0, 0, 0, 0, 0, -10.328619, 0.19848633, -4.8177185, 0, 0, 0, 0, 0, 0, -10.03954, 0.13574219, -2.9332962, 0, 0, 0, 0, 0, 0, -9.327685, 0.11730957, -2.3903427, 0, 0, 0, 0, 0, 0, -7.50442, 0.103515625, -2.268978, 0, 0, 0, 0, 0, 0, -5.4382405, 0.16345215, -5.0045204, 0, 0, 0, 0, 0, 0, -3.939126, 0.17956543, -5.950039, 0, 0, 0, 0, 0, 0, -2.9115772, 0.16870117, -5.7617607, 0, 0, 0, 0, 0, 0, -2.642271, 0.17675781, -6.128048, 0, 0, 0, 0, 0, 0, -6.090952, 0.24963379, -8.253002),
 "tilts": PackedFloat32Array(-1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964)
 }
 point_count = 16
@@ -73,7 +73,7 @@ point_count = 21
 [sub_resource type="Curve3D" id="Curve3D_ijfif"]
 closed = true
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.541, 0, 0.587, 0, 0, 0, 0, 0, 0, -7.259, 0, 0.788, 0, 0, 0, 0, 0, 0, -2.886, 0, -5.696, 0, 0, 0, 0, 0, 0, -3.938, 0, -5.829, 0, 0, 0, 0, 0, 0, -5.365, 0, -4.951, 0, 0, 0, 0, 0, 0, -6.387, 0, -3.501, 0, 0, 0, 0, 0, 0, -7.495, 0, -2.14, 0, 0, 0, 0, 0, 0, -9.24, 0, -2.205, 0, 0, 0, 0, 0, 0, -10.062, 0, -2.776, 0, 0, 0, 0, 0, 0, -9.636739, 0, -5.3197374, 0, 0, 0, 0, 0, 0, -11.601189, 0, -5.278021, 0, 0, 0, 0, 0, 0, -12.61619, 0, -4.598354, 0, 0, 0, 0, 0, 0, -12.827, 0, -5.125, 0, 0, 0, 0, 0, 0, -13.826, 0, -3.823, 0, 0, 0, 0, 0, 0, -14.024, 0, -2.659, 0, 0, 0, 0, 0, 0, -13.682, 0, -1.546, 0, 0, 0, 0, 0, 0, -13.71, 0, -0.894, 0, 0, 0, 0, 0, 0, -14.022, 0, -0.126, 0, 0, 0, 0, 0, 0, -14.07, 0, 0.722, 0, 0, 0, 0, 0, 0, -13.774, 0, 1.5, 0, 0, 0, 0, 0, 0, -13.119, 0, 2.201, 0, 0, 0, 0, 0, 0, -12.9, 0, 2.66, 0, 0, 0, 0, 0, 0, -12.731, 0, 3.686, 0, 0, 0, 0, 0, 0, -12.196, 0, 5.045, 0, 0, 0, 0, 0, 0, -10.459, 0, 2.922, 0, 0, 0, 0, 0, 0, -8.798, 0, 1.191),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.541, 0, 0.587, 0, 0, 0, 0, 0, 0, -7.259, 0, 0.788, 0, 0, 0, 0, 0, 0, -2.886, 0, -5.696, 0, 0, 0, 0, 0, 0, -3.938, 0, -5.829, 0, 0, 0, 0, 0, 0, -5.365, 0, -4.951, 0, 0, 0, 0, 0, 0, -6.387, 0, -3.501, 0, 0, 0, 0, 0, 0, -7.495, 0, -2.14, 0, 0, 0, 0, 0, 0, -9.24, 0, -2.205, 0, 0, 0, 0, 0, 0, -10.062, 0, -2.776, 0, 0, 0, 0, 0, 0, -10.321939, 0, -4.8021626, 0, 0, 0, 0, 0, 0, -11.601189, 0, -5.278021, 0, 0, 0, 0, 0, 0, -12.61619, 0, -4.598354, 0, 0, 0, 0, 0, 0, -12.827, 0, -5.125, 0, 0, 0, 0, 0, 0, -13.826, 0, -3.823, 0, 0, 0, 0, 0, 0, -14.024, 0, -2.659, 0, 0, 0, 0, 0, 0, -13.682, 0, -1.546, 0, 0, 0, 0, 0, 0, -13.71, 0, -0.894, 0, 0, 0, 0, 0, 0, -14.022, 0, -0.126, 0, 0, 0, 0, 0, 0, -14.07, 0, 0.722, 0, 0, 0, 0, 0, 0, -13.774, 0, 1.5, 0, 0, 0, 0, 0, 0, -13.119, 0, 2.201, 0, 0, 0, 0, 0, 0, -12.9, 0, 2.66, 0, 0, 0, 0, 0, 0, -12.731, 0, 3.686, 0, 0, 0, 0, 0, 0, -12.196, 0, 5.045, 0, 0, 0, 0, 0, 0, -10.459, 0, 2.922, 0, 0, 0, 0, 0, 0, -8.798, 0, 1.191),
 "tilts": PackedFloat32Array(-1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964, -1.5707964)
 }
 point_count = 26
@@ -250,7 +250,7 @@ polygon = PackedVector2Array(-1.3845539, 0.041505814, -1.5461607, 3.502173, 6.07
 
 [node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="CollisionAreas/Area_Lab"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.29723072, 0, 2.9425788)
-polygon = PackedVector2Array(0.76648235, 1.9492736, 1.1082964, 2.8558254, 3.2334924, 3.1976402, 5.700502, 0.061861992, 1.0191278, 0.34423065)
+polygon = PackedVector2Array(0.76648235, 1.9492736, 1.1082964, 2.8558254, 3.2334924, 3.1976402, 5.700502, 0.061861992, 0.44559383, 0.3829503)
 
 [node name="Area_Entertainment" type="StaticBody3D" parent="CollisionAreas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.054913, 0.4652617, -4.9829197)
@@ -489,7 +489,39 @@ path_joined = false
 visible = false
 
 [node name="SmPlasticFire" type="MeshInstance3D" parent="DistrictFires/Park"]
-transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -2.8321927, -0.003886953, -2.8452485)
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.8321927, -0.003886953, -1.8452485)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire4" type="MeshInstance3D" parent="DistrictFires/Park"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.1811955, -0.003886953, -1.1533234)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire5" type="MeshInstance3D" parent="DistrictFires/Park"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.0891469, -0.003886953, -2.650367)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire2" type="MeshInstance3D" parent="DistrictFires/Park"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.29582334, -0.003886953, -2.4560025)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire3" type="MeshInstance3D" parent="DistrictFires/Park"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.6067288, -0.003886953, -1.5431397)
 material_override = ExtResource("10_chgr3")
 cast_shadow = 0
 mesh = ExtResource("10_hh50m")
@@ -497,7 +529,364 @@ skeleton = NodePath("../../..")
 script = ExtResource("11_chgr3")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="DistrictFires/Park"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8205078, 0.19128482, -2.8425267)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1027191, 0.19128482, -2.186826)
+light_color = Color(1, 0.66499996, 0.32999998, 1)
+omni_range = 0.902
+omni_attenuation = 0.328
+script = ExtResource("13_ijfif")
+
+[node name="Government" type="Node3D" parent="DistrictFires"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1959229, 0, 8.849335)
+visible = false
+
+[node name="SmPlasticFire" type="MeshInstance3D" parent="DistrictFires/Government"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.8321927, -0.003886953, -1.8452485)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire4" type="MeshInstance3D" parent="DistrictFires/Government"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.1811955, -0.003886953, -1.1533234)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire5" type="MeshInstance3D" parent="DistrictFires/Government"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.0891469, -0.003886953, -2.650367)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire2" type="MeshInstance3D" parent="DistrictFires/Government"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.29582334, -0.003886953, -2.4560025)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire3" type="MeshInstance3D" parent="DistrictFires/Government"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.6067288, -0.003886953, -1.5431397)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="DistrictFires/Government"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1027191, 0.19128482, -2.186826)
+light_color = Color(1, 0.66499996, 0.32999998, 1)
+omni_range = 0.902
+omni_attenuation = 0.328
+script = ExtResource("13_ijfif")
+
+[node name="PowerPlant" type="Node3D" parent="DistrictFires"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.200531, 0, 11.596649)
+visible = false
+
+[node name="SmPlasticFire" type="MeshInstance3D" parent="DistrictFires/PowerPlant"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.9096308, -0.003886953, -2.0693846)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire4" type="MeshInstance3D" parent="DistrictFires/PowerPlant"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.277997, -0.003886953, -1.1312132)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire5" type="MeshInstance3D" parent="DistrictFires/PowerPlant"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.1630754, -0.003886953, -2.809348)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire2" type="MeshInstance3D" parent="DistrictFires/PowerPlant"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.29582334, -0.003886953, -2.4560025)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire3" type="MeshInstance3D" parent="DistrictFires/PowerPlant"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.2716303, -0.003886953, -1.5385923)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="DistrictFires/PowerPlant"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1027191, 0.19128482, -2.186826)
+light_color = Color(1, 0.66499996, 0.32999998, 1)
+omni_range = 0.902
+omni_attenuation = 0.328
+script = ExtResource("13_ijfif")
+
+[node name="Heat" type="Node3D" parent="DistrictFires"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.642169, 0, 0.417408)
+visible = false
+
+[node name="SmPlasticFire" type="MeshInstance3D" parent="DistrictFires/Heat"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.9096308, -0.003886953, -2.0693846)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire4" type="MeshInstance3D" parent="DistrictFires/Heat"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.277997, -0.003886953, -1.1312132)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire5" type="MeshInstance3D" parent="DistrictFires/Heat"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.1630754, -0.003886953, -2.809348)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire2" type="MeshInstance3D" parent="DistrictFires/Heat"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.29582334, -0.003886953, -2.4560025)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire3" type="MeshInstance3D" parent="DistrictFires/Heat"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.2716303, -0.003886953, -1.5385923)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="DistrictFires/Heat"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1027191, 0.19128482, -2.186826)
+light_color = Color(1, 0.66499996, 0.32999998, 1)
+omni_range = 0.902
+omni_attenuation = 0.328
+script = ExtResource("13_ijfif")
+
+[node name="Lab" type="Node3D" parent="DistrictFires"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3165836, 0, -3.6714897)
+visible = false
+
+[node name="SmPlasticFire" type="MeshInstance3D" parent="DistrictFires/Lab"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.6002016, -0.003886953, -2.0232687)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire4" type="MeshInstance3D" parent="DistrictFires/Lab"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.277997, -0.003886953, -1.1312132)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire5" type="MeshInstance3D" parent="DistrictFires/Lab"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.033679, -0.003886953, -2.8918333)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire2" type="MeshInstance3D" parent="DistrictFires/Lab"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.4093113, -0.003886953, -2.4143305)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire3" type="MeshInstance3D" parent="DistrictFires/Lab"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.32855225, -0.003886953, -1.5380926)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="DistrictFires/Lab"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3778472, 0.19128482, -2.0298433)
+light_color = Color(1, 0.66499996, 0.32999998, 1)
+omni_range = 0.902
+omni_attenuation = 0.328
+script = ExtResource("13_ijfif")
+
+[node name="Entertainment" type="Node3D" parent="DistrictFires"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.06385, 0, -8.429634)
+visible = false
+
+[node name="SmPlasticFire" type="MeshInstance3D" parent="DistrictFires/Entertainment"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.6002016, -0.003886953, -2.0232687)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire4" type="MeshInstance3D" parent="DistrictFires/Entertainment"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.277997, -0.003886953, -1.1312132)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire5" type="MeshInstance3D" parent="DistrictFires/Entertainment"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.78974295, -0.003886953, -3.035983)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire2" type="MeshInstance3D" parent="DistrictFires/Entertainment"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, 0.3901689, -0.003886953, -2.4858637)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire3" type="MeshInstance3D" parent="DistrictFires/Entertainment"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, 0.08786583, -0.003886953, -1.1414862)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="DistrictFires/Entertainment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3778472, 0.19128482, -2.0298433)
+light_color = Color(1, 0.66499996, 0.32999998, 1)
+omni_range = 0.902
+omni_attenuation = 0.328
+script = ExtResource("13_ijfif")
+
+[node name="Hospital" type="Node3D" parent="DistrictFires"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1902766, 0, -3.1656075)
+visible = false
+
+[node name="SmPlasticFire" type="MeshInstance3D" parent="DistrictFires/Hospital"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.5219884, -0.0064504296, -1.9354773)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire4" type="MeshInstance3D" parent="DistrictFires/Hospital"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.1997838, -0.0064504296, -1.0434217)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire5" type="MeshInstance3D" parent="DistrictFires/Hospital"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.71152973, -0.0064504296, -2.9481916)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire2" type="MeshInstance3D" parent="DistrictFires/Hospital"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, 0.46838188, -0.0064504296, -2.3980722)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire3" type="MeshInstance3D" parent="DistrictFires/Hospital"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, 0.16607904, -0.0064504296, -1.0536947)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="DistrictFires/Hospital"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1930599, 0.19128482, -2.4078035)
+light_color = Color(1, 0.66499996, 0.32999998, 1)
+omni_range = 0.902
+omni_attenuation = 0.328
+script = ExtResource("13_ijfif")
+
+[node name="Civilian" type="Node3D" parent="DistrictFires"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8334494, 0, 3.8338165)
+visible = false
+
+[node name="SmPlasticFire" type="MeshInstance3D" parent="DistrictFires/Civilian"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.5219884, -0.0064504296, -1.9354773)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire4" type="MeshInstance3D" parent="DistrictFires/Civilian"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -1.1997838, -0.0064504296, -1.0434217)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire5" type="MeshInstance3D" parent="DistrictFires/Civilian"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.71152973, -0.0064504296, -2.9481916)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire2" type="MeshInstance3D" parent="DistrictFires/Civilian"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, 0.46838188, -0.0064504296, -2.3980722)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="SmPlasticFire3" type="MeshInstance3D" parent="DistrictFires/Civilian"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -0.11339474, -0.0064504296, -1.3833303)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="DistrictFires/Civilian"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9484167, 0.19128482, -2.266038)
 light_color = Color(1, 0.66499996, 0.32999998, 1)
 omni_range = 0.902
 omni_attenuation = 0.328

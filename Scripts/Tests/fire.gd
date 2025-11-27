@@ -12,6 +12,6 @@ func _flicker():
 	scale = Vector3(s, s, s)
 
 	# wait 0.5–1.5 seconds then repeat
-	var wait_time = randf_range(0.2, 0.8)
+	var wait_time = randf_range(0.1, 0.2)
 	await get_tree().create_timer(wait_time).timeout
 	_flicker()
