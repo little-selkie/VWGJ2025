@@ -16,5 +16,7 @@ ItemList/font_sizes/font_size = 40
 Label/font_sizes/font_size = 46
 ProgressBar/font_sizes/font_size = 40
 RichTextLabel/font_sizes/normal_font_size = 46
+TooltipPanel/constants/close_h_offset = 2
+TooltipPanel/constants/close_v_offset = 2
 TooltipPanel/styles/embedded_border = SubResource("StyleBoxFlat_v4t6n")
 TooltipPanel/styles/panel = SubResource("StyleBoxFlat_61r0m")

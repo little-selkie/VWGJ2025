@@ -39,7 +39,6 @@ autostart = true
 
 [node name="Control" type="Control" parent="."]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -84,9 +83,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -801.19055
-offset_top = -416.6667
+offset_top = -385.7143
 offset_right = 822.80945
-offset_bottom = 483.3333
+offset_bottom = 514.2857
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_he734")
@@ -98,7 +97,7 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 2
 theme = ExtResource("2_he734")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 60
 text = "Header Text"
 horizontal_alignment = 1
 
