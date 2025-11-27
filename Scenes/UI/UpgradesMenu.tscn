@@ -1,10 +1,12 @@
-[gd_scene load_steps=11 format=3 uid="uid://gonh10mhtf6u"]
+[gd_scene load_steps=13 format=3 uid="uid://gonh10mhtf6u"]
 
 [ext_resource type="Script" uid="uid://dk11yw20b35wa" path="res://Scripts/UI/upgrades_menu.gd" id="1_psehl"]
 [ext_resource type="Texture2D" uid="uid://bu2gq36n27ab3" path="res://icon.svg" id="2_qlo13"]
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="3_jsc17"]
+[ext_resource type="Texture2D" uid="uid://rqr7n11w7vy1" path="res://Icons/Upgrades/Money.png" id="4_hjbx5"]
 [ext_resource type="AudioStream" uid="uid://lvt03mbttcbu" path="res://Audio/SFX/button-4-214382.mp3" id="4_rxmqn"]
 [ext_resource type="AudioStream" uid="uid://uvfqbuxyjfn4" path="res://Audio/SFX/cash-register-fake-88639.mp3" id="5_7uhuk"]
+[ext_resource type="Texture2D" uid="uid://calkv8wwbh5fo" path="res://Icons/Upgrades/Tech.png" id="5_r36y8"]
 [ext_resource type="AudioStream" uid="uid://cymgkgfqkrxg" path="res://Audio/SFX/folding-37422.mp3" id="6_hjbx5"]
 
 [sub_resource type="Animation" id="Animation_jsc17"]
@@ -128,20 +130,22 @@ layout_mode = 2
 theme = ExtResource("3_jsc17")
 text = "00"
 
-[node name="PlaceholderMoney" type="Label" parent="UpgradesMenu/VBoxContainer/Cost"]
+[node name="PlaceholderMoney" type="TextureRect" parent="UpgradesMenu/VBoxContainer/Cost"]
 layout_mode = 2
 theme = ExtResource("3_jsc17")
-text = " Money "
+texture = ExtResource("4_hjbx5")
+expand_mode = 2
 
 [node name="TechnologyCost" type="Label" parent="UpgradesMenu/VBoxContainer/Cost"]
 layout_mode = 2
 theme = ExtResource("3_jsc17")
 text = "00"
 
-[node name="PlaceholderTechnology" type="Label" parent="UpgradesMenu/VBoxContainer/Cost"]
+[node name="PlaceholderTechnology" type="TextureRect" parent="UpgradesMenu/VBoxContainer/Cost"]
 layout_mode = 2
 theme = ExtResource("3_jsc17")
-text = " Technology"
+texture = ExtResource("5_r36y8")
+expand_mode = 2
 
 [node name="BuyButton" type="Button" parent="UpgradesMenu/VBoxContainer"]
 layout_mode = 2
