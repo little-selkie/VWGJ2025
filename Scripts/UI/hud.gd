@@ -31,8 +31,10 @@ func _on_pause_menu_hidden() -> void:
 func _on_mute_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
 		AudioServer.set_bus_mute(bus, true)
+		$PauseMenu/MuteButton.icon = load("res://Icons/Additional/Sound_Off_Icon.png")
 	if !toggled_on:
 		AudioServer.set_bus_mute(bus, false)
+		$PauseMenu/MuteButton.icon = load("res://Icons/Additional/Sound_On_Icon.png")
 
 func _on_start_button_pressed() -> void:
 	GlobalVars.reload()
