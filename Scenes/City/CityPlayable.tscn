@@ -89,7 +89,7 @@ transform = Transform3D(-0.01605177, 0.86747044, -0.49722978, 0.027989445, 0.497
 
 [node name="Districts" type="Node" parent="."]
 
-[node name="HospitalDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+[node name="HospitalDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual") instance=ExtResource("3_as6u6")]
 offset_left = 1132.0
 offset_top = 130.0
 offset_right = 1132.0
@@ -101,8 +101,9 @@ is_on = false
 produces_1 = 2
 produces_1_count = 5
 fix_cost = 500
+fire_visual = NodePath("../../DistrictFires/Hospital")
 
-[node name="EntertainmentDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+[node name="EntertainmentDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual") instance=ExtResource("3_as6u6")]
 offset_left = 518.0
 offset_top = 544.0
 offset_right = 518.0
@@ -116,8 +117,9 @@ produces_1_count = 10
 produces_2 = 3
 produces_2_count = 20
 fix_cost = 500
+fire_visual = NodePath("../../DistrictFires/Entertainment")
 
-[node name="ParkDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+[node name="ParkDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual") instance=ExtResource("3_as6u6")]
 offset_left = 1593.0
 offset_top = 610.0
 offset_right = 1593.0
@@ -129,8 +131,9 @@ is_on = false
 produces_1 = 1
 produces_1_count = 20
 fix_cost = 500
+fire_visual = NodePath("../../DistrictFires/Park")
 
-[node name="CivilianDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+[node name="CivilianDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual") instance=ExtResource("3_as6u6")]
 offset_left = 2026.0
 offset_top = 199.0
 offset_right = 2026.0
@@ -141,8 +144,9 @@ needs_energy = 6
 can_work_at_night = true
 production_timer = 0.05
 fix_cost = 500
+fire_visual = NodePath("../../DistrictFires/Civilian")
 
-[node name="HeatingDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+[node name="HeatingDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual") instance=ExtResource("3_as6u6")]
 offset_left = 1707.0
 offset_top = 1159.0
 offset_right = 1707.0
@@ -154,8 +158,9 @@ is_on = false
 produces_1 = 4
 produces_1_count = 20
 fix_cost = 500
+fire_visual = NodePath("../../DistrictFires/Heat")
 
-[node name="GovernmentDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+[node name="GovernmentDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual") instance=ExtResource("3_as6u6")]
 offset_left = 2594.0
 offset_top = 543.0
 offset_right = 2594.0
@@ -165,8 +170,9 @@ district_name = "Government"
 needs_energy = 2
 is_on = false
 fix_cost = 500
+fire_visual = NodePath("../../DistrictFires/Government")
 
-[node name="TechnologyDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+[node name="TechnologyDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual") instance=ExtResource("3_as6u6")]
 offset_left = 635.0
 offset_top = 1149.0
 offset_right = 635.0
@@ -178,8 +184,9 @@ is_on = false
 produces_1 = 5
 produces_1_count = 4
 fix_cost = 500
+fire_visual = NodePath("../../DistrictFires/Lab")
 
-[node name="PowerPlant" parent="Districts" instance=ExtResource("3_iswwh")]
+[node name="PowerPlant" parent="Districts" node_paths=PackedStringArray("fire_visual") instance=ExtResource("3_iswwh")]
 offset_left = 2721.0
 offset_top = 971.0
 offset_right = 2721.0
@@ -187,6 +194,7 @@ offset_bottom = 971.0
 district_description = "Generates Power"
 district_name = "Power Plant"
 fix_cost = 1000
+fire_visual = NodePath("../../DistrictFires/PowerPlant")
 
 [node name="RandomEventManager" parent="." instance=ExtResource("2_as6u6")]
 min_event_timer = 10.0

@@ -31,6 +31,9 @@ var shelter_protection: float = 0
 
 var random_event_manager: Node
 
+@export_group("Fire")
+@export var fire_visual: Node
+
 func _process(_delta: float) -> void:
 	work()
 	check_for_energy()
@@ -267,6 +270,7 @@ func remove_from_2d_array(array, type: String) -> void:
 func broken() -> void:
 	$On_Off/Check.button_pressed = false
 	is_on = false
+	fire_visual.visible = true
 	civillian_building_check()
 	$Panel/HBoxContainer/FixCost.text = str(fix_cost)
 	$Panel.visible = true
@@ -322,6 +326,7 @@ func _on_fix_button_pressed() -> void:
 func fix() -> void:
 	$Panel.visible = false
 	is_broken = false
+	fire_visual.visible = false
 	GlobalVars.everything_is_broken = false
 	$Panel/Fixing/ProgressBar.value = 0
 

@@ -1,5 +1,6 @@
 extends Control
 
+
 @export var district_description: String = "Test"
 
 @export var district_name: String = "Test"
@@ -17,6 +18,9 @@ var shelter_protection: float = 0
 
 @export_range(0, 100, 1) var base_energy: int = 10
 var extra_energy: int = 0
+
+@export_group("Fire")
+@export var fire_visual: Node
 
 func _process(_delta: float) -> void:
 	gives_energy = base_energy + extra_energy
@@ -57,6 +61,7 @@ func _on_check_toggled(toggled_on: bool) -> void:
 func broken() -> void:
 	$On_Off/Check.button_pressed = false
 	is_on = false
+	fire_visual.visible = true
 	$Panel/HBoxContainer/FixCost.text = str(fix_cost)
 	$Panel.visible = true
 	if $Panel/Fixing/FixTickTimer.is_stopped():
@@ -80,6 +85,7 @@ func _on_fix_button_pressed() -> void:
 func fix() -> void:
 	$Panel.visible = false
 	is_broken = false
+	fire_visual.visible = false
 	GlobalVars.everything_is_broken = false
 	$Panel/Fixing/ProgressBar.value = 0
 
@@ -89,6 +95,7 @@ func _on_fix_tick_timer_timeout() -> void:
 		fix()
 	elif $Panel/Fixing/ProgressBar.value <= 100:
 		$Panel/Fixing/FixTickTimer.start()
+
 
 
 func _on_draw() -> void:
