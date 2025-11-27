@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ceij25nk1svn7"]
+[gd_scene load_steps=22 format=3 uid="uid://ceij25nk1svn7"]
 
 [ext_resource type="PackedScene" uid="uid://b0b6gee2o0hl3" path="res://Scenes/City/CitySimulated.tscn" id="1_mmd3b"]
 [ext_resource type="Script" uid="uid://d1dtodg0syeey" path="res://Scripts/City/city_playable.gd" id="1_r2v6b"]
@@ -9,6 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://gonh10mhtf6u" path="res://Scenes/UI/UpgradesMenu.tscn" id="6_cfbjk"]
 [ext_resource type="PackedScene" uid="uid://bkhdypxj8q4jn" path="res://Scenes/City/City3D.tscn" id="7_cfbjk"]
 [ext_resource type="Material" uid="uid://iqscfxq1xkrc" path="res://Art/UX/DistrictBorder.tres" id="9_dda04"]
+[ext_resource type="Material" uid="uid://c7v8b7b7wcwu5" path="res://Art/FAYA/fire_mat.tres" id="10_chgr3"]
+[ext_resource type="ArrayMesh" uid="uid://b3ygbbyq1foai" path="res://Art/FAYA/SM_Plastic_Fire.res" id="10_hh50m"]
+[ext_resource type="Script" uid="uid://cndsq4i8iryiw" path="res://Scripts/Tests/fire.gd" id="11_chgr3"]
+[ext_resource type="Script" uid="uid://djdysyw4268ig" path="res://Scripts/Tests/light_flicker.gd" id="13_ijfif"]
 
 [sub_resource type="Curve3D" id="Curve3D_r2v6b"]
 closed = true
@@ -478,3 +482,23 @@ path_local = false
 path_continuous_u = true
 path_u_distance = 1.0
 path_joined = false
+
+[node name="DistrictFires" type="Node3D" parent="."]
+
+[node name="Park" type="Node3D" parent="DistrictFires"]
+visible = false
+
+[node name="SmPlasticFire" type="MeshInstance3D" parent="DistrictFires/Park"]
+transform = Transform3D(0.25, 0, 0, 0, -1.0927847e-08, 0.25, 0, -0.25, -1.0927847e-08, -2.8321927, -0.003886953, -2.8452485)
+material_override = ExtResource("10_chgr3")
+cast_shadow = 0
+mesh = ExtResource("10_hh50m")
+skeleton = NodePath("../../..")
+script = ExtResource("11_chgr3")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="DistrictFires/Park"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8205078, 0.19128482, -2.8425267)
+light_color = Color(1, 0.66499996, 0.32999998, 1)
+omni_range = 0.902
+omni_attenuation = 0.328
+script = ExtResource("13_ijfif")

@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c7v8b7b7wcwu5"]
+
+[ext_resource type="Shader" uid="uid://bx2c78d53l6ix" path="res://Art/FAYA/fire_shader.gdshader" id="1_8c3bq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_8c3bq")
