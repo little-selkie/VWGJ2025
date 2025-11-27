@@ -29,7 +29,7 @@ var resource_people_health: Array = [
 	"PLACEHOLDER"]
 var resource_money: Array = [
 	"Money", 
-	1000, 
+	3000, 
 	load("res://Icons/Upgrades/Money.png"), 
 	"PLACEHOLDER"]
 var resource_heat: Array = [
@@ -39,7 +39,7 @@ var resource_heat: Array = [
 	"PLACEHOLDER"]
 var resource_upgrade: Array = [
 	"Technology", 
-	50,
+	80,
 	load("res://Icons/Upgrades/Tech.png"), 
 	"PLACEHOLDER"]
 
