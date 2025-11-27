@@ -143,7 +143,7 @@ district_name = "Heating"
 needs_energy = 4
 is_on = false
 produces_1 = 4
-produces_1_count = 10
+produces_1_count = 20
 fix_cost = 500
 
 [node name="GovernmentDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
