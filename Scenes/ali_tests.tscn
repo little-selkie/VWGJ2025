@@ -19,7 +19,7 @@ fov = 50.0
 transform = Transform3D(0.7882686, -0.3966368, 0.470438, -6.9658235e-10, 0.7645278, 0.6445908, -0.61533135, -0.5081107, 0.6026533, -10.0903015, 19.97581, 0)
 light_color = Color(0.5982517, 0.74899393, 0.9142372, 1)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Roads" type="MeshInstance3D" parent="."]
 transform = Transform3D(64, 0, 0, 0, 0.499, 0, 0, 0, 64, 0, 0, 0)
 material_override = ExtResource("1_q04yn")
 mesh = SubResource("PlaneMesh_52kg3")

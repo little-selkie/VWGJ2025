@@ -206,7 +206,6 @@ offset_bottom = -2160.0
 [node name="City3d" parent="." instance=ExtResource("7_cfbjk")]
 
 [node name="CollisionAreas" type="Node3D" parent="."]
-visible = false
 
 [node name="Area_PowerPlant" type="StaticBody3D" parent="CollisionAreas"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.490129, 0.4652617, 7.626425)
@@ -311,6 +310,12 @@ polygon = PackedVector2Array(-0.39526176, 3.0573664, 0.522117, 5.389036, 4.69616
 [node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="CollisionAreas/Area_Government"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, -3.8937201, 0, -3.6856585)
 polygon = PackedVector2Array(0.7369447, 5.0101347, 1.6654091, 5.913233, 3.4863274, 6.7340717, 5.720304, 2.401408, 5.7797494, 1.3462396, 4.6354117, -1.626066, 2.9411979, -0.9127129, 0.90516853, 1.985285)
+
+[node name="Area_Void" type="StaticBody3D" parent="CollisionAreas"]
+
+[node name="CollisionPolygon3D2" type="CollisionPolygon3D" parent="CollisionAreas/Area_Void"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 6.0011573, -0.3510971, 0.2349081)
+polygon = PackedVector2Array(-16.625515, 37.01715, 26.100248, 19.318392, 31.570482, -53.216595, -87.85962, -23.473782)
 
 [node name="DistrictBorderUX" type="Node3D" parent="."]
 
