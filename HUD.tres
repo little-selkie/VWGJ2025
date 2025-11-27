@@ -1,4 +1,10 @@
-[gd_resource type="Theme" format=3 uid="uid://crmwd4ulbqdbp"]
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://crmwd4ulbqdbp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4t6n"]
+bg_color = Color(0.9137255, 0.8745098, 0.87058824, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_61r0m"]
+bg_color = Color(0, 0, 0, 1)
 
 [resource]
 BoxContainer/constants/separation = 24
@@ -10,3 +16,5 @@ ItemList/font_sizes/font_size = 40
 Label/font_sizes/font_size = 46
 ProgressBar/font_sizes/font_size = 40
 RichTextLabel/font_sizes/normal_font_size = 46
+TooltipPanel/styles/embedded_border = SubResource("StyleBoxFlat_v4t6n")
+TooltipPanel/styles/panel = SubResource("StyleBoxFlat_61r0m")

@@ -1,5 +1,7 @@
 extends Control
 
+@export var district_description: String = "Test"
+
 @export var district_name: String = "Test"
 @export_range(0, 100, 1) var gives_energy: int = 10
 
@@ -33,6 +35,7 @@ func _ready():
 	$Panel/Fixing/FixTickTimer.wait_time = fix_speed
 	$VBoxContainer/DistrictName.text = str(district_name)
 	$VBoxContainer/HBoxContainer/EnergyCount.text = str(gives_energy)
+	$Info.tooltip_text = str(district_description)
 
 func _on_check_toggled(toggled_on: bool) -> void:
 	$Check.play()

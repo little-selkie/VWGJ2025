@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://078tgcvsvcbr"]
+[gd_scene load_steps=17 format=3 uid="uid://078tgcvsvcbr"]
 
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="1_54j4s"]
 [ext_resource type="Script" uid="uid://cqyj8vred4vnv" path="res://Scripts/UI/district_upgrades_menu.gd" id="1_dhfmc"]
 [ext_resource type="Texture2D" uid="uid://bu2gq36n27ab3" path="res://icon.svg" id="2_gxjsq"]
 [ext_resource type="Texture2D" uid="uid://1rd7atb31nf2" path="res://Icons/Additional/Upgrades_top.png" id="3_uslyp"]
 [ext_resource type="Texture2D" uid="uid://hvbkjh106y7y" path="res://Icons/Additional/Upgrades_bottom.png" id="4_3ovtx"]
+[ext_resource type="Texture2D" uid="uid://3gp1r7dpjeir" path="res://Icons/Additional/Upgrades_top_folded.png" id="4_3507b"]
 [ext_resource type="AudioStream" uid="uid://lvt03mbttcbu" path="res://Audio/SFX/button-4-214382.mp3" id="4_bny83"]
 [ext_resource type="AudioStream" uid="uid://uvfqbuxyjfn4" path="res://Audio/SFX/cash-register-fake-88639.mp3" id="5_vrqec"]
 [ext_resource type="Texture2D" uid="uid://rqr7n11w7vy1" path="res://Icons/Upgrades/Money.png" id="6_msl1y"]
@@ -16,6 +17,17 @@ content_margin_left = 164.0
 content_margin_top = 69.0
 content_margin_right = 159.0
 texture = ExtResource("3_uslyp")
+expand_margin_left = 277.0
+expand_margin_top = 18.0
+expand_margin_right = 298.0
+expand_margin_bottom = 5.0
+axis_stretch_horizontal = 2
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vgro6"]
+content_margin_left = 164.0
+content_margin_top = 69.0
+content_margin_right = 159.0
+texture = ExtResource("4_3507b")
 expand_margin_left = 277.0
 expand_margin_top = 18.0
 expand_margin_right = 298.0
@@ -54,8 +66,8 @@ theme = ExtResource("1_54j4s")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/title_panel = SubResource("StyleBoxTexture_msl1y")
 theme_override_styles/title_hover_panel = SubResource("StyleBoxTexture_msl1y")
-theme_override_styles/title_collapsed_panel = SubResource("StyleBoxTexture_msl1y")
-theme_override_styles/title_collapsed_hover_panel = SubResource("StyleBoxTexture_msl1y")
+theme_override_styles/title_collapsed_panel = SubResource("StyleBoxTexture_vgro6")
+theme_override_styles/title_collapsed_hover_panel = SubResource("StyleBoxTexture_vgro6")
 theme_override_styles/panel = SubResource("StyleBoxTexture_s8xan")
 folded = true
 title = "District Upgrades"

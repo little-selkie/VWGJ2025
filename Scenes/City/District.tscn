@@ -1,18 +1,29 @@
-[gd_scene load_steps=11 format=3 uid="uid://ecc8wscwb87c"]
+[gd_scene load_steps=16 format=3 uid="uid://ecc8wscwb87c"]
 
 [ext_resource type="Script" uid="uid://b5xd2rmp4iqb2" path="res://Scripts/City/district.gd" id="1_j064q"]
 [ext_resource type="PackedScene" uid="uid://078tgcvsvcbr" path="res://Scenes/UI/DistrictUpgradesMenu.tscn" id="2_jrh6f"]
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="2_wwqtv"]
+[ext_resource type="Texture2D" uid="uid://hvbkjh106y7y" path="res://Icons/Additional/Upgrades_bottom.png" id="3_4nkll"]
 [ext_resource type="Texture2D" uid="uid://dm88on4ur3kty" path="res://Icons/Upgrades/Electricity.png" id="3_bbwrn"]
 [ext_resource type="Texture2D" uid="uid://dboy4vxaewkhq" path="res://Icons/Upgrades/Air_Defense_.png" id="3_mkv84"]
+[ext_resource type="Texture2D" uid="uid://hnvdw0ewvlpq" path="res://Icons/Additional/Info_Bubble.png" id="4_tqgjt"]
 [ext_resource type="AudioStream" uid="uid://d15seqb5v0lny" path="res://Audio/SFX/light-switch-on-382714.mp3" id="6_ww6a0"]
 [ext_resource type="AudioStream" uid="uid://cfablmg0cs227" path="res://Audio/SFX/diesel-power-generator-33638.mp3" id="7_gjx8e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tqgjt"]
+texture = ExtResource("3_4nkll")
 
 [sub_resource type="Gradient" id="Gradient_jrh6f"]
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_wwqtv"]
 gradient = SubResource("Gradient_jrh6f")
 width = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4nkll"]
+bg_color = Color(0.9137255, 0.8745098, 0.87058824, 0.15686275)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tqgjt"]
+bg_color = Color(0.33488655, 0.56332284, 0.22869927, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j064q"]
 bg_color = Color(0.33844706, 0.13373291, 0.08383446, 1)
@@ -22,35 +33,46 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_j064q")
 
-[node name="PlaceholderImage" type="ColorRect" parent="."]
+[node name="BG" type="Panel" parent="."]
+custom_minimum_size = Vector2(600, 300)
 layout_mode = 0
-offset_left = 11.0
-offset_top = 9.0
-offset_right = 97.0
-offset_bottom = 97.0
-scale = Vector2(6.2799983, 2.96)
-color = Color(0.16862746, 0, 0.16862746, 0.40784314)
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("2_wwqtv")
+theme_override_styles/panel = SubResource("StyleBoxTexture_tqgjt")
+
+[node name="Efficiency" type="Label" parent="."]
+layout_mode = 0
+offset_left = 207.0
+offset_top = 153.0
+offset_right = 574.0
+offset_bottom = 217.0
+theme = ExtResource("2_wwqtv")
+theme_override_colors/font_color = Color(1, 1, 1, 0.3529412)
+theme_override_font_sizes/font_size = 26
+text = "(Global Efficiency: +100%)"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 22.0
+offset_left = 70.0
 offset_top = 27.0
-offset_right = 277.0
+offset_right = 537.0
 offset_bottom = 179.0
 theme = ExtResource("2_wwqtv")
+theme_override_constants/separation = 0
 
 [node name="DistrictName" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 text = "Test"
-horizontal_alignment = 1
 
 [node name="Details" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 2
 
 [node name="EnergyCost" type="Label" parent="VBoxContainer/Details"]
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-text = "0"
+text = "99"
 
 [node name="EnergyImage" type="TextureRect" parent="VBoxContainer/Details"]
 layout_mode = 2
@@ -63,9 +85,11 @@ text = "|"
 
 [node name="Production" type="HBoxContainer" parent="VBoxContainer/Details"]
 layout_mode = 2
+theme_override_constants/separation = 5
 
 [node name="Product_1" type="HBoxContainer" parent="VBoxContainer/Details/Production"]
 layout_mode = 2
+theme_override_constants/separation = 2
 
 [node name="+" type="Label" parent="VBoxContainer/Details/Production/Product_1"]
 layout_mode = 2
@@ -75,25 +99,26 @@ text = "+"
 [node name="ProductCount" type="Label" parent="VBoxContainer/Details/Production/Product_1"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 1, 0, 1)
-text = "0"
+text = "99"
 
 [node name="ProductImage" type="TextureRect" parent="VBoxContainer/Details/Production/Product_1"]
 layout_mode = 2
-tooltip_text = "Not Working :("
 texture = ExtResource("3_mkv84")
 expand_mode = 2
 
 [node name="Product_2" type="HBoxContainer" parent="VBoxContainer/Details/Production"]
-visible = false
 layout_mode = 2
+theme_override_constants/separation = 2
 
 [node name="+" type="Label" parent="VBoxContainer/Details/Production/Product_2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0, 1, 0, 1)
 text = "+"
 
 [node name="ProductCount" type="Label" parent="VBoxContainer/Details/Production/Product_2"]
 layout_mode = 2
-text = "0"
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+text = "99"
 
 [node name="ProductImage" type="TextureRect" parent="VBoxContainer/Details/Production/Product_2"]
 layout_mode = 2
@@ -133,35 +158,50 @@ layout_mode = 2
 texture = SubResource("GradientTexture1D_wwqtv")
 
 [node name="ProductionProgress" type="ProgressBar" parent="."]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 0
-offset_left = 481.0
-offset_top = 194.0
-offset_right = 485.0
-offset_bottom = 253.0
+offset_left = 339.0
+offset_top = 198.0
+offset_right = 539.0
+offset_bottom = 257.0
+tooltip_text = "Production Progress"
 theme = ExtResource("2_wwqtv")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/background = SubResource("StyleBoxFlat_4nkll")
+theme_override_styles/fill = SubResource("StyleBoxFlat_tqgjt")
 step = 0.5
 
 [node name="ProductionTick" type="Timer" parent="."]
 
 [node name="On_Off" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 24.0
-offset_top = 189.0
-offset_right = 251.0
-offset_bottom = 253.0
+offset_left = 61.0
+offset_top = 196.0
+offset_right = 328.0
+offset_bottom = 260.0
 theme = ExtResource("2_wwqtv")
+theme_override_constants/separation = 2
+
+[node name="Power" type="Label" parent="On_Off"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "Power: "
 
 [node name="Off" type="Label" parent="On_Off"]
 layout_mode = 2
+theme = ExtResource("2_wwqtv")
 theme_override_font_sizes/font_size = 30
 text = "Off"
+vertical_alignment = 1
 
 [node name="Check" type="CheckButton" parent="On_Off"]
 layout_mode = 2
+theme = ExtResource("2_wwqtv")
 theme_override_colors/button_checked_color = Color(0.105882354, 0.627451, 1, 1)
 
 [node name="On" type="Label" parent="On_Off"]
 layout_mode = 2
+theme = ExtResource("2_wwqtv")
 theme_override_font_sizes/font_size = 30
 text = "On"
 
@@ -239,10 +279,23 @@ step = 1.0
 
 [node name="DistrictUpgradesMenu" parent="." instance=ExtResource("2_jrh6f")]
 layout_mode = 1
-offset_left = 7.0
-offset_top = 270.0
-offset_right = 7.0
-offset_bottom = 270.0
+offset_left = 284.0
+offset_top = 247.0
+offset_right = 284.0
+offset_bottom = 247.0
+
+[node name="Info" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = 482.0
+offset_top = 20.0
+offset_right = 546.0
+offset_bottom = 84.0
+tooltip_text = "Test Tooltip"
+theme = ExtResource("2_wwqtv")
+texture = ExtResource("4_tqgjt")
+expand_mode = 2
+stretch_mode = 4
 
 [node name="Check" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3

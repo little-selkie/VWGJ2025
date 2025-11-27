@@ -1,5 +1,7 @@
 extends Control
 
+@export var district_description: String = "Test"
+
 @export var district_name: String = "Test"
 @export_range(0, 10, 1) var needs_energy: int = 1
 
@@ -37,6 +39,10 @@ func _process(_delta: float) -> void:
 	update_info()
 	
 	efficiency = int(GlobalVars.resource_people_health[1] + 50)
+	if efficiency >= 100:
+		$Efficiency.text = "(Global Efficiency: +" + str(0 - int(100-(GlobalVars.resource_people_health[1] + 50))) + "%)"
+	elif efficiency < 100:
+		$Efficiency.text = "(Global Efficiency: " + str(0 - int(100-(GlobalVars.resource_people_health[1] + 50))) + "%)"
 
 func _ready():
 	shader_change(is_on)
@@ -52,9 +58,13 @@ func _ready():
 	$Panel.visible = false
 	$Panel/Fixing/FixTickTimer.wait_time = fix_speed
 	random_event_manager = get_parent().get_parent().find_child("RandomEventManager")
+	if district_name == "Civilian Building" or district_name == "Government":
+		$Efficiency.visible = false
+	
 
 func update_info():
 	set_icons()
+	$Info.tooltip_text = str(district_description)
 	if produces_1 == 0 and produces_2 == 0 and produces_3 == 0 and produces_4 == 0:
 		$ProductionProgress.visible = false
 	if is_on and (GlobalVars.resource_power[1] - needs_energy) >= 0:
@@ -65,13 +75,11 @@ func update_info():
 	$VBoxContainer/DistrictName.text = str(district_name)
 	if produces_1 != 0:
 		$VBoxContainer/Details/Production/Product_1/ProductCount.text = str(produces_1_count)
-		$VBoxContainer/Details/Production/Product_1/ProductImage.tooltip_text = str(producesEnum.keys()[produces_1])
 		$VBoxContainer/Details/Production/Product_1.visible = true
 	else:
 		$VBoxContainer/Details/Production/Product_1.visible = false
 	if produces_2 != 0:
 		$VBoxContainer/Details/Production/Product_2/ProductCount.text = str(produces_2_count)
-		$VBoxContainer/Details/Production/Product_2/ProductImage.tooltip_text = str(producesEnum.keys()[produces_2])
 		$VBoxContainer/Details/Production/Product_2.visible = true
 	else:
 		$VBoxContainer/Details/Production/Product_2.visible = false
