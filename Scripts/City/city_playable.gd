@@ -80,3 +80,5 @@ func _process(_delta: float) -> void:
 					$DistrictBorderUX/Border_Hospital.visible = true
 				"Area_Government":
 					$DistrictBorderUX/Border_Gov.visible = true
+				"Area_Void":
+					return
