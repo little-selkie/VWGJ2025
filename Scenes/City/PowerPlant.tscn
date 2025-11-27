@@ -243,6 +243,7 @@ max_distance = 5000.0
 bus = &"SFX"
 
 [connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="hidden" from="." to="." method="_on_hidden"]
 [connection signal="toggled" from="On_Off/Check" to="." method="_on_check_toggled"]
 [connection signal="pressed" from="DebugBrake" to="." method="_on_debug_brake_pressed"]
 [connection signal="pressed" from="Panel/HBoxContainer/FixButton" to="." method="_on_fix_button_pressed"]

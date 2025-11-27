@@ -93,3 +93,7 @@ func _on_fix_tick_timer_timeout() -> void:
 
 func _on_draw() -> void:
 	$Fold.play()
+
+
+func _on_hidden() -> void:
+	$DistrictUpgradesMenu/UpgradesMenu.folded = true

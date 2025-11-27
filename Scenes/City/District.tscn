@@ -369,6 +369,7 @@ attenuation = 2.1435478
 bus = &"SFX"
 
 [connection signal="draw" from="." to="." method="_on_draw"]
+[connection signal="hidden" from="." to="." method="_on_hidden"]
 [connection signal="value_changed" from="ProductionProgress" to="." method="_on_production_progress_value_changed"]
 [connection signal="timeout" from="ProductionTick" to="." method="_on_production_tick_timeout"]
 [connection signal="toggled" from="On_Off/Check" to="." method="_on_check_toggled"]
