@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://8h80kcye77gd"]
+[gd_scene load_steps=20 format=3 uid="uid://8h80kcye77gd"]
 
 [ext_resource type="Script" uid="uid://bkcwd0kfg6bjt" path="res://Scripts/City/power_plant.gd" id="1_ho2cs"]
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="2_7hj7r"]
@@ -12,6 +12,46 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ktors"]
 texture = ExtResource("3_wvn1h")
+
+[sub_resource type="DPITexture" id="DPITexture_ktors"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\"/></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_m3umb"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_1wbtk"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".37\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\" fill-opacity=\".5\"/></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_8ty0h"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".25\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_d5hin"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\"/></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_yv24s"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_km315"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".37\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\" fill-opacity=\".5\"/></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_uhana"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".25\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 3.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j064q"]
 bg_color = Color(0.33844706, 0.13373291, 0.08383446, 1)
@@ -75,6 +115,14 @@ text = "Off"
 
 [node name="Check" type="CheckButton" parent="On_Off"]
 layout_mode = 2
+theme_override_icons/checked = SubResource("DPITexture_ktors")
+theme_override_icons/unchecked = SubResource("DPITexture_m3umb")
+theme_override_icons/checked_disabled = SubResource("DPITexture_1wbtk")
+theme_override_icons/unchecked_disabled = SubResource("DPITexture_8ty0h")
+theme_override_icons/checked_mirrored = SubResource("DPITexture_d5hin")
+theme_override_icons/unchecked_mirrored = SubResource("DPITexture_yv24s")
+theme_override_icons/checked_disabled_mirrored = SubResource("DPITexture_km315")
+theme_override_icons/unchecked_disabled_mirrored = SubResource("DPITexture_uhana")
 
 [node name="On" type="Label" parent="On_Off"]
 layout_mode = 2
@@ -167,10 +215,10 @@ stretch_mode = 4
 
 [node name="DistrictUpgradesMenu" parent="." instance=ExtResource("2_o1fab")]
 layout_mode = 1
-offset_left = 215.0
-offset_top = 179.0
-offset_right = 215.0
-offset_bottom = 179.0
+offset_left = 263.0
+offset_top = 192.0
+offset_right = 263.0
+offset_bottom = 192.0
 
 [node name="Check" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3

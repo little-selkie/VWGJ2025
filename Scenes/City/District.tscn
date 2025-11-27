@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://ecc8wscwb87c"]
+[gd_scene load_steps=25 format=3 uid="uid://ecc8wscwb87c"]
 
 [ext_resource type="Script" uid="uid://b5xd2rmp4iqb2" path="res://Scripts/City/district.gd" id="1_j064q"]
 [ext_resource type="PackedScene" uid="uid://078tgcvsvcbr" path="res://Scenes/UI/DistrictUpgradesMenu.tscn" id="2_jrh6f"]
@@ -25,6 +25,46 @@ bg_color = Color(0.9137255, 0.8745098, 0.87058824, 0.15686275)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tqgjt"]
 bg_color = Color(0.33488655, 0.56332284, 0.22869927, 1)
+
+[sub_resource type="DPITexture" id="DPITexture_nrkkc"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\"/></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_kdwf6"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_qonli"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".37\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\" fill-opacity=\".5\"/></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_e6uhw"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".25\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_fqmyk"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".75\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\"/></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_uc20o"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".5\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_m51r2"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#fff\" fill-opacity=\".37\" rx=\"7\"/><circle cx=\"8\" cy=\"8\" r=\"5\" fill=\"#1a1a1a\" fill-opacity=\".5\"/></svg>
+"
+base_scale = 3.0
+
+[sub_resource type="DPITexture" id="DPITexture_m8351"]
+_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"32\" height=\"16\"><g fill-opacity=\".25\"><rect width=\"30\" height=\"14\" x=\"1\" y=\"1\" fill=\"#1a1a1a\" rx=\"7\"/><circle cx=\"24\" cy=\"8\" r=\"5\" fill=\"#fff\"/></g></svg>
+"
+base_scale = 3.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j064q"]
 bg_color = Color(0.33844706, 0.13373291, 0.08383446, 1)
@@ -159,12 +199,12 @@ layout_mode = 2
 texture = SubResource("GradientTexture1D_wwqtv")
 
 [node name="ProductionProgress" type="ProgressBar" parent="."]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(150, 64)
 layout_mode = 0
-offset_left = 339.0
-offset_top = 198.0
+offset_left = 389.0
+offset_top = 196.0
 offset_right = 539.0
-offset_bottom = 257.0
+offset_bottom = 260.0
 tooltip_text = "Production Progress"
 theme = ExtResource("2_wwqtv")
 theme_override_font_sizes/font_size = 30
@@ -176,12 +216,12 @@ step = 0.5
 
 [node name="On_Off" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 61.0
+offset_left = 53.0
 offset_top = 196.0
-offset_right = 328.0
+offset_right = 384.0
 offset_bottom = 260.0
 theme = ExtResource("2_wwqtv")
-theme_override_constants/separation = 2
+theme_override_constants/separation = 0
 
 [node name="Power" type="Label" parent="On_Off"]
 layout_mode = 2
@@ -199,6 +239,14 @@ vertical_alignment = 1
 layout_mode = 2
 theme = ExtResource("2_wwqtv")
 theme_override_colors/button_checked_color = Color(0.105882354, 0.627451, 1, 1)
+theme_override_icons/checked = SubResource("DPITexture_nrkkc")
+theme_override_icons/unchecked = SubResource("DPITexture_kdwf6")
+theme_override_icons/checked_disabled = SubResource("DPITexture_qonli")
+theme_override_icons/unchecked_disabled = SubResource("DPITexture_e6uhw")
+theme_override_icons/checked_mirrored = SubResource("DPITexture_fqmyk")
+theme_override_icons/unchecked_mirrored = SubResource("DPITexture_uc20o")
+theme_override_icons/checked_disabled_mirrored = SubResource("DPITexture_m51r2")
+theme_override_icons/unchecked_disabled_mirrored = SubResource("DPITexture_m8351")
 
 [node name="On" type="Label" parent="On_Off"]
 layout_mode = 2
@@ -280,10 +328,10 @@ step = 1.0
 
 [node name="DistrictUpgradesMenu" parent="." instance=ExtResource("2_jrh6f")]
 layout_mode = 1
-offset_left = 284.0
-offset_top = 247.0
-offset_right = 284.0
-offset_bottom = 247.0
+offset_left = 295.0
+offset_top = 255.0
+offset_right = 295.0
+offset_bottom = 255.0
 
 [node name="Info" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(64, 64)
