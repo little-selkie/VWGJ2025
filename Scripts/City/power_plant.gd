@@ -21,6 +21,7 @@ var extra_energy: int = 0
 
 @export_group("Fire")
 @export var fire_visual: Node
+@export var fire_sound: Node
 
 func _process(_delta: float) -> void:
 	gives_energy = base_energy + extra_energy
@@ -29,6 +30,7 @@ func _process(_delta: float) -> void:
 		broken()
 
 func _ready():
+	fire_sound.volume_db = -80
 	if is_on:
 		$On_Off/Check.button_pressed = true
 		$Generators.playing = false
@@ -62,6 +64,7 @@ func broken() -> void:
 	$On_Off/Check.button_pressed = false
 	is_on = false
 	fire_visual.visible = true
+	fire_sound.volume_db = -30
 	$Panel/HBoxContainer/FixCost.text = str(fix_cost)
 	$Panel.visible = true
 	if $Panel/Fixing/FixTickTimer.is_stopped():
@@ -86,6 +89,7 @@ func fix() -> void:
 	$Panel.visible = false
 	is_broken = false
 	fire_visual.visible = false
+	fire_sound.volume_db = -80
 	GlobalVars.everything_is_broken = false
 	$Panel/Fixing/ProgressBar.value = 0
 

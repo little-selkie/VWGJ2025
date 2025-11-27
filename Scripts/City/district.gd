@@ -33,6 +33,7 @@ var random_event_manager: Node
 
 @export_group("Fire")
 @export var fire_visual: Node
+@export var fire_sound: Node
 
 func _process(_delta: float) -> void:
 	work()
@@ -63,6 +64,7 @@ func _ready():
 	random_event_manager = get_parent().get_parent().find_child("RandomEventManager")
 	if district_name == "Civilian Building" or district_name == "Government":
 		$Efficiency.visible = false
+	fire_sound.volume_db = -80
 	
 
 func update_info():
@@ -271,6 +273,7 @@ func broken() -> void:
 	$On_Off/Check.button_pressed = false
 	is_on = false
 	fire_visual.visible = true
+	fire_sound.volume_db = -30
 	civillian_building_check()
 	$Panel/HBoxContainer/FixCost.text = str(fix_cost)
 	$Panel.visible = true
@@ -327,6 +330,7 @@ func fix() -> void:
 	$Panel.visible = false
 	is_broken = false
 	fire_visual.visible = false
+	fire_sound.volume_db = -80
 	GlobalVars.everything_is_broken = false
 	$Panel/Fixing/ProgressBar.value = 0
 
