@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c40pgjptu5ut3"]
+[gd_scene load_steps=9 format=3 uid="uid://c40pgjptu5ut3"]
 
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="1_2o727"]
 [ext_resource type="Script" uid="uid://bdsa04hpwbyiy" path="res://Scripts/tutorial.gd" id="1_7bloo"]
@@ -9,9 +9,14 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uo1fs"]
 bg_color = Color(0.13333334, 0.13333334, 0.13333334, 0.5372549)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ro48b"]
+bg_color = Color(1, 0, 0, 0.60784316)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pjjuc"]
+bg_color = Color(1, 0, 0, 1)
+
 [node name="Tutorial" type="Control"]
 process_mode = 3
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -31,19 +36,19 @@ theme = ExtResource("1_2o727")
 theme_override_styles/panel = SubResource("StyleBoxFlat_uo1fs")
 
 [node name="TutorialPopUp" type="TextureRect" parent="Panel"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -942.5
-offset_top = -725.0
-offset_right = 942.5
-offset_bottom = 507.0
+offset_left = -1353.0
+offset_top = -913.0
+offset_right = 532.0
+offset_bottom = 319.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.4000006, 1.4000006)
 texture = ExtResource("2_uo1fs")
 
 [node name="Label" type="Label" parent="Panel/TutorialPopUp"]
@@ -114,12 +119,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -942.5
-offset_top = -725.0
-offset_right = 942.5
-offset_bottom = 507.0
+offset_left = -1353.0
+offset_top = -913.0
+offset_right = 532.0
+offset_bottom = 319.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.3999988, 1.3999988)
 texture = ExtResource("2_uo1fs")
 
 [node name="HeaderText" type="Label" parent="Panel/TutorialSteps"]
@@ -129,15 +135,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -135.0
-offset_top = -388.0
-offset_right = 107.0
-offset_bottom = -300.0
+offset_left = -246.78516
+offset_top = -403.1427
+offset_right = 219.21484
+offset_bottom = -315.1427
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_2o727")
 theme_override_font_sizes/font_size = 64
 text = "Tutorial: Step 0"
+horizontal_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel/TutorialSteps"]
 custom_minimum_size = Vector2(0, 600)
@@ -157,11 +164,12 @@ stretch_mode = 5
 custom_minimum_size = Vector2(690, 0)
 layout_mode = 2
 theme = ExtResource("1_2o727")
-theme_override_font_sizes/normal_font_size = 46
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
 text = "aaaaaaaaaaaaaaaaaaaaaaaaaaaa"
 fit_content = true
 shortcut_keys_enabled = false
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PrettyLady" type="TextureRect" parent="Panel/TutorialSteps"]
@@ -175,11 +183,11 @@ texture = ExtResource("3_uo1fs")
 
 [node name="Buttons" type="HBoxContainer" parent="Panel/TutorialSteps"]
 layout_mode = 0
-offset_left = 412.5
-offset_top = 1051.0
-offset_right = 1702.5
-offset_bottom = 1147.0
-theme_override_constants/separation = 500
+offset_left = 502.14328
+offset_top = 1050.7152
+offset_right = 1792.1433
+offset_bottom = 1146.7152
+theme_override_constants/separation = 1000
 
 [node name="Back" type="Button" parent="Panel/TutorialSteps/Buttons"]
 layout_mode = 2
@@ -188,12 +196,6 @@ theme = ExtResource("1_2o727")
 theme_override_font_sizes/font_size = 64
 text = "<"
 
-[node name="Close" type="Button" parent="Panel/TutorialSteps/Buttons"]
-layout_mode = 2
-theme = ExtResource("1_2o727")
-theme_override_font_sizes/font_size = 64
-text = "Close"
-
 [node name="Forward" type="Button" parent="Panel/TutorialSteps/Buttons"]
 layout_mode = 2
 tooltip_text = "Next Step"
@@ -201,10 +203,23 @@ theme = ExtResource("1_2o727")
 theme_override_font_sizes/font_size = 64
 text = ">"
 
+[node name="Close" type="Button" parent="Panel/TutorialSteps"]
+layout_mode = 0
+offset_left = 1596.4302
+offset_top = 392.14322
+offset_right = 1770.4302
+offset_bottom = 488.14322
+scale = Vector2(0.65713906, 0.65713906)
+theme = ExtResource("1_2o727")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_ro48b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_pjjuc")
+text = "X"
+
 [connection signal="draw" from="." to="." method="_on_draw"]
 [connection signal="hidden" from="." to="." method="_on_hidden"]
 [connection signal="pressed" from="Panel/TutorialPopUp/Buttons/Yes" to="." method="_on_yes_pressed"]
 [connection signal="pressed" from="Panel/TutorialPopUp/Buttons/No" to="." method="_on_no_pressed"]
 [connection signal="pressed" from="Panel/TutorialSteps/Buttons/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="Panel/TutorialSteps/Buttons/Close" to="." method="_on_close_pressed"]
 [connection signal="pressed" from="Panel/TutorialSteps/Buttons/Forward" to="." method="_on_forward_pressed"]
+[connection signal="pressed" from="Panel/TutorialSteps/Close" to="." method="_on_close_pressed"]
