@@ -159,6 +159,8 @@ func _on_buy_button_pressed() -> void:
 func check_for_money() -> void:
 	if (GlobalVars.resource_money[1] - current_money_cost) < 0 or (GlobalVars.resource_upgrade[1] - current_technology_cost) < 0:
 		$UpgradesMenu/VBoxContainer/BuyButton.disabled = true
+	else:
+		$UpgradesMenu/VBoxContainer/BuyButton.disabled = false
 
 
 # District Upgrade Functions
