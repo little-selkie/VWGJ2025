@@ -84,7 +84,8 @@ process_mode = 1
 script = ExtResource("1_r2v6b")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.01605177, 0.86747044, -0.49722978, 0.027989445, 0.49748883, 0.86701876, 0.99947935, -9.318077e-10, -0.03226559, -12.749004, 9.41552, -0.7889633)
+transform = Transform3D(0.024914281, 0.7425861, -0.66928715, 0.023985915, 0.66885823, 0.743003, 0.9994018, -0.034564853, -0.0011474825, -18.145634, 13.153191, 0.6140909)
+fov = 60.0
 
 [node name="CitySimulated" parent="." instance=ExtResource("1_mmd3b")]
 
@@ -92,9 +93,9 @@ transform = Transform3D(-0.01605177, 0.86747044, -0.49722978, 0.027989445, 0.497
 
 [node name="HospitalDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual", "fire_sound") instance=ExtResource("3_as6u6")]
 offset_left = 1132.0
-offset_top = 130.0
+offset_top = 198.0
 offset_right = 1132.0
-offset_bottom = 130.0
+offset_bottom = 198.0
 district_description = "Generates Physical Health"
 district_name = "Hospital"
 needs_energy = 2
@@ -152,9 +153,9 @@ fire_visual = NodePath("../../DistrictFires/Civilian")
 fire_sound = NodePath("../../DistrictFires/Civilian/FireSound")
 
 [node name="HeatingDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual", "fire_sound") instance=ExtResource("3_as6u6")]
-offset_left = 1707.0
+offset_left = 1635.0
 offset_top = 1159.0
-offset_right = 1707.0
+offset_right = 1635.0
 offset_bottom = 1159.0
 district_description = "Generates Heat"
 district_name = "Heating"
@@ -167,10 +168,10 @@ fire_visual = NodePath("../../DistrictFires/Heat")
 fire_sound = NodePath("../../DistrictFires/Heat/FireSound")
 
 [node name="GovernmentDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual", "fire_sound") instance=ExtResource("3_as6u6")]
-offset_left = 2594.0
-offset_top = 543.0
-offset_right = 2594.0
-offset_bottom = 543.0
+offset_left = 2317.0
+offset_top = 577.0
+offset_right = 2317.0
+offset_bottom = 577.0
 district_description = "Influences the appearance of Political Events with important Upgrades"
 district_name = "Government"
 needs_energy = 2
@@ -195,9 +196,9 @@ fire_visual = NodePath("../../DistrictFires/Lab")
 fire_sound = NodePath("../../DistrictFires/Lab/FireSound")
 
 [node name="PowerPlant" parent="Districts" node_paths=PackedStringArray("fire_visual", "fire_sound") instance=ExtResource("3_iswwh")]
-offset_left = 2721.0
+offset_left = 2562.0
 offset_top = 971.0
-offset_right = 2721.0
+offset_right = 2562.0
 offset_bottom = 971.0
 district_description = "Generates Power"
 district_name = "Power Plant"

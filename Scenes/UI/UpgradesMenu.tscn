@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://gonh10mhtf6u"]
+[gd_scene load_steps=15 format=3 uid="uid://gonh10mhtf6u"]
 
 [ext_resource type="Script" uid="uid://dk11yw20b35wa" path="res://Scripts/UI/upgrades_menu.gd" id="1_psehl"]
 [ext_resource type="Texture2D" uid="uid://bu2gq36n27ab3" path="res://icon.svg" id="2_qlo13"]
@@ -8,6 +8,12 @@
 [ext_resource type="AudioStream" uid="uid://uvfqbuxyjfn4" path="res://Audio/SFX/cash-register-fake-88639.mp3" id="5_7uhuk"]
 [ext_resource type="Texture2D" uid="uid://calkv8wwbh5fo" path="res://Icons/Upgrades/Tech.png" id="5_r36y8"]
 [ext_resource type="AudioStream" uid="uid://cymgkgfqkrxg" path="res://Audio/SFX/folding-37422.mp3" id="6_hjbx5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hjbx5"]
+bg_color = Color(0.9098039, 0.7137255, 0, 0.49803922)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r36y8"]
+bg_color = Color(0.9098039, 0.7137255, 0, 0.49803922)
 
 [sub_resource type="Animation" id="Animation_jsc17"]
 resource_name = "GeneralUpgradeSlide"
@@ -91,6 +97,8 @@ offset_right = 203.5
 offset_bottom = 72.0
 grow_horizontal = 2
 theme = ExtResource("3_jsc17")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hjbx5")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_r36y8")
 toggle_mode = true
 text = "General Upgrades"
 
