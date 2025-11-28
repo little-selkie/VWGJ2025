@@ -55,3 +55,7 @@ func _on_sfx_slider_drag_started() -> void:
 
 func _on_sfx_slider_drag_ended(_value_changed: bool) -> void:
 	$PauseMenu/SampleAudio.stop()
+
+
+func _on_button_pressed() -> void:
+	$PauseMenu.visible = true

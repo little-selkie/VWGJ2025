@@ -1,5 +1,6 @@
 extends Control
 
+
 @export var district_description: String = "Test"
 
 @export var district_name: String = "Test"
@@ -18,6 +19,10 @@ var shelter_protection: float = 0
 @export_range(0, 100, 1) var base_energy: int = 10
 var extra_energy: int = 0
 
+@export_group("Fire")
+@export var fire_visual: Node
+@export var fire_sound: Node
+
 func _process(_delta: float) -> void:
 	gives_energy = base_energy + extra_energy
 	$VBoxContainer/HBoxContainer/EnergyCount.text = str(gives_energy)
@@ -25,6 +30,7 @@ func _process(_delta: float) -> void:
 		broken()
 
 func _ready():
+	fire_sound.volume_db = -80
 	if is_on:
 		$On_Off/Check.button_pressed = true
 		$Generators.playing = false
@@ -57,6 +63,8 @@ func _on_check_toggled(toggled_on: bool) -> void:
 func broken() -> void:
 	$On_Off/Check.button_pressed = false
 	is_on = false
+	fire_visual.visible = true
+	fire_sound.volume_db = -30
 	$Panel/HBoxContainer/FixCost.text = str(fix_cost)
 	$Panel.visible = true
 	if $Panel/Fixing/FixTickTimer.is_stopped():
@@ -80,6 +88,8 @@ func _on_fix_button_pressed() -> void:
 func fix() -> void:
 	$Panel.visible = false
 	is_broken = false
+	fire_visual.visible = false
+	fire_sound.volume_db = -80
 	GlobalVars.everything_is_broken = false
 	$Panel/Fixing/ProgressBar.value = 0
 
@@ -91,5 +101,10 @@ func _on_fix_tick_timer_timeout() -> void:
 		$Panel/Fixing/FixTickTimer.start()
 
 
+
 func _on_draw() -> void:
 	$Fold.play()
+
+
+func _on_hidden() -> void:
+	$DistrictUpgradesMenu/UpgradesMenu.folded = true

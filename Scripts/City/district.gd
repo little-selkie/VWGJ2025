@@ -31,6 +31,10 @@ var shelter_protection: float = 0
 
 var random_event_manager: Node
 
+@export_group("Fire")
+@export var fire_visual: Node
+@export var fire_sound: Node
+
 func _process(_delta: float) -> void:
 	work()
 	check_for_energy()
@@ -60,6 +64,7 @@ func _ready():
 	random_event_manager = get_parent().get_parent().find_child("RandomEventManager")
 	if district_name == "Civilian Building" or district_name == "Government":
 		$Efficiency.visible = false
+	fire_sound.volume_db = -80
 	
 
 func update_info():
@@ -267,12 +272,15 @@ func remove_from_2d_array(array, type: String) -> void:
 func broken() -> void:
 	$On_Off/Check.button_pressed = false
 	is_on = false
+	fire_visual.visible = true
+	fire_sound.volume_db = -30
 	civillian_building_check()
 	$Panel/HBoxContainer/FixCost.text = str(fix_cost)
 	$Panel.visible = true
 	if $Panel/Fixing/FixTickTimer.is_stopped():
-		$Panel/BrokenLabel.visible = true
 		$Panel/HBoxContainer.visible = true
+		$Panel/FixButton.visible = true
+		$Panel/BrokenLabel.visible = true
 		$Panel/Fixing.visible = false
 
 func shader_change(are_lights_on: bool) -> void:
@@ -316,12 +324,15 @@ func _on_fix_button_pressed() -> void:
 		GlobalVars.resource_money[1] -= fix_cost
 		$Panel/Fixing/FixTickTimer.start()
 		$Panel/Fixing.visible = true
-		$Panel/HBoxContainer.visible = false
 		$Panel/BrokenLabel.visible = false
+		$Panel/HBoxContainer.visible = false
+		$Panel/FixButton.visible = false
 
 func fix() -> void:
 	$Panel.visible = false
 	is_broken = false
+	fire_visual.visible = false
+	fire_sound.volume_db = -80
 	GlobalVars.everything_is_broken = false
 	$Panel/Fixing/ProgressBar.value = 0
 
@@ -335,3 +346,7 @@ func _on_fix_tick_timer_timeout() -> void:
 
 func _on_draw() -> void:
 	$Fold.play()
+
+
+func _on_hidden() -> void:
+	$DistrictUpgradesMenu/UpgradesMenu.folded = true

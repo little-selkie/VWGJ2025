@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ceij25nk1svn7"]
+[gd_scene load_steps=23 format=3 uid="uid://ceij25nk1svn7"]
 
 [ext_resource type="PackedScene" uid="uid://b0b6gee2o0hl3" path="res://Scenes/City/CitySimulated.tscn" id="1_mmd3b"]
 [ext_resource type="Script" uid="uid://d1dtodg0syeey" path="res://Scripts/City/city_playable.gd" id="1_r2v6b"]
@@ -13,6 +13,7 @@
 [ext_resource type="ArrayMesh" uid="uid://4fc3on74hb2x" path="res://Art/FAYA/SM_Plastic_Fire.res" id="10_hh50m"]
 [ext_resource type="Script" uid="uid://cndsq4i8iryiw" path="res://Scripts/Tests/fire.gd" id="11_chgr3"]
 [ext_resource type="Script" uid="uid://djdysyw4268ig" path="res://Scripts/Tests/light_flicker.gd" id="13_ijfif"]
+[ext_resource type="AudioStream" uid="uid://bw367k73cpuqk" path="res://Audio/SFX/fire-sound-efftect-21991.mp3" id="14_p1u6s"]
 
 [sub_resource type="Curve3D" id="Curve3D_r2v6b"]
 closed = true
@@ -89,7 +90,7 @@ transform = Transform3D(-0.01605177, 0.86747044, -0.49722978, 0.027989445, 0.497
 
 [node name="Districts" type="Node" parent="."]
 
-[node name="HospitalDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+[node name="HospitalDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual", "fire_sound") instance=ExtResource("3_as6u6")]
 offset_left = 1132.0
 offset_top = 130.0
 offset_right = 1132.0
@@ -101,8 +102,10 @@ is_on = false
 produces_1 = 2
 produces_1_count = 5
 fix_cost = 500
+fire_visual = NodePath("../../DistrictFires/Hospital")
+fire_sound = NodePath("../../DistrictFires/Hospital/FireSound")
 
-[node name="EntertainmentDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+[node name="EntertainmentDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual", "fire_sound") instance=ExtResource("3_as6u6")]
 offset_left = 518.0
 offset_top = 544.0
 offset_right = 518.0
@@ -116,8 +119,10 @@ produces_1_count = 10
 produces_2 = 3
 produces_2_count = 20
 fix_cost = 500
+fire_visual = NodePath("../../DistrictFires/Entertainment")
+fire_sound = NodePath("../../DistrictFires/Entertainment/FireSound")
 
-[node name="ParkDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+[node name="ParkDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual", "fire_sound") instance=ExtResource("3_as6u6")]
 offset_left = 1593.0
 offset_top = 610.0
 offset_right = 1593.0
@@ -129,8 +134,10 @@ is_on = false
 produces_1 = 1
 produces_1_count = 20
 fix_cost = 500
+fire_visual = NodePath("../../DistrictFires/Park")
+fire_sound = NodePath("../../DistrictFires/Park/FireSound")
 
-[node name="CivilianDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+[node name="CivilianDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual", "fire_sound") instance=ExtResource("3_as6u6")]
 offset_left = 2026.0
 offset_top = 199.0
 offset_right = 2026.0
@@ -141,8 +148,10 @@ needs_energy = 6
 can_work_at_night = true
 production_timer = 0.05
 fix_cost = 500
+fire_visual = NodePath("../../DistrictFires/Civilian")
+fire_sound = NodePath("../../DistrictFires/Civilian/FireSound")
 
-[node name="HeatingDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+[node name="HeatingDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual", "fire_sound") instance=ExtResource("3_as6u6")]
 offset_left = 1707.0
 offset_top = 1159.0
 offset_right = 1707.0
@@ -152,10 +161,12 @@ district_name = "Heating"
 needs_energy = 4
 is_on = false
 produces_1 = 4
-produces_1_count = 20
+produces_1_count = 12
 fix_cost = 500
+fire_visual = NodePath("../../DistrictFires/Heat")
+fire_sound = NodePath("../../DistrictFires/Heat/FireSound")
 
-[node name="GovernmentDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+[node name="GovernmentDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual", "fire_sound") instance=ExtResource("3_as6u6")]
 offset_left = 2594.0
 offset_top = 543.0
 offset_right = 2594.0
@@ -165,8 +176,10 @@ district_name = "Government"
 needs_energy = 2
 is_on = false
 fix_cost = 500
+fire_visual = NodePath("../../DistrictFires/Government")
+fire_sound = NodePath("../../DistrictFires/Government/FireSound")
 
-[node name="TechnologyDistrict" parent="Districts" instance=ExtResource("3_as6u6")]
+[node name="TechnologyDistrict" parent="Districts" node_paths=PackedStringArray("fire_visual", "fire_sound") instance=ExtResource("3_as6u6")]
 offset_left = 635.0
 offset_top = 1149.0
 offset_right = 635.0
@@ -178,8 +191,10 @@ is_on = false
 produces_1 = 5
 produces_1_count = 4
 fix_cost = 500
+fire_visual = NodePath("../../DistrictFires/Lab")
+fire_sound = NodePath("../../DistrictFires/Lab/FireSound")
 
-[node name="PowerPlant" parent="Districts" instance=ExtResource("3_iswwh")]
+[node name="PowerPlant" parent="Districts" node_paths=PackedStringArray("fire_visual", "fire_sound") instance=ExtResource("3_iswwh")]
 offset_left = 2721.0
 offset_top = 971.0
 offset_right = 2721.0
@@ -187,6 +202,8 @@ offset_bottom = 971.0
 district_description = "Generates Power"
 district_name = "Power Plant"
 fix_cost = 1000
+fire_visual = NodePath("../../DistrictFires/PowerPlant")
+fire_sound = NodePath("../../DistrictFires/PowerPlant/FireSound")
 
 [node name="RandomEventManager" parent="." instance=ExtResource("2_as6u6")]
 min_event_timer = 10.0
@@ -535,6 +552,15 @@ omni_range = 0.902
 omni_attenuation = 0.328
 script = ExtResource("13_ijfif")
 
+[node name="FireSound" type="AudioStreamPlayer3D" parent="DistrictFires/Park"]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1063033, 0, -1.9031544)
+stream = ExtResource("14_p1u6s")
+volume_db = -25.0
+autoplay = true
+max_distance = 2000.0
+bus = &"SFX"
+
 [node name="Government" type="Node3D" parent="DistrictFires"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1959229, 0, 8.849335)
 visible = false
@@ -585,6 +611,15 @@ light_color = Color(1, 0.66499996, 0.32999998, 1)
 omni_range = 0.902
 omni_attenuation = 0.328
 script = ExtResource("13_ijfif")
+
+[node name="FireSound" type="AudioStreamPlayer3D" parent="DistrictFires/Government"]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1063033, 0, -1.9031544)
+stream = ExtResource("14_p1u6s")
+volume_db = -25.0
+autoplay = true
+max_distance = 2000.0
+bus = &"SFX"
 
 [node name="PowerPlant" type="Node3D" parent="DistrictFires"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.200531, 0, 11.596649)
@@ -637,6 +672,15 @@ omni_range = 0.902
 omni_attenuation = 0.328
 script = ExtResource("13_ijfif")
 
+[node name="FireSound" type="AudioStreamPlayer3D" parent="DistrictFires/PowerPlant"]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1063033, 0, -1.9031544)
+stream = ExtResource("14_p1u6s")
+volume_db = -25.0
+autoplay = true
+max_distance = 2000.0
+bus = &"SFX"
+
 [node name="Heat" type="Node3D" parent="DistrictFires"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.642169, 0, 0.417408)
 visible = false
@@ -687,6 +731,15 @@ light_color = Color(1, 0.66499996, 0.32999998, 1)
 omni_range = 0.902
 omni_attenuation = 0.328
 script = ExtResource("13_ijfif")
+
+[node name="FireSound" type="AudioStreamPlayer3D" parent="DistrictFires/Heat"]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1063033, 0, -1.9031544)
+stream = ExtResource("14_p1u6s")
+volume_db = -25.0
+autoplay = true
+max_distance = 2000.0
+bus = &"SFX"
 
 [node name="Lab" type="Node3D" parent="DistrictFires"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3165836, 0, -3.6714897)
@@ -739,6 +792,15 @@ omni_range = 0.902
 omni_attenuation = 0.328
 script = ExtResource("13_ijfif")
 
+[node name="FireSound" type="AudioStreamPlayer3D" parent="DistrictFires/Lab"]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1063033, 0, -1.9031544)
+stream = ExtResource("14_p1u6s")
+volume_db = -25.0
+autoplay = true
+max_distance = 2000.0
+bus = &"SFX"
+
 [node name="Entertainment" type="Node3D" parent="DistrictFires"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.06385, 0, -8.429634)
 visible = false
@@ -789,6 +851,15 @@ light_color = Color(1, 0.66499996, 0.32999998, 1)
 omni_range = 0.902
 omni_attenuation = 0.328
 script = ExtResource("13_ijfif")
+
+[node name="FireSound" type="AudioStreamPlayer3D" parent="DistrictFires/Entertainment"]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1063033, 0, -1.9031544)
+stream = ExtResource("14_p1u6s")
+volume_db = -25.0
+autoplay = true
+max_distance = 2000.0
+bus = &"SFX"
 
 [node name="Hospital" type="Node3D" parent="DistrictFires"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1902766, 0, -3.1656075)
@@ -841,6 +912,15 @@ omni_range = 0.902
 omni_attenuation = 0.328
 script = ExtResource("13_ijfif")
 
+[node name="FireSound" type="AudioStreamPlayer3D" parent="DistrictFires/Hospital"]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1063033, 0, -1.9031544)
+stream = ExtResource("14_p1u6s")
+volume_db = -25.0
+autoplay = true
+max_distance = 2000.0
+bus = &"SFX"
+
 [node name="Civilian" type="Node3D" parent="DistrictFires"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8334494, 0, 3.8338165)
 visible = false
@@ -891,3 +971,12 @@ light_color = Color(1, 0.66499996, 0.32999998, 1)
 omni_range = 0.902
 omni_attenuation = 0.328
 script = ExtResource("13_ijfif")
+
+[node name="FireSound" type="AudioStreamPlayer3D" parent="DistrictFires/Civilian"]
+process_mode = 1
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1063033, 0, -1.9031544)
+stream = ExtResource("14_p1u6s")
+volume_db = -25.0
+autoplay = true
+max_distance = 2000.0
+bus = &"SFX"
