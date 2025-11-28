@@ -215,6 +215,17 @@ volume_db = -5.0
 max_distance = 5000.0
 bus = &"SFX"
 
+[node name="BuildVersion" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0.19607843)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 2110.0
+offset_right = 871.0
+offset_bottom = 2174.0
+theme = ExtResource("2_72sra")
+theme_override_font_sizes/font_size = 30
+text = "Game made for Volunteer Week Game Jam 2025. Build: v1.0"
+
 [connection signal="pressed" from="BG/VBoxContainer/MenuButtons/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="BG/VBoxContainer/MenuButtons/ExitButton" to="." method="_on_exit_button_pressed"]
 [connection signal="value_changed" from="BG/SoundSettings/Music/MusicSlider" to="." method="_on_music_slider_value_changed"]
