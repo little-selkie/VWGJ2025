@@ -19,7 +19,7 @@ func _on_time_simulation_timeout() -> void:
 	else:
 		GlobalVars.current_time[2] += 1
 	
-	if GlobalVars.current_time[1] == 24:
+	if GlobalVars.current_time[1] == 23:
 		GlobalVars.time_of_day = "Night"
 	elif GlobalVars.current_time[1] == 6:
 		GlobalVars.time_of_day = "Day"
