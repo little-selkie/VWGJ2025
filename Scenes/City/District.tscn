@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://ecc8wscwb87c"]
+[gd_scene load_steps=33 format=3 uid="uid://ecc8wscwb87c"]
 
 [ext_resource type="Script" uid="uid://b5xd2rmp4iqb2" path="res://Scripts/City/district.gd" id="1_j064q"]
 [ext_resource type="PackedScene" uid="uid://078tgcvsvcbr" path="res://Scenes/UI/DistrictUpgradesMenu.tscn" id="2_jrh6f"]
@@ -70,6 +70,30 @@ base_scale = 3.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j064q"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qonli"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.26666668, 0.92941177, 0.5764706, 0.46666667)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e6uhw"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.26666668, 0.92941177, 0.5764706, 0.7019608)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qonli"]
 texture = ExtResource("6_kdwf6")
@@ -337,6 +361,11 @@ offset_bottom = 67.5
 scale = Vector2(0.305, 0.305)
 theme = ExtResource("2_wwqtv")
 theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_qonli")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_qonli")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e6uhw")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_qonli")
+theme_override_styles/focus = SubResource("StyleBoxFlat_qonli")
 text = "Fix"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
