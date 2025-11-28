@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://8h80kcye77gd"]
+[gd_scene load_steps=26 format=3 uid="uid://8h80kcye77gd"]
 
 [ext_resource type="Script" uid="uid://bkcwd0kfg6bjt" path="res://Scripts/City/power_plant.gd" id="1_ho2cs"]
 [ext_resource type="Theme" uid="uid://crmwd4ulbqdbp" path="res://HUD.tres" id="2_7hj7r"]
@@ -56,6 +56,30 @@ base_scale = 3.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j064q"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3umb"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.26666668, 0.92941177, 0.5764706, 0.46666667)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1wbtk"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.26666668, 0.92941177, 0.5764706, 0.7019608)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
 
 [sub_resource type="Animation" id="Animation_m3umb"]
 resource_name = "BrokenFlash"
@@ -209,6 +233,11 @@ theme_override_constants/separation = 5
 
 [node name="FixButton" type="Button" parent="Panel/HBoxContainer"]
 layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3umb")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_m3umb")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1wbtk")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_m3umb")
+theme_override_styles/focus = SubResource("StyleBoxFlat_m3umb")
 text = "Fix"
 
 [node name="FixCost" type="Label" parent="Panel/HBoxContainer"]
